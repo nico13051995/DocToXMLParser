@@ -270,13 +270,10 @@ void MainWindow::performeFiles(QStringList filesList, bool save)
                     textResult.append(words->querySubObject("Item(QVariant)", a)->dynamicCall("Text()").toString());
                 }
                 listTets.append(textResult);*/
-
-                QString textResult;
-                //    range->querySubObject("ListFormat()")->dynamicCall("ConvertNumbersToText()");
-                textResult.append(range->dynamicCall("Text()").toString());
-
-                listTets.append(textResult);
-                qDebug() << textResult;
+                QString value = range->dynamicCall("Text()").toString();
+                if(value != "\r")
+                    listTets.append(value);
+                //qDebug() << textResult;
 
                 changeProgress(filePart*counter*100 + (((double)a/countParagraphs)*filePart*100));
 
