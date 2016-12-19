@@ -1,0 +1,145 @@
+{
+  "name": "VNTU_ATICLE",
+  "header": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE article PUBLIC \"-//PKP//OJS Articles and Issues XML//EN\" \"http://pkp.sfu.ca/ojs/dtds/2.4.7/native.dtd\">",
+  "items": [
+    {
+      "name": "UDK",
+      "regexp": "УДК (.+)",
+      "nextHope": [
+        {
+          "name": "authors",
+          "regexp": ".+",
+          "nextHope": [],
+          "value": "0",
+          "atributes": []
+        },
+        {
+          "name": "title",
+          "regexp": ".+",
+          "nextHope": [],
+          "value": "0",
+          "atributes": [
+            {
+              "name": "local",
+              "type": 1,
+              "value": "uk_UA"
+            }
+          ]
+        }
+      ],
+      "value": "1",
+      "atributes": []
+    },
+    {
+      "name": "ISNN",
+      "regexp": "\\w+(.+?) *, *(\\s?.+\\s?)+ *, *(\\d+) *, № (\\d+)",
+      "value": "1",
+      "nextHope": [],
+      "atributes": []
+    },
+    {
+      "name": "magasin_name",
+      "regexp": "(\\w+.+?) *, *(\\s?.+\\s?)+ *, *(\\d+) *, № (\\d+)",
+      "nextHope": [],
+      "value": "2",
+      "atributes": [
+        {
+          "name": "local",
+          "type": 1,
+          "value": "uk_UA"
+        }
+      ]
+    },
+    {
+      "name": "abstract",
+      "regexp": "Анотація. (.+)",
+      "nextHope": [],
+      "value": "1",
+      "atributes": [
+        {
+          "name": "local",
+          "type": 1,
+          "value": "uk_UA"
+        }
+      ]
+    },
+    {
+      "name": "abstract",
+      "regexp": "Аннотация. (.+)",
+      "nextHope": [],
+      "value": "1",
+      "atributes": [
+        {
+          "name": "local",
+          "type": 1,
+          "value": "ru_RU"
+        }
+      ]
+    },
+    {
+      "name": "abstract",
+      "regexp": "Abstract. (.+)",
+      "nextHope": [],
+      "value": "1",
+      "atributes": [
+        {
+          "name": "local",
+          "type": 1,
+          "value": "en_US"
+        }
+      ]
+    },
+    {
+      "name": "date_published",
+      "regexp": "Стаття надійшла:\\s*(.+).",
+      "nextHope": [],
+      "value": "1",
+      "atributes": []
+    },
+    {
+      "name": "authors_info",
+      "regexp": "Відомості про авторів",
+      "enable": false,
+      "nextHope": [
+                {
+                  "name": "author",
+                  "regexp": "([A-Za-zА-Яа-яїіЇІ]+) ([A-Za-zА-Яа-яїіЇІ]+) ([A-Za-zА-Яа-яїіЇІ]+) – (.+)",
+                  "nextHope": [],
+                  "childrens" : [{ "name": "lastname", "useParentGroups" : true, "value" : "1"},
+                    { "name": "firstname", "useParentGroups" : true, "value" : "2"}, { "name": "middlename", "useParentGroups" : true, "value" : "3"},
+                    { "name": "biography", "useParentGroups" : true, "value" : "4"}, {"name": "email", "regexp": "e-mail:\\s*(\\w+@\\w+.\\w+)", "useParentScope" : true, "value" : "1"}],
+                  "type": 1,
+                  "value": "",
+                  "list": true,
+                  "atributes": [
+                        {
+                            "name": "primary_contact",
+                            "type": 1,
+                            "value": "true"
+                        }
+                    ]
+                }
+      ],
+      "value": "1",
+      "atributes": [],
+      "list": true
+    },
+    {
+      "name": "literatura",
+      "regexp": ".*Список літератури.*",
+      "enable": false,
+      "nextHope": [
+        {
+          "name": "lteratura",
+          "regexp": "\\d+\\.\\t*\\s+(.+)",
+          "nextHope": [],
+          "value": "1",
+          "list": true,
+          "atributes": []
+        }
+      ],
+      "value": "1",
+      "atributes": []
+    }
+  ]
+}

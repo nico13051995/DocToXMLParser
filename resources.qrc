@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>default.json</file>
+    </qresource>
+    <qresource prefix="/license">
+        <file>license.txt</file>
+        <file>xml-icon.ico</file>
+    </qresource>
+</RCC>
