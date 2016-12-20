@@ -6,4 +6,15 @@
         <file>license.txt</file>
         <file>xml-icon.ico</file>
     </qresource>
+    <qresource prefix="/icons">
+        <file>images/icons/archive.png</file>
+        <file>images/icons/error.png</file>
+        <file>images/icons/folder-14.png</file>
+        <file>images/icons/save.png</file>
+        <file>images/icons/settings-4.png</file>
+        <file>images/icons/exit-2.png</file>
+        <file>images/icons/id-card-5.png</file>
+        <file>images/icons/cloud-computing.png</file>
+        <file>images/icons/letter-i.png</file>
+    </qresource>
 </RCC>
