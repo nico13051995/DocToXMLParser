@@ -15,6 +15,7 @@
 #include "selectparserwindow.h"
 #include "wdconfigdialog.h"
 #include "models/parserconfig.h"
+#include "models/paragraph.h"
 #include "models/item.h"
 #include "xmlbuilder.h"
 

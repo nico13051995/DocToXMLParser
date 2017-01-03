@@ -12,12 +12,12 @@ class XmlBuilder : public Builder
     QString *result;
 public:
     XmlBuilder(QString name, QString header, QString footer);
-    QObject *build(QList<Item*> items, QList<QString> paragraphs);
+    QObject *build(QList<Item*> items, QList<Paragraph> paragraphs);
     QString getResultAsString();
 
     QXmlStreamWriter *getXml();
 private:
-    QObject *build(QStringList parentMatch, QList<Item *> items, QList<QString> paragraphs);
+    QObject *build(QStringList parentMatch, QList<Item *> items, QList<Paragraph> paragraphs);
 
 signals:
 

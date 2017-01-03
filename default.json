@@ -11,6 +11,7 @@
           "regexp": ".+",
           "nextHope": [],
           "value": "0",
+          "compareFontProperties" : true,
           "atributes": []
         },
         {
@@ -131,10 +132,11 @@
       "nextHope": [
         {
           "name": "lteratura",
-          "regexp": "\\d+\\.\\t*\\s+(.+)",
+          "regexp": "^\\d+\\.\\t*\\s+(.+)",
           "nextHope": [],
           "value": "1",
           "list": true,
+          "compareFontProperties" : true,
           "atributes": []
         }
       ],

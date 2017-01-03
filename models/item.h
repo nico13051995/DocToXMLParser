@@ -16,9 +16,11 @@ class Item : public JsonSerializable
     bool useParentGroups; // parent scope prepeand to child
     bool useParentScope;
     bool isList; //if true then try find next similar
+    bool compareFontProperties;
     QList<ItemAttribute*> atributes;
     QList<Item*> childrens;
     QList<Item*> nextHope;//for performe only next paragraph
+    int nextHopeIndex = 0;
 
 public:
     explicit Item(QObject *parent = 0);
@@ -58,6 +60,12 @@ public:
     void setIsList(bool value);
 
     bool getUseParentScope() const;
+
+    bool getCompareFontProperties() const;
+
+    int getNextHopeIndex() const;
+
+    void setNextHopeIndex(int value);
 
 signals:
 

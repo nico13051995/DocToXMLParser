@@ -24,7 +24,8 @@ SOURCES += main.cpp\
     models/parserconfig.cpp \
     settings.cpp \
     wdconfigdialog.cpp \
-    models/settingscontainer.cpp
+    models/settingscontainer.cpp \
+    models/paragraph.cpp
 HEADERS  += mainwindow.h \
     xmlbuilder.h \
     regexp.h \
@@ -36,7 +37,8 @@ HEADERS  += mainwindow.h \
     models/parserconfig.h \
     settings.h \
     wdconfigdialog.h \
-    models/settingscontainer.h
+    models/settingscontainer.h \
+    models/paragraph.h
 
 FORMS    += mainwindow.ui \
     selectparserwindow.ui \

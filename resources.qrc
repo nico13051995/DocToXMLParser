@@ -16,5 +16,6 @@
         <file>images/icons/id-card-5.png</file>
         <file>images/icons/cloud-computing.png</file>
         <file>images/icons/letter-i.png</file>
+        <file>images/icons/Apps-Qt-icon.png</file>
     </qresource>
 </RCC>

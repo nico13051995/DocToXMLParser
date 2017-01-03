@@ -255,8 +255,8 @@ void MainWindow::performeFiles(QStringList filesList, bool save)
         qDebug() << textResult;
         qDebug() << list;
 */
-        QList<QString> listTets;
-        listTets.append(textResult);
+        QList<Paragraph> listTets;
+        listTets.append(Paragraph(textResult, QFont()));
 
         if(paragraphs != NULL)
         {
@@ -271,8 +271,16 @@ void MainWindow::performeFiles(QStringList filesList, bool save)
                 }
                 listTets.append(textResult);*/
                 QString value = range->dynamicCall("Text()").toString();
+                QAxObject *fontAxObject = range->querySubObject("Font()");
+                QString fontName = fontAxObject->dynamicCall("Name()").toString();
+                int fontSize = fontAxObject->dynamicCall("Size()").toInt();
+                bool fontItalic = fontAxObject->dynamicCall("Italic()").toBool();
+                QFont rangeFont = QFont(fontName, fontSize, -1, fontItalic);
+                qDebug() << "TEXT: " << value << "\nFONT: " << rangeFont;
+
+
                 if(value != "\r")
-                    listTets.append(value);
+                    listTets.append(Paragraph(value, rangeFont));
                 //qDebug() << textResult;
 
                 changeProgress(filePart*counter*100 + (((double)a/countParagraphs)*filePart*100));

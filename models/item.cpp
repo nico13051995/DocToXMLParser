@@ -114,6 +114,21 @@ bool Item::getUseParentScope() const
     return useParentScope;
 }
 
+bool Item::getCompareFontProperties() const
+{
+    return compareFontProperties;
+}
+
+int Item::getNextHopeIndex() const
+{
+    return nextHopeIndex;
+}
+
+void Item::setNextHopeIndex(int value)
+{
+    nextHopeIndex = value;
+}
+
 Item::Item(QObject *parent) : JsonSerializable(parent)
 {
     enable = true;
@@ -143,6 +158,7 @@ Item::Item(QJsonObject obj, QObject *parent): JsonSerializable(parent)
 bool Item::load(QJsonObject obj)
 {
     enable = true;
+    compareFontProperties = false;
     isList = false;
     useParentGroups = false;
     useParentScope = false;
@@ -156,6 +172,9 @@ bool Item::load(QJsonObject obj)
         useParentScope = obj["useParentScope"].toBool();
     if(obj.contains("enable"))
         enable = obj["enable"].toBool();
+    if(obj.contains("compareFontProperties"))
+        compareFontProperties = obj["compareFontProperties"].toBool();
+
     if(obj.contains("list"))
     {
         isList = obj["list"].toBool();
