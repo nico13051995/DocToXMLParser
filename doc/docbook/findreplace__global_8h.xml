@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="findreplace__global_8h">
+    <title>findreplace_global.h File Reference</title>
+    <programlisting>#include &lt;QtCore/qglobal.h&gt;</programlisting>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="findreplace__global_8h_1aa040f93a96010954030a6df0f78d1a24">FINDREPLACESHARED_EXPORT</link> Q_DECL_IMPORT</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/qt-json-editor-master/dialogs/findreplace_global.h</para>
+    </simplesect>
+</section>

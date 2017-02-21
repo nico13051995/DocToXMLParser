@@ -1,0 +1,348 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_json_editor_main">
+<title>JsonEditorMain class Reference</title>
+<para>
+    <programlisting>#include <link linkend="jsoneditormain_8h">&lt;jsoneditormain.h&gt;</link></programlisting>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Ui::JsonEditorMain * ui</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Json::Value jsonValue</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const QString newInsertText</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const QString treeViewColumnKey</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const QString treeViewColumnValue</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const QString treeViewColumnType</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString curFile</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QTextEdit * textEdit</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString lastFilePath</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Ui::FindDialog * m_findDialog</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Ui::FindReplaceDialog * m_findReplaceDialog</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_json_editor_main_1a26035af11b29baf46d5fd32c288501f0">JsonEditorMain</link> (
+QWidget * parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_json_editor_main_1a6ed414b7f5f19c6c971053a5a8e83c3a">~JsonEditorMain</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_json_editor_main_1a8242322e2557b45ff878ba77bbcc26d9">changeEvent</link> (
+QEvent * e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_json_editor_main_1a3040d8580a6cd99cb2158b8da0207b97">closeEvent</link> (
+QCloseEvent * event)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString <link linkend="class_json_editor_main_1a523662fcc234bee1a92c8deb38d30fa5">treeFormat</link> (
+<link linkend="class_json_tree_item">JsonTreeItem</link> * treeItem, QString indent, bool noHeader)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_json_editor_main_1a5141d08d696d6921faa52a7cae22e252">readSettings</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_json_editor_main_1a1e0fc4e0adcf58859acada29263621c4">writeSettings</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_editor_main_1ab127e496e42c19a884f9ab675e2e670b">maybeSave</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_json_editor_main_1a369558bd5bff5bc5313b4de51a996fc8">loadFile</link> (
+const QString &amp; fileName)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_editor_main_1a3add63c8b947c5714887a77ceeae82f0">saveFile</link> (
+const QString &amp; fileName)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_json_editor_main_1adf680978e8201457bd67849f6be895d9">setCurrentFile</link> (
+const QString &amp; fileName)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString <link linkend="class_json_editor_main_1a65bbcb29400b1d0fabbefe1d888a3a53">strippedName</link> (
+const QString &amp; fullFileName)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_json_editor_main_1a26035af11b29baf46d5fd32c288501f0">
+                <title>JsonEditorMain::JsonEditorMain (QWidget *parent=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_editor_main_1a6ed414b7f5f19c6c971053a5a8e83c3a">
+                <title>JsonEditorMain::~JsonEditorMain ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_editor_main_1a8242322e2557b45ff878ba77bbcc26d9">
+                <title>void JsonEditorMain::changeEvent (QEvent *e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_editor_main_1a3040d8580a6cd99cb2158b8da0207b97">
+                <title>void JsonEditorMain::closeEvent (QCloseEvent *event)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_editor_main_1a523662fcc234bee1a92c8deb38d30fa5">
+                <title>QString JsonEditorMain::treeFormat (JsonTreeItem *treeItem=NULL, QString indent=&quot;&quot;, bool noHeader=false)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_editor_main_1a5141d08d696d6921faa52a7cae22e252">
+                <title>void JsonEditorMain::readSettings ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_editor_main_1a1e0fc4e0adcf58859acada29263621c4">
+                <title>void JsonEditorMain::writeSettings ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_editor_main_1ab127e496e42c19a884f9ab675e2e670b">
+                <title>bool JsonEditorMain::maybeSave ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_editor_main_1a369558bd5bff5bc5313b4de51a996fc8">
+                <title>void JsonEditorMain::loadFile (const QString &amp;fileName)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_editor_main_1a3add63c8b947c5714887a77ceeae82f0">
+                <title>bool JsonEditorMain::saveFile (const QString &amp;fileName)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_editor_main_1adf680978e8201457bd67849f6be895d9">
+                <title>void JsonEditorMain::setCurrentFile (const QString &amp;fileName)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_editor_main_1a65bbcb29400b1d0fabbefe1d888a3a53">
+                <title>QString JsonEditorMain::strippedName (const QString &amp;fullFileName)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

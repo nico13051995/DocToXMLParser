@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="struct_j_s_highlighter_1_1_highlighting_rule">
+<title>JSHighlighter::HighlightingRule struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="_j_s_highlighter_8h">&lt;JSHighlighter.h&gt;</link></programlisting>
+</para>
+        <section>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QRegExp pattern</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QTextCharFormat format</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+</section>

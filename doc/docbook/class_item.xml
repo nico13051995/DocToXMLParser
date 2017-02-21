@@ -1,0 +1,459 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_item">
+<title>Item class Reference</title>
+<para>
+    <programlisting>#include <link linkend="item_8h">&lt;item.h&gt;</link></programlisting>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString regexp</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString value</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int type</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool enable</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool useParentGroups</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool useParentScope</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool isList</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool compareFontProperties</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QList&lt; ItemAttribute * &gt; atributes</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QList&lt; Item * &gt; childrens</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QList&lt; Item * &gt; nextHope</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int nextHopeIndex</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_item_1aabd972d6d2b789c2ea8d83c127b9bfa6">Item</link> (
+QObject * parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_item_1a11663c84075b78c3ae5e30fdfcd7c458">~Item</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_item_1abf5c29843b8d9106348c9fed7904a6cd">Item</link> (
+QJsonObject obj, QObject * parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_item_1aa089e9749b9a19492d45bb02c2135b48">load</link> (
+QJsonObject obj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_item_1a0922eea7bc56f3f87a134210b56dde2c">save</link> (
+QJsonObject obj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QList&lt; <link linkend="class_item">Item</link> * &gt; <link linkend="class_item_1a561400c0ac0bc9734b08878eaf5625ed">getNextHope</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_item_1aeb4b7f6ae49089c37b4e83b60cdec1fc">setNextHope</link> (
+const QList&lt; <link linkend="class_item">Item</link> *&gt; &amp; value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QList&lt; <link linkend="class_item">Item</link> * &gt; <link linkend="class_item_1a9b13c14f5684cf1bf9a085718bf5bb27">getChildrens</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_item_1af6cc06c1af86eba7addaa1abf7034813">setChildrens</link> (
+const QList&lt; <link linkend="class_item">Item</link> *&gt; &amp; value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QList&lt; <link linkend="class_item_attribute">ItemAttribute</link> * &gt; <link linkend="class_item_1ad954d16c20b7f88ceaf67d584a025070">getAtributes</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_item_1a7ab11dc5bc3eac9b3acdea2ec58bcd63">setAtributes</link> (
+const QList&lt; <link linkend="class_item_attribute">ItemAttribute</link> *&gt; &amp; value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString <link linkend="class_item_1a5ef326c2ff5f7836cce5b217ab86924f">getRegexp</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_item_1a7745fe1a00ad454eaaa8416ff88ea869">setRegexp</link> (
+const QString &amp; value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString <link linkend="class_item_1a926b576dfdb3a48d93d8eb6aeba6d64a">getName</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_item_1a4471207d9b41c03f59f8e8bd2c385cba">setName</link> (
+const QString &amp; value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="class_item_1a4bec7c4c9b1397ba6ed6e65bcde7b3e8">getType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_item_1ad1b9dd3edd2a2e33e44a3f84707e96d5">setType</link> (
+int value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString <link linkend="class_item_1ae6ea1a0f342108797321796acb3c9878">getValue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString <link linkend="class_item_1a171f7fb92445cf2ebbcc39456a499597">getValue</link> (
+QStringList mach)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_item_1a09651004e3d1e354981d45d5988d6073">getUseParentGroups</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_item_1a28d35e796991b8b314acaffe19cc8f84">setUseParentGroups</link> (
+bool value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_item_1a608527e7705b8f8640e3bdba3fb94415">isEnable</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_item_1a058f352e4efb4ba66a85c09e5c59fc9a">setEnable</link> (
+bool value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_item_1a0aac23b6c71f5e1246db2584340606a2">getIsList</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_item_1aa289228a65c92ec36e1098b2041ab09a">setIsList</link> (
+bool value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_item_1a1c9646660ee2abe8560fe42c2413f376">getUseParentScope</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_item_1ae7708e01436a0b0595152fea8e77eb0c">getCompareFontProperties</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="class_item_1a6ccb1728ae39e87cfd1430f252916983">getNextHopeIndex</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_item_1a433534d413597c7163d5cf51e94dfdd4">setNextHopeIndex</link> (
+int value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>The <link linkend="class_item">Item</link> class Main model for searching. </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_item_1aabd972d6d2b789c2ea8d83c127b9bfa6">
+                <title>Item::Item (QObject *parent=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1a11663c84075b78c3ae5e30fdfcd7c458">
+                <title>Item::~Item ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1abf5c29843b8d9106348c9fed7904a6cd">
+                <title>Item::Item (QJsonObject obj, QObject *parent=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1aa089e9749b9a19492d45bb02c2135b48">
+                <title>bool Item::load (QJsonObject obj)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1a0922eea7bc56f3f87a134210b56dde2c">
+                <title>bool Item::save (QJsonObject obj)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1a561400c0ac0bc9734b08878eaf5625ed">
+                <title>QList&lt; Item * &gt; Item::getNextHope () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1aeb4b7f6ae49089c37b4e83b60cdec1fc">
+                <title>void Item::setNextHope (const QList&lt; Item *&gt; &amp;value)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1a9b13c14f5684cf1bf9a085718bf5bb27">
+                <title>QList&lt; Item * &gt; Item::getChildrens () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1af6cc06c1af86eba7addaa1abf7034813">
+                <title>void Item::setChildrens (const QList&lt; Item *&gt; &amp;value)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1ad954d16c20b7f88ceaf67d584a025070">
+                <title>QList&lt; ItemAttribute * &gt; Item::getAtributes () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1a7ab11dc5bc3eac9b3acdea2ec58bcd63">
+                <title>void Item::setAtributes (const QList&lt; ItemAttribute *&gt; &amp;value)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1a5ef326c2ff5f7836cce5b217ab86924f">
+                <title>QString Item::getRegexp () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1a7745fe1a00ad454eaaa8416ff88ea869">
+                <title>void Item::setRegexp (const QString &amp;value)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1a926b576dfdb3a48d93d8eb6aeba6d64a">
+                <title>QString Item::getName () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1a4471207d9b41c03f59f8e8bd2c385cba">
+                <title>void Item::setName (const QString &amp;value)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1a4bec7c4c9b1397ba6ed6e65bcde7b3e8">
+                <title>int Item::getType () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1ad1b9dd3edd2a2e33e44a3f84707e96d5">
+                <title>void Item::setType (int value)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1ae6ea1a0f342108797321796acb3c9878">
+                <title>QString Item::getValue () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1a171f7fb92445cf2ebbcc39456a499597">
+                <title>QString Item::getValue (QStringList mach) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1a09651004e3d1e354981d45d5988d6073">
+                <title>bool Item::getUseParentGroups () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1a28d35e796991b8b314acaffe19cc8f84">
+                <title>void Item::setUseParentGroups (bool value)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1a608527e7705b8f8640e3bdba3fb94415">
+                <title>bool Item::isEnable () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1a058f352e4efb4ba66a85c09e5c59fc9a">
+                <title>void Item::setEnable (bool value)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1a0aac23b6c71f5e1246db2584340606a2">
+                <title>bool Item::getIsList () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1aa289228a65c92ec36e1098b2041ab09a">
+                <title>void Item::setIsList (bool value)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1a1c9646660ee2abe8560fe42c2413f376">
+                <title>bool Item::getUseParentScope () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1ae7708e01436a0b0595152fea8e77eb0c">
+                <title>bool Item::getCompareFontProperties () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1a6ccb1728ae39e87cfd1430f252916983">
+                <title>int Item::getNextHopeIndex () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_1a433534d413597c7163d5cf51e94dfdd4">
+                <title>void Item::setNextHopeIndex (int value)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

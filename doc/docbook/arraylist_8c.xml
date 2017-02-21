@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="arraylist_8c">
+    <title>arraylist.c File Reference</title>
+    <programlisting>#include &quot;config.h&quot;</programlisting>
+    <programlisting>#include &lt;stdlib.h&gt;</programlisting>
+    <programlisting>#include &lt;string.h&gt;</programlisting>
+    <programlisting>#include &quot;bits.h&quot;</programlisting>
+    <programlisting>#include &quot;arraylist.h&quot;</programlisting>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structarray__list">array_list</link> * <link linkend="arraylist_8c_1a0d4bfac055dfd98e17296142abf4d894">array_list_new</link> (
+<link linkend="arraylist_8h_1a90d2ce204a483fa38f5514bad67222aa">array_list_free_fn</link> * free_fn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="arraylist_8c_1ae3e11e5059d5798c579db56d96c9046a">array_list_free</link> (
+struct <link linkend="structarray__list">array_list</link> * arr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * <link linkend="arraylist_8c_1ab2337d58daf086691717a4f038adea9d">array_list_get_idx</link> (
+struct <link linkend="structarray__list">array_list</link> * arr, int i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="arraylist_8c_1af6fa36448c5a54db7992568f149d4162">array_list_expand_internal</link> (
+struct <link linkend="structarray__list">array_list</link> * arr, int max)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="arraylist_8c_1acb580f4184c52f8ade1f7c68bb57b633">array_list_put_idx</link> (
+struct <link linkend="structarray__list">array_list</link> * arr, int idx, void * data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="arraylist_8c_1aa6cc3f924c6ae01867055e77261002fc">array_list_add</link> (
+struct <link linkend="structarray__list">array_list</link> * arr, void * data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="arraylist_8c_1ac3283937cbfed71adbbdcfd12e7e6c1f">array_list_length</link> (
+struct <link linkend="structarray__list">array_list</link> * arr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/qt-json-editor-master/jsonc/arraylist.c</para>
+    </simplesect>
+</section>

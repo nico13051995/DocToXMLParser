@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="findreplaceform_8cpp">
+    <title>findreplaceform.cpp File Reference</title>
+    <programlisting>#include &lt;QtGui&gt;</programlisting>
+    <programlisting>#include &lt;QTextEdit&gt;</programlisting>
+    <programlisting>#include &lt;QRegExp&gt;</programlisting>
+    <programlisting>#include &lt;QSettings&gt;</programlisting>
+    <programlisting>#include &quot;findreplaceform.h&quot;</programlisting>
+    <programlisting>#include &quot;ui_findreplaceform.h&quot;</programlisting>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="findreplaceform_8cpp_1ad0e85b6e1a23bc6895c0b0173fe84fb8">TEXT_TO_FIND</link> &quot;textToFind&quot;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="findreplaceform_8cpp_1ae47c14ca9975586733a09e6d551dad02">TEXT_TO_REPLACE</link> &quot;textToReplace&quot;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="findreplaceform_8cpp_1a47c8ca9e44c58a42f6fe68e4203a013e">DOWN_RADIO</link> &quot;downRadio&quot;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="findreplaceform_8cpp_1a8c493bff457c3ec968f611c4d562e2ba">UP_RADIO</link> &quot;upRadio&quot;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="findreplaceform_8cpp_1a187fe30bbd8393046e13732d0ced8e39">CASE_CHECK</link> &quot;caseCheck&quot;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="findreplaceform_8cpp_1a30b2264592edd78f0d0a3a9b67cdfaf8">WHOLE_CHECK</link> &quot;wholeCheck&quot;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="findreplaceform_8cpp_1a19c3030804a7b73372b7d4de85d75804">REGEXP_CHECK</link> &quot;regexpCheck&quot;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/qt-json-editor-master/dialogs/findreplaceform.cpp</para>
+    </simplesect>
+</section>

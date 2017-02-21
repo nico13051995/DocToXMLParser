@@ -37,20 +37,58 @@ public:
     ~MainWindow();
 
 public slots:
+    /**
+     * Open file dialog and call performeFiles
+    */
     void selectFilesWithDialog(bool selected);
+    /**
+     * Save result to XML file (FileDialog)
+    */
     void exportTo();
+    /**
+     * Main calculation function
+     * @param[in] filesList List of files path
+     * @param[in] save If true then save result to xml file after calculation is done
+    */
     void performeFiles(QStringList filesList, bool save = false);
+    /**
+     * Open folder dialog and call performeFiles
+    */
     void selectFolder(bool selected);
+    /**
+    * Show dialog with parser configuaration
+    */
     void showSelectParserConfigDialog();
+    /**
+    * Show dialog with Microsoft Word configuaration such as enable debug mode and so on.
+    */
     void showMSWConfigDialog();
+    /**
+    * Generation of sample parser file with set path for save out file.
+    * @return file from :/default.json
+    */
     void generateMapSample();
 private slots:
+    /**
+    * Required dialog which contain Qt Licence.
+    */
     void aboutQt();
+    /**
+    * Show info dialog which contain general information about SW
+    */
     void aboutParser();
-
+    /**
+    * Change text in status bar in async mode
+    */
     void changeStatus(QString text, QColor color = Qt::black);
+    /**
+    * Change value of progress bar in status bar in async mode
+    */
     void changeProgress(int value);
 
+    /**
+    * Functions for reconfig MS Word
+    */
     void visibleMSChange(bool value);
     void hideExMSChange(bool value);
     void showMSErrChange(bool value);

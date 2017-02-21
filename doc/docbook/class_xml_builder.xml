@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_xml_builder">
+<title>XmlBuilder class Reference</title>
+<para>
+    <programlisting>#include <link linkend="xmlbuilder_8h">&lt;xmlbuilder.h&gt;</link></programlisting>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QXmlStreamWriter * xml</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString * result</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_xml_builder_1affc2a88fc3eaefab78f1142cc2756aad">XmlBuilder</link> (
+QString name, QString header, QString footer)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QObject * <link linkend="class_xml_builder_1a29a46891d09f490c19c1063884b66f33">build</link> (
+QList&lt; <link linkend="class_item">Item</link> *&gt; items, QList&lt; <link linkend="class_paragraph">Paragraph</link> &gt; paragraphs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString <link linkend="class_xml_builder_1af445b2645cb7bc6e15ccca26fca26c83">getResultAsString</link> (
+)<para><emphasis>getResultAsString - get XML string from QXmlStreamWriter</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QXmlStreamWriter * <link linkend="class_xml_builder_1ac30c219c08203e1a18e38e7e43c3252e">getXml</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QObject * <link linkend="class_xml_builder_1a8c8292d307e29aee7590ed6a09794ad3">build</link> (
+QStringList parentMatch, QList&lt; <link linkend="class_item">Item</link> *&gt; items, QList&lt; <link linkend="class_paragraph">Paragraph</link> &gt; paragraphs)<para><emphasis>build - main function for parse</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>The <link linkend="class_xml_builder">XmlBuilder</link> class implementation of <link linkend="class_builder">Builder</link> for XML generator. </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_xml_builder_1affc2a88fc3eaefab78f1142cc2756aad">
+                <title>XmlBuilder::XmlBuilder (QString name, QString header, QString footer)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_xml_builder_1a29a46891d09f490c19c1063884b66f33">
+                <title>QObject * XmlBuilder::build (QList&lt; Item *&gt; items, QList&lt; Paragraph &gt; paragraphs)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_xml_builder_1af445b2645cb7bc6e15ccca26fca26c83">
+                <title>QString XmlBuilder::getResultAsString ()</title> <emphasis>getResultAsString - get XML string from QXmlStreamWriter</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>string with result XML </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="class_xml_builder_1ac30c219c08203e1a18e38e7e43c3252e">
+                <title>QXmlStreamWriter * XmlBuilder::getXml ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_xml_builder_1a8c8292d307e29aee7590ed6a09794ad3">
+                <title>QObject * XmlBuilder::build (QStringList parentMatch, QList&lt; Item *&gt; items, QList&lt; Paragraph &gt; paragraphs)</title> <emphasis>build - main function for parse</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>parentMatch</entry>
+                                <entry>
+<para>- finded result of previus iteration </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>items</entry>
+                                <entry>
+<para>- item which need search </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>paragraphs</entry>
+                                <entry>
+<para>- paragraphs for search </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para></para>
+</formalpara>
+</para>
+
+            </section>
+</section>

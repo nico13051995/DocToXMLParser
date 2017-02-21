@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="mainwindow_8h">
+    <title>mainwindow.h File Reference</title>
+    <programlisting>#include &lt;QMainWindow&gt;</programlisting>
+    <programlisting>#include &lt;QFileDialog&gt;</programlisting>
+    <programlisting>#include &lt;QDir&gt;</programlisting>
+    <programlisting>#include &lt;QMessageBox&gt;</programlisting>
+    <programlisting>#include &lt;QAxObject&gt;</programlisting>
+    <programlisting>#include &lt;QDebug&gt;</programlisting>
+    <programlisting>#include &lt;QSettings&gt;</programlisting>
+    <programlisting>#include &lt;QJsonObject&gt;</programlisting>
+    <programlisting>#include &lt;QJsonDocument&gt;</programlisting>
+    <programlisting>#include &lt;QJsonArray&gt;</programlisting>
+    <programlisting>#include &quot;selectparserwindow.h&quot;</programlisting>
+    <programlisting>#include &quot;wdconfigdialog.h&quot;</programlisting>
+    <programlisting>#include &quot;models/parserconfig.h&quot;</programlisting>
+    <programlisting>#include &quot;models/paragraph.h&quot;</programlisting>
+    <programlisting>#include &quot;models/item.h&quot;</programlisting>
+    <programlisting>#include &quot;xmlbuilder.h&quot;</programlisting>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_main_window">MainWindow</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_ui">Ui</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="mainwindow_8h_1a72c1937b26ce9a87266ca6c802b047a0">DEFAULT_PATH</link> &quot;:/default.json&quot;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/mainwindow.h</para>
+    </simplesect>
+</section>

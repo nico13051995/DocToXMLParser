@@ -1,0 +1,303 @@
+\hypertarget{class_json_tree_item}{}\section{Json\+Tree\+Item Class Reference}
+\label{class_json_tree_item}\index{Json\+Tree\+Item@{Json\+Tree\+Item}}
+
+
+{\ttfamily \#include $<$jsontreeitem.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_json_tree_item_a3a4ebfeec3401b43940cddc8dd644727}{Json\+Tree\+Item} (const Q\+Vector$<$ Q\+Variant $>$ \&\hyperlink{class_json_tree_item_a3cd46e11efb01a8c7f59d6bf3c4582d4}{data}, \hyperlink{class_json_tree_item}{Json\+Tree\+Item} $\ast$\hyperlink{class_json_tree_item_a1777c30033cacb28a800b34423dcee38}{parent}=0)
+\item 
+\hyperlink{class_json_tree_item_aac595e07ae4a51106c478e0d99a149e0}{$\sim$\+Json\+Tree\+Item} ()
+\item 
+\hyperlink{class_json_tree_item}{Json\+Tree\+Item} $\ast$ \hyperlink{class_json_tree_item_a24864c7936a43d9059277a20497341b9}{child} (int number)
+\item 
+int \hyperlink{class_json_tree_item_a24d3056cd6f6f2d442cbd0d9756b89c1}{child\+Count} () const
+\item 
+int \hyperlink{class_json_tree_item_ad66ee4ac09255aa32fb05ffbd4057413}{column\+Count} () const
+\item 
+Q\+Variant \hyperlink{class_json_tree_item_a3cd46e11efb01a8c7f59d6bf3c4582d4}{data} (int column) const
+\item 
+bool \hyperlink{class_json_tree_item_a890a0b7cf4aabcaa43e0726d672ba34a}{insert\+Children} (int position, int count, int columns)
+\item 
+bool \hyperlink{class_json_tree_item_a189b5b2926b94dc53f3aaa366cf66b05}{insert\+Columns} (int position, int columns)
+\item 
+\hyperlink{class_json_tree_item}{Json\+Tree\+Item} $\ast$ \hyperlink{class_json_tree_item_a1777c30033cacb28a800b34423dcee38}{parent} ()
+\item 
+bool \hyperlink{class_json_tree_item_a37ef4384835286e1afcc6f42de7b1c6a}{remove\+Children} (int position, int count)
+\item 
+bool \hyperlink{class_json_tree_item_a7cb315d624881ca9fbb193c5432a82b2}{remove\+Columns} (int position, int columns)
+\item 
+int \hyperlink{class_json_tree_item_a39c277f6a181ec177b483b38e97e70d5}{child\+Number} () const
+\item 
+bool \hyperlink{class_json_tree_item_a7b60096836271a128a142c023a769e12}{set\+Data} (int column, const Q\+Variant \&value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file jsontreeitem.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_json_tree_item_a3a4ebfeec3401b43940cddc8dd644727}\label{class_json_tree_item_a3a4ebfeec3401b43940cddc8dd644727}} 
+\index{Json\+Tree\+Item@{Json\+Tree\+Item}!Json\+Tree\+Item@{Json\+Tree\+Item}}
+\index{Json\+Tree\+Item@{Json\+Tree\+Item}!Json\+Tree\+Item@{Json\+Tree\+Item}}
+\subsubsection{\texorpdfstring{Json\+Tree\+Item()}{JsonTreeItem()}}
+{\footnotesize\ttfamily Json\+Tree\+Item\+::\+Json\+Tree\+Item (\begin{DoxyParamCaption}\item[{const Q\+Vector$<$ Q\+Variant $>$ \&}]{data,  }\item[{\hyperlink{class_json_tree_item}{Json\+Tree\+Item} $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file jsontreeitem.\+cpp.
+
+
+\begin{DoxyCode}
+6 \{
+7     parentItem = \hyperlink{class_json_tree_item_a1777c30033cacb28a800b34423dcee38}{parent};
+8     itemData = \hyperlink{class_json_tree_item_a3cd46e11efb01a8c7f59d6bf3c4582d4}{data};
+9 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_item_aac595e07ae4a51106c478e0d99a149e0}\label{class_json_tree_item_aac595e07ae4a51106c478e0d99a149e0}} 
+\index{Json\+Tree\+Item@{Json\+Tree\+Item}!````~Json\+Tree\+Item@{$\sim$\+Json\+Tree\+Item}}
+\index{````~Json\+Tree\+Item@{$\sim$\+Json\+Tree\+Item}!Json\+Tree\+Item@{Json\+Tree\+Item}}
+\subsubsection{\texorpdfstring{$\sim$\+Json\+Tree\+Item()}{~JsonTreeItem()}}
+{\footnotesize\ttfamily Json\+Tree\+Item\+::$\sim$\+Json\+Tree\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file jsontreeitem.\+cpp.
+
+
+\begin{DoxyCode}
+12 \{
+13     qDeleteAll(childItems);
+14 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_json_tree_item_a24864c7936a43d9059277a20497341b9}\label{class_json_tree_item_a24864c7936a43d9059277a20497341b9}} 
+\index{Json\+Tree\+Item@{Json\+Tree\+Item}!child@{child}}
+\index{child@{child}!Json\+Tree\+Item@{Json\+Tree\+Item}}
+\subsubsection{\texorpdfstring{child()}{child()}}
+{\footnotesize\ttfamily \hyperlink{class_json_tree_item}{Json\+Tree\+Item} $\ast$ Json\+Tree\+Item\+::child (\begin{DoxyParamCaption}\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+Definition at line 16 of file jsontreeitem.\+cpp.
+
+
+\begin{DoxyCode}
+17 \{
+18     \textcolor{keywordflow}{return} childItems.value(number);
+19 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_item_a24d3056cd6f6f2d442cbd0d9756b89c1}\label{class_json_tree_item_a24d3056cd6f6f2d442cbd0d9756b89c1}} 
+\index{Json\+Tree\+Item@{Json\+Tree\+Item}!child\+Count@{child\+Count}}
+\index{child\+Count@{child\+Count}!Json\+Tree\+Item@{Json\+Tree\+Item}}
+\subsubsection{\texorpdfstring{child\+Count()}{childCount()}}
+{\footnotesize\ttfamily int Json\+Tree\+Item\+::child\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 21 of file jsontreeitem.\+cpp.
+
+
+\begin{DoxyCode}
+22 \{
+23     \textcolor{keywordflow}{return} childItems.count();
+24 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_item_a39c277f6a181ec177b483b38e97e70d5}\label{class_json_tree_item_a39c277f6a181ec177b483b38e97e70d5}} 
+\index{Json\+Tree\+Item@{Json\+Tree\+Item}!child\+Number@{child\+Number}}
+\index{child\+Number@{child\+Number}!Json\+Tree\+Item@{Json\+Tree\+Item}}
+\subsubsection{\texorpdfstring{child\+Number()}{childNumber()}}
+{\footnotesize\ttfamily int Json\+Tree\+Item\+::child\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 26 of file jsontreeitem.\+cpp.
+
+
+\begin{DoxyCode}
+27 \{
+28     \textcolor{keywordflow}{if} (parentItem)
+29         \textcolor{keywordflow}{return} parentItem->childItems.indexOf(const\_cast<JsonTreeItem*>(\textcolor{keyword}{this}));
+30 
+31     \textcolor{keywordflow}{return} 0;
+32 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_item_ad66ee4ac09255aa32fb05ffbd4057413}\label{class_json_tree_item_ad66ee4ac09255aa32fb05ffbd4057413}} 
+\index{Json\+Tree\+Item@{Json\+Tree\+Item}!column\+Count@{column\+Count}}
+\index{column\+Count@{column\+Count}!Json\+Tree\+Item@{Json\+Tree\+Item}}
+\subsubsection{\texorpdfstring{column\+Count()}{columnCount()}}
+{\footnotesize\ttfamily int Json\+Tree\+Item\+::column\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 34 of file jsontreeitem.\+cpp.
+
+
+\begin{DoxyCode}
+35 \{
+36     \textcolor{keywordflow}{return} itemData.count();
+37 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_item_a3cd46e11efb01a8c7f59d6bf3c4582d4}\label{class_json_tree_item_a3cd46e11efb01a8c7f59d6bf3c4582d4}} 
+\index{Json\+Tree\+Item@{Json\+Tree\+Item}!data@{data}}
+\index{data@{data}!Json\+Tree\+Item@{Json\+Tree\+Item}}
+\subsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily Q\+Variant Json\+Tree\+Item\+::data (\begin{DoxyParamCaption}\item[{int}]{column }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 39 of file jsontreeitem.\+cpp.
+
+
+\begin{DoxyCode}
+40 \{
+41     \textcolor{keywordflow}{return} itemData.value(column);
+42 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_item_a890a0b7cf4aabcaa43e0726d672ba34a}\label{class_json_tree_item_a890a0b7cf4aabcaa43e0726d672ba34a}} 
+\index{Json\+Tree\+Item@{Json\+Tree\+Item}!insert\+Children@{insert\+Children}}
+\index{insert\+Children@{insert\+Children}!Json\+Tree\+Item@{Json\+Tree\+Item}}
+\subsubsection{\texorpdfstring{insert\+Children()}{insertChildren()}}
+{\footnotesize\ttfamily bool Json\+Tree\+Item\+::insert\+Children (\begin{DoxyParamCaption}\item[{int}]{position,  }\item[{int}]{count,  }\item[{int}]{columns }\end{DoxyParamCaption})}
+
+
+
+Definition at line 44 of file jsontreeitem.\+cpp.
+
+
+\begin{DoxyCode}
+45 \{
+46     \textcolor{keywordflow}{if} (position < 0 || position > childItems.size())
+47         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+48 
+49     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} row = 0; row < count; ++row) \{
+50         QVector<QVariant> \hyperlink{class_json_tree_item_a3cd46e11efb01a8c7f59d6bf3c4582d4}{data}(columns);
+51         \hyperlink{class_json_tree_item}{JsonTreeItem} *item = \textcolor{keyword}{new} \hyperlink{class_json_tree_item_a3a4ebfeec3401b43940cddc8dd644727}{JsonTreeItem}(\hyperlink{class_json_tree_item_a3cd46e11efb01a8c7f59d6bf3c4582d4}{data}, \textcolor{keyword}{this});
+52         childItems.insert(position, item);
+53     \}
+54 
+55     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+56 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_item_a189b5b2926b94dc53f3aaa366cf66b05}\label{class_json_tree_item_a189b5b2926b94dc53f3aaa366cf66b05}} 
+\index{Json\+Tree\+Item@{Json\+Tree\+Item}!insert\+Columns@{insert\+Columns}}
+\index{insert\+Columns@{insert\+Columns}!Json\+Tree\+Item@{Json\+Tree\+Item}}
+\subsubsection{\texorpdfstring{insert\+Columns()}{insertColumns()}}
+{\footnotesize\ttfamily bool Json\+Tree\+Item\+::insert\+Columns (\begin{DoxyParamCaption}\item[{int}]{position,  }\item[{int}]{columns }\end{DoxyParamCaption})}
+
+
+
+Definition at line 58 of file jsontreeitem.\+cpp.
+
+
+\begin{DoxyCode}
+59 \{
+60     \textcolor{keywordflow}{if} (position < 0 || position > itemData.size())
+61         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+62 
+63     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} column = 0; column < columns; ++column)
+64         itemData.insert(position, QVariant());
+65 
+66     \textcolor{keywordflow}{foreach} (\hyperlink{class_json_tree_item}{JsonTreeItem} *\hyperlink{class_json_tree_item_a24864c7936a43d9059277a20497341b9}{child}, childItems)
+67         child->\hyperlink{class_json_tree_item_a189b5b2926b94dc53f3aaa366cf66b05}{insertColumns}(position, columns);
+68 
+69     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+70 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_item_a1777c30033cacb28a800b34423dcee38}\label{class_json_tree_item_a1777c30033cacb28a800b34423dcee38}} 
+\index{Json\+Tree\+Item@{Json\+Tree\+Item}!parent@{parent}}
+\index{parent@{parent}!Json\+Tree\+Item@{Json\+Tree\+Item}}
+\subsubsection{\texorpdfstring{parent()}{parent()}}
+{\footnotesize\ttfamily \hyperlink{class_json_tree_item}{Json\+Tree\+Item} $\ast$ Json\+Tree\+Item\+::parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 72 of file jsontreeitem.\+cpp.
+
+
+\begin{DoxyCode}
+73 \{
+74     \textcolor{keywordflow}{return} parentItem;
+75 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_item_a37ef4384835286e1afcc6f42de7b1c6a}\label{class_json_tree_item_a37ef4384835286e1afcc6f42de7b1c6a}} 
+\index{Json\+Tree\+Item@{Json\+Tree\+Item}!remove\+Children@{remove\+Children}}
+\index{remove\+Children@{remove\+Children}!Json\+Tree\+Item@{Json\+Tree\+Item}}
+\subsubsection{\texorpdfstring{remove\+Children()}{removeChildren()}}
+{\footnotesize\ttfamily bool Json\+Tree\+Item\+::remove\+Children (\begin{DoxyParamCaption}\item[{int}]{position,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+Definition at line 77 of file jsontreeitem.\+cpp.
+
+
+\begin{DoxyCode}
+78 \{
+79     \textcolor{keywordflow}{if} (position < 0 || position + count > childItems.size())
+80         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+81 
+82     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} row = 0; row < count; ++row)
+83         \textcolor{keyword}{delete} childItems.takeAt(position);
+84 
+85     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+86 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_item_a7cb315d624881ca9fbb193c5432a82b2}\label{class_json_tree_item_a7cb315d624881ca9fbb193c5432a82b2}} 
+\index{Json\+Tree\+Item@{Json\+Tree\+Item}!remove\+Columns@{remove\+Columns}}
+\index{remove\+Columns@{remove\+Columns}!Json\+Tree\+Item@{Json\+Tree\+Item}}
+\subsubsection{\texorpdfstring{remove\+Columns()}{removeColumns()}}
+{\footnotesize\ttfamily bool Json\+Tree\+Item\+::remove\+Columns (\begin{DoxyParamCaption}\item[{int}]{position,  }\item[{int}]{columns }\end{DoxyParamCaption})}
+
+
+
+Definition at line 88 of file jsontreeitem.\+cpp.
+
+
+\begin{DoxyCode}
+89 \{
+90     \textcolor{keywordflow}{if} (position < 0 || position + columns > itemData.size())
+91         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+92 
+93     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} column = 0; column < columns; ++column)
+94         itemData.remove(position);
+95 
+96     \textcolor{keywordflow}{foreach} (\hyperlink{class_json_tree_item}{JsonTreeItem} *\hyperlink{class_json_tree_item_a24864c7936a43d9059277a20497341b9}{child}, childItems)
+97         child->\hyperlink{class_json_tree_item_a7cb315d624881ca9fbb193c5432a82b2}{removeColumns}(position, columns);
+98 
+99     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+100 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_item_a7b60096836271a128a142c023a769e12}\label{class_json_tree_item_a7b60096836271a128a142c023a769e12}} 
+\index{Json\+Tree\+Item@{Json\+Tree\+Item}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Json\+Tree\+Item@{Json\+Tree\+Item}}
+\subsubsection{\texorpdfstring{set\+Data()}{setData()}}
+{\footnotesize\ttfamily bool Json\+Tree\+Item\+::set\+Data (\begin{DoxyParamCaption}\item[{int}]{column,  }\item[{const Q\+Variant \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 102 of file jsontreeitem.\+cpp.
+
+
+\begin{DoxyCode}
+103 \{
+104     \textcolor{keywordflow}{if} (column < 0 || column >= itemData.size())
+105         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+106 
+107     itemData[column] = value;
+108     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+109 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+qt-\/json-\/editor-\/master/\hyperlink{jsontreeitem_8h}{jsontreeitem.\+h}\item 
+qt-\/json-\/editor-\/master/\hyperlink{jsontreeitem_8cpp}{jsontreeitem.\+cpp}\end{DoxyCompactItemize}

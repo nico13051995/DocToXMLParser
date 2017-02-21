@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_add_node_dlg">
+<title>AddNodeDlg class Reference</title>
+<para>
+    <programlisting>#include <link linkend="addnodedlg_8h">&lt;addnodedlg.h&gt;</link></programlisting>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Ui::AddNodeDlg * ui</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString m_value</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString m_type</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString m_name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_add_node_dlg_1a4ec72774fa593b3478b30b93fc6bc66e">AddNodeDlg</link> (
+QWidget * parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_add_node_dlg_1ac8fbcff62ff505714198a9318eca0c0f">~AddNodeDlg</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString <link linkend="class_add_node_dlg_1a68b5c4fdf57e5fd7545df5b6f1dfbccd">getValue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString <link linkend="class_add_node_dlg_1a71a6ea544a25bea1ab8d540f7ad72629">getType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString <link linkend="class_add_node_dlg_1aa57ccdcce3ed1af8633a44ddb5048595">getName</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_add_node_dlg_1a950d325bb996a975c520cf18ddc1950d">changeEvent</link> (
+QEvent * e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_add_node_dlg_1a1f953c07a5711c3064c73d627910e273">hideEvent</link> (
+QHideEvent * e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_add_node_dlg_1a4ec72774fa593b3478b30b93fc6bc66e">
+                <title>AddNodeDlg::AddNodeDlg (QWidget *parent=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_add_node_dlg_1ac8fbcff62ff505714198a9318eca0c0f">
+                <title>AddNodeDlg::~AddNodeDlg ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_add_node_dlg_1a68b5c4fdf57e5fd7545df5b6f1dfbccd">
+                <title>QString AddNodeDlg::getValue ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_add_node_dlg_1a71a6ea544a25bea1ab8d540f7ad72629">
+                <title>QString AddNodeDlg::getType ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_add_node_dlg_1aa57ccdcce3ed1af8633a44ddb5048595">
+                <title>QString AddNodeDlg::getName ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_add_node_dlg_1a950d325bb996a975c520cf18ddc1950d">
+                <title>void AddNodeDlg::changeEvent (QEvent *e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_add_node_dlg_1a1f953c07a5711c3064c73d627910e273">
+                <title>void AddNodeDlg::hideEvent (QHideEvent *e)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

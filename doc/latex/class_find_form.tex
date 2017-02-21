@@ -1,0 +1,159 @@
+\hypertarget{class_find_form}{}\section{Find\+Form Class Reference}
+\label{class_find_form}\index{Find\+Form@{Find\+Form}}
+
+
+{\ttfamily \#include $<$findform.\+h$>$}
+
+Inheritance diagram for Find\+Form\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_find_form}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_find_form_abcd5a2ae0b7d642134927bcef687410f}{Find\+Form} (Q\+Widget $\ast$parent=0)
+\item 
+\hyperlink{class_find_form_a79950e64527805f37728704eb5577a15}{$\sim$\+Find\+Form} ()
+\item 
+virtual void \hyperlink{class_find_form_a8d9f1b06d14a58d2d2a91d1d82205b4d}{write\+Settings} (Q\+Settings \&settings, const Q\+String \&prefix=\char`\"{}Find\+Dialog\char`\"{})
+\item 
+virtual void \hyperlink{class_find_form_abfa26fe2e262103bbd9d694e748c0884}{read\+Settings} (Q\+Settings \&settings, const Q\+String \&prefix=\char`\"{}Find\+Dialog\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_find_form_aa1ee766531453cc558ff1a8efbfd9bf6}{change\+Event} (Q\+Event $\ast$e)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The form for the find dialog (it is basically the same as \hyperlink{class_find_replace_form}{Find\+Replace\+Form} without the replace related widgets). 
+
+Definition at line 20 of file findform.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_find_form_abcd5a2ae0b7d642134927bcef687410f}\label{class_find_form_abcd5a2ae0b7d642134927bcef687410f}} 
+\index{Find\+Form@{Find\+Form}!Find\+Form@{Find\+Form}}
+\index{Find\+Form@{Find\+Form}!Find\+Form@{Find\+Form}}
+\subsubsection{\texorpdfstring{Find\+Form()}{FindForm()}}
+{\footnotesize\ttfamily Find\+Form\+::\+Find\+Form (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file findform.\+cpp.
+
+
+\begin{DoxyCode}
+13                                   :
+14     \hyperlink{class_find_replace_form_ad168473a919873f5cf6f9531e9c7faf3}{FindReplaceForm}(parent)
+15 \{
+16     \hyperlink{class_find_replace_form_acd7c42b7ef674ca414d0e47158fdad31}{hideReplaceWidgets}();
+17 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_find_form_a79950e64527805f37728704eb5577a15}\label{class_find_form_a79950e64527805f37728704eb5577a15}} 
+\index{Find\+Form@{Find\+Form}!````~Find\+Form@{$\sim$\+Find\+Form}}
+\index{````~Find\+Form@{$\sim$\+Find\+Form}!Find\+Form@{Find\+Form}}
+\subsubsection{\texorpdfstring{$\sim$\+Find\+Form()}{~FindForm()}}
+{\footnotesize\ttfamily Find\+Form\+::$\sim$\+Find\+Form (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 19 of file findform.\+cpp.
+
+
+\begin{DoxyCode}
+20 \{
+21 
+22 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_find_form_aa1ee766531453cc558ff1a8efbfd9bf6}\label{class_find_form_aa1ee766531453cc558ff1a8efbfd9bf6}} 
+\index{Find\+Form@{Find\+Form}!change\+Event@{change\+Event}}
+\index{change\+Event@{change\+Event}!Find\+Form@{Find\+Form}}
+\subsubsection{\texorpdfstring{change\+Event()}{changeEvent()}}
+{\footnotesize\ttfamily void Find\+Form\+::change\+Event (\begin{DoxyParamCaption}\item[{Q\+Event $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 24 of file findform.\+cpp.
+
+
+\begin{DoxyCode}
+25 \{
+26     QWidget::changeEvent(e);
+27     \textcolor{keywordflow}{switch} (e->type()) \{
+28     \textcolor{keywordflow}{case} QEvent::LanguageChange:
+29         \hyperlink{class_find_replace_form_a9bf9e9096feff863dcd6c2a989e07d2c}{ui}->retranslateUi(\textcolor{keyword}{this});
+30         \textcolor{keywordflow}{break};
+31     \textcolor{keywordflow}{default}:
+32         \textcolor{keywordflow}{break};
+33     \}
+34 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_find_form_abfa26fe2e262103bbd9d694e748c0884}\label{class_find_form_abfa26fe2e262103bbd9d694e748c0884}} 
+\index{Find\+Form@{Find\+Form}!read\+Settings@{read\+Settings}}
+\index{read\+Settings@{read\+Settings}!Find\+Form@{Find\+Form}}
+\subsubsection{\texorpdfstring{read\+Settings()}{readSettings()}}
+{\footnotesize\ttfamily void Find\+Form\+::read\+Settings (\begin{DoxyParamCaption}\item[{Q\+Settings \&}]{settings,  }\item[{const Q\+String \&}]{prefix = {\ttfamily \char`\"{}FindDialog\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Reads the state of the form from the passed settings. 
+\begin{DoxyParams}{Parameters}
+{\em settings} & \\
+\hline
+{\em prefix} & the prefix to look for in the settings \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_find_replace_form_a87e0f16b427e570ede2a219b16300c2a}{Find\+Replace\+Form}.
+
+
+
+Definition at line 40 of file findform.\+cpp.
+
+
+\begin{DoxyCode}
+40                                                                       \{
+41     \hyperlink{class_find_replace_form_a87e0f16b427e570ede2a219b16300c2a}{FindReplaceForm::readSettings}(settings, prefix);
+42 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_find_form_a8d9f1b06d14a58d2d2a91d1d82205b4d}\label{class_find_form_a8d9f1b06d14a58d2d2a91d1d82205b4d}} 
+\index{Find\+Form@{Find\+Form}!write\+Settings@{write\+Settings}}
+\index{write\+Settings@{write\+Settings}!Find\+Form@{Find\+Form}}
+\subsubsection{\texorpdfstring{write\+Settings()}{writeSettings()}}
+{\footnotesize\ttfamily void Find\+Form\+::write\+Settings (\begin{DoxyParamCaption}\item[{Q\+Settings \&}]{settings,  }\item[{const Q\+String \&}]{prefix = {\ttfamily \char`\"{}FindDialog\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Writes the state of the form to the passed settings. 
+\begin{DoxyParams}{Parameters}
+{\em settings} & \\
+\hline
+{\em prefix} & the prefix to insert in the settings \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_find_replace_form_a8746401be4fbab54b6019a76e05e7b43}{Find\+Replace\+Form}.
+
+
+
+Definition at line 36 of file findform.\+cpp.
+
+
+\begin{DoxyCode}
+36                                                                        \{
+37     \hyperlink{class_find_replace_form_a8746401be4fbab54b6019a76e05e7b43}{FindReplaceForm::writeSettings}(settings, prefix);
+38 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+qt-\/json-\/editor-\/master/dialogs/\hyperlink{findform_8h}{findform.\+h}\item 
+qt-\/json-\/editor-\/master/dialogs/\hyperlink{findform_8cpp}{findform.\+cpp}\end{DoxyCompactItemize}

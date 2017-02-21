@@ -6,6 +6,10 @@
 #include "models/paragraph.h"
 #include "regexp.h"
 
+/**
+ * @brief The Builder interface for future extend of current functionality
+ * create other builders
+ */
 class Builder : public QObject
 {
     Q_OBJECT

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="settingscontainer_8h">
+    <title>settingscontainer.h File Reference</title>
+    <programlisting>#include &lt;QObject&gt;</programlisting>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_settings_container">SettingsContainer</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/models/settingscontainer.h</para>
+    </simplesect>
+</section>

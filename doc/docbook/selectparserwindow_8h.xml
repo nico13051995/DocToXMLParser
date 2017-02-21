@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="selectparserwindow_8h">
+    <title>selectparserwindow.h File Reference</title>
+    <programlisting>#include &lt;QDialog&gt;</programlisting>
+    <programlisting>#include &lt;QDesktopServices&gt;</programlisting>
+    <programlisting>#include &lt;QUrl&gt;</programlisting>
+    <programlisting>#include &quot;models/parserconfig.h&quot;</programlisting>
+    <programlisting>#include &quot;settings.h&quot;</programlisting>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_select_parser_window">SelectParserWindow</link></para>
+<para><emphasis>The SelectParserWindow class.</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_ui">Ui</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/selectparserwindow.h</para>
+    </simplesect>
+</section>

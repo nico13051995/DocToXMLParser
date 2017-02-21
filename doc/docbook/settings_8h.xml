@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="settings_8h">
+    <title>settings.h File Reference</title>
+    <programlisting>#include &lt;QSettings&gt;</programlisting>
+    <programlisting>#include &lt;QDebug&gt;</programlisting>
+    <programlisting>#include &lt;QFile&gt;</programlisting>
+    <programlisting>#include &lt;QMessageBox&gt;</programlisting>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_settings">Settings</link></para>
+<para><emphasis>The Settings class simple singelton for get program settings (DI)</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/settings.h</para>
+    </simplesect>
+</section>

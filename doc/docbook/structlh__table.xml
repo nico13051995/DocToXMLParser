@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structlh__table">
+<title>lh_table struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="linkhash_8h">&lt;linkhash.h&gt;</link></programlisting>
+</para>
+        <section>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int size</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int count</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int collisions</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int resizes</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int lookups</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int inserts</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int deletes</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const char * name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct lh_entry * head</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct lh_entry * tail</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct lh_entry * table</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>lh_entry_free_fn * free_fn</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>lh_hash_fn * hash_fn</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>lh_equal_fn * equal_fn</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>The hash table structure. </para>
+                <para>Definition at line 75 of file linkhash.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>linkhash.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+            <simplesect>
+                <title>int lh_table::size</title>                
+<para>Size of our hash. </para>
+
+                <para>Definition at line 79 of file linkhash.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>linkhash.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int lh_table::count</title>                
+<para>Numbers of entries. </para>
+
+                <para>Definition at line 83 of file linkhash.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>linkhash.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int lh_table::collisions</title>                
+<para>Number of collisions. </para>
+
+                <para>Definition at line 88 of file linkhash.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>linkhash.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int lh_table::resizes</title>                
+<para>Number of resizes. </para>
+
+                <para>Definition at line 93 of file linkhash.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>linkhash.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int lh_table::lookups</title>                
+<para>Number of lookups. </para>
+
+                <para>Definition at line 98 of file linkhash.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>linkhash.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int lh_table::inserts</title>                
+<para>Number of inserts. </para>
+
+                <para>Definition at line 103 of file linkhash.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>linkhash.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int lh_table::deletes</title>                
+<para>Number of deletes. </para>
+
+                <para>Definition at line 108 of file linkhash.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>linkhash.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>const char* lh_table::name</title>                
+<para>Name of the hash table. </para>
+
+                <para>Definition at line 113 of file linkhash.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>linkhash.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>struct lh_entry* lh_table::head</title>                
+<para>The first entry. </para>
+
+                <para>Definition at line 118 of file linkhash.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>linkhash.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>struct lh_entry* lh_table::tail</title>                
+<para>The last entry. </para>
+
+                <para>Definition at line 123 of file linkhash.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>linkhash.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>lh_entry_free_fn* lh_table::free_fn</title>                
+<para>A pointer onto the function responsible for freeing an entry. </para>
+
+                <para>Definition at line 130 of file linkhash.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>linkhash.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

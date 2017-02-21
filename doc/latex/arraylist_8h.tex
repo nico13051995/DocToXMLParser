@@ -1,0 +1,177 @@
+\hypertarget{arraylist_8h}{}\section{qt-\/json-\/editor-\/master/jsonc/arraylist.h File Reference}
+\label{arraylist_8h}\index{qt-\/json-\/editor-\/master/jsonc/arraylist.\+h@{qt-\/json-\/editor-\/master/jsonc/arraylist.\+h}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structarray__list}{array\+\_\+list}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{arraylist_8h_acd30d910b398421574eb1f59e78617f5}{A\+R\+R\+A\+Y\+\_\+\+L\+I\+S\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+I\+ZE}~32
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void() \hyperlink{arraylist_8h_a90d2ce204a483fa38f5514bad67222aa}{array\+\_\+list\+\_\+free\+\_\+fn}(void $\ast$data)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structarray__list}{array\+\_\+list} $\ast$ \hyperlink{arraylist_8h_a0d4bfac055dfd98e17296142abf4d894}{array\+\_\+list\+\_\+new} (\hyperlink{arraylist_8h_a90d2ce204a483fa38f5514bad67222aa}{array\+\_\+list\+\_\+free\+\_\+fn} $\ast$free\+\_\+fn)
+\item 
+void \hyperlink{arraylist_8h_acd00fb70f7ca82f23b48b812c3498f67}{array\+\_\+list\+\_\+free} (struct \hyperlink{structarray__list}{array\+\_\+list} $\ast$al)
+\item 
+void $\ast$ \hyperlink{arraylist_8h_aa16207e545b6c1265299abcfa418dc2b}{array\+\_\+list\+\_\+get\+\_\+idx} (struct \hyperlink{structarray__list}{array\+\_\+list} $\ast$al, int i)
+\item 
+int \hyperlink{arraylist_8h_a21b8e4c59e52fbc5a9a5a098e3f96e76}{array\+\_\+list\+\_\+put\+\_\+idx} (struct \hyperlink{structarray__list}{array\+\_\+list} $\ast$al, int i, void $\ast$data)
+\item 
+int \hyperlink{arraylist_8h_a6e995608aa464244ff3184fb43574dc8}{array\+\_\+list\+\_\+add} (struct \hyperlink{structarray__list}{array\+\_\+list} $\ast$al, void $\ast$data)
+\item 
+int \hyperlink{arraylist_8h_aa8393b4aa3dc447660371530439ab70f}{array\+\_\+list\+\_\+length} (struct \hyperlink{structarray__list}{array\+\_\+list} $\ast$al)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{arraylist_8h_acd30d910b398421574eb1f59e78617f5}\label{arraylist_8h_acd30d910b398421574eb1f59e78617f5}} 
+\index{arraylist.\+h@{arraylist.\+h}!A\+R\+R\+A\+Y\+\_\+\+L\+I\+S\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+I\+ZE@{A\+R\+R\+A\+Y\+\_\+\+L\+I\+S\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+R\+A\+Y\+\_\+\+L\+I\+S\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+I\+ZE@{A\+R\+R\+A\+Y\+\_\+\+L\+I\+S\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+I\+ZE}!arraylist.\+h@{arraylist.\+h}}
+\subsubsection{\texorpdfstring{A\+R\+R\+A\+Y\+\_\+\+L\+I\+S\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+I\+ZE}{ARRAY\_LIST\_DEFAULT\_SIZE}}
+{\footnotesize\ttfamily \#define A\+R\+R\+A\+Y\+\_\+\+L\+I\+S\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+I\+ZE~32}
+
+
+
+Definition at line 19 of file arraylist.\+h.
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{arraylist_8h_a90d2ce204a483fa38f5514bad67222aa}\label{arraylist_8h_a90d2ce204a483fa38f5514bad67222aa}} 
+\index{arraylist.\+h@{arraylist.\+h}!array\+\_\+list\+\_\+free\+\_\+fn@{array\+\_\+list\+\_\+free\+\_\+fn}}
+\index{array\+\_\+list\+\_\+free\+\_\+fn@{array\+\_\+list\+\_\+free\+\_\+fn}!arraylist.\+h@{arraylist.\+h}}
+\subsubsection{\texorpdfstring{array\+\_\+list\+\_\+free\+\_\+fn}{array\_list\_free\_fn}}
+{\footnotesize\ttfamily typedef void() array\+\_\+list\+\_\+free\+\_\+fn(void $\ast$data)}
+
+
+
+Definition at line 21 of file arraylist.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{arraylist_8h_a6e995608aa464244ff3184fb43574dc8}\label{arraylist_8h_a6e995608aa464244ff3184fb43574dc8}} 
+\index{arraylist.\+h@{arraylist.\+h}!array\+\_\+list\+\_\+add@{array\+\_\+list\+\_\+add}}
+\index{array\+\_\+list\+\_\+add@{array\+\_\+list\+\_\+add}!arraylist.\+h@{arraylist.\+h}}
+\subsubsection{\texorpdfstring{array\+\_\+list\+\_\+add()}{array\_list\_add()}}
+{\footnotesize\ttfamily int array\+\_\+list\+\_\+add (\begin{DoxyParamCaption}\item[{struct \hyperlink{structarray__list}{array\+\_\+list} $\ast$}]{al,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 85 of file arraylist.\+c.
+
+
+\begin{DoxyCode}
+86 \{
+87   \textcolor{keywordflow}{return} \hyperlink{arraylist_8c_acb580f4184c52f8ade1f7c68bb57b633}{array\_list\_put\_idx}(arr, arr->length, data);
+88 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{arraylist_8h_acd00fb70f7ca82f23b48b812c3498f67}\label{arraylist_8h_acd00fb70f7ca82f23b48b812c3498f67}} 
+\index{arraylist.\+h@{arraylist.\+h}!array\+\_\+list\+\_\+free@{array\+\_\+list\+\_\+free}}
+\index{array\+\_\+list\+\_\+free@{array\+\_\+list\+\_\+free}!arraylist.\+h@{arraylist.\+h}}
+\subsubsection{\texorpdfstring{array\+\_\+list\+\_\+free()}{array\_list\_free()}}
+{\footnotesize\ttfamily void array\+\_\+list\+\_\+free (\begin{DoxyParamCaption}\item[{struct \hyperlink{structarray__list}{array\+\_\+list} $\ast$}]{al }\end{DoxyParamCaption})}
+
+
+
+Definition at line 44 of file arraylist.\+c.
+
+
+\begin{DoxyCode}
+45 \{
+46   \textcolor{keywordtype}{int} i;
+47   \textcolor{keywordflow}{for}(i = 0; i < arr->length; i++)
+48     \textcolor{keywordflow}{if}(arr->array[i]) arr->free\_fn(arr->array[i]);
+49   free(arr->array);
+50   free(arr);
+51 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{arraylist_8h_aa16207e545b6c1265299abcfa418dc2b}\label{arraylist_8h_aa16207e545b6c1265299abcfa418dc2b}} 
+\index{arraylist.\+h@{arraylist.\+h}!array\+\_\+list\+\_\+get\+\_\+idx@{array\+\_\+list\+\_\+get\+\_\+idx}}
+\index{array\+\_\+list\+\_\+get\+\_\+idx@{array\+\_\+list\+\_\+get\+\_\+idx}!arraylist.\+h@{arraylist.\+h}}
+\subsubsection{\texorpdfstring{array\+\_\+list\+\_\+get\+\_\+idx()}{array\_list\_get\_idx()}}
+{\footnotesize\ttfamily void$\ast$ array\+\_\+list\+\_\+get\+\_\+idx (\begin{DoxyParamCaption}\item[{struct \hyperlink{structarray__list}{array\+\_\+list} $\ast$}]{al,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Definition at line 54 of file arraylist.\+c.
+
+
+\begin{DoxyCode}
+55 \{
+56   \textcolor{keywordflow}{if}(i >= arr->length) \textcolor{keywordflow}{return} NULL;
+57   \textcolor{keywordflow}{return} arr->array[i];
+58 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{arraylist_8h_aa8393b4aa3dc447660371530439ab70f}\label{arraylist_8h_aa8393b4aa3dc447660371530439ab70f}} 
+\index{arraylist.\+h@{arraylist.\+h}!array\+\_\+list\+\_\+length@{array\+\_\+list\+\_\+length}}
+\index{array\+\_\+list\+\_\+length@{array\+\_\+list\+\_\+length}!arraylist.\+h@{arraylist.\+h}}
+\subsubsection{\texorpdfstring{array\+\_\+list\+\_\+length()}{array\_list\_length()}}
+{\footnotesize\ttfamily int array\+\_\+list\+\_\+length (\begin{DoxyParamCaption}\item[{struct \hyperlink{structarray__list}{array\+\_\+list} $\ast$}]{al }\end{DoxyParamCaption})}
+
+
+
+Definition at line 91 of file arraylist.\+c.
+
+
+\begin{DoxyCode}
+92 \{
+93   \textcolor{keywordflow}{return} arr->length;
+94 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{arraylist_8h_a0d4bfac055dfd98e17296142abf4d894}\label{arraylist_8h_a0d4bfac055dfd98e17296142abf4d894}} 
+\index{arraylist.\+h@{arraylist.\+h}!array\+\_\+list\+\_\+new@{array\+\_\+list\+\_\+new}}
+\index{array\+\_\+list\+\_\+new@{array\+\_\+list\+\_\+new}!arraylist.\+h@{arraylist.\+h}}
+\subsubsection{\texorpdfstring{array\+\_\+list\+\_\+new()}{array\_list\_new()}}
+{\footnotesize\ttfamily struct \hyperlink{structarray__list}{array\+\_\+list}$\ast$ array\+\_\+list\+\_\+new (\begin{DoxyParamCaption}\item[{\hyperlink{arraylist_8h_a90d2ce204a483fa38f5514bad67222aa}{array\+\_\+list\+\_\+free\+\_\+fn} $\ast$}]{free\+\_\+fn }\end{DoxyParamCaption})}
+
+
+
+Definition at line 27 of file arraylist.\+c.
+
+
+\begin{DoxyCode}
+28 \{
+29   \textcolor{keyword}{struct }\hyperlink{structarray__list}{array\_list} *arr;
+30 
+31   arr = (\textcolor{keyword}{struct }\hyperlink{structarray__list}{array\_list}*)calloc(1, \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \hyperlink{structarray__list}{array\_list}));
+32   \textcolor{keywordflow}{if}(!arr) \textcolor{keywordflow}{return} NULL;
+33   arr->\hyperlink{structarray__list_aba48a197d3c8f1d56682da23fe883d0a}{size} = \hyperlink{arraylist_8h_acd30d910b398421574eb1f59e78617f5}{ARRAY\_LIST\_DEFAULT\_SIZE};
+34   arr->\hyperlink{structarray__list_a442fcfde196a3cc95a647f0708de814d}{length} = 0;
+35   arr->\hyperlink{structarray__list_ab7989cdde357e5c7819c562c7680ab74}{free\_fn} = \hyperlink{structarray__list_ab7989cdde357e5c7819c562c7680ab74}{free\_fn};
+36   \textcolor{keywordflow}{if}(!(arr->\hyperlink{structarray__list_a7ba65feda2b156148c08667cf155b657}{array} = (\textcolor{keywordtype}{void}**)calloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{void}*), arr->\hyperlink{structarray__list_aba48a197d3c8f1d56682da23fe883d0a}{size}))) \{
+37     free(arr);
+38     \textcolor{keywordflow}{return} NULL;
+39   \}
+40   \textcolor{keywordflow}{return} arr;
+41 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{arraylist_8h_a21b8e4c59e52fbc5a9a5a098e3f96e76}\label{arraylist_8h_a21b8e4c59e52fbc5a9a5a098e3f96e76}} 
+\index{arraylist.\+h@{arraylist.\+h}!array\+\_\+list\+\_\+put\+\_\+idx@{array\+\_\+list\+\_\+put\+\_\+idx}}
+\index{array\+\_\+list\+\_\+put\+\_\+idx@{array\+\_\+list\+\_\+put\+\_\+idx}!arraylist.\+h@{arraylist.\+h}}
+\subsubsection{\texorpdfstring{array\+\_\+list\+\_\+put\+\_\+idx()}{array\_list\_put\_idx()}}
+{\footnotesize\ttfamily int array\+\_\+list\+\_\+put\+\_\+idx (\begin{DoxyParamCaption}\item[{struct \hyperlink{structarray__list}{array\+\_\+list} $\ast$}]{al,  }\item[{int}]{i,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 75 of file arraylist.\+c.
+
+
+\begin{DoxyCode}
+76 \{
+77   \textcolor{keywordflow}{if}(array\_list\_expand\_internal(arr, idx)) \textcolor{keywordflow}{return} -1;
+78   \textcolor{keywordflow}{if}(arr->array[idx]) arr->free\_fn(arr->array[idx]);
+79   arr->array[idx] = data;
+80   \textcolor{keywordflow}{if}(arr->length <= idx) arr->length = idx + 1;
+81   \textcolor{keywordflow}{return} 0;
+82 \}
+\end{DoxyCode}

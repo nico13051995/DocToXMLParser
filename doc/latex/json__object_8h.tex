@@ -1,0 +1,1071 @@
+\hypertarget{json__object_8h}{}\section{qt-\/json-\/editor-\/master/jsonc/json\+\_\+object.h File Reference}
+\label{json__object_8h}\index{qt-\/json-\/editor-\/master/jsonc/json\+\_\+object.\+h@{qt-\/json-\/editor-\/master/jsonc/json\+\_\+object.\+h}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{json__object_8h_a268a63dd1b2e6d81559e268a4529e9bf}{J\+S\+O\+N\+\_\+\+O\+B\+J\+E\+C\+T\+\_\+\+D\+E\+F\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+ES}~16
+\item 
+\#define \hyperlink{json__object_8h_aa93f0eb578d23995850d61f7d61c55c1}{F\+A\+L\+SE}~((\hyperlink{json__object_8h_a621c38f1f10a1c565d897e3178b16d6e}{boolean})0)
+\item 
+\#define \hyperlink{json__object_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{T\+R\+UE}~((\hyperlink{json__object_8h_a621c38f1f10a1c565d897e3178b16d6e}{boolean})1)
+\item 
+\#define \hyperlink{json__object_8h_acf5f514a9e0061c10fc08055762639ee}{json\+\_\+object\+\_\+object\+\_\+foreach}(obj,  key,  val)
+\item 
+\#define \hyperlink{json__object_8h_a71f07006c12d78f7bbf4cb716a5af3a6}{json\+\_\+object\+\_\+object\+\_\+foreachC}(obj,  iter)~for(iter.\+entry = \hyperlink{json__object_8h_a9840421d6b45a7d00a42e13e379b54b5}{json\+\_\+object\+\_\+get\+\_\+object}(obj)-\/$>$head; (iter.\+entry ? (iter.\+key = (char$\ast$)iter.\+entry-\/$>$k, iter.\+val = (struct \hyperlink{structjson__object}{json\+\_\+object}$\ast$)iter.\+entry-\/$>$v, iter.\+entry) \+: 0); iter.\+entry = iter.\+entry-\/$>$next)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \hyperlink{json__object_8h_a621c38f1f10a1c565d897e3178b16d6e}{boolean}
+\item 
+typedef struct \hyperlink{structprintbuf}{printbuf} \hyperlink{json__object_8h_ace274df280df67463ff417b1b3392395}{printbuf}
+\item 
+typedef struct \hyperlink{structlh__table}{lh\+\_\+table} \hyperlink{json__object_8h_a766e90057496fc6712d6be0da180a21f}{lh\+\_\+table}
+\item 
+typedef struct \hyperlink{structarray__list}{array\+\_\+list} \hyperlink{json__object_8h_a6d6d32d8b026ea2025df519b9e90f44a}{array\+\_\+list}
+\item 
+typedef struct \hyperlink{structjson__object}{json\+\_\+object} \hyperlink{json__object_8h_af27907ced0f5a43409ad96430fe0f914}{json\+\_\+object}
+\item 
+typedef struct \hyperlink{structjson__object__iter}{json\+\_\+object\+\_\+iter} \hyperlink{json__object_8h_af88126730e765f2068968f4b16fd074f}{json\+\_\+object\+\_\+iter}
+\item 
+typedef struct \hyperlink{structjson__tokener}{json\+\_\+tokener} \hyperlink{json__object_8h_a4dd5e5b65aee7f376f529f86b210ff49}{json\+\_\+tokener}
+\item 
+typedef enum \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06c}{json\+\_\+type} \hyperlink{json__object_8h_aba5eff84f8638d22f50403175f270c96}{json\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06c}{json\+\_\+type} \{ \newline
+\hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca127e62d156e13517471fcde3378979c1}{json\+\_\+type\+\_\+null}, 
+\hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca5d15299e90dbb9935ff6d3e2c22a285c}{json\+\_\+type\+\_\+boolean}, 
+\hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac6ac2d9a16577d00210fea64d16b47cd}{json\+\_\+type\+\_\+double}, 
+\hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca7bf325c213b43c5f970ae2d4443ab956}{json\+\_\+type\+\_\+int}, 
+\newline
+\hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac966c8008f0b2c07da59ee8a60ad440f}{json\+\_\+type\+\_\+object}, 
+\hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cae536c8c9da4648e6b9348abddde6113c}{json\+\_\+type\+\_\+array}, 
+\hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac9f56e57c09245522d764015a054faa6}{json\+\_\+type\+\_\+string}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$ \hyperlink{json__object_8h_acc3628d97c6308dc967006e4268c4e7f}{json\+\_\+object\+\_\+get} (struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$obj)
+\item 
+void \hyperlink{json__object_8h_accc34b38e15e46357d64a0beed3d0150}{json\+\_\+object\+\_\+put} (struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$obj)
+\item 
+int \hyperlink{json__object_8h_ab6dc8b19f8da310e78f402f83d6ae6c5}{json\+\_\+object\+\_\+is\+\_\+type} (struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$obj, enum \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06c}{json\+\_\+type} type)
+\item 
+enum \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06c}{json\+\_\+type} \hyperlink{json__object_8h_adc5e998b4897b6e450bd0975a58d2f72}{json\+\_\+object\+\_\+get\+\_\+type} (struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$obj)
+\item 
+const char $\ast$ \hyperlink{json__object_8h_a1f62a660e2619559d1f3f54cd7483ff8}{json\+\_\+object\+\_\+to\+\_\+json\+\_\+string} (struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$obj)
+\item 
+struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$ \hyperlink{json__object_8h_af0ed3555604f39ac74b5e28bc5b1f82c}{json\+\_\+object\+\_\+new\+\_\+object} (void)
+\item 
+struct \hyperlink{structlh__table}{lh\+\_\+table} $\ast$ \hyperlink{json__object_8h_a9840421d6b45a7d00a42e13e379b54b5}{json\+\_\+object\+\_\+get\+\_\+object} (struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$obj)
+\item 
+void \hyperlink{json__object_8h_a04448b1c63173e1bfe49965835732075}{json\+\_\+object\+\_\+object\+\_\+add} (struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$obj, const char $\ast$key, struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$val)
+\item 
+struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$ \hyperlink{json__object_8h_ac11730ad909d1f9eb077d1ce9ff8b153}{json\+\_\+object\+\_\+object\+\_\+get} (struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$obj, const char $\ast$key)
+\item 
+void \hyperlink{json__object_8h_a03653c18aafccd1ffba1ad318e342845}{json\+\_\+object\+\_\+object\+\_\+del} (struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$obj, const char $\ast$key)
+\item 
+struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$ \hyperlink{json__object_8h_a9b5af06e9a99e16c6d9b6459a685ea3f}{json\+\_\+object\+\_\+new\+\_\+array} (void)
+\item 
+struct \hyperlink{structarray__list}{array\+\_\+list} $\ast$ \hyperlink{json__object_8h_aba4e8df5e00bdc91a89bfb775e04ed70}{json\+\_\+object\+\_\+get\+\_\+array} (struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$obj)
+\item 
+int \hyperlink{json__object_8h_a2e62d4b19de8f297595f3b4aaa0ec453}{json\+\_\+object\+\_\+array\+\_\+length} (struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$obj)
+\item 
+int \hyperlink{json__object_8h_acc89c0f58947d499e2868ac8b62bed49}{json\+\_\+object\+\_\+array\+\_\+add} (struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$obj, struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$val)
+\item 
+int \hyperlink{json__object_8h_a2d19d21b495e1e0d3f711093d97a5104}{json\+\_\+object\+\_\+array\+\_\+put\+\_\+idx} (struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$obj, int idx, struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$val)
+\item 
+struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$ \hyperlink{json__object_8h_a5c9120a6d644ea12a61e2ec8520130c6}{json\+\_\+object\+\_\+array\+\_\+get\+\_\+idx} (struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$obj, int idx)
+\item 
+struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$ \hyperlink{json__object_8h_a1bb59b93df42cafe49e8ff8c500690a6}{json\+\_\+object\+\_\+new\+\_\+boolean} (\hyperlink{json__object_8h_a621c38f1f10a1c565d897e3178b16d6e}{boolean} b)
+\item 
+\hyperlink{json__object_8h_a621c38f1f10a1c565d897e3178b16d6e}{boolean} \hyperlink{json__object_8h_a1765227e33016c7fee2abe31800080d1}{json\+\_\+object\+\_\+get\+\_\+boolean} (struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$obj)
+\item 
+struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$ \hyperlink{json__object_8h_af4dc3777b8751243c620a2cc65c89e26}{json\+\_\+object\+\_\+new\+\_\+int} (int i)
+\item 
+int \hyperlink{json__object_8h_a28e392cc4d04c34628ed6dddd8a3ba6b}{json\+\_\+object\+\_\+get\+\_\+int} (struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$obj)
+\item 
+struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$ \hyperlink{json__object_8h_a2e9c761833a4f5d0a0c60640377e3cec}{json\+\_\+object\+\_\+new\+\_\+double} (double d)
+\item 
+double \hyperlink{json__object_8h_a9cf586fba906a597a121423045cb2a45}{json\+\_\+object\+\_\+get\+\_\+double} (struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$obj)
+\item 
+struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$ \hyperlink{json__object_8h_a48eb92a8208e6718e55edf1130e8e4b8}{json\+\_\+object\+\_\+new\+\_\+string} (const char $\ast$s)
+\item 
+struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$ \hyperlink{json__object_8h_a9d14fd03ed7520c4aa33ab53b4569414}{json\+\_\+object\+\_\+new\+\_\+string\+\_\+len} (const char $\ast$s, int len)
+\item 
+const char $\ast$ \hyperlink{json__object_8h_ad24f1c4c22b2a7d33e7b562c01f2ca65}{json\+\_\+object\+\_\+get\+\_\+string} (struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$obj)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{json__object_8h_a27427f89f2fc995639e366635fbe58ac}{json\+\_\+number\+\_\+chars}
+\item 
+const char $\ast$ \hyperlink{json__object_8h_a20dbe4913551cefa6b4b0a77fd4397c4}{json\+\_\+hex\+\_\+chars}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{json__object_8h_aa93f0eb578d23995850d61f7d61c55c1}\label{json__object_8h_aa93f0eb578d23995850d61f7d61c55c1}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!F\+A\+L\+SE@{F\+A\+L\+SE}}
+\index{F\+A\+L\+SE@{F\+A\+L\+SE}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{F\+A\+L\+SE}{FALSE}}
+{\footnotesize\ttfamily \#define F\+A\+L\+SE~((\hyperlink{json__object_8h_a621c38f1f10a1c565d897e3178b16d6e}{boolean})0)}
+
+
+
+Definition at line 22 of file json\+\_\+object.\+h.
+
+\mbox{\Hypertarget{json__object_8h_a268a63dd1b2e6d81559e268a4529e9bf}\label{json__object_8h_a268a63dd1b2e6d81559e268a4529e9bf}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!J\+S\+O\+N\+\_\+\+O\+B\+J\+E\+C\+T\+\_\+\+D\+E\+F\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+ES@{J\+S\+O\+N\+\_\+\+O\+B\+J\+E\+C\+T\+\_\+\+D\+E\+F\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+ES}}
+\index{J\+S\+O\+N\+\_\+\+O\+B\+J\+E\+C\+T\+\_\+\+D\+E\+F\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+ES@{J\+S\+O\+N\+\_\+\+O\+B\+J\+E\+C\+T\+\_\+\+D\+E\+F\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+ES}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{J\+S\+O\+N\+\_\+\+O\+B\+J\+E\+C\+T\+\_\+\+D\+E\+F\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+ES}{JSON\_OBJECT\_DEF\_HASH\_ENTRIES}}
+{\footnotesize\ttfamily \#define J\+S\+O\+N\+\_\+\+O\+B\+J\+E\+C\+T\+\_\+\+D\+E\+F\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+ES~16}
+
+
+
+Definition at line 19 of file json\+\_\+object.\+h.
+
+\mbox{\Hypertarget{json__object_8h_acf5f514a9e0061c10fc08055762639ee}\label{json__object_8h_acf5f514a9e0061c10fc08055762639ee}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+object\+\_\+foreach@{json\+\_\+object\+\_\+object\+\_\+foreach}}
+\index{json\+\_\+object\+\_\+object\+\_\+foreach@{json\+\_\+object\+\_\+object\+\_\+foreach}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+object\+\_\+foreach}{json\_object\_object\_foreach}}
+{\footnotesize\ttfamily \#define json\+\_\+object\+\_\+object\+\_\+foreach(\begin{DoxyParamCaption}\item[{}]{obj,  }\item[{}]{key,  }\item[{}]{val }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordtype}{char} *key; \textcolor{keyword}{struct }\hyperlink{structjson__object}{json\_object} *val; \textcolor{keyword}{struct }\hyperlink{structlh__entry}{lh\_entry} *entry; \(\backslash\)
+ for(entry = \hyperlink{json__object_8h_a9840421d6b45a7d00a42e13e379b54b5}{json\_object\_get\_object}(obj)->head; (entry ? (key = (\textcolor{keywordtype}{char}*)entry->
+      \hyperlink{structlh__entry_a6b176b3582c9cf553af6431750f5c3b6}{k}, val = (\textcolor{keyword}{struct} \hyperlink{structjson__object}{json\_object}*)entry->\hyperlink{structlh__entry_a1b676732ab2ad3eeaedf6ec60a6a0835}{v}, entry) : 0); entry = entry->
+      \hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next})
+\end{DoxyCode}
+Iterate through all keys and values of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & the \hyperlink{structjson__object}{json\+\_\+object} instance \\
+\hline
+{\em key} & the local name for the char$\ast$ key variable defined in the body \\
+\hline
+{\em val} & the local name for the json\+\_\+object$\ast$ object variable defined in the body \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 161 of file json\+\_\+object.\+h.
+
+\mbox{\Hypertarget{json__object_8h_a71f07006c12d78f7bbf4cb716a5af3a6}\label{json__object_8h_a71f07006c12d78f7bbf4cb716a5af3a6}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+object\+\_\+foreachC@{json\+\_\+object\+\_\+object\+\_\+foreachC}}
+\index{json\+\_\+object\+\_\+object\+\_\+foreachC@{json\+\_\+object\+\_\+object\+\_\+foreachC}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+object\+\_\+foreachC}{json\_object\_object\_foreachC}}
+{\footnotesize\ttfamily \#define json\+\_\+object\+\_\+object\+\_\+foreachC(\begin{DoxyParamCaption}\item[{}]{obj,  }\item[{}]{iter }\end{DoxyParamCaption})~for(iter.\+entry = \hyperlink{json__object_8h_a9840421d6b45a7d00a42e13e379b54b5}{json\+\_\+object\+\_\+get\+\_\+object}(obj)-\/$>$head; (iter.\+entry ? (iter.\+key = (char$\ast$)iter.\+entry-\/$>$k, iter.\+val = (struct \hyperlink{structjson__object}{json\+\_\+object}$\ast$)iter.\+entry-\/$>$v, iter.\+entry) \+: 0); iter.\+entry = iter.\+entry-\/$>$next)}
+
+Iterate through all keys and values of an object (A\+N\+SI C Safe) 
+\begin{DoxyParams}{Parameters}
+{\em obj} & the \hyperlink{structjson__object}{json\+\_\+object} instance \\
+\hline
+{\em iter} & the object iterator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 171 of file json\+\_\+object.\+h.
+
+\mbox{\Hypertarget{json__object_8h_aa8cecfc5c5c054d2875c03e77b7be15d}\label{json__object_8h_aa8cecfc5c5c054d2875c03e77b7be15d}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!T\+R\+UE@{T\+R\+UE}}
+\index{T\+R\+UE@{T\+R\+UE}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{T\+R\+UE}{TRUE}}
+{\footnotesize\ttfamily \#define T\+R\+UE~((\hyperlink{json__object_8h_a621c38f1f10a1c565d897e3178b16d6e}{boolean})1)}
+
+
+
+Definition at line 25 of file json\+\_\+object.\+h.
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{json__object_8h_a6d6d32d8b026ea2025df519b9e90f44a}\label{json__object_8h_a6d6d32d8b026ea2025df519b9e90f44a}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!array\+\_\+list@{array\+\_\+list}}
+\index{array\+\_\+list@{array\+\_\+list}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{array\+\_\+list}{array\_list}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structarray__list}{array\+\_\+list} \hyperlink{structarray__list}{array\+\_\+list}}
+
+
+
+Definition at line 39 of file json\+\_\+object.\+h.
+
+\mbox{\Hypertarget{json__object_8h_a621c38f1f10a1c565d897e3178b16d6e}\label{json__object_8h_a621c38f1f10a1c565d897e3178b16d6e}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!boolean@{boolean}}
+\index{boolean@{boolean}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{boolean}{boolean}}
+{\footnotesize\ttfamily typedef int \hyperlink{json__object_8h_a621c38f1f10a1c565d897e3178b16d6e}{boolean}}
+
+
+
+Definition at line 35 of file json\+\_\+object.\+h.
+
+\mbox{\Hypertarget{json__object_8h_af27907ced0f5a43409ad96430fe0f914}\label{json__object_8h_af27907ced0f5a43409ad96430fe0f914}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object@{json\+\_\+object}}
+\index{json\+\_\+object@{json\+\_\+object}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object}{json\_object}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structjson__object}{json\+\_\+object} \hyperlink{structjson__object}{json\+\_\+object}}
+
+
+
+Definition at line 40 of file json\+\_\+object.\+h.
+
+\mbox{\Hypertarget{json__object_8h_af88126730e765f2068968f4b16fd074f}\label{json__object_8h_af88126730e765f2068968f4b16fd074f}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+iter@{json\+\_\+object\+\_\+iter}}
+\index{json\+\_\+object\+\_\+iter@{json\+\_\+object\+\_\+iter}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+iter}{json\_object\_iter}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structjson__object__iter}{json\+\_\+object\+\_\+iter} \hyperlink{structjson__object__iter}{json\+\_\+object\+\_\+iter}}
+
+
+
+Definition at line 41 of file json\+\_\+object.\+h.
+
+\mbox{\Hypertarget{json__object_8h_a4dd5e5b65aee7f376f529f86b210ff49}\label{json__object_8h_a4dd5e5b65aee7f376f529f86b210ff49}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+tokener@{json\+\_\+tokener}}
+\index{json\+\_\+tokener@{json\+\_\+tokener}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+tokener}{json\_tokener}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structjson__tokener}{json\+\_\+tokener} \hyperlink{structjson__tokener}{json\+\_\+tokener}}
+
+
+
+Definition at line 42 of file json\+\_\+object.\+h.
+
+\mbox{\Hypertarget{json__object_8h_aba5eff84f8638d22f50403175f270c96}\label{json__object_8h_aba5eff84f8638d22f50403175f270c96}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+type@{json\+\_\+type}}
+\index{json\+\_\+type@{json\+\_\+type}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+type}{json\_type}}
+{\footnotesize\ttfamily typedef enum \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06c}{json\+\_\+type}  \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06c}{json\+\_\+type}}
+
+\mbox{\Hypertarget{json__object_8h_a766e90057496fc6712d6be0da180a21f}\label{json__object_8h_a766e90057496fc6712d6be0da180a21f}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!lh\+\_\+table@{lh\+\_\+table}}
+\index{lh\+\_\+table@{lh\+\_\+table}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{lh\+\_\+table}{lh\_table}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structlh__table}{lh\+\_\+table} \hyperlink{structlh__table}{lh\+\_\+table}}
+
+
+
+Definition at line 38 of file json\+\_\+object.\+h.
+
+\mbox{\Hypertarget{json__object_8h_ace274df280df67463ff417b1b3392395}\label{json__object_8h_ace274df280df67463ff417b1b3392395}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!printbuf@{printbuf}}
+\index{printbuf@{printbuf}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{printbuf}{printbuf}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structprintbuf}{printbuf} \hyperlink{structprintbuf}{printbuf}}
+
+
+
+Definition at line 37 of file json\+\_\+object.\+h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{json__object_8h_ac75c61993722a9b8aaa44704072ec06c}\label{json__object_8h_ac75c61993722a9b8aaa44704072ec06c}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+type@{json\+\_\+type}}
+\index{json\+\_\+type@{json\+\_\+type}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+type}{json\_type}}
+{\footnotesize\ttfamily enum \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06c}{json\+\_\+type}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{json\+\_\+type\+\_\+null@{json\+\_\+type\+\_\+null}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+type\+\_\+null@{json\+\_\+type\+\_\+null}}}\mbox{\Hypertarget{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca127e62d156e13517471fcde3378979c1}\label{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca127e62d156e13517471fcde3378979c1}} 
+json\+\_\+type\+\_\+null&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{json\+\_\+type\+\_\+boolean@{json\+\_\+type\+\_\+boolean}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+type\+\_\+boolean@{json\+\_\+type\+\_\+boolean}}}\mbox{\Hypertarget{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca5d15299e90dbb9935ff6d3e2c22a285c}\label{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca5d15299e90dbb9935ff6d3e2c22a285c}} 
+json\+\_\+type\+\_\+boolean&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{json\+\_\+type\+\_\+double@{json\+\_\+type\+\_\+double}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+type\+\_\+double@{json\+\_\+type\+\_\+double}}}\mbox{\Hypertarget{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac6ac2d9a16577d00210fea64d16b47cd}\label{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac6ac2d9a16577d00210fea64d16b47cd}} 
+json\+\_\+type\+\_\+double&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{json\+\_\+type\+\_\+int@{json\+\_\+type\+\_\+int}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+type\+\_\+int@{json\+\_\+type\+\_\+int}}}\mbox{\Hypertarget{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca7bf325c213b43c5f970ae2d4443ab956}\label{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca7bf325c213b43c5f970ae2d4443ab956}} 
+json\+\_\+type\+\_\+int&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{json\+\_\+type\+\_\+object@{json\+\_\+type\+\_\+object}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+type\+\_\+object@{json\+\_\+type\+\_\+object}}}\mbox{\Hypertarget{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac966c8008f0b2c07da59ee8a60ad440f}\label{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac966c8008f0b2c07da59ee8a60ad440f}} 
+json\+\_\+type\+\_\+object&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{json\+\_\+type\+\_\+array@{json\+\_\+type\+\_\+array}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+type\+\_\+array@{json\+\_\+type\+\_\+array}}}\mbox{\Hypertarget{json__object_8h_ac75c61993722a9b8aaa44704072ec06cae536c8c9da4648e6b9348abddde6113c}\label{json__object_8h_ac75c61993722a9b8aaa44704072ec06cae536c8c9da4648e6b9348abddde6113c}} 
+json\+\_\+type\+\_\+array&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{json\+\_\+type\+\_\+string@{json\+\_\+type\+\_\+string}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+type\+\_\+string@{json\+\_\+type\+\_\+string}}}\mbox{\Hypertarget{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac9f56e57c09245522d764015a054faa6}\label{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac9f56e57c09245522d764015a054faa6}} 
+json\+\_\+type\+\_\+string&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 46 of file json\+\_\+object.\+h.
+
+
+\begin{DoxyCode}
+46                        \{
+47   \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca127e62d156e13517471fcde3378979c1}{json\_type\_null},
+48   \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca5d15299e90dbb9935ff6d3e2c22a285c}{json\_type\_boolean},
+49   \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac6ac2d9a16577d00210fea64d16b47cd}{json\_type\_double},
+50   \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca7bf325c213b43c5f970ae2d4443ab956}{json\_type\_int},
+51   \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac966c8008f0b2c07da59ee8a60ad440f}{json\_type\_object},
+52   \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cae536c8c9da4648e6b9348abddde6113c}{json\_type\_array},
+53   \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac9f56e57c09245522d764015a054faa6}{json\_type\_string}
+54 \} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06c}{json\_type};
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{json__object_8h_acc89c0f58947d499e2868ac8b62bed49}\label{json__object_8h_acc89c0f58947d499e2868ac8b62bed49}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+array\+\_\+add@{json\+\_\+object\+\_\+array\+\_\+add}}
+\index{json\+\_\+object\+\_\+array\+\_\+add@{json\+\_\+object\+\_\+array\+\_\+add}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+array\+\_\+add()}{json\_object\_array\_add()}}
+{\footnotesize\ttfamily int json\+\_\+object\+\_\+array\+\_\+add (\begin{DoxyParamCaption}\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{obj,  }\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{val }\end{DoxyParamCaption})}
+
+Add an element to the end of a \hyperlink{structjson__object}{json\+\_\+object} of type json\+\_\+type\+\_\+array
+
+The reference count will {\itshape not} be incremented. This is to make adding fields to objects in code more compact. If you want to retain a reference to an added object you must wrap the passed object with json\+\_\+object\+\_\+get
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & the \hyperlink{structjson__object}{json\+\_\+object} instance \\
+\hline
+{\em val} & the \hyperlink{structjson__object}{json\+\_\+object} to be added \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 496 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+497 \{
+498   \textcolor{keywordflow}{return} \hyperlink{arraylist_8c_aa6cc3f924c6ae01867055e77261002fc}{array\_list\_add}(jso->o.c\_array, val);
+499 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_a5c9120a6d644ea12a61e2ec8520130c6}\label{json__object_8h_a5c9120a6d644ea12a61e2ec8520130c6}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+array\+\_\+get\+\_\+idx@{json\+\_\+object\+\_\+array\+\_\+get\+\_\+idx}}
+\index{json\+\_\+object\+\_\+array\+\_\+get\+\_\+idx@{json\+\_\+object\+\_\+array\+\_\+get\+\_\+idx}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+array\+\_\+get\+\_\+idx()}{json\_object\_array\_get\_idx()}}
+{\footnotesize\ttfamily struct \hyperlink{structjson__object}{json\+\_\+object}$\ast$ json\+\_\+object\+\_\+array\+\_\+get\+\_\+idx (\begin{DoxyParamCaption}\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{obj,  }\item[{int}]{idx }\end{DoxyParamCaption})}
+
+Get the element at specificed index of the array (a \hyperlink{structjson__object}{json\+\_\+object} of type json\+\_\+type\+\_\+array) 
+\begin{DoxyParams}{Parameters}
+{\em obj} & the \hyperlink{structjson__object}{json\+\_\+object} instance \\
+\hline
+{\em idx} & the index to get the element at \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{structjson__object}{json\+\_\+object} at the specified index (or N\+U\+LL) 
+\end{DoxyReturn}
+
+
+Definition at line 507 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+509 \{
+510   \textcolor{keywordflow}{return} (\textcolor{keyword}{struct} \hyperlink{structjson__object}{json\_object}*)\hyperlink{arraylist_8c_ab2337d58daf086691717a4f038adea9d}{array\_list\_get\_idx}(jso->o.c\_array, idx);
+511 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_a2e62d4b19de8f297595f3b4aaa0ec453}\label{json__object_8h_a2e62d4b19de8f297595f3b4aaa0ec453}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+array\+\_\+length@{json\+\_\+object\+\_\+array\+\_\+length}}
+\index{json\+\_\+object\+\_\+array\+\_\+length@{json\+\_\+object\+\_\+array\+\_\+length}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+array\+\_\+length()}{json\_object\_array\_length()}}
+{\footnotesize\ttfamily int json\+\_\+object\+\_\+array\+\_\+length (\begin{DoxyParamCaption}\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the length of a \hyperlink{structjson__object}{json\+\_\+object} of type json\+\_\+type\+\_\+array 
+\begin{DoxyParams}{Parameters}
+{\em obj} & the \hyperlink{structjson__object}{json\+\_\+object} instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an int 
+\end{DoxyReturn}
+
+
+Definition at line 491 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+492 \{
+493   \textcolor{keywordflow}{return} \hyperlink{arraylist_8c_ac3283937cbfed71adbbdcfd12e7e6c1f}{array\_list\_length}(jso->o.c\_array);
+494 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_a2d19d21b495e1e0d3f711093d97a5104}\label{json__object_8h_a2d19d21b495e1e0d3f711093d97a5104}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+array\+\_\+put\+\_\+idx@{json\+\_\+object\+\_\+array\+\_\+put\+\_\+idx}}
+\index{json\+\_\+object\+\_\+array\+\_\+put\+\_\+idx@{json\+\_\+object\+\_\+array\+\_\+put\+\_\+idx}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+array\+\_\+put\+\_\+idx()}{json\_object\_array\_put\_idx()}}
+{\footnotesize\ttfamily int json\+\_\+object\+\_\+array\+\_\+put\+\_\+idx (\begin{DoxyParamCaption}\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{obj,  }\item[{int}]{idx,  }\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{val }\end{DoxyParamCaption})}
+
+Insert or replace an element at a specified index in an array (a \hyperlink{structjson__object}{json\+\_\+object} of type json\+\_\+type\+\_\+array)
+
+The reference count will {\itshape not} be incremented. This is to make adding fields to objects in code more compact. If you want to retain a reference to an added object you must wrap the passed object with json\+\_\+object\+\_\+get
+
+The reference count of a replaced object will be decremented.
+
+The array size will be automatically be expanded to the size of the index if the index is larger than the current size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & the \hyperlink{structjson__object}{json\+\_\+object} instance \\
+\hline
+{\em idx} & the index to insert the element at \\
+\hline
+{\em val} & the \hyperlink{structjson__object}{json\+\_\+object} to be added \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 501 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+503 \{
+504   \textcolor{keywordflow}{return} \hyperlink{arraylist_8c_acb580f4184c52f8ade1f7c68bb57b633}{array\_list\_put\_idx}(jso->o.c\_array, idx, val);
+505 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_acc3628d97c6308dc967006e4268c4e7f}\label{json__object_8h_acc3628d97c6308dc967006e4268c4e7f}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+get@{json\+\_\+object\+\_\+get}}
+\index{json\+\_\+object\+\_\+get@{json\+\_\+object\+\_\+get}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+get()}{json\_object\_get()}}
+{\footnotesize\ttfamily struct \hyperlink{structjson__object}{json\+\_\+object}$\ast$ json\+\_\+object\+\_\+get (\begin{DoxyParamCaption}\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Increment the reference count of \hyperlink{structjson__object}{json\+\_\+object} 
+\begin{DoxyParams}{Parameters}
+{\em obj} & the \hyperlink{structjson__object}{json\+\_\+object} instance \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 130 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+131 \{
+132   \textcolor{keywordflow}{if}(jso) \{
+133     jso->\_ref\_count++;
+134   \}
+135   \textcolor{keywordflow}{return} jso;
+136 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_aba4e8df5e00bdc91a89bfb775e04ed70}\label{json__object_8h_aba4e8df5e00bdc91a89bfb775e04ed70}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+get\+\_\+array@{json\+\_\+object\+\_\+get\+\_\+array}}
+\index{json\+\_\+object\+\_\+get\+\_\+array@{json\+\_\+object\+\_\+get\+\_\+array}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+get\+\_\+array()}{json\_object\_get\_array()}}
+{\footnotesize\ttfamily struct \hyperlink{structarray__list}{array\+\_\+list}$\ast$ json\+\_\+object\+\_\+get\+\_\+array (\begin{DoxyParamCaption}\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the arraylist of a \hyperlink{structjson__object}{json\+\_\+object} of type json\+\_\+type\+\_\+array 
+\begin{DoxyParams}{Parameters}
+{\em obj} & the \hyperlink{structjson__object}{json\+\_\+object} instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an arraylist 
+\end{DoxyReturn}
+
+
+Definition at line 480 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+481 \{
+482   \textcolor{keywordflow}{if}(!jso) \textcolor{keywordflow}{return} NULL;
+483   \textcolor{keywordflow}{switch}(jso->o\_type) \{
+484   \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cae536c8c9da4648e6b9348abddde6113c}{json\_type\_array}:
+485     \textcolor{keywordflow}{return} jso->o.c\_array;
+486   \textcolor{keywordflow}{default}:
+487     \textcolor{keywordflow}{return} NULL;
+488   \}
+489 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_a1765227e33016c7fee2abe31800080d1}\label{json__object_8h_a1765227e33016c7fee2abe31800080d1}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+get\+\_\+boolean@{json\+\_\+object\+\_\+get\+\_\+boolean}}
+\index{json\+\_\+object\+\_\+get\+\_\+boolean@{json\+\_\+object\+\_\+get\+\_\+boolean}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+get\+\_\+boolean()}{json\_object\_get\_boolean()}}
+{\footnotesize\ttfamily \hyperlink{json__object_8h_a621c38f1f10a1c565d897e3178b16d6e}{boolean} json\+\_\+object\+\_\+get\+\_\+boolean (\begin{DoxyParamCaption}\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the boolean value of a \hyperlink{structjson__object}{json\+\_\+object}
+
+The type is coerced to a boolean if the passed object is not a boolean. integer and double objects will return F\+A\+L\+SE if there value is zero or T\+R\+UE otherwise. If the passed object is a string it will return T\+R\+UE if it has a non zero length. If any other object type is passed T\+R\+UE will be returned if the object is not N\+U\+LL.
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & the \hyperlink{structjson__object}{json\+\_\+object} instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a boolean 
+\end{DoxyReturn}
+
+
+Definition at line 299 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+300 \{
+301   \textcolor{keywordflow}{if}(!jso) \textcolor{keywordflow}{return} \hyperlink{json__object_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE};
+302   \textcolor{keywordflow}{switch}(jso->o\_type) \{
+303   \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca5d15299e90dbb9935ff6d3e2c22a285c}{json\_type\_boolean}:
+304     \textcolor{keywordflow}{return} jso->o.c\_boolean;
+305   \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca7bf325c213b43c5f970ae2d4443ab956}{json\_type\_int}:
+306     \textcolor{keywordflow}{return} (jso->o.c\_int != 0);
+307   \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac6ac2d9a16577d00210fea64d16b47cd}{json\_type\_double}:
+308     \textcolor{keywordflow}{return} (jso->o.c\_double != 0);
+309   \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac9f56e57c09245522d764015a054faa6}{json\_type\_string}:
+310     \textcolor{keywordflow}{return} (strlen(jso->o.c\_string) != 0);
+311   \textcolor{keywordflow}{default}:
+312     \textcolor{keywordflow}{return} \hyperlink{json__object_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE};
+313   \}
+314 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_a9cf586fba906a597a121423045cb2a45}\label{json__object_8h_a9cf586fba906a597a121423045cb2a45}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+get\+\_\+double@{json\+\_\+object\+\_\+get\+\_\+double}}
+\index{json\+\_\+object\+\_\+get\+\_\+double@{json\+\_\+object\+\_\+get\+\_\+double}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+get\+\_\+double()}{json\_object\_get\_double()}}
+{\footnotesize\ttfamily double json\+\_\+object\+\_\+get\+\_\+double (\begin{DoxyParamCaption}\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the double value of a \hyperlink{structjson__object}{json\+\_\+object}
+
+The type is coerced to a double if the passed object is not a double. integer objects will return their dboule conversion. Strings will be parsed as a double. If no conversion exists then 0.\+0 is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & the \hyperlink{structjson__object}{json\+\_\+object} instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an double 
+\end{DoxyReturn}
+
+
+Definition at line 371 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+372 \{
+373   \textcolor{keywordtype}{double} cdouble;
+374 
+375   \textcolor{keywordflow}{if}(!jso) \textcolor{keywordflow}{return} 0.0;
+376   \textcolor{keywordflow}{switch}(jso->o\_type) \{
+377   \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac6ac2d9a16577d00210fea64d16b47cd}{json\_type\_double}:
+378     \textcolor{keywordflow}{return} jso->o.c\_double;
+379   \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca7bf325c213b43c5f970ae2d4443ab956}{json\_type\_int}:
+380     \textcolor{keywordflow}{return} jso->o.c\_int;
+381   \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca5d15299e90dbb9935ff6d3e2c22a285c}{json\_type\_boolean}:
+382     \textcolor{keywordflow}{return} jso->o.c\_boolean;
+383   \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac9f56e57c09245522d764015a054faa6}{json\_type\_string}:
+384     \textcolor{keywordflow}{if}(sscanf(jso->o.c\_string, \textcolor{stringliteral}{"%lf"}, &cdouble) == 1) \textcolor{keywordflow}{return} cdouble;
+385   \textcolor{keywordflow}{default}:
+386     \textcolor{keywordflow}{return} 0.0;
+387   \}
+388 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_a28e392cc4d04c34628ed6dddd8a3ba6b}\label{json__object_8h_a28e392cc4d04c34628ed6dddd8a3ba6b}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+get\+\_\+int@{json\+\_\+object\+\_\+get\+\_\+int}}
+\index{json\+\_\+object\+\_\+get\+\_\+int@{json\+\_\+object\+\_\+get\+\_\+int}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+get\+\_\+int()}{json\_object\_get\_int()}}
+{\footnotesize\ttfamily int json\+\_\+object\+\_\+get\+\_\+int (\begin{DoxyParamCaption}\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the int value of a \hyperlink{structjson__object}{json\+\_\+object}
+
+The type is coerced to a int if the passed object is not a int. double objects will return their integer conversion. Strings will be parsed as an integer. If no conversion exists then 0 is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & the \hyperlink{structjson__object}{json\+\_\+object} instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an int 
+\end{DoxyReturn}
+
+
+Definition at line 334 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+335 \{
+336   \textcolor{keywordtype}{int} cint;
+337 
+338   \textcolor{keywordflow}{if}(!jso) \textcolor{keywordflow}{return} 0;
+339   \textcolor{keywordflow}{switch}(jso->o\_type) \{
+340   \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca7bf325c213b43c5f970ae2d4443ab956}{json\_type\_int}:
+341     \textcolor{keywordflow}{return} jso->o.c\_int;
+342   \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac6ac2d9a16577d00210fea64d16b47cd}{json\_type\_double}:
+343     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{int})jso->o.c\_double;
+344   \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca5d15299e90dbb9935ff6d3e2c22a285c}{json\_type\_boolean}:
+345     \textcolor{keywordflow}{return} jso->o.c\_boolean;
+346   \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac9f56e57c09245522d764015a054faa6}{json\_type\_string}:
+347     \textcolor{keywordflow}{if}(sscanf(jso->o.c\_string, \textcolor{stringliteral}{"%d"}, &cint) == 1) \textcolor{keywordflow}{return} cint;
+348   \textcolor{keywordflow}{default}:
+349     \textcolor{keywordflow}{return} 0;
+350   \}
+351 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_a9840421d6b45a7d00a42e13e379b54b5}\label{json__object_8h_a9840421d6b45a7d00a42e13e379b54b5}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+get\+\_\+object@{json\+\_\+object\+\_\+get\+\_\+object}}
+\index{json\+\_\+object\+\_\+get\+\_\+object@{json\+\_\+object\+\_\+get\+\_\+object}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+get\+\_\+object()}{json\_object\_get\_object()}}
+{\footnotesize\ttfamily struct \hyperlink{structlh__table}{lh\+\_\+table}$\ast$ json\+\_\+object\+\_\+get\+\_\+object (\begin{DoxyParamCaption}\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the hashtable of a \hyperlink{structjson__object}{json\+\_\+object} of type json\+\_\+type\+\_\+object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & the \hyperlink{structjson__object}{json\+\_\+object} instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a linkhash 
+\end{DoxyReturn}
+
+
+Definition at line 252 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+253 \{
+254   \textcolor{keywordflow}{if}(!jso) \textcolor{keywordflow}{return} NULL;
+255   \textcolor{keywordflow}{switch}(jso->o\_type) \{
+256   \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac966c8008f0b2c07da59ee8a60ad440f}{json\_type\_object}:
+257     \textcolor{keywordflow}{return} jso->o.c\_object;
+258   \textcolor{keywordflow}{default}:
+259     \textcolor{keywordflow}{return} NULL;
+260   \}
+261 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_ad24f1c4c22b2a7d33e7b562c01f2ca65}\label{json__object_8h_ad24f1c4c22b2a7d33e7b562c01f2ca65}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+get\+\_\+string@{json\+\_\+object\+\_\+get\+\_\+string}}
+\index{json\+\_\+object\+\_\+get\+\_\+string@{json\+\_\+object\+\_\+get\+\_\+string}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+get\+\_\+string()}{json\_object\_get\_string()}}
+{\footnotesize\ttfamily const char$\ast$ json\+\_\+object\+\_\+get\+\_\+string (\begin{DoxyParamCaption}\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the string value of a \hyperlink{structjson__object}{json\+\_\+object}
+
+If the passed object is not of type json\+\_\+type\+\_\+string then the J\+S\+ON representation of the object is returned.
+
+The returned string memory is managed by the \hyperlink{structjson__object}{json\+\_\+object} and will be freed when the reference count of the \hyperlink{structjson__object}{json\+\_\+object} drops to zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & the \hyperlink{structjson__object}{json\+\_\+object} instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a string 
+\end{DoxyReturn}
+
+
+Definition at line 428 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+429 \{
+430   \textcolor{keywordflow}{if}(!jso) \textcolor{keywordflow}{return} NULL;
+431   \textcolor{keywordflow}{switch}(jso->o\_type) \{
+432   \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac9f56e57c09245522d764015a054faa6}{json\_type\_string}:
+433     \textcolor{keywordflow}{return} jso->o.c\_string;
+434   \textcolor{keywordflow}{default}:
+435     \textcolor{keywordflow}{return} \hyperlink{json__object_8c_a5b0d99d5f750bd2e41470337c5604b5b}{json\_object\_to\_json\_string}(jso);
+436   \}
+437 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_adc5e998b4897b6e450bd0975a58d2f72}\label{json__object_8h_adc5e998b4897b6e450bd0975a58d2f72}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+get\+\_\+type@{json\+\_\+object\+\_\+get\+\_\+type}}
+\index{json\+\_\+object\+\_\+get\+\_\+type@{json\+\_\+object\+\_\+get\+\_\+type}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+get\+\_\+type()}{json\_object\_get\_type()}}
+{\footnotesize\ttfamily enum \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06c}{json\+\_\+type} json\+\_\+object\+\_\+get\+\_\+type (\begin{DoxyParamCaption}\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the type of the \hyperlink{structjson__object}{json\+\_\+object} 
+\begin{DoxyParams}{Parameters}
+{\em obj} & the \hyperlink{structjson__object}{json\+\_\+object} instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+type being one of\+: json\+\_\+type\+\_\+boolean, json\+\_\+type\+\_\+double, json\+\_\+type\+\_\+int, json\+\_\+type\+\_\+object, json\+\_\+type\+\_\+array, json\+\_\+type\+\_\+string, 
+\end{DoxyReturn}
+
+
+Definition at line 184 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+185 \{
+186   \textcolor{keywordflow}{return} jso->o\_type;
+187 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_ab6dc8b19f8da310e78f402f83d6ae6c5}\label{json__object_8h_ab6dc8b19f8da310e78f402f83d6ae6c5}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+is\+\_\+type@{json\+\_\+object\+\_\+is\+\_\+type}}
+\index{json\+\_\+object\+\_\+is\+\_\+type@{json\+\_\+object\+\_\+is\+\_\+type}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+is\+\_\+type()}{json\_object\_is\_type()}}
+{\footnotesize\ttfamily int json\+\_\+object\+\_\+is\+\_\+type (\begin{DoxyParamCaption}\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{obj,  }\item[{enum \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06c}{json\+\_\+type}}]{type }\end{DoxyParamCaption})}
+
+Check if the \hyperlink{structjson__object}{json\+\_\+object} is of a given type 
+\begin{DoxyParams}{Parameters}
+{\em obj} & the \hyperlink{structjson__object}{json\+\_\+object} instance \\
+\hline
+{\em type} & one of\+: json\+\_\+type\+\_\+boolean, json\+\_\+type\+\_\+double, json\+\_\+type\+\_\+int, json\+\_\+type\+\_\+object, json\+\_\+type\+\_\+array, json\+\_\+type\+\_\+string, \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 179 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+180 \{
+181   \textcolor{keywordflow}{return} (jso->o\_type == type);
+182 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_a9b5af06e9a99e16c6d9b6459a685ea3f}\label{json__object_8h_a9b5af06e9a99e16c6d9b6459a685ea3f}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+new\+\_\+array@{json\+\_\+object\+\_\+new\+\_\+array}}
+\index{json\+\_\+object\+\_\+new\+\_\+array@{json\+\_\+object\+\_\+new\+\_\+array}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+new\+\_\+array()}{json\_object\_new\_array()}}
+{\footnotesize\ttfamily struct \hyperlink{structjson__object}{json\+\_\+object}$\ast$ json\+\_\+object\+\_\+new\+\_\+array (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Create a new empty \hyperlink{structjson__object}{json\+\_\+object} of type json\+\_\+type\+\_\+array \begin{DoxyReturn}{Returns}
+a \hyperlink{structjson__object}{json\+\_\+object} of type json\+\_\+type\+\_\+array 
+\end{DoxyReturn}
+
+
+Definition at line 470 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+471 \{
+472   \textcolor{keyword}{struct }\hyperlink{structjson__object}{json\_object} *jso = json\_object\_new(\hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cae536c8c9da4648e6b9348abddde6113c}{json\_type\_array});
+473   \textcolor{keywordflow}{if}(!jso) \textcolor{keywordflow}{return} NULL;
+474   jso->\hyperlink{structjson__object_aa3a238f4b671c21fa0578fc37a126c2e}{\_delete} = &json\_object\_array\_delete;
+475   jso->\hyperlink{structjson__object_a077a02daac4653f91584dd7f47c3d632}{\_to\_json\_string} = &json\_object\_array\_to\_json\_string;
+476   jso->\hyperlink{structjson__object_a33aff83ffea02b934235c4821cca8cf0}{o}.\hyperlink{unionjson__object_1_1data_a4ad6bf2fd6d8718f55850509edfe2e45}{c\_array} = \hyperlink{arraylist_8c_a0d4bfac055dfd98e17296142abf4d894}{array\_list\_new}(&json\_object\_array\_entry\_free);
+477   \textcolor{keywordflow}{return} jso;
+478 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_a1bb59b93df42cafe49e8ff8c500690a6}\label{json__object_8h_a1bb59b93df42cafe49e8ff8c500690a6}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+new\+\_\+boolean@{json\+\_\+object\+\_\+new\+\_\+boolean}}
+\index{json\+\_\+object\+\_\+new\+\_\+boolean@{json\+\_\+object\+\_\+new\+\_\+boolean}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+new\+\_\+boolean()}{json\_object\_new\_boolean()}}
+{\footnotesize\ttfamily struct \hyperlink{structjson__object}{json\+\_\+object}$\ast$ json\+\_\+object\+\_\+new\+\_\+boolean (\begin{DoxyParamCaption}\item[{\hyperlink{json__object_8h_a621c38f1f10a1c565d897e3178b16d6e}{boolean}}]{b }\end{DoxyParamCaption})}
+
+Create a new empty \hyperlink{structjson__object}{json\+\_\+object} of type json\+\_\+type\+\_\+boolean 
+\begin{DoxyParams}{Parameters}
+{\em b} & a boolean T\+R\+UE or F\+A\+L\+SE (0 or 1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \hyperlink{structjson__object}{json\+\_\+object} of type json\+\_\+type\+\_\+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 290 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+291 \{
+292   \textcolor{keyword}{struct }\hyperlink{structjson__object}{json\_object} *jso = json\_object\_new(\hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca5d15299e90dbb9935ff6d3e2c22a285c}{json\_type\_boolean});
+293   \textcolor{keywordflow}{if}(!jso) \textcolor{keywordflow}{return} NULL;
+294   jso->\hyperlink{structjson__object_a077a02daac4653f91584dd7f47c3d632}{\_to\_json\_string} = &json\_object\_boolean\_to\_json\_string;
+295   jso->\hyperlink{structjson__object_a33aff83ffea02b934235c4821cca8cf0}{o}.\hyperlink{unionjson__object_1_1data_ace8860a384f47f7cbe7e656eb2632fc0}{c\_boolean} = b;
+296   \textcolor{keywordflow}{return} jso;
+297 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_a2e9c761833a4f5d0a0c60640377e3cec}\label{json__object_8h_a2e9c761833a4f5d0a0c60640377e3cec}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+new\+\_\+double@{json\+\_\+object\+\_\+new\+\_\+double}}
+\index{json\+\_\+object\+\_\+new\+\_\+double@{json\+\_\+object\+\_\+new\+\_\+double}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+new\+\_\+double()}{json\_object\_new\_double()}}
+{\footnotesize\ttfamily struct \hyperlink{structjson__object}{json\+\_\+object}$\ast$ json\+\_\+object\+\_\+new\+\_\+double (\begin{DoxyParamCaption}\item[{double}]{d }\end{DoxyParamCaption})}
+
+Create a new empty \hyperlink{structjson__object}{json\+\_\+object} of type json\+\_\+type\+\_\+double 
+\begin{DoxyParams}{Parameters}
+{\em d} & the double \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \hyperlink{structjson__object}{json\+\_\+object} of type json\+\_\+type\+\_\+double 
+\end{DoxyReturn}
+
+
+Definition at line 362 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+363 \{
+364   \textcolor{keyword}{struct }\hyperlink{structjson__object}{json\_object} *jso = json\_object\_new(\hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac6ac2d9a16577d00210fea64d16b47cd}{json\_type\_double});
+365   \textcolor{keywordflow}{if}(!jso) \textcolor{keywordflow}{return} NULL;
+366   jso->\hyperlink{structjson__object_a077a02daac4653f91584dd7f47c3d632}{\_to\_json\_string} = &json\_object\_double\_to\_json\_string;
+367   jso->\hyperlink{structjson__object_a33aff83ffea02b934235c4821cca8cf0}{o}.\hyperlink{unionjson__object_1_1data_a9cc4abdb21302913701ac0c8dc75e55a}{c\_double} = d;
+368   \textcolor{keywordflow}{return} jso;
+369 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_af4dc3777b8751243c620a2cc65c89e26}\label{json__object_8h_af4dc3777b8751243c620a2cc65c89e26}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+new\+\_\+int@{json\+\_\+object\+\_\+new\+\_\+int}}
+\index{json\+\_\+object\+\_\+new\+\_\+int@{json\+\_\+object\+\_\+new\+\_\+int}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+new\+\_\+int()}{json\_object\_new\_int()}}
+{\footnotesize\ttfamily struct \hyperlink{structjson__object}{json\+\_\+object}$\ast$ json\+\_\+object\+\_\+new\+\_\+int (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+Create a new empty \hyperlink{structjson__object}{json\+\_\+object} of type json\+\_\+type\+\_\+int 
+\begin{DoxyParams}{Parameters}
+{\em i} & the integer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \hyperlink{structjson__object}{json\+\_\+object} of type json\+\_\+type\+\_\+int 
+\end{DoxyReturn}
+
+
+Definition at line 325 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+326 \{
+327   \textcolor{keyword}{struct }\hyperlink{structjson__object}{json\_object} *jso = json\_object\_new(\hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca7bf325c213b43c5f970ae2d4443ab956}{json\_type\_int});
+328   \textcolor{keywordflow}{if}(!jso) \textcolor{keywordflow}{return} NULL;
+329   jso->\hyperlink{structjson__object_a077a02daac4653f91584dd7f47c3d632}{\_to\_json\_string} = &json\_object\_int\_to\_json\_string;
+330   jso->\hyperlink{structjson__object_a33aff83ffea02b934235c4821cca8cf0}{o}.\hyperlink{unionjson__object_1_1data_a397c3575aeea167c47dff9594d1e4aab}{c\_int} = i;
+331   \textcolor{keywordflow}{return} jso;
+332 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_af0ed3555604f39ac74b5e28bc5b1f82c}\label{json__object_8h_af0ed3555604f39ac74b5e28bc5b1f82c}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+new\+\_\+object@{json\+\_\+object\+\_\+new\+\_\+object}}
+\index{json\+\_\+object\+\_\+new\+\_\+object@{json\+\_\+object\+\_\+new\+\_\+object}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+new\+\_\+object()}{json\_object\_new\_object()}}
+{\footnotesize\ttfamily struct \hyperlink{structjson__object}{json\+\_\+object}$\ast$ json\+\_\+object\+\_\+new\+\_\+object (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Create a new empty object \begin{DoxyReturn}{Returns}
+a \hyperlink{structjson__object}{json\+\_\+object} of type json\+\_\+type\+\_\+object 
+\end{DoxyReturn}
+
+
+Definition at line 241 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+242 \{
+243   \textcolor{keyword}{struct }\hyperlink{structjson__object}{json\_object} *jso = json\_object\_new(\hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac966c8008f0b2c07da59ee8a60ad440f}{json\_type\_object});
+244   \textcolor{keywordflow}{if}(!jso) \textcolor{keywordflow}{return} NULL;
+245   jso->\hyperlink{structjson__object_aa3a238f4b671c21fa0578fc37a126c2e}{\_delete} = &json\_object\_object\_delete;
+246   jso->\hyperlink{structjson__object_a077a02daac4653f91584dd7f47c3d632}{\_to\_json\_string} = &json\_object\_object\_to\_json\_string;
+247   jso->\hyperlink{structjson__object_a33aff83ffea02b934235c4821cca8cf0}{o}.\hyperlink{unionjson__object_1_1data_a68089c942f154d4df590d8ecb476a69b}{c\_object} = \hyperlink{linkhash_8c_a0aaf11e11ee5b0925279a52eab04bc38}{lh\_kchar\_table\_new}(
+      \hyperlink{json__object_8h_a268a63dd1b2e6d81559e268a4529e9bf}{JSON\_OBJECT\_DEF\_HASH\_ENTRIES},
+248                     NULL, &json\_object\_lh\_entry\_free);
+249   \textcolor{keywordflow}{return} jso;
+250 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_a48eb92a8208e6718e55edf1130e8e4b8}\label{json__object_8h_a48eb92a8208e6718e55edf1130e8e4b8}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+new\+\_\+string@{json\+\_\+object\+\_\+new\+\_\+string}}
+\index{json\+\_\+object\+\_\+new\+\_\+string@{json\+\_\+object\+\_\+new\+\_\+string}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+new\+\_\+string()}{json\_object\_new\_string()}}
+{\footnotesize\ttfamily struct \hyperlink{structjson__object}{json\+\_\+object}$\ast$ json\+\_\+object\+\_\+new\+\_\+string (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+Create a new empty \hyperlink{structjson__object}{json\+\_\+object} of type json\+\_\+type\+\_\+string
+
+A copy of the string is made and the memory is managed by the \hyperlink{structjson__object}{json\+\_\+object}
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \hyperlink{structjson__object}{json\+\_\+object} of type json\+\_\+type\+\_\+string 
+\end{DoxyReturn}
+
+
+Definition at line 408 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+409 \{
+410   \textcolor{keyword}{struct }\hyperlink{structjson__object}{json\_object} *jso = json\_object\_new(\hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac9f56e57c09245522d764015a054faa6}{json\_type\_string});
+411   \textcolor{keywordflow}{if}(!jso) \textcolor{keywordflow}{return} NULL;
+412   jso->\hyperlink{structjson__object_aa3a238f4b671c21fa0578fc37a126c2e}{\_delete} = &json\_object\_string\_delete;
+413   jso->\hyperlink{structjson__object_a077a02daac4653f91584dd7f47c3d632}{\_to\_json\_string} = &json\_object\_string\_to\_json\_string;
+414   jso->\hyperlink{structjson__object_a33aff83ffea02b934235c4821cca8cf0}{o}.\hyperlink{unionjson__object_1_1data_a2749f46b4691f85695cecb9f4e365321}{c\_string} = strdup(s);
+415   \textcolor{keywordflow}{return} jso;
+416 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_a9d14fd03ed7520c4aa33ab53b4569414}\label{json__object_8h_a9d14fd03ed7520c4aa33ab53b4569414}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+new\+\_\+string\+\_\+len@{json\+\_\+object\+\_\+new\+\_\+string\+\_\+len}}
+\index{json\+\_\+object\+\_\+new\+\_\+string\+\_\+len@{json\+\_\+object\+\_\+new\+\_\+string\+\_\+len}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+new\+\_\+string\+\_\+len()}{json\_object\_new\_string\_len()}}
+{\footnotesize\ttfamily struct \hyperlink{structjson__object}{json\+\_\+object}$\ast$ json\+\_\+object\+\_\+new\+\_\+string\+\_\+len (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+Definition at line 418 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+419 \{
+420   \textcolor{keyword}{struct }\hyperlink{structjson__object}{json\_object} *jso = json\_object\_new(\hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac9f56e57c09245522d764015a054faa6}{json\_type\_string});
+421   \textcolor{keywordflow}{if}(!jso) \textcolor{keywordflow}{return} NULL;
+422   jso->\hyperlink{structjson__object_aa3a238f4b671c21fa0578fc37a126c2e}{\_delete} = &json\_object\_string\_delete;
+423   jso->\hyperlink{structjson__object_a077a02daac4653f91584dd7f47c3d632}{\_to\_json\_string} = &json\_object\_string\_to\_json\_string;
+424   jso->\hyperlink{structjson__object_a33aff83ffea02b934235c4821cca8cf0}{o}.\hyperlink{unionjson__object_1_1data_a2749f46b4691f85695cecb9f4e365321}{c\_string} = \hyperlink{json__object_8c_a9dd8c380e1619571aa097b2119a9bca9}{strndup}(s, len);
+425   \textcolor{keywordflow}{return} jso;
+426 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_a04448b1c63173e1bfe49965835732075}\label{json__object_8h_a04448b1c63173e1bfe49965835732075}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+object\+\_\+add@{json\+\_\+object\+\_\+object\+\_\+add}}
+\index{json\+\_\+object\+\_\+object\+\_\+add@{json\+\_\+object\+\_\+object\+\_\+add}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+object\+\_\+add()}{json\_object\_object\_add()}}
+{\footnotesize\ttfamily void json\+\_\+object\+\_\+object\+\_\+add (\begin{DoxyParamCaption}\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{obj,  }\item[{const char $\ast$}]{key,  }\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{val }\end{DoxyParamCaption})}
+
+Add an object field to a \hyperlink{structjson__object}{json\+\_\+object} of type json\+\_\+type\+\_\+object
+
+The reference count will {\itshape not} be incremented. This is to make adding fields to objects in code more compact. If you want to retain a reference to an added object you must wrap the passed object with json\+\_\+object\+\_\+get
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & the \hyperlink{structjson__object}{json\+\_\+object} instance \\
+\hline
+{\em key} & the object field name (a private copy will be duplicated) \\
+\hline
+{\em val} & a \hyperlink{structjson__object}{json\+\_\+object} or N\+U\+LL member to associate with the given field \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 263 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+265 \{
+266   \hyperlink{linkhash_8c_a2fed2c78f70d229edb2d00775ffe593c}{lh\_table\_delete}(jso->o.c\_object, key);
+267   \hyperlink{linkhash_8c_a22b897763cc34a98c21c7fe82d151004}{lh\_table\_insert}(jso->o.c\_object, strdup(key), val);
+268 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_a03653c18aafccd1ffba1ad318e342845}\label{json__object_8h_a03653c18aafccd1ffba1ad318e342845}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+object\+\_\+del@{json\+\_\+object\+\_\+object\+\_\+del}}
+\index{json\+\_\+object\+\_\+object\+\_\+del@{json\+\_\+object\+\_\+object\+\_\+del}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+object\+\_\+del()}{json\_object\_object\_del()}}
+{\footnotesize\ttfamily void json\+\_\+object\+\_\+object\+\_\+del (\begin{DoxyParamCaption}\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{obj,  }\item[{const char $\ast$}]{key }\end{DoxyParamCaption})}
+
+Delete the given \hyperlink{structjson__object}{json\+\_\+object} field
+
+The reference count will be decremented for the deleted object
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & the \hyperlink{structjson__object}{json\+\_\+object} instance \\
+\hline
+{\em key} & the object field name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 275 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+276 \{
+277   \hyperlink{linkhash_8c_a2fed2c78f70d229edb2d00775ffe593c}{lh\_table\_delete}(jso->o.c\_object, key);
+278 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_ac11730ad909d1f9eb077d1ce9ff8b153}\label{json__object_8h_ac11730ad909d1f9eb077d1ce9ff8b153}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+object\+\_\+get@{json\+\_\+object\+\_\+object\+\_\+get}}
+\index{json\+\_\+object\+\_\+object\+\_\+get@{json\+\_\+object\+\_\+object\+\_\+get}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+object\+\_\+get()}{json\_object\_object\_get()}}
+{\footnotesize\ttfamily struct \hyperlink{structjson__object}{json\+\_\+object}$\ast$ json\+\_\+object\+\_\+object\+\_\+get (\begin{DoxyParamCaption}\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{obj,  }\item[{const char $\ast$}]{key }\end{DoxyParamCaption})}
+
+Get the \hyperlink{structjson__object}{json\+\_\+object} associate with a given object field 
+\begin{DoxyParams}{Parameters}
+{\em obj} & the \hyperlink{structjson__object}{json\+\_\+object} instance \\
+\hline
+{\em key} & the object field name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{structjson__object}{json\+\_\+object} associated with the given field name 
+\end{DoxyReturn}
+
+
+Definition at line 270 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+271 \{
+272   \textcolor{keywordflow}{return} (\textcolor{keyword}{struct} \hyperlink{structjson__object}{json\_object}*) \hyperlink{linkhash_8c_a49c27f18a174eaf126d1b7953df13cb1}{lh\_table\_lookup}(jso->o.c\_object, key);
+273 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_accc34b38e15e46357d64a0beed3d0150}\label{json__object_8h_accc34b38e15e46357d64a0beed3d0150}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+put@{json\+\_\+object\+\_\+put}}
+\index{json\+\_\+object\+\_\+put@{json\+\_\+object\+\_\+put}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+put()}{json\_object\_put()}}
+{\footnotesize\ttfamily void json\+\_\+object\+\_\+put (\begin{DoxyParamCaption}\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Decrement the reference count of \hyperlink{structjson__object}{json\+\_\+object} and free if it reaches zero 
+\begin{DoxyParams}{Parameters}
+{\em obj} & the \hyperlink{structjson__object}{json\+\_\+object} instance \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 138 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+139 \{
+140   \textcolor{keywordflow}{if}(jso) \{
+141     jso->\_ref\_count--;
+142     \textcolor{keywordflow}{if}(!jso->\_ref\_count) jso->\_delete(jso);
+143   \}
+144 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__object_8h_a1f62a660e2619559d1f3f54cd7483ff8}\label{json__object_8h_a1f62a660e2619559d1f3f54cd7483ff8}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+object\+\_\+to\+\_\+json\+\_\+string@{json\+\_\+object\+\_\+to\+\_\+json\+\_\+string}}
+\index{json\+\_\+object\+\_\+to\+\_\+json\+\_\+string@{json\+\_\+object\+\_\+to\+\_\+json\+\_\+string}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+to\+\_\+json\+\_\+string()}{json\_object\_to\_json\_string()}}
+{\footnotesize\ttfamily const char$\ast$ json\+\_\+object\+\_\+to\+\_\+json\+\_\+string (\begin{DoxyParamCaption}\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Stringify object to json format 
+\begin{DoxyParams}{Parameters}
+{\em obj} & the \hyperlink{structjson__object}{json\+\_\+object} instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a string in J\+S\+ON format 
+\end{DoxyReturn}
+
+
+Definition at line 192 of file json\+\_\+object.\+c.
+
+
+\begin{DoxyCode}
+193 \{
+194   \textcolor{keywordflow}{if}(!jso) \textcolor{keywordflow}{return} \textcolor{stringliteral}{"null"};
+195   \textcolor{keywordflow}{if}(!jso->\_pb) \{
+196     \textcolor{keywordflow}{if}(!(jso->\_pb = \hyperlink{printbuf_8c_a3e390ebc7660a18335edd89f640fd415}{printbuf\_new}())) \textcolor{keywordflow}{return} NULL;
+197   \} \textcolor{keywordflow}{else} \{
+198     \hyperlink{printbuf_8c_a4393ee3dedb376af11c96fe97532292e}{printbuf\_reset}(jso->\_pb);
+199   \}
+200   \textcolor{keywordflow}{if}(jso->\_to\_json\_string(jso, jso->\_pb) < 0) \textcolor{keywordflow}{return} NULL;
+201   \textcolor{keywordflow}{return} jso->\_pb->buf;
+202 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{json__object_8h_a20dbe4913551cefa6b4b0a77fd4397c4}\label{json__object_8h_a20dbe4913551cefa6b4b0a77fd4397c4}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+hex\+\_\+chars@{json\+\_\+hex\+\_\+chars}}
+\index{json\+\_\+hex\+\_\+chars@{json\+\_\+hex\+\_\+chars}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+hex\+\_\+chars}{json\_hex\_chars}}
+{\footnotesize\ttfamily const char$\ast$ json\+\_\+hex\+\_\+chars}
+
+
+
+Definition at line 33 of file json\+\_\+object.\+c.
+
+\mbox{\Hypertarget{json__object_8h_a27427f89f2fc995639e366635fbe58ac}\label{json__object_8h_a27427f89f2fc995639e366635fbe58ac}} 
+\index{json\+\_\+object.\+h@{json\+\_\+object.\+h}!json\+\_\+number\+\_\+chars@{json\+\_\+number\+\_\+chars}}
+\index{json\+\_\+number\+\_\+chars@{json\+\_\+number\+\_\+chars}!json\+\_\+object.\+h@{json\+\_\+object.\+h}}
+\subsubsection{\texorpdfstring{json\+\_\+number\+\_\+chars}{json\_number\_chars}}
+{\footnotesize\ttfamily const char$\ast$ json\+\_\+number\+\_\+chars}
+
+
+
+Definition at line 32 of file json\+\_\+object.\+c.
+

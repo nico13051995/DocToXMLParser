@@ -1,0 +1,626 @@
+\hypertarget{class_item}{}\section{Item Class Reference}
+\label{class_item}\index{Item@{Item}}
+
+
+The \hyperlink{class_item}{Item} class Main model for searching.  
+
+
+
+
+{\ttfamily \#include $<$item.\+h$>$}
+
+Inheritance diagram for Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_item}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_item_aabd972d6d2b789c2ea8d83c127b9bfa6}{Item} (Q\+Object $\ast$parent=0)
+\item 
+\hyperlink{class_item_a11663c84075b78c3ae5e30fdfcd7c458}{$\sim$\+Item} ()
+\item 
+\hyperlink{class_item_abf5c29843b8d9106348c9fed7904a6cd}{Item} (Q\+Json\+Object obj, Q\+Object $\ast$parent=0)
+\item 
+bool \hyperlink{class_item_aa089e9749b9a19492d45bb02c2135b48}{load} (Q\+Json\+Object obj)
+\item 
+bool \hyperlink{class_item_a0922eea7bc56f3f87a134210b56dde2c}{save} (Q\+Json\+Object obj)
+\item 
+Q\+List$<$ \hyperlink{class_item}{Item} $\ast$ $>$ \hyperlink{class_item_a561400c0ac0bc9734b08878eaf5625ed}{get\+Next\+Hope} () const
+\item 
+void \hyperlink{class_item_aeb4b7f6ae49089c37b4e83b60cdec1fc}{set\+Next\+Hope} (const Q\+List$<$ \hyperlink{class_item}{Item} $\ast$$>$ \&value)
+\item 
+Q\+List$<$ \hyperlink{class_item}{Item} $\ast$ $>$ \hyperlink{class_item_a9b13c14f5684cf1bf9a085718bf5bb27}{get\+Childrens} () const
+\item 
+void \hyperlink{class_item_af6cc06c1af86eba7addaa1abf7034813}{set\+Childrens} (const Q\+List$<$ \hyperlink{class_item}{Item} $\ast$$>$ \&value)
+\item 
+Q\+List$<$ \hyperlink{class_item_attribute}{Item\+Attribute} $\ast$ $>$ \hyperlink{class_item_ad954d16c20b7f88ceaf67d584a025070}{get\+Atributes} () const
+\item 
+void \hyperlink{class_item_a7ab11dc5bc3eac9b3acdea2ec58bcd63}{set\+Atributes} (const Q\+List$<$ \hyperlink{class_item_attribute}{Item\+Attribute} $\ast$$>$ \&value)
+\item 
+Q\+String \hyperlink{class_item_a5ef326c2ff5f7836cce5b217ab86924f}{get\+Regexp} () const
+\item 
+void \hyperlink{class_item_a7745fe1a00ad454eaaa8416ff88ea869}{set\+Regexp} (const Q\+String \&value)
+\item 
+Q\+String \hyperlink{class_item_a926b576dfdb3a48d93d8eb6aeba6d64a}{get\+Name} () const
+\item 
+void \hyperlink{class_item_a4471207d9b41c03f59f8e8bd2c385cba}{set\+Name} (const Q\+String \&value)
+\item 
+int \hyperlink{class_item_a4bec7c4c9b1397ba6ed6e65bcde7b3e8}{get\+Type} () const
+\item 
+void \hyperlink{class_item_ad1b9dd3edd2a2e33e44a3f84707e96d5}{set\+Type} (int value)
+\item 
+Q\+String \hyperlink{class_item_ae6ea1a0f342108797321796acb3c9878}{get\+Value} () const
+\item 
+Q\+String \hyperlink{class_item_a171f7fb92445cf2ebbcc39456a499597}{get\+Value} (Q\+String\+List mach) const
+\item 
+bool \hyperlink{class_item_a09651004e3d1e354981d45d5988d6073}{get\+Use\+Parent\+Groups} () const
+\item 
+void \hyperlink{class_item_a28d35e796991b8b314acaffe19cc8f84}{set\+Use\+Parent\+Groups} (bool value)
+\item 
+bool \hyperlink{class_item_a608527e7705b8f8640e3bdba3fb94415}{is\+Enable} () const
+\item 
+void \hyperlink{class_item_a058f352e4efb4ba66a85c09e5c59fc9a}{set\+Enable} (bool value)
+\item 
+bool \hyperlink{class_item_a0aac23b6c71f5e1246db2584340606a2}{get\+Is\+List} () const
+\item 
+void \hyperlink{class_item_aa289228a65c92ec36e1098b2041ab09a}{set\+Is\+List} (bool value)
+\item 
+bool \hyperlink{class_item_a1c9646660ee2abe8560fe42c2413f376}{get\+Use\+Parent\+Scope} () const
+\item 
+bool \hyperlink{class_item_ae7708e01436a0b0595152fea8e77eb0c}{get\+Compare\+Font\+Properties} () const
+\item 
+int \hyperlink{class_item_a6ccb1728ae39e87cfd1430f252916983}{get\+Next\+Hope\+Index} () const
+\item 
+void \hyperlink{class_item_a433534d413597c7163d5cf51e94dfdd4}{set\+Next\+Hope\+Index} (int value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_item}{Item} class Main model for searching. 
+
+Definition at line 12 of file item.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_item_aabd972d6d2b789c2ea8d83c127b9bfa6}\label{class_item_aabd972d6d2b789c2ea8d83c127b9bfa6}} 
+\index{Item@{Item}!Item@{Item}}
+\index{Item@{Item}!Item@{Item}}
+\subsubsection{\texorpdfstring{Item()}{Item()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Item\+::\+Item (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line 132 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+132                           : \hyperlink{class_json_serializable_ab5bc08152c95bca5aad8f1a4e2c09998}{JsonSerializable}(parent)
+133 \{
+134     enable = \textcolor{keyword}{true};
+135 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_a11663c84075b78c3ae5e30fdfcd7c458}\label{class_item_a11663c84075b78c3ae5e30fdfcd7c458}} 
+\index{Item@{Item}!````~Item@{$\sim$\+Item}}
+\index{````~Item@{$\sim$\+Item}!Item@{Item}}
+\subsubsection{\texorpdfstring{$\sim$\+Item()}{~Item()}}
+{\footnotesize\ttfamily Item\+::$\sim$\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 137 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+138 \{
+139     \textcolor{keywordflow}{for}(\hyperlink{class_item}{Item}* value : childrens)
+140     \{
+141         \textcolor{keyword}{delete} value;
+142     \}
+143     \textcolor{keywordflow}{for}(\hyperlink{class_item}{Item}* value : nextHope)
+144     \{
+145         \textcolor{keyword}{delete} value;
+146     \}
+147     \textcolor{keywordflow}{for}(\hyperlink{class_item_attribute}{ItemAttribute}* value : atributes)
+148     \{
+149         \textcolor{keyword}{delete} value;
+150     \}
+151 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_abf5c29843b8d9106348c9fed7904a6cd}\label{class_item_abf5c29843b8d9106348c9fed7904a6cd}} 
+\index{Item@{Item}!Item@{Item}}
+\index{Item@{Item}!Item@{Item}}
+\subsubsection{\texorpdfstring{Item()}{Item()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Item\+::\+Item (\begin{DoxyParamCaption}\item[{Q\+Json\+Object}]{obj,  }\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 153 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+153                                           : \hyperlink{class_json_serializable_ab5bc08152c95bca5aad8f1a4e2c09998}{JsonSerializable}(parent)
+154 \{
+155     \hyperlink{class_item_aa089e9749b9a19492d45bb02c2135b48}{load}(obj);
+156 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_item_ad954d16c20b7f88ceaf67d584a025070}\label{class_item_ad954d16c20b7f88ceaf67d584a025070}} 
+\index{Item@{Item}!get\+Atributes@{get\+Atributes}}
+\index{get\+Atributes@{get\+Atributes}!Item@{Item}}
+\subsubsection{\texorpdfstring{get\+Atributes()}{getAtributes()}}
+{\footnotesize\ttfamily Q\+List$<$ \hyperlink{class_item_attribute}{Item\+Attribute} $\ast$ $>$ Item\+::get\+Atributes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 24 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+25 \{
+26     \textcolor{keywordflow}{return} atributes;
+27 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_a9b13c14f5684cf1bf9a085718bf5bb27}\label{class_item_a9b13c14f5684cf1bf9a085718bf5bb27}} 
+\index{Item@{Item}!get\+Childrens@{get\+Childrens}}
+\index{get\+Childrens@{get\+Childrens}!Item@{Item}}
+\subsubsection{\texorpdfstring{get\+Childrens()}{getChildrens()}}
+{\footnotesize\ttfamily Q\+List$<$ \hyperlink{class_item}{Item} $\ast$ $>$ Item\+::get\+Childrens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 14 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+15 \{
+16     \textcolor{keywordflow}{return} childrens;
+17 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_ae7708e01436a0b0595152fea8e77eb0c}\label{class_item_ae7708e01436a0b0595152fea8e77eb0c}} 
+\index{Item@{Item}!get\+Compare\+Font\+Properties@{get\+Compare\+Font\+Properties}}
+\index{get\+Compare\+Font\+Properties@{get\+Compare\+Font\+Properties}!Item@{Item}}
+\subsubsection{\texorpdfstring{get\+Compare\+Font\+Properties()}{getCompareFontProperties()}}
+{\footnotesize\ttfamily bool Item\+::get\+Compare\+Font\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 117 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+118 \{
+119     \textcolor{keywordflow}{return} compareFontProperties;
+120 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_a0aac23b6c71f5e1246db2584340606a2}\label{class_item_a0aac23b6c71f5e1246db2584340606a2}} 
+\index{Item@{Item}!get\+Is\+List@{get\+Is\+List}}
+\index{get\+Is\+List@{get\+Is\+List}!Item@{Item}}
+\subsubsection{\texorpdfstring{get\+Is\+List()}{getIsList()}}
+{\footnotesize\ttfamily bool Item\+::get\+Is\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 102 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+103 \{
+104     \textcolor{keywordflow}{return} isList;
+105 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_a926b576dfdb3a48d93d8eb6aeba6d64a}\label{class_item_a926b576dfdb3a48d93d8eb6aeba6d64a}} 
+\index{Item@{Item}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Item@{Item}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily Q\+String Item\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 44 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+45 \{
+46     \textcolor{keywordflow}{return} name;
+47 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_a561400c0ac0bc9734b08878eaf5625ed}\label{class_item_a561400c0ac0bc9734b08878eaf5625ed}} 
+\index{Item@{Item}!get\+Next\+Hope@{get\+Next\+Hope}}
+\index{get\+Next\+Hope@{get\+Next\+Hope}!Item@{Item}}
+\subsubsection{\texorpdfstring{get\+Next\+Hope()}{getNextHope()}}
+{\footnotesize\ttfamily Q\+List$<$ \hyperlink{class_item}{Item} $\ast$ $>$ Item\+::get\+Next\+Hope (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 4 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+5 \{
+6     \textcolor{keywordflow}{return} nextHope;
+7 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_a6ccb1728ae39e87cfd1430f252916983}\label{class_item_a6ccb1728ae39e87cfd1430f252916983}} 
+\index{Item@{Item}!get\+Next\+Hope\+Index@{get\+Next\+Hope\+Index}}
+\index{get\+Next\+Hope\+Index@{get\+Next\+Hope\+Index}!Item@{Item}}
+\subsubsection{\texorpdfstring{get\+Next\+Hope\+Index()}{getNextHopeIndex()}}
+{\footnotesize\ttfamily int Item\+::get\+Next\+Hope\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 122 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+123 \{
+124     \textcolor{keywordflow}{return} nextHopeIndex;
+125 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_a5ef326c2ff5f7836cce5b217ab86924f}\label{class_item_a5ef326c2ff5f7836cce5b217ab86924f}} 
+\index{Item@{Item}!get\+Regexp@{get\+Regexp}}
+\index{get\+Regexp@{get\+Regexp}!Item@{Item}}
+\subsubsection{\texorpdfstring{get\+Regexp()}{getRegexp()}}
+{\footnotesize\ttfamily Q\+String Item\+::get\+Regexp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 34 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+35 \{
+36     \textcolor{keywordflow}{return} regexp;
+37 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_a4bec7c4c9b1397ba6ed6e65bcde7b3e8}\label{class_item_a4bec7c4c9b1397ba6ed6e65bcde7b3e8}} 
+\index{Item@{Item}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!Item@{Item}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}}
+{\footnotesize\ttfamily int Item\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 54 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+55 \{
+56     \textcolor{keywordflow}{return} type;
+57 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_a09651004e3d1e354981d45d5988d6073}\label{class_item_a09651004e3d1e354981d45d5988d6073}} 
+\index{Item@{Item}!get\+Use\+Parent\+Groups@{get\+Use\+Parent\+Groups}}
+\index{get\+Use\+Parent\+Groups@{get\+Use\+Parent\+Groups}!Item@{Item}}
+\subsubsection{\texorpdfstring{get\+Use\+Parent\+Groups()}{getUseParentGroups()}}
+{\footnotesize\ttfamily bool Item\+::get\+Use\+Parent\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 82 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+83 \{
+84     \textcolor{keywordflow}{return} useParentGroups;
+85 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_a1c9646660ee2abe8560fe42c2413f376}\label{class_item_a1c9646660ee2abe8560fe42c2413f376}} 
+\index{Item@{Item}!get\+Use\+Parent\+Scope@{get\+Use\+Parent\+Scope}}
+\index{get\+Use\+Parent\+Scope@{get\+Use\+Parent\+Scope}!Item@{Item}}
+\subsubsection{\texorpdfstring{get\+Use\+Parent\+Scope()}{getUseParentScope()}}
+{\footnotesize\ttfamily bool Item\+::get\+Use\+Parent\+Scope (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 112 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+113 \{
+114     \textcolor{keywordflow}{return} useParentScope;
+115 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_ae6ea1a0f342108797321796acb3c9878}\label{class_item_ae6ea1a0f342108797321796acb3c9878}} 
+\index{Item@{Item}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!Item@{Item}}
+\subsubsection{\texorpdfstring{get\+Value()}{getValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Q\+String Item\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 64 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+65 \{
+66     \textcolor{keywordflow}{return} value;
+67 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_a171f7fb92445cf2ebbcc39456a499597}\label{class_item_a171f7fb92445cf2ebbcc39456a499597}} 
+\index{Item@{Item}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!Item@{Item}}
+\subsubsection{\texorpdfstring{get\+Value()}{getValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Q\+String Item\+::get\+Value (\begin{DoxyParamCaption}\item[{Q\+String\+List}]{mach }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 69 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+70 \{
+71     \textcolor{keywordflow}{switch} (type) \{
+72     \textcolor{keywordflow}{case} 0:
+73         \textcolor{keywordflow}{return} mach[value.toInt()];
+74         \textcolor{keywordflow}{break};
+75     \textcolor{keywordflow}{case} 1:
+76         \textcolor{keywordflow}{return} value;
+77     \textcolor{keywordflow}{default}:
+78         \textcolor{keywordflow}{break};
+79     \}
+80 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_a608527e7705b8f8640e3bdba3fb94415}\label{class_item_a608527e7705b8f8640e3bdba3fb94415}} 
+\index{Item@{Item}!is\+Enable@{is\+Enable}}
+\index{is\+Enable@{is\+Enable}!Item@{Item}}
+\subsubsection{\texorpdfstring{is\+Enable()}{isEnable()}}
+{\footnotesize\ttfamily bool Item\+::is\+Enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 92 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+93 \{
+94     \textcolor{keywordflow}{return} enable;
+95 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_aa089e9749b9a19492d45bb02c2135b48}\label{class_item_aa089e9749b9a19492d45bb02c2135b48}} 
+\index{Item@{Item}!load@{load}}
+\index{load@{load}!Item@{Item}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily bool Item\+::load (\begin{DoxyParamCaption}\item[{Q\+Json\+Object}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_json_serializable_a881aaead36cbf7d097bddfa08f204fd9}{Json\+Serializable}.
+
+
+
+Definition at line 158 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+159 \{
+160     enable = \textcolor{keyword}{true};
+161     compareFontProperties = \textcolor{keyword}{false};
+162     isList = \textcolor{keyword}{false};
+163     useParentGroups = \textcolor{keyword}{false};
+164     useParentScope = \textcolor{keyword}{false};
+165     name = obj[\textcolor{stringliteral}{"name"}].toString();
+166     regexp = obj[\textcolor{stringliteral}{"regexp"}].toString();
+167     value = obj[\textcolor{stringliteral}{"value"}].toString();
+168     type = obj[\textcolor{stringliteral}{"type"}].toInt();
+169     \textcolor{keywordflow}{if}(obj.contains(\textcolor{stringliteral}{"useParentGroups"}))
+170         useParentGroups = obj[\textcolor{stringliteral}{"useParentGroups"}].toBool();
+171     \textcolor{keywordflow}{if}(obj.contains(\textcolor{stringliteral}{"useParentScope"}))
+172         useParentScope = obj[\textcolor{stringliteral}{"useParentScope"}].toBool();
+173     \textcolor{keywordflow}{if}(obj.contains(\textcolor{stringliteral}{"enable"}))
+174         enable = obj[\textcolor{stringliteral}{"enable"}].toBool();
+175     \textcolor{keywordflow}{if}(obj.contains(\textcolor{stringliteral}{"compareFontProperties"}))
+176         compareFontProperties = obj[\textcolor{stringliteral}{"compareFontProperties"}].toBool();
+177 
+178     \textcolor{keywordflow}{if}(obj.contains(\textcolor{stringliteral}{"list"}))
+179     \{
+180         isList = obj[\textcolor{stringliteral}{"list"}].toBool();
+181         qDebug() << \textcolor{stringliteral}{"AAAAAAAA"} << isList;
+182     \}
+183 
+184     \textcolor{keywordflow}{for}(QJsonValue value : obj[\textcolor{stringliteral}{"childrens"}].toArray())
+185     \{
+186         \hyperlink{class_item}{Item} *child = \textcolor{keyword}{new} \hyperlink{class_item_aabd972d6d2b789c2ea8d83c127b9bfa6}{Item}(value.toObject(), \textcolor{keyword}{this});
+187         childrens.append(child);
+188     \}
+189     \textcolor{keywordflow}{for}(QJsonValue value : obj[\textcolor{stringliteral}{"nextHope"}].toArray())
+190     \{
+191         nextHope.append(\textcolor{keyword}{new} \hyperlink{class_item_aabd972d6d2b789c2ea8d83c127b9bfa6}{Item}(value.toObject()));
+192     \}
+193     \textcolor{keywordflow}{for}(QJsonValue value : obj[\textcolor{stringliteral}{"atributes"}].toArray())
+194     \{
+195         atributes.append(\textcolor{keyword}{new} \hyperlink{class_item_attribute}{ItemAttribute}(value.toObject(), \textcolor{keyword}{this}));
+196     \}
+197 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_a0922eea7bc56f3f87a134210b56dde2c}\label{class_item_a0922eea7bc56f3f87a134210b56dde2c}} 
+\index{Item@{Item}!save@{save}}
+\index{save@{save}!Item@{Item}}
+\subsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily bool Item\+::save (\begin{DoxyParamCaption}\item[{Q\+Json\+Object}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_json_serializable_a98939816a5704c8d4c46f8571a5ae214}{Json\+Serializable}.
+
+
+
+Definition at line 199 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+200 \{
+201 
+202 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_a7ab11dc5bc3eac9b3acdea2ec58bcd63}\label{class_item_a7ab11dc5bc3eac9b3acdea2ec58bcd63}} 
+\index{Item@{Item}!set\+Atributes@{set\+Atributes}}
+\index{set\+Atributes@{set\+Atributes}!Item@{Item}}
+\subsubsection{\texorpdfstring{set\+Atributes()}{setAtributes()}}
+{\footnotesize\ttfamily void Item\+::set\+Atributes (\begin{DoxyParamCaption}\item[{const Q\+List$<$ \hyperlink{class_item_attribute}{Item\+Attribute} $\ast$$>$ \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+30 \{
+31     atributes = value;
+32 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_af6cc06c1af86eba7addaa1abf7034813}\label{class_item_af6cc06c1af86eba7addaa1abf7034813}} 
+\index{Item@{Item}!set\+Childrens@{set\+Childrens}}
+\index{set\+Childrens@{set\+Childrens}!Item@{Item}}
+\subsubsection{\texorpdfstring{set\+Childrens()}{setChildrens()}}
+{\footnotesize\ttfamily void Item\+::set\+Childrens (\begin{DoxyParamCaption}\item[{const Q\+List$<$ \hyperlink{class_item}{Item} $\ast$$>$ \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 19 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+20 \{
+21     childrens = value;
+22 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_a058f352e4efb4ba66a85c09e5c59fc9a}\label{class_item_a058f352e4efb4ba66a85c09e5c59fc9a}} 
+\index{Item@{Item}!set\+Enable@{set\+Enable}}
+\index{set\+Enable@{set\+Enable}!Item@{Item}}
+\subsubsection{\texorpdfstring{set\+Enable()}{setEnable()}}
+{\footnotesize\ttfamily void Item\+::set\+Enable (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 97 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+98 \{
+99     enable = value;
+100 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_aa289228a65c92ec36e1098b2041ab09a}\label{class_item_aa289228a65c92ec36e1098b2041ab09a}} 
+\index{Item@{Item}!set\+Is\+List@{set\+Is\+List}}
+\index{set\+Is\+List@{set\+Is\+List}!Item@{Item}}
+\subsubsection{\texorpdfstring{set\+Is\+List()}{setIsList()}}
+{\footnotesize\ttfamily void Item\+::set\+Is\+List (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 107 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+108 \{
+109     isList = value;
+110 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_a4471207d9b41c03f59f8e8bd2c385cba}\label{class_item_a4471207d9b41c03f59f8e8bd2c385cba}} 
+\index{Item@{Item}!set\+Name@{set\+Name}}
+\index{set\+Name@{set\+Name}!Item@{Item}}
+\subsubsection{\texorpdfstring{set\+Name()}{setName()}}
+{\footnotesize\ttfamily void Item\+::set\+Name (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 49 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+50 \{
+51     name = value;
+52 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_aeb4b7f6ae49089c37b4e83b60cdec1fc}\label{class_item_aeb4b7f6ae49089c37b4e83b60cdec1fc}} 
+\index{Item@{Item}!set\+Next\+Hope@{set\+Next\+Hope}}
+\index{set\+Next\+Hope@{set\+Next\+Hope}!Item@{Item}}
+\subsubsection{\texorpdfstring{set\+Next\+Hope()}{setNextHope()}}
+{\footnotesize\ttfamily void Item\+::set\+Next\+Hope (\begin{DoxyParamCaption}\item[{const Q\+List$<$ \hyperlink{class_item}{Item} $\ast$$>$ \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+10 \{
+11     nextHope = value;
+12 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_a433534d413597c7163d5cf51e94dfdd4}\label{class_item_a433534d413597c7163d5cf51e94dfdd4}} 
+\index{Item@{Item}!set\+Next\+Hope\+Index@{set\+Next\+Hope\+Index}}
+\index{set\+Next\+Hope\+Index@{set\+Next\+Hope\+Index}!Item@{Item}}
+\subsubsection{\texorpdfstring{set\+Next\+Hope\+Index()}{setNextHopeIndex()}}
+{\footnotesize\ttfamily void Item\+::set\+Next\+Hope\+Index (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 127 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+128 \{
+129     nextHopeIndex = value;
+130 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_a7745fe1a00ad454eaaa8416ff88ea869}\label{class_item_a7745fe1a00ad454eaaa8416ff88ea869}} 
+\index{Item@{Item}!set\+Regexp@{set\+Regexp}}
+\index{set\+Regexp@{set\+Regexp}!Item@{Item}}
+\subsubsection{\texorpdfstring{set\+Regexp()}{setRegexp()}}
+{\footnotesize\ttfamily void Item\+::set\+Regexp (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 39 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+40 \{
+41     regexp = value;
+42 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_ad1b9dd3edd2a2e33e44a3f84707e96d5}\label{class_item_ad1b9dd3edd2a2e33e44a3f84707e96d5}} 
+\index{Item@{Item}!set\+Type@{set\+Type}}
+\index{set\+Type@{set\+Type}!Item@{Item}}
+\subsubsection{\texorpdfstring{set\+Type()}{setType()}}
+{\footnotesize\ttfamily void Item\+::set\+Type (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 59 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+60 \{
+61     type = value;
+62 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_item_a28d35e796991b8b314acaffe19cc8f84}\label{class_item_a28d35e796991b8b314acaffe19cc8f84}} 
+\index{Item@{Item}!set\+Use\+Parent\+Groups@{set\+Use\+Parent\+Groups}}
+\index{set\+Use\+Parent\+Groups@{set\+Use\+Parent\+Groups}!Item@{Item}}
+\subsubsection{\texorpdfstring{set\+Use\+Parent\+Groups()}{setUseParentGroups()}}
+{\footnotesize\ttfamily void Item\+::set\+Use\+Parent\+Groups (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 87 of file item.\+cpp.
+
+
+\begin{DoxyCode}
+88 \{
+89     useParentGroups = value;
+90 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+models/\hyperlink{item_8h}{item.\+h}\item 
+models/\hyperlink{item_8cpp}{item.\+cpp}\end{DoxyCompactItemize}

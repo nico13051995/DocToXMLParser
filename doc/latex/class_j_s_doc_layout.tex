@@ -1,0 +1,65 @@
+\hypertarget{class_j_s_doc_layout}{}\section{J\+S\+Doc\+Layout Class Reference}
+\label{class_j_s_doc_layout}\index{J\+S\+Doc\+Layout@{J\+S\+Doc\+Layout}}
+Inheritance diagram for J\+S\+Doc\+Layout\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_j_s_doc_layout}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_j_s_doc_layout_ac36ca8ee49e1346ef73c9128a19731d2}{J\+S\+Doc\+Layout} (Q\+Text\+Document $\ast$doc)
+\item 
+void \hyperlink{class_j_s_doc_layout_a181d392df06a4e6fca1f38b3a5a86a2c}{force\+Update} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 588 of file jsedit.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_j_s_doc_layout_ac36ca8ee49e1346ef73c9128a19731d2}\label{class_j_s_doc_layout_ac36ca8ee49e1346ef73c9128a19731d2}} 
+\index{J\+S\+Doc\+Layout@{J\+S\+Doc\+Layout}!J\+S\+Doc\+Layout@{J\+S\+Doc\+Layout}}
+\index{J\+S\+Doc\+Layout@{J\+S\+Doc\+Layout}!J\+S\+Doc\+Layout@{J\+S\+Doc\+Layout}}
+\subsubsection{\texorpdfstring{J\+S\+Doc\+Layout()}{JSDocLayout()}}
+{\footnotesize\ttfamily J\+S\+Doc\+Layout\+::\+J\+S\+Doc\+Layout (\begin{DoxyParamCaption}\item[{Q\+Text\+Document $\ast$}]{doc }\end{DoxyParamCaption})}
+
+
+
+Definition at line 595 of file jsedit.\+cpp.
+
+
+\begin{DoxyCode}
+596     : QPlainTextDocumentLayout(doc)
+597 \{
+598 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_j_s_doc_layout_a181d392df06a4e6fca1f38b3a5a86a2c}\label{class_j_s_doc_layout_a181d392df06a4e6fca1f38b3a5a86a2c}} 
+\index{J\+S\+Doc\+Layout@{J\+S\+Doc\+Layout}!force\+Update@{force\+Update}}
+\index{force\+Update@{force\+Update}!J\+S\+Doc\+Layout@{J\+S\+Doc\+Layout}}
+\subsubsection{\texorpdfstring{force\+Update()}{forceUpdate()}}
+{\footnotesize\ttfamily void J\+S\+Doc\+Layout\+::force\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 600 of file jsedit.\+cpp.
+
+
+\begin{DoxyCode}
+601 \{
+602     emit documentSizeChanged(documentSize());
+603 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+qt-\/json-\/editor-\/master/\hyperlink{jsedit_8cpp}{jsedit.\+cpp}\end{DoxyCompactItemize}

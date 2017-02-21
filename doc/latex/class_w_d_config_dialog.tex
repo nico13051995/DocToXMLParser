@@ -1,0 +1,112 @@
+\hypertarget{class_w_d_config_dialog}{}\section{W\+D\+Config\+Dialog Class Reference}
+\label{class_w_d_config_dialog}\index{W\+D\+Config\+Dialog@{W\+D\+Config\+Dialog}}
+
+
+{\ttfamily \#include $<$wdconfigdialog.\+h$>$}
+
+Inheritance diagram for W\+D\+Config\+Dialog\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_w_d_config_dialog}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_w_d_config_dialog_a46e6c2574fc6de02a4219c24867c4c41}{visible\+Change} (bool value)
+\item 
+void \hyperlink{class_w_d_config_dialog_aa808e6dfb8b3489d9252f193f39ed22a}{hide\+Ex\+Change} (bool value)
+\item 
+void \hyperlink{class_w_d_config_dialog_a016142c07d15c313cbe71098e3c5b4df}{show\+M\+S\+Err\+Change} (bool value)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_w_d_config_dialog_adcd73104551e851520b62ae06734cb8e}{W\+D\+Config\+Dialog} (Q\+Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_w_d_config_dialog}{W\+D\+Config\+Dialog} Init all conections with UI. \end{DoxyCompactList}\item 
+\hyperlink{class_w_d_config_dialog_a28db62577a732e8bc26038a37123ed60}{$\sim$\+W\+D\+Config\+Dialog} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 12 of file wdconfigdialog.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_w_d_config_dialog_adcd73104551e851520b62ae06734cb8e}\label{class_w_d_config_dialog_adcd73104551e851520b62ae06734cb8e}} 
+\index{W\+D\+Config\+Dialog@{W\+D\+Config\+Dialog}!W\+D\+Config\+Dialog@{W\+D\+Config\+Dialog}}
+\index{W\+D\+Config\+Dialog@{W\+D\+Config\+Dialog}!W\+D\+Config\+Dialog@{W\+D\+Config\+Dialog}}
+\subsubsection{\texorpdfstring{W\+D\+Config\+Dialog()}{WDConfigDialog()}}
+{\footnotesize\ttfamily W\+D\+Config\+Dialog\+::\+W\+D\+Config\+Dialog (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{class_w_d_config_dialog}{W\+D\+Config\+Dialog} Init all conections with UI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 4 of file wdconfigdialog.\+cpp.
+
+
+\begin{DoxyCode}
+4                                               :
+5     QDialog(parent),
+6     ui(\textcolor{keyword}{new} Ui::WDConfigDialog)
+7 \{
+8     ui->setupUi(\textcolor{keyword}{this});
+9     connect(ui->visible, SIGNAL(clicked(\textcolor{keywordtype}{bool})), \textcolor{keyword}{this}, SIGNAL(\hyperlink{class_w_d_config_dialog_a46e6c2574fc6de02a4219c24867c4c41}{visibleChange}(\textcolor{keywordtype}{bool})));
+10     connect(ui->hideEx, SIGNAL(clicked(\textcolor{keywordtype}{bool})), \textcolor{keyword}{this}, SIGNAL(\hyperlink{class_w_d_config_dialog_aa808e6dfb8b3489d9252f193f39ed22a}{hideExChange}(\textcolor{keywordtype}{bool})));
+11     connect(ui->showError, SIGNAL(clicked(\textcolor{keywordtype}{bool})), \textcolor{keyword}{this}, SIGNAL(\hyperlink{class_w_d_config_dialog_a016142c07d15c313cbe71098e3c5b4df}{showMSErrChange}(\textcolor{keywordtype}{bool})));
+12 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_w_d_config_dialog_a28db62577a732e8bc26038a37123ed60}\label{class_w_d_config_dialog_a28db62577a732e8bc26038a37123ed60}} 
+\index{W\+D\+Config\+Dialog@{W\+D\+Config\+Dialog}!````~W\+D\+Config\+Dialog@{$\sim$\+W\+D\+Config\+Dialog}}
+\index{````~W\+D\+Config\+Dialog@{$\sim$\+W\+D\+Config\+Dialog}!W\+D\+Config\+Dialog@{W\+D\+Config\+Dialog}}
+\subsubsection{\texorpdfstring{$\sim$\+W\+D\+Config\+Dialog()}{~WDConfigDialog()}}
+{\footnotesize\ttfamily W\+D\+Config\+Dialog\+::$\sim$\+W\+D\+Config\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 14 of file wdconfigdialog.\+cpp.
+
+
+\begin{DoxyCode}
+15 \{
+16     \textcolor{keyword}{delete} ui;
+17 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_w_d_config_dialog_aa808e6dfb8b3489d9252f193f39ed22a}\label{class_w_d_config_dialog_aa808e6dfb8b3489d9252f193f39ed22a}} 
+\index{W\+D\+Config\+Dialog@{W\+D\+Config\+Dialog}!hide\+Ex\+Change@{hide\+Ex\+Change}}
+\index{hide\+Ex\+Change@{hide\+Ex\+Change}!W\+D\+Config\+Dialog@{W\+D\+Config\+Dialog}}
+\subsubsection{\texorpdfstring{hide\+Ex\+Change}{hideExChange}}
+{\footnotesize\ttfamily void W\+D\+Config\+Dialog\+::hide\+Ex\+Change (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_w_d_config_dialog_a016142c07d15c313cbe71098e3c5b4df}\label{class_w_d_config_dialog_a016142c07d15c313cbe71098e3c5b4df}} 
+\index{W\+D\+Config\+Dialog@{W\+D\+Config\+Dialog}!show\+M\+S\+Err\+Change@{show\+M\+S\+Err\+Change}}
+\index{show\+M\+S\+Err\+Change@{show\+M\+S\+Err\+Change}!W\+D\+Config\+Dialog@{W\+D\+Config\+Dialog}}
+\subsubsection{\texorpdfstring{show\+M\+S\+Err\+Change}{showMSErrChange}}
+{\footnotesize\ttfamily void W\+D\+Config\+Dialog\+::show\+M\+S\+Err\+Change (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_w_d_config_dialog_a46e6c2574fc6de02a4219c24867c4c41}\label{class_w_d_config_dialog_a46e6c2574fc6de02a4219c24867c4c41}} 
+\index{W\+D\+Config\+Dialog@{W\+D\+Config\+Dialog}!visible\+Change@{visible\+Change}}
+\index{visible\+Change@{visible\+Change}!W\+D\+Config\+Dialog@{W\+D\+Config\+Dialog}}
+\subsubsection{\texorpdfstring{visible\+Change}{visibleChange}}
+{\footnotesize\ttfamily void W\+D\+Config\+Dialog\+::visible\+Change (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{wdconfigdialog_8h}{wdconfigdialog.\+h}\item 
+\hyperlink{wdconfigdialog_8cpp}{wdconfigdialog.\+cpp}\end{DoxyCompactItemize}

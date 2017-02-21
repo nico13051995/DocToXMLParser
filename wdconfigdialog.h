@@ -13,6 +13,11 @@ class WDConfigDialog : public QDialog
 {
     Q_OBJECT
 public:
+    /**
+     * @brief WDConfigDialog
+     * Init all conections with UI
+     * @param parent
+     */
     WDConfigDialog(QWidget *parent = 0);
     ~WDConfigDialog();
 signals:

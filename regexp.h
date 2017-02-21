@@ -8,6 +8,12 @@
 #include <QRegularExpressionMatchIterator>
 #include <QDebug>
 
+
+/**
+ * @brief The RegExpTool class
+ * Specific class tool for fast parsing document
+ *
+ */
 class RegExpTool : public QObject
 {
     Q_OBJECT

@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<chapter xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>qt-json-editor</title>
+
+<para>Update for jsoneditor.googlecode.com for Qt 5.3</para>
+
+<para></para>
+
+<para><formalpara><title>Features </title></formalpara>
+</para>
+
+<para><itemizedlist>
+<listitem>
+<para>Open, Save, SaveAs</para>
+</listitem><listitem>
+<para>Find, Find and Replace</para>
+</listitem><listitem>
+<para>Syntax Highlighting</para>
+</listitem><listitem>
+<para>Editing on Tree view on the right</para>
+</listitem><listitem>
+<para>Formatting/Pretty Print of <link linkend="namespace_json">Json</link></para>
+</listitem><listitem>
+<para>Remembers directory, and last opened file</para>
+</listitem><listitem>
+<para>Made of Qt Awesomeness</para>
+</listitem></itemizedlist>
+</para>
+
+<para><formalpara><title>Known Issues/Bugs </title></formalpara>
+</para>
+
+<para><itemizedlist>
+<listitem>
+<para>No about page.</para>
+</listitem><listitem>
+<para>Help page could be better.</para>
+</listitem><listitem>
+<para>No validation on int/double entry</para>
+</listitem></itemizedlist>
+</para>
+
+<para><formalpara><title>Upcoming Features </title></formalpara>
+</para>
+
+<para><itemizedlist>
+<listitem>
+<para>Font choices</para>
+</listitem><listitem>
+<para>Display filename in the title bar</para>
+</listitem><listitem>
+<para>Add release for Mac</para>
+</listitem><listitem>
+<para>Switch to using native QJson for parsing?</para>
+</listitem><listitem>
+<para>Drag and Drop?</para>
+</listitem><listitem>
+<para>Copy and Paste Nodes?</para>
+</listitem><listitem>
+<para>Context Menu additions? </para>
+</listitem></itemizedlist>
+</para>
+
+</chapter>

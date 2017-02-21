@@ -13,6 +13,9 @@
 #include <QJsonArray>
 #include "item.h"
 
+/**
+ * @brief The ParserConfig class
+ */
 class ParserConfig : public QObject
 {
     Q_OBJECT
@@ -23,6 +26,10 @@ class ParserConfig : public QObject
     QString header;
     QString footer;
 
+    /**
+     * @brief currentTemplate
+     * list of item readed from config files
+     */
     QList<Item *> currentTemplate;
 public:
     ParserConfig(QString path, QObject *parent = 0);
@@ -42,6 +49,11 @@ public:
 signals:
 
 public slots:
+    /**
+     * @brief readJson
+     * @param path to json file
+     * @return if true then reading is successfull else all so bad :(
+     */
     bool readJson(QString path);
 };
 

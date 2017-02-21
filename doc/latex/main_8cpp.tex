@@ -1,0 +1,37 @@
+\hypertarget{main_8cpp}{}\section{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+{\ttfamily \#include \char`\"{}mainwindow.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Q\+Application$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file main.\+cpp.
+
+
+\begin{DoxyCode}
+5 \{
+6     QApplication a(argc, argv);
+7     a.setOrganizationName(\textcolor{stringliteral}{"My Company"});
+8     a.setOrganizationDomain(\textcolor{stringliteral}{"mycompany.com"});
+9     a.setApplicationName(\textcolor{stringliteral}{"My Application"});
+10     QCoreApplication::setOrganizationName(\textcolor{stringliteral}{"org"});
+11         QCoreApplication::setApplicationName(\textcolor{stringliteral}{"app"});
+12     \hyperlink{class_main_window}{MainWindow} w;
+13     w.show();
+14 
+15     \textcolor{keywordflow}{return} a.exec();
+16 \}
+\end{DoxyCode}

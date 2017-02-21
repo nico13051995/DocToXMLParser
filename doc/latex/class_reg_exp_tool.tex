@@ -1,0 +1,178 @@
+\hypertarget{class_reg_exp_tool}{}\section{Reg\+Exp\+Tool Class Reference}
+\label{class_reg_exp_tool}\index{Reg\+Exp\+Tool@{Reg\+Exp\+Tool}}
+
+
+The \hyperlink{class_reg_exp_tool}{Reg\+Exp\+Tool} class Specific class tool for fast parsing document.  
+
+
+
+
+{\ttfamily \#include $<$regexp.\+h$>$}
+
+Inheritance diagram for Reg\+Exp\+Tool\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_reg_exp_tool}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_reg_exp_tool_a08defd4a7b37e54d7278cb0e25b03922}{Reg\+Exp\+Tool} (Q\+Object $\ast$parent=0)
+\item 
+Q\+String\+List \hyperlink{class_reg_exp_tool_a15bf497425b5baaebf81697af4e59ad2}{global\+Match} (Q\+String text, Q\+String pattern=Q\+String())
+\item 
+bool \hyperlink{class_reg_exp_tool_a91de829aa5c85a794348421a28b4b73c}{set\+Patter} (Q\+String pattern)
+\item 
+const Q\+String\+List \hyperlink{class_reg_exp_tool_a4db3c1e4ddabf6246d41be920f60b7be}{get\+Groups\+Names} (Q\+String pattern=Q\+String())
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_reg_exp_tool}{Reg\+Exp\+Tool} class Specific class tool for fast parsing document. 
+
+Definition at line 17 of file regexp.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_reg_exp_tool_a08defd4a7b37e54d7278cb0e25b03922}\label{class_reg_exp_tool_a08defd4a7b37e54d7278cb0e25b03922}} 
+\index{Reg\+Exp\+Tool@{Reg\+Exp\+Tool}!Reg\+Exp\+Tool@{Reg\+Exp\+Tool}}
+\index{Reg\+Exp\+Tool@{Reg\+Exp\+Tool}!Reg\+Exp\+Tool@{Reg\+Exp\+Tool}}
+\subsubsection{\texorpdfstring{Reg\+Exp\+Tool()}{RegExpTool()}}
+{\footnotesize\ttfamily Reg\+Exp\+Tool\+::\+Reg\+Exp\+Tool (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line 4 of file regexp.\+cpp.
+
+
+\begin{DoxyCode}
+4                                       : QObject(parent)
+5 \{
+6     QString escaped = pattern;
+7     escaped.replace(QLatin1String(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)"}), QLatin1String(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)\(\backslash\)\(\backslash\)"}));
+8     escaped.replace(QLatin1String(\textcolor{stringliteral}{"\(\backslash\)""}), QLatin1String(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)\(\backslash\)""}));
+9     escaped.prepend(QLatin1Char(\textcolor{charliteral}{'"'}));
+10     escaped.append(QLatin1Char(\textcolor{charliteral}{'"'}));
+11 
+12     rx.setPattern(pattern);
+13     rx.setPatternOptions(patternOptions);
+14 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_reg_exp_tool_a4db3c1e4ddabf6246d41be920f60b7be}\label{class_reg_exp_tool_a4db3c1e4ddabf6246d41be920f60b7be}} 
+\index{Reg\+Exp\+Tool@{Reg\+Exp\+Tool}!get\+Groups\+Names@{get\+Groups\+Names}}
+\index{get\+Groups\+Names@{get\+Groups\+Names}!Reg\+Exp\+Tool@{Reg\+Exp\+Tool}}
+\subsubsection{\texorpdfstring{get\+Groups\+Names()}{getGroupsNames()}}
+{\footnotesize\ttfamily const Q\+String\+List Reg\+Exp\+Tool\+::get\+Groups\+Names (\begin{DoxyParamCaption}\item[{Q\+String}]{pattern = {\ttfamily QString()} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 64 of file regexp.\+cpp.
+
+
+\begin{DoxyCode}
+65 \{
+66     QString oldPattern;
+67     \textcolor{keywordflow}{if}(!pattern.isEmpty())
+68     \{
+69         oldPattern = rx.pattern();
+70         rx.setPattern(pattern);
+71     \}
+72     \textcolor{keywordflow}{if} (rx.isValid()) \{
+73         \textcolor{keyword}{const} QStringList namedCaptureGroups = rx.namedCaptureGroups();
+74         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < namedCaptureGroups.size(); ++i) \{
+75             \textcolor{keyword}{const} QString currentNamedCaptureGroup = namedCaptureGroups.at(i);
+76             qDebug() << \textcolor{stringliteral}{"index:"} <<  QString::number(i);
+77             qDebug() << \textcolor{stringliteral}{"name:"} << (currentNamedCaptureGroup.isNull() ? tr(\textcolor{stringliteral}{"<no name>"}) : 
+      currentNamedCaptureGroup);
+78         \}
+79     \}
+80     \textcolor{keywordflow}{if}(!oldPattern.isEmpty())
+81     \{
+82         rx.setPattern(oldPattern);
+83     \}
+84 
+85 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_reg_exp_tool_a15bf497425b5baaebf81697af4e59ad2}\label{class_reg_exp_tool_a15bf497425b5baaebf81697af4e59ad2}} 
+\index{Reg\+Exp\+Tool@{Reg\+Exp\+Tool}!global\+Match@{global\+Match}}
+\index{global\+Match@{global\+Match}!Reg\+Exp\+Tool@{Reg\+Exp\+Tool}}
+\subsubsection{\texorpdfstring{global\+Match()}{globalMatch()}}
+{\footnotesize\ttfamily Q\+String\+List Reg\+Exp\+Tool\+::global\+Match (\begin{DoxyParamCaption}\item[{Q\+String}]{text,  }\item[{Q\+String}]{pattern = {\ttfamily QString()} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 16 of file regexp.\+cpp.
+
+
+\begin{DoxyCode}
+17 \{
+18     QStringList list;
+19     QString oldPattern;
+20     \textcolor{keywordflow}{if}(!pattern.isEmpty())
+21     \{
+22         oldPattern = rx.pattern();
+23         QString escaped = pattern;
+24         escaped.replace(QLatin1String(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)"}), QLatin1String(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)\(\backslash\)\(\backslash\)"}));
+25         escaped.replace(QLatin1String(\textcolor{stringliteral}{"\(\backslash\)""}), QLatin1String(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)\(\backslash\)""}));
+26         escaped.prepend(QLatin1Char(\textcolor{charliteral}{'"'}));
+27         escaped.append(QLatin1Char(\textcolor{charliteral}{'"'}));
+28         rx.setPattern(pattern);
+29     \}
+30     \textcolor{keywordflow}{if} (rx.isValid()) \{
+31         \textcolor{keyword}{const} \textcolor{keywordtype}{int} capturingGroupsCount = rx.captureCount() + 1;
+32 
+33         QRegularExpressionMatchIterator iterator = rx.globalMatch(text.simplified(), 0, matchType, 
+      matchOptions);
+34         \textcolor{keywordtype}{int} i = 0;
+35 
+36         \textcolor{keywordflow}{while} (iterator.hasNext()) \{
+37             QRegularExpressionMatch match = iterator.next();
+38             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} captureGroupIndex = 0; captureGroupIndex < capturingGroupsCount; ++captureGroupIndex) 
+      \{
+39                 qDebug() << \textcolor{stringliteral}{"index:"} << QString::number(captureGroupIndex);
+40                 qDebug() << \textcolor{stringliteral}{"value:"} << match.captured(captureGroupIndex) << \textcolor{stringliteral}{"\(\backslash\)n"};
+41                 list.append(match.captured(captureGroupIndex));
+42             \}
+43             ++i;
+44         \}
+45     \}
+46     \textcolor{keywordflow}{if}(!oldPattern.isEmpty())
+47     \{
+48         rx.setPattern(oldPattern);
+49     \}
+50     \textcolor{keywordflow}{return} list;
+51 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_reg_exp_tool_a91de829aa5c85a794348421a28b4b73c}\label{class_reg_exp_tool_a91de829aa5c85a794348421a28b4b73c}} 
+\index{Reg\+Exp\+Tool@{Reg\+Exp\+Tool}!set\+Patter@{set\+Patter}}
+\index{set\+Patter@{set\+Patter}!Reg\+Exp\+Tool@{Reg\+Exp\+Tool}}
+\subsubsection{\texorpdfstring{set\+Patter()}{setPatter()}}
+{\footnotesize\ttfamily bool Reg\+Exp\+Tool\+::set\+Patter (\begin{DoxyParamCaption}\item[{Q\+String}]{pattern }\end{DoxyParamCaption})}
+
+
+
+Definition at line 53 of file regexp.\+cpp.
+
+
+\begin{DoxyCode}
+54 \{
+55     QString oldPattern = rx.pattern();
+56     rx.setPattern(pattern);
+57     \textcolor{keywordflow}{if}(rx.isValid())
+58         this->pattern = pattern;
+59     \textcolor{keywordflow}{else}
+60         rx.setPattern(oldPattern);
+61     \textcolor{keywordflow}{return} rx.isValid();
+62 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{regexp_8h}{regexp.\+h}\item 
+\hyperlink{regexp_8cpp}{regexp.\+cpp}\end{DoxyCompactItemize}

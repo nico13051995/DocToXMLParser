@@ -1,0 +1,255 @@
+\hypertarget{debug_8h}{}\section{qt-\/json-\/editor-\/master/jsonc/debug.h File Reference}
+\label{debug_8h}\index{qt-\/json-\/editor-\/master/jsonc/debug.\+h@{qt-\/json-\/editor-\/master/jsonc/debug.\+h}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{debug_8h_a50f21a239fa040a10ad4cfdb4278b02b}{M\+C\+\_\+\+S\+E\+T\+\_\+\+D\+E\+B\+UG}(x)~if (0) \hyperlink{debug_8h_af65a73617b71476020a005b20bf02726}{mc\+\_\+set\+\_\+debug}(x)
+\item 
+\#define \hyperlink{debug_8h_acb272a4b4444b69cd995236f167f90ba}{M\+C\+\_\+\+G\+E\+T\+\_\+\+D\+E\+B\+UG}()~(0)
+\item 
+\#define \hyperlink{debug_8h_acf1e895cb5eb7f334cbe51901e6bb918}{M\+C\+\_\+\+S\+E\+T\+\_\+\+S\+Y\+S\+L\+OG}(x)~if (0) \hyperlink{debug_8h_aadb888da410116384e75a00db30da705}{mc\+\_\+set\+\_\+syslog}(x)
+\item 
+\#define \hyperlink{debug_8h_a25591d3d4754c0c6d1f2b5463fb4977e}{M\+C\+\_\+\+A\+B\+O\+RT}(x, ...)~if (0) \hyperlink{debug_8h_a44913dbc4f1abf6614d42b22b941c092}{mc\+\_\+abort}(x, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{debug_8h_afda355b35d18bf2e6a2a22d5c8eef42c}{M\+C\+\_\+\+D\+E\+B\+UG}(x, ...)~if (0) \hyperlink{debug_8h_a600cf4cbbe19c0c15ca3710210e35aba}{mc\+\_\+debug}(x, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{debug_8h_a11ba39cecbe449af5b86fa2f78e9da9d}{M\+C\+\_\+\+E\+R\+R\+OR}(x, ...)~if (0) \hyperlink{debug_8h_abf22ea3a331c7ff21c23da91a07c7cb2}{mc\+\_\+error}(x, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{debug_8h_a5ef640ce1e9e61c5f6632aefbbfa0041}{M\+C\+\_\+\+I\+N\+FO}(x, ...)~if (0) \hyperlink{debug_8h_acbb92996a994e316ff65ed3a026e12a4}{mc\+\_\+info}(x, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{debug_8h_af65a73617b71476020a005b20bf02726}{mc\+\_\+set\+\_\+debug} (int debug)
+\item 
+int \hyperlink{debug_8h_a3b3ab3ae8b438384fb109a2e38646b6e}{mc\+\_\+get\+\_\+debug} (void)
+\item 
+void \hyperlink{debug_8h_aadb888da410116384e75a00db30da705}{mc\+\_\+set\+\_\+syslog} (int syslog)
+\item 
+void \hyperlink{debug_8h_a44913dbc4f1abf6614d42b22b941c092}{mc\+\_\+abort} (const char $\ast$msg,...)
+\item 
+void \hyperlink{debug_8h_a600cf4cbbe19c0c15ca3710210e35aba}{mc\+\_\+debug} (const char $\ast$msg,...)
+\item 
+void \hyperlink{debug_8h_abf22ea3a331c7ff21c23da91a07c7cb2}{mc\+\_\+error} (const char $\ast$msg,...)
+\item 
+void \hyperlink{debug_8h_acbb92996a994e316ff65ed3a026e12a4}{mc\+\_\+info} (const char $\ast$msg,...)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{debug_8h_a25591d3d4754c0c6d1f2b5463fb4977e}\label{debug_8h_a25591d3d4754c0c6d1f2b5463fb4977e}} 
+\index{debug.\+h@{debug.\+h}!M\+C\+\_\+\+A\+B\+O\+RT@{M\+C\+\_\+\+A\+B\+O\+RT}}
+\index{M\+C\+\_\+\+A\+B\+O\+RT@{M\+C\+\_\+\+A\+B\+O\+RT}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{M\+C\+\_\+\+A\+B\+O\+RT}{MC\_ABORT}}
+{\footnotesize\ttfamily \#define M\+C\+\_\+\+A\+B\+O\+RT(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{... }\end{DoxyParamCaption})~if (0) \hyperlink{debug_8h_a44913dbc4f1abf6614d42b22b941c092}{mc\+\_\+abort}(x, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)}
+
+
+
+Definition at line 40 of file debug.\+h.
+
+\mbox{\Hypertarget{debug_8h_afda355b35d18bf2e6a2a22d5c8eef42c}\label{debug_8h_afda355b35d18bf2e6a2a22d5c8eef42c}} 
+\index{debug.\+h@{debug.\+h}!M\+C\+\_\+\+D\+E\+B\+UG@{M\+C\+\_\+\+D\+E\+B\+UG}}
+\index{M\+C\+\_\+\+D\+E\+B\+UG@{M\+C\+\_\+\+D\+E\+B\+UG}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{M\+C\+\_\+\+D\+E\+B\+UG}{MC\_DEBUG}}
+{\footnotesize\ttfamily \#define M\+C\+\_\+\+D\+E\+B\+UG(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{... }\end{DoxyParamCaption})~if (0) \hyperlink{debug_8h_a600cf4cbbe19c0c15ca3710210e35aba}{mc\+\_\+debug}(x, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)}
+
+
+
+Definition at line 41 of file debug.\+h.
+
+\mbox{\Hypertarget{debug_8h_a11ba39cecbe449af5b86fa2f78e9da9d}\label{debug_8h_a11ba39cecbe449af5b86fa2f78e9da9d}} 
+\index{debug.\+h@{debug.\+h}!M\+C\+\_\+\+E\+R\+R\+OR@{M\+C\+\_\+\+E\+R\+R\+OR}}
+\index{M\+C\+\_\+\+E\+R\+R\+OR@{M\+C\+\_\+\+E\+R\+R\+OR}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{M\+C\+\_\+\+E\+R\+R\+OR}{MC\_ERROR}}
+{\footnotesize\ttfamily \#define M\+C\+\_\+\+E\+R\+R\+OR(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{... }\end{DoxyParamCaption})~if (0) \hyperlink{debug_8h_abf22ea3a331c7ff21c23da91a07c7cb2}{mc\+\_\+error}(x, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)}
+
+
+
+Definition at line 42 of file debug.\+h.
+
+\mbox{\Hypertarget{debug_8h_acb272a4b4444b69cd995236f167f90ba}\label{debug_8h_acb272a4b4444b69cd995236f167f90ba}} 
+\index{debug.\+h@{debug.\+h}!M\+C\+\_\+\+G\+E\+T\+\_\+\+D\+E\+B\+UG@{M\+C\+\_\+\+G\+E\+T\+\_\+\+D\+E\+B\+UG}}
+\index{M\+C\+\_\+\+G\+E\+T\+\_\+\+D\+E\+B\+UG@{M\+C\+\_\+\+G\+E\+T\+\_\+\+D\+E\+B\+UG}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{M\+C\+\_\+\+G\+E\+T\+\_\+\+D\+E\+B\+UG}{MC\_GET\_DEBUG}}
+{\footnotesize\ttfamily \#define M\+C\+\_\+\+G\+E\+T\+\_\+\+D\+E\+B\+UG(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(0)}
+
+
+
+Definition at line 38 of file debug.\+h.
+
+\mbox{\Hypertarget{debug_8h_a5ef640ce1e9e61c5f6632aefbbfa0041}\label{debug_8h_a5ef640ce1e9e61c5f6632aefbbfa0041}} 
+\index{debug.\+h@{debug.\+h}!M\+C\+\_\+\+I\+N\+FO@{M\+C\+\_\+\+I\+N\+FO}}
+\index{M\+C\+\_\+\+I\+N\+FO@{M\+C\+\_\+\+I\+N\+FO}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{M\+C\+\_\+\+I\+N\+FO}{MC\_INFO}}
+{\footnotesize\ttfamily \#define M\+C\+\_\+\+I\+N\+FO(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{... }\end{DoxyParamCaption})~if (0) \hyperlink{debug_8h_acbb92996a994e316ff65ed3a026e12a4}{mc\+\_\+info}(x, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)}
+
+
+
+Definition at line 43 of file debug.\+h.
+
+\mbox{\Hypertarget{debug_8h_a50f21a239fa040a10ad4cfdb4278b02b}\label{debug_8h_a50f21a239fa040a10ad4cfdb4278b02b}} 
+\index{debug.\+h@{debug.\+h}!M\+C\+\_\+\+S\+E\+T\+\_\+\+D\+E\+B\+UG@{M\+C\+\_\+\+S\+E\+T\+\_\+\+D\+E\+B\+UG}}
+\index{M\+C\+\_\+\+S\+E\+T\+\_\+\+D\+E\+B\+UG@{M\+C\+\_\+\+S\+E\+T\+\_\+\+D\+E\+B\+UG}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{M\+C\+\_\+\+S\+E\+T\+\_\+\+D\+E\+B\+UG}{MC\_SET\_DEBUG}}
+{\footnotesize\ttfamily \#define M\+C\+\_\+\+S\+E\+T\+\_\+\+D\+E\+B\+UG(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~if (0) \hyperlink{debug_8h_af65a73617b71476020a005b20bf02726}{mc\+\_\+set\+\_\+debug}(x)}
+
+
+
+Definition at line 37 of file debug.\+h.
+
+\mbox{\Hypertarget{debug_8h_acf1e895cb5eb7f334cbe51901e6bb918}\label{debug_8h_acf1e895cb5eb7f334cbe51901e6bb918}} 
+\index{debug.\+h@{debug.\+h}!M\+C\+\_\+\+S\+E\+T\+\_\+\+S\+Y\+S\+L\+OG@{M\+C\+\_\+\+S\+E\+T\+\_\+\+S\+Y\+S\+L\+OG}}
+\index{M\+C\+\_\+\+S\+E\+T\+\_\+\+S\+Y\+S\+L\+OG@{M\+C\+\_\+\+S\+E\+T\+\_\+\+S\+Y\+S\+L\+OG}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{M\+C\+\_\+\+S\+E\+T\+\_\+\+S\+Y\+S\+L\+OG}{MC\_SET\_SYSLOG}}
+{\footnotesize\ttfamily \#define M\+C\+\_\+\+S\+E\+T\+\_\+\+S\+Y\+S\+L\+OG(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~if (0) \hyperlink{debug_8h_aadb888da410116384e75a00db30da705}{mc\+\_\+set\+\_\+syslog}(x)}
+
+
+
+Definition at line 39 of file debug.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{debug_8h_a44913dbc4f1abf6614d42b22b941c092}\label{debug_8h_a44913dbc4f1abf6614d42b22b941c092}} 
+\index{debug.\+h@{debug.\+h}!mc\+\_\+abort@{mc\+\_\+abort}}
+\index{mc\+\_\+abort@{mc\+\_\+abort}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{mc\+\_\+abort()}{mc\_abort()}}
+{\footnotesize\ttfamily void mc\+\_\+abort (\begin{DoxyParamCaption}\item[{const char $\ast$}]{msg,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Definition at line 44 of file debug.\+c.
+
+
+\begin{DoxyCode}
+45 \{
+46   va\_list ap;
+47   va\_start(ap, msg);
+48 \textcolor{preprocessor}{#if HAVE\_VSYSLOG}
+49   \textcolor{keywordflow}{if}(\_syslog) \{
+50       vsyslog(LOG\_ERR, msg, ap);
+51   \} \textcolor{keywordflow}{else}
+52 \textcolor{preprocessor}{#endif}
+53       vprintf(msg, ap);
+54   va\_end(ap);
+55   exit(1);
+56 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{debug_8h_a600cf4cbbe19c0c15ca3710210e35aba}\label{debug_8h_a600cf4cbbe19c0c15ca3710210e35aba}} 
+\index{debug.\+h@{debug.\+h}!mc\+\_\+debug@{mc\+\_\+debug}}
+\index{mc\+\_\+debug@{mc\+\_\+debug}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{mc\+\_\+debug()}{mc\_debug()}}
+{\footnotesize\ttfamily void mc\+\_\+debug (\begin{DoxyParamCaption}\item[{const char $\ast$}]{msg,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Definition at line 59 of file debug.\+c.
+
+
+\begin{DoxyCode}
+60 \{
+61   va\_list ap;
+62   \textcolor{keywordflow}{if}(\_debug) \{
+63     va\_start(ap, msg);
+64 \textcolor{preprocessor}{#if HAVE\_VSYSLOG}
+65     \textcolor{keywordflow}{if}(\_syslog) \{
+66         vsyslog(LOG\_DEBUG, msg, ap);
+67     \} \textcolor{keywordflow}{else}
+68 \textcolor{preprocessor}{#endif}
+69         vprintf(msg, ap);
+70     va\_end(ap);
+71   \}
+72 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{debug_8h_abf22ea3a331c7ff21c23da91a07c7cb2}\label{debug_8h_abf22ea3a331c7ff21c23da91a07c7cb2}} 
+\index{debug.\+h@{debug.\+h}!mc\+\_\+error@{mc\+\_\+error}}
+\index{mc\+\_\+error@{mc\+\_\+error}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{mc\+\_\+error()}{mc\_error()}}
+{\footnotesize\ttfamily void mc\+\_\+error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{msg,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Definition at line 74 of file debug.\+c.
+
+
+\begin{DoxyCode}
+75 \{
+76   va\_list ap;
+77   va\_start(ap, msg);
+78 \textcolor{preprocessor}{#if HAVE\_VSYSLOG}
+79     \textcolor{keywordflow}{if}(\_syslog) \{
+80         vsyslog(LOG\_ERR, msg, ap);
+81     \} \textcolor{keywordflow}{else}
+82 \textcolor{preprocessor}{#endif}
+83         vfprintf(stderr, msg, ap);
+84   va\_end(ap);
+85 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{debug_8h_a3b3ab3ae8b438384fb109a2e38646b6e}\label{debug_8h_a3b3ab3ae8b438384fb109a2e38646b6e}} 
+\index{debug.\+h@{debug.\+h}!mc\+\_\+get\+\_\+debug@{mc\+\_\+get\+\_\+debug}}
+\index{mc\+\_\+get\+\_\+debug@{mc\+\_\+get\+\_\+debug}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{mc\+\_\+get\+\_\+debug()}{mc\_get\_debug()}}
+{\footnotesize\ttfamily int mc\+\_\+get\+\_\+debug (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 37 of file debug.\+c.
+
+
+\begin{DoxyCode}
+37 \{ \textcolor{keywordflow}{return} \_debug; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{debug_8h_acbb92996a994e316ff65ed3a026e12a4}\label{debug_8h_acbb92996a994e316ff65ed3a026e12a4}} 
+\index{debug.\+h@{debug.\+h}!mc\+\_\+info@{mc\+\_\+info}}
+\index{mc\+\_\+info@{mc\+\_\+info}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{mc\+\_\+info()}{mc\_info()}}
+{\footnotesize\ttfamily void mc\+\_\+info (\begin{DoxyParamCaption}\item[{const char $\ast$}]{msg,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Definition at line 87 of file debug.\+c.
+
+
+\begin{DoxyCode}
+88 \{
+89   va\_list ap;
+90   va\_start(ap, msg);
+91 \textcolor{preprocessor}{#if HAVE\_VSYSLOG}
+92     \textcolor{keywordflow}{if}(\_syslog) \{
+93         vsyslog(LOG\_INFO, msg, ap);
+94     \} \textcolor{keywordflow}{else} 
+95 \textcolor{preprocessor}{#endif}
+96         vfprintf(stderr, msg, ap);
+97   va\_end(ap);
+98 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{debug_8h_af65a73617b71476020a005b20bf02726}\label{debug_8h_af65a73617b71476020a005b20bf02726}} 
+\index{debug.\+h@{debug.\+h}!mc\+\_\+set\+\_\+debug@{mc\+\_\+set\+\_\+debug}}
+\index{mc\+\_\+set\+\_\+debug@{mc\+\_\+set\+\_\+debug}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{mc\+\_\+set\+\_\+debug()}{mc\_set\_debug()}}
+{\footnotesize\ttfamily void mc\+\_\+set\+\_\+debug (\begin{DoxyParamCaption}\item[{int}]{debug }\end{DoxyParamCaption})}
+
+
+
+Definition at line 36 of file debug.\+c.
+
+
+\begin{DoxyCode}
+36 \{ \_debug = debug; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{debug_8h_aadb888da410116384e75a00db30da705}\label{debug_8h_aadb888da410116384e75a00db30da705}} 
+\index{debug.\+h@{debug.\+h}!mc\+\_\+set\+\_\+syslog@{mc\+\_\+set\+\_\+syslog}}
+\index{mc\+\_\+set\+\_\+syslog@{mc\+\_\+set\+\_\+syslog}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{mc\+\_\+set\+\_\+syslog()}{mc\_set\_syslog()}}
+{\footnotesize\ttfamily void mc\+\_\+set\+\_\+syslog (\begin{DoxyParamCaption}\item[{int}]{syslog }\end{DoxyParamCaption})}
+
+
+
+Definition at line 39 of file debug.\+c.
+
+
+\begin{DoxyCode}
+40 \{
+41   \_syslog = syslog;
+42 \}
+\end{DoxyCode}

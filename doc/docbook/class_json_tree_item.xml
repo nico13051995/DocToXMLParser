@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_json_tree_item">
+<title>JsonTreeItem class Reference</title>
+<para>
+    <programlisting>#include <link linkend="jsontreeitem_8h">&lt;jsontreeitem.h&gt;</link></programlisting>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QList&lt; JsonTreeItem * &gt; childItems</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QVector&lt; QVariant &gt; itemData</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>JsonTreeItem * parentItem</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_json_tree_item_1a3a4ebfeec3401b43940cddc8dd644727">JsonTreeItem</link> (
+const QVector&lt; QVariant &gt; &amp; data, <link linkend="class_json_tree_item">JsonTreeItem</link> * parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_json_tree_item_1aac595e07ae4a51106c478e0d99a149e0">~JsonTreeItem</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_json_tree_item">JsonTreeItem</link> * <link linkend="class_json_tree_item_1a24864c7936a43d9059277a20497341b9">child</link> (
+int number)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="class_json_tree_item_1a24d3056cd6f6f2d442cbd0d9756b89c1">childCount</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="class_json_tree_item_1ad66ee4ac09255aa32fb05ffbd4057413">columnCount</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QVariant <link linkend="class_json_tree_item_1a3cd46e11efb01a8c7f59d6bf3c4582d4">data</link> (
+int column)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_tree_item_1a890a0b7cf4aabcaa43e0726d672ba34a">insertChildren</link> (
+int position, int count, int columns)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_tree_item_1a189b5b2926b94dc53f3aaa366cf66b05">insertColumns</link> (
+int position, int columns)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_json_tree_item">JsonTreeItem</link> * <link linkend="class_json_tree_item_1a1777c30033cacb28a800b34423dcee38">parent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_tree_item_1a37ef4384835286e1afcc6f42de7b1c6a">removeChildren</link> (
+int position, int count)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_tree_item_1a7cb315d624881ca9fbb193c5432a82b2">removeColumns</link> (
+int position, int columns)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="class_json_tree_item_1a39c277f6a181ec177b483b38e97e70d5">childNumber</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_tree_item_1a7b60096836271a128a142c023a769e12">setData</link> (
+int column, const QVariant &amp; value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_json_tree_item_1a3a4ebfeec3401b43940cddc8dd644727">
+                <title>JsonTreeItem::JsonTreeItem (const QVector&lt; QVariant &gt; &amp;data, JsonTreeItem *parent=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_item_1aac595e07ae4a51106c478e0d99a149e0">
+                <title>JsonTreeItem::~JsonTreeItem ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_item_1a24864c7936a43d9059277a20497341b9">
+                <title>JsonTreeItem * JsonTreeItem::child (int number)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_item_1a24d3056cd6f6f2d442cbd0d9756b89c1">
+                <title>int JsonTreeItem::childCount () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_item_1ad66ee4ac09255aa32fb05ffbd4057413">
+                <title>int JsonTreeItem::columnCount () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_item_1a3cd46e11efb01a8c7f59d6bf3c4582d4">
+                <title>QVariant JsonTreeItem::data (int column) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_item_1a890a0b7cf4aabcaa43e0726d672ba34a">
+                <title>bool JsonTreeItem::insertChildren (int position, int count, int columns)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_item_1a189b5b2926b94dc53f3aaa366cf66b05">
+                <title>bool JsonTreeItem::insertColumns (int position, int columns)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_item_1a1777c30033cacb28a800b34423dcee38">
+                <title>JsonTreeItem * JsonTreeItem::parent ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_item_1a37ef4384835286e1afcc6f42de7b1c6a">
+                <title>bool JsonTreeItem::removeChildren (int position, int count)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_item_1a7cb315d624881ca9fbb193c5432a82b2">
+                <title>bool JsonTreeItem::removeColumns (int position, int columns)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_item_1a39c277f6a181ec177b483b38e97e70d5">
+                <title>int JsonTreeItem::childNumber () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_item_1a7b60096836271a128a142c023a769e12">
+                <title>bool JsonTreeItem::setData (int column, const QVariant &amp;value)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

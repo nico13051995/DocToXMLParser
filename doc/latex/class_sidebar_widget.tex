@@ -1,0 +1,276 @@
+\hypertarget{class_sidebar_widget}{}\section{Sidebar\+Widget Class Reference}
+\label{class_sidebar_widget}\index{Sidebar\+Widget@{Sidebar\+Widget}}
+Inheritance diagram for Sidebar\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sidebar_widget}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sidebar_widget_adb5e207d7e93d3716178199118451364}{Sidebar\+Widget} (\hyperlink{class_j_s_edit}{J\+S\+Edit} $\ast$editor)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Vector$<$ \hyperlink{struct_block_info}{Block\+Info} $>$ \hyperlink{class_sidebar_widget_ac6820d4338c9763dd3b6a2da710a0fb0}{line\+Numbers}
+\item 
+Q\+Color \hyperlink{class_sidebar_widget_a71151528db89c451ad8aa0c31694c27a}{background\+Color}
+\item 
+Q\+Color \hyperlink{class_sidebar_widget_a0a577ea7fe9a4f2075fa19d1e601f987}{line\+Number\+Color}
+\item 
+Q\+Color \hyperlink{class_sidebar_widget_a0221f90d581113d83c73af06e1738067}{indicator\+Color}
+\item 
+Q\+Color \hyperlink{class_sidebar_widget_afa52fb75135fc07142c40b10b6255fa5}{fold\+Indicator\+Color}
+\item 
+Q\+Font \hyperlink{class_sidebar_widget_a8c38342a3799d3bfbe9671b3f5d28e1f}{font}
+\item 
+int \hyperlink{class_sidebar_widget_a8be447556cc4ec612153b05eec332513}{fold\+Indicator\+Width}
+\item 
+Q\+Pixmap \hyperlink{class_sidebar_widget_a7af9c03c7765c0ba88116fb397de74b5}{right\+Arrow\+Icon}
+\item 
+Q\+Pixmap \hyperlink{class_sidebar_widget_af4a932d3ba2010fe06b78a7253d39d8b}{down\+Arrow\+Icon}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_sidebar_widget_a5908595bfafd6a963901894cec3224bb}{mouse\+Press\+Event} (Q\+Mouse\+Event $\ast$event)
+\item 
+void \hyperlink{class_sidebar_widget_ae74f39b64dca90cf88e35ccbbe9eb5b6}{paint\+Event} (Q\+Paint\+Event $\ast$event)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 427 of file jsedit.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sidebar_widget_adb5e207d7e93d3716178199118451364}\label{class_sidebar_widget_adb5e207d7e93d3716178199118451364}} 
+\index{Sidebar\+Widget@{Sidebar\+Widget}!Sidebar\+Widget@{Sidebar\+Widget}}
+\index{Sidebar\+Widget@{Sidebar\+Widget}!Sidebar\+Widget@{Sidebar\+Widget}}
+\subsubsection{\texorpdfstring{Sidebar\+Widget()}{SidebarWidget()}}
+{\footnotesize\ttfamily Sidebar\+Widget\+::\+Sidebar\+Widget (\begin{DoxyParamCaption}\item[{\hyperlink{class_j_s_edit}{J\+S\+Edit} $\ast$}]{editor }\end{DoxyParamCaption})}
+
+
+
+Definition at line 445 of file jsedit.\+cpp.
+
+
+\begin{DoxyCode}
+446     : QWidget(editor)
+447     , \hyperlink{class_sidebar_widget_a8be447556cc4ec612153b05eec332513}{foldIndicatorWidth}(0)
+448 \{
+449     \hyperlink{class_sidebar_widget_a71151528db89c451ad8aa0c31694c27a}{backgroundColor} = Qt::lightGray;
+450     \hyperlink{class_sidebar_widget_a0a577ea7fe9a4f2075fa19d1e601f987}{lineNumberColor} = Qt::black;
+451     \hyperlink{class_sidebar_widget_a0221f90d581113d83c73af06e1738067}{indicatorColor} = Qt::white;
+452     \hyperlink{class_sidebar_widget_afa52fb75135fc07142c40b10b6255fa5}{foldIndicatorColor} = Qt::lightGray;
+453 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sidebar_widget_a5908595bfafd6a963901894cec3224bb}\label{class_sidebar_widget_a5908595bfafd6a963901894cec3224bb}} 
+\index{Sidebar\+Widget@{Sidebar\+Widget}!mouse\+Press\+Event@{mouse\+Press\+Event}}
+\index{mouse\+Press\+Event@{mouse\+Press\+Event}!Sidebar\+Widget@{Sidebar\+Widget}}
+\subsubsection{\texorpdfstring{mouse\+Press\+Event()}{mousePressEvent()}}
+{\footnotesize\ttfamily void Sidebar\+Widget\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{Q\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 455 of file jsedit.\+cpp.
+
+
+\begin{DoxyCode}
+456 \{
+457     \textcolor{keywordflow}{if} (\hyperlink{class_sidebar_widget_a8be447556cc4ec612153b05eec332513}{foldIndicatorWidth} > 0) \{
+458         \textcolor{keywordtype}{int} xofs = width() - \hyperlink{class_sidebar_widget_a8be447556cc4ec612153b05eec332513}{foldIndicatorWidth};
+459         \textcolor{keywordtype}{int} lineNo = -1;
+460         \textcolor{keywordtype}{int} fh = fontMetrics().lineSpacing();
+461         \textcolor{keywordtype}{int} ys = \textcolor{keyword}{event}->pos().y();
+462         \textcolor{keywordflow}{if} (event->pos().x() > xofs) \{
+463             \textcolor{keywordflow}{foreach} (\hyperlink{struct_block_info}{BlockInfo} ln, \hyperlink{class_sidebar_widget_ac6820d4338c9763dd3b6a2da710a0fb0}{lineNumbers})
+464                 \textcolor{keywordflow}{if} (ln.\hyperlink{struct_block_info_a6333e999c5d9f3e8882776e66eb087c0}{position} < ys && (ln.\hyperlink{struct_block_info_a6333e999c5d9f3e8882776e66eb087c0}{position} + fh) > ys) \{
+465                     \textcolor{keywordflow}{if} (ln.\hyperlink{struct_block_info_a777eccf7133be7d93623791ffd0a3282}{foldable})
+466                         lineNo = ln.\hyperlink{struct_block_info_a7f39cc445f8a30a859859f49e59640ee}{number};
+467                     \textcolor{keywordflow}{break};
+468                 \}
+469         \}
+470         \textcolor{keywordflow}{if} (lineNo >= 0) \{
+471             \hyperlink{class_j_s_edit}{JSEdit} *editor = qobject\_cast<\hyperlink{class_j_s_edit}{JSEdit}*>(parent());
+472             \textcolor{keywordflow}{if} (editor)
+473                 editor->\hyperlink{class_j_s_edit_ae2955b517e15a98c85252efef452ae8a}{toggleFold}(lineNo);
+474         \}
+475     \}
+476 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sidebar_widget_ae74f39b64dca90cf88e35ccbbe9eb5b6}\label{class_sidebar_widget_ae74f39b64dca90cf88e35ccbbe9eb5b6}} 
+\index{Sidebar\+Widget@{Sidebar\+Widget}!paint\+Event@{paint\+Event}}
+\index{paint\+Event@{paint\+Event}!Sidebar\+Widget@{Sidebar\+Widget}}
+\subsubsection{\texorpdfstring{paint\+Event()}{paintEvent()}}
+{\footnotesize\ttfamily void Sidebar\+Widget\+::paint\+Event (\begin{DoxyParamCaption}\item[{Q\+Paint\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 478 of file jsedit.\+cpp.
+
+
+\begin{DoxyCode}
+479 \{
+480     QPainter p(\textcolor{keyword}{this});
+481     p.fillRect(event->rect(), \hyperlink{class_sidebar_widget_a71151528db89c451ad8aa0c31694c27a}{backgroundColor});
+482     p.setPen(\hyperlink{class_sidebar_widget_a0a577ea7fe9a4f2075fa19d1e601f987}{lineNumberColor});
+483     p.setFont(\hyperlink{class_sidebar_widget_a8c38342a3799d3bfbe9671b3f5d28e1f}{font});
+484     \textcolor{keywordtype}{int} fh = QFontMetrics(\hyperlink{class_sidebar_widget_a8c38342a3799d3bfbe9671b3f5d28e1f}{font}).height();
+485     \textcolor{keywordflow}{foreach} (\hyperlink{struct_block_info}{BlockInfo} ln, \hyperlink{class_sidebar_widget_ac6820d4338c9763dd3b6a2da710a0fb0}{lineNumbers})
+486         p.drawText(0, ln.\hyperlink{struct_block_info_a6333e999c5d9f3e8882776e66eb087c0}{position}, width() - 4 - \hyperlink{class_sidebar_widget_a8be447556cc4ec612153b05eec332513}{foldIndicatorWidth}, fh, 
+      Qt::AlignRight, QString::number(ln.\hyperlink{struct_block_info_a7f39cc445f8a30a859859f49e59640ee}{number}));
+487 
+488     \textcolor{keywordflow}{if} (\hyperlink{class_sidebar_widget_a8be447556cc4ec612153b05eec332513}{foldIndicatorWidth} > 0) \{
+489         \textcolor{keywordtype}{int} xofs = width() - \hyperlink{class_sidebar_widget_a8be447556cc4ec612153b05eec332513}{foldIndicatorWidth};
+490         p.fillRect(xofs, 0, \hyperlink{class_sidebar_widget_a8be447556cc4ec612153b05eec332513}{foldIndicatorWidth}, height(), 
+      \hyperlink{class_sidebar_widget_a0221f90d581113d83c73af06e1738067}{indicatorColor});
+491 
+492         \textcolor{comment}{// initialize (or recreate) the arrow icons whenever necessary}
+493         \textcolor{keywordflow}{if} (\hyperlink{class_sidebar_widget_a8be447556cc4ec612153b05eec332513}{foldIndicatorWidth} != \hyperlink{class_sidebar_widget_a7af9c03c7765c0ba88116fb397de74b5}{rightArrowIcon}.width()) \{
+494             QPainter iconPainter;
+495             QPolygonF polygon;
+496 
+497             \textcolor{keywordtype}{int} dim = \hyperlink{class_sidebar_widget_a8be447556cc4ec612153b05eec332513}{foldIndicatorWidth};
+498             \hyperlink{class_sidebar_widget_a7af9c03c7765c0ba88116fb397de74b5}{rightArrowIcon} = QPixmap(dim, dim);
+499             \hyperlink{class_sidebar_widget_a7af9c03c7765c0ba88116fb397de74b5}{rightArrowIcon}.fill(Qt::transparent);
+500             \hyperlink{class_sidebar_widget_af4a932d3ba2010fe06b78a7253d39d8b}{downArrowIcon} = \hyperlink{class_sidebar_widget_a7af9c03c7765c0ba88116fb397de74b5}{rightArrowIcon};
+501 
+502             polygon << QPointF(dim * 0.4, dim * 0.25);
+503             polygon << QPointF(dim * 0.4, dim * 0.75);
+504             polygon << QPointF(dim * 0.8, dim * 0.5);
+505             iconPainter.begin(&\hyperlink{class_sidebar_widget_a7af9c03c7765c0ba88116fb397de74b5}{rightArrowIcon});
+506             iconPainter.setRenderHint(QPainter::Antialiasing);
+507             iconPainter.setPen(Qt::NoPen);
+508             iconPainter.setBrush(\hyperlink{class_sidebar_widget_afa52fb75135fc07142c40b10b6255fa5}{foldIndicatorColor});
+509             iconPainter.drawPolygon(polygon);
+510             iconPainter.end();
+511 
+512             polygon.clear();
+513             polygon << QPointF(dim * 0.25, dim * 0.4);
+514             polygon << QPointF(dim * 0.75, dim * 0.4);
+515             polygon << QPointF(dim * 0.5, dim * 0.8);
+516             iconPainter.begin(&\hyperlink{class_sidebar_widget_af4a932d3ba2010fe06b78a7253d39d8b}{downArrowIcon});
+517             iconPainter.setRenderHint(QPainter::Antialiasing);
+518             iconPainter.setPen(Qt::NoPen);
+519             iconPainter.setBrush(\hyperlink{class_sidebar_widget_afa52fb75135fc07142c40b10b6255fa5}{foldIndicatorColor});
+520             iconPainter.drawPolygon(polygon);
+521             iconPainter.end();
+522         \}
+523 
+524         \textcolor{keywordflow}{foreach} (\hyperlink{struct_block_info}{BlockInfo} ln, \hyperlink{class_sidebar_widget_ac6820d4338c9763dd3b6a2da710a0fb0}{lineNumbers})
+525             \textcolor{keywordflow}{if} (ln.\hyperlink{struct_block_info_a777eccf7133be7d93623791ffd0a3282}{foldable}) \{
+526                 \textcolor{keywordflow}{if} (ln.\hyperlink{struct_block_info_a1aac7802107d29f5fc685a355a75ce1d}{folded})
+527                     p.drawPixmap(xofs, ln.\hyperlink{struct_block_info_a6333e999c5d9f3e8882776e66eb087c0}{position}, \hyperlink{class_sidebar_widget_a7af9c03c7765c0ba88116fb397de74b5}{rightArrowIcon});
+528                 \textcolor{keywordflow}{else}
+529                     p.drawPixmap(xofs, ln.\hyperlink{struct_block_info_a6333e999c5d9f3e8882776e66eb087c0}{position}, \hyperlink{class_sidebar_widget_af4a932d3ba2010fe06b78a7253d39d8b}{downArrowIcon});
+530             \}
+531     \}
+532 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_sidebar_widget_a71151528db89c451ad8aa0c31694c27a}\label{class_sidebar_widget_a71151528db89c451ad8aa0c31694c27a}} 
+\index{Sidebar\+Widget@{Sidebar\+Widget}!background\+Color@{background\+Color}}
+\index{background\+Color@{background\+Color}!Sidebar\+Widget@{Sidebar\+Widget}}
+\subsubsection{\texorpdfstring{background\+Color}{backgroundColor}}
+{\footnotesize\ttfamily Q\+Color Sidebar\+Widget\+::background\+Color}
+
+
+
+Definition at line 432 of file jsedit.\+cpp.
+
+\mbox{\Hypertarget{class_sidebar_widget_af4a932d3ba2010fe06b78a7253d39d8b}\label{class_sidebar_widget_af4a932d3ba2010fe06b78a7253d39d8b}} 
+\index{Sidebar\+Widget@{Sidebar\+Widget}!down\+Arrow\+Icon@{down\+Arrow\+Icon}}
+\index{down\+Arrow\+Icon@{down\+Arrow\+Icon}!Sidebar\+Widget@{Sidebar\+Widget}}
+\subsubsection{\texorpdfstring{down\+Arrow\+Icon}{downArrowIcon}}
+{\footnotesize\ttfamily Q\+Pixmap Sidebar\+Widget\+::down\+Arrow\+Icon}
+
+
+
+Definition at line 439 of file jsedit.\+cpp.
+
+\mbox{\Hypertarget{class_sidebar_widget_afa52fb75135fc07142c40b10b6255fa5}\label{class_sidebar_widget_afa52fb75135fc07142c40b10b6255fa5}} 
+\index{Sidebar\+Widget@{Sidebar\+Widget}!fold\+Indicator\+Color@{fold\+Indicator\+Color}}
+\index{fold\+Indicator\+Color@{fold\+Indicator\+Color}!Sidebar\+Widget@{Sidebar\+Widget}}
+\subsubsection{\texorpdfstring{fold\+Indicator\+Color}{foldIndicatorColor}}
+{\footnotesize\ttfamily Q\+Color Sidebar\+Widget\+::fold\+Indicator\+Color}
+
+
+
+Definition at line 435 of file jsedit.\+cpp.
+
+\mbox{\Hypertarget{class_sidebar_widget_a8be447556cc4ec612153b05eec332513}\label{class_sidebar_widget_a8be447556cc4ec612153b05eec332513}} 
+\index{Sidebar\+Widget@{Sidebar\+Widget}!fold\+Indicator\+Width@{fold\+Indicator\+Width}}
+\index{fold\+Indicator\+Width@{fold\+Indicator\+Width}!Sidebar\+Widget@{Sidebar\+Widget}}
+\subsubsection{\texorpdfstring{fold\+Indicator\+Width}{foldIndicatorWidth}}
+{\footnotesize\ttfamily int Sidebar\+Widget\+::fold\+Indicator\+Width}
+
+
+
+Definition at line 437 of file jsedit.\+cpp.
+
+\mbox{\Hypertarget{class_sidebar_widget_a8c38342a3799d3bfbe9671b3f5d28e1f}\label{class_sidebar_widget_a8c38342a3799d3bfbe9671b3f5d28e1f}} 
+\index{Sidebar\+Widget@{Sidebar\+Widget}!font@{font}}
+\index{font@{font}!Sidebar\+Widget@{Sidebar\+Widget}}
+\subsubsection{\texorpdfstring{font}{font}}
+{\footnotesize\ttfamily Q\+Font Sidebar\+Widget\+::font}
+
+
+
+Definition at line 436 of file jsedit.\+cpp.
+
+\mbox{\Hypertarget{class_sidebar_widget_a0221f90d581113d83c73af06e1738067}\label{class_sidebar_widget_a0221f90d581113d83c73af06e1738067}} 
+\index{Sidebar\+Widget@{Sidebar\+Widget}!indicator\+Color@{indicator\+Color}}
+\index{indicator\+Color@{indicator\+Color}!Sidebar\+Widget@{Sidebar\+Widget}}
+\subsubsection{\texorpdfstring{indicator\+Color}{indicatorColor}}
+{\footnotesize\ttfamily Q\+Color Sidebar\+Widget\+::indicator\+Color}
+
+
+
+Definition at line 434 of file jsedit.\+cpp.
+
+\mbox{\Hypertarget{class_sidebar_widget_a0a577ea7fe9a4f2075fa19d1e601f987}\label{class_sidebar_widget_a0a577ea7fe9a4f2075fa19d1e601f987}} 
+\index{Sidebar\+Widget@{Sidebar\+Widget}!line\+Number\+Color@{line\+Number\+Color}}
+\index{line\+Number\+Color@{line\+Number\+Color}!Sidebar\+Widget@{Sidebar\+Widget}}
+\subsubsection{\texorpdfstring{line\+Number\+Color}{lineNumberColor}}
+{\footnotesize\ttfamily Q\+Color Sidebar\+Widget\+::line\+Number\+Color}
+
+
+
+Definition at line 433 of file jsedit.\+cpp.
+
+\mbox{\Hypertarget{class_sidebar_widget_ac6820d4338c9763dd3b6a2da710a0fb0}\label{class_sidebar_widget_ac6820d4338c9763dd3b6a2da710a0fb0}} 
+\index{Sidebar\+Widget@{Sidebar\+Widget}!line\+Numbers@{line\+Numbers}}
+\index{line\+Numbers@{line\+Numbers}!Sidebar\+Widget@{Sidebar\+Widget}}
+\subsubsection{\texorpdfstring{line\+Numbers}{lineNumbers}}
+{\footnotesize\ttfamily Q\+Vector$<$\hyperlink{struct_block_info}{Block\+Info}$>$ Sidebar\+Widget\+::line\+Numbers}
+
+
+
+Definition at line 431 of file jsedit.\+cpp.
+
+\mbox{\Hypertarget{class_sidebar_widget_a7af9c03c7765c0ba88116fb397de74b5}\label{class_sidebar_widget_a7af9c03c7765c0ba88116fb397de74b5}} 
+\index{Sidebar\+Widget@{Sidebar\+Widget}!right\+Arrow\+Icon@{right\+Arrow\+Icon}}
+\index{right\+Arrow\+Icon@{right\+Arrow\+Icon}!Sidebar\+Widget@{Sidebar\+Widget}}
+\subsubsection{\texorpdfstring{right\+Arrow\+Icon}{rightArrowIcon}}
+{\footnotesize\ttfamily Q\+Pixmap Sidebar\+Widget\+::right\+Arrow\+Icon}
+
+
+
+Definition at line 438 of file jsedit.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+qt-\/json-\/editor-\/master/\hyperlink{jsedit_8cpp}{jsedit.\+cpp}\end{DoxyCompactItemize}

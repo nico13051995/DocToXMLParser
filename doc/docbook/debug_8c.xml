@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="debug_8c">
+    <title>debug.c File Reference</title>
+    <programlisting>#include &quot;config.h&quot;</programlisting>
+    <programlisting>#include &lt;stdio.h&gt;</programlisting>
+    <programlisting>#include &lt;stdlib.h&gt;</programlisting>
+    <programlisting>#include &lt;string.h&gt;</programlisting>
+    <programlisting>#include &lt;stdarg.h&gt;</programlisting>
+    <programlisting>#include &quot;debug.h&quot;</programlisting>
+        <section>
+            <title>Variables</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="debug_8c_1af1a3d22da8e95e772e909a596f8db36b">_syslog</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="debug_8c_1a4859ebf3de3eada7338899d0f24d3c23">_debug</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="debug_8c_1af65a73617b71476020a005b20bf02726">mc_set_debug</link> (
+int debug)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="debug_8c_1a3b3ab3ae8b438384fb109a2e38646b6e">mc_get_debug</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="debug_8c_1aadb888da410116384e75a00db30da705">mc_set_syslog</link> (
+int syslog)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="debug_8c_1a44913dbc4f1abf6614d42b22b941c092">mc_abort</link> (
+const char * msg, ... )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="debug_8c_1a600cf4cbbe19c0c15ca3710210e35aba">mc_debug</link> (
+const char * msg, ... )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="debug_8c_1abf22ea3a331c7ff21c23da91a07c7cb2">mc_error</link> (
+const char * msg, ... )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="debug_8c_1acbb92996a994e316ff65ed3a026e12a4">mc_info</link> (
+const char * msg, ... )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/qt-json-editor-master/jsonc/debug.c</para>
+    </simplesect>
+</section>

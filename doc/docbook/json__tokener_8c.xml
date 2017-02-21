@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="json__tokener_8c">
+    <title>json_tokener.c File Reference</title>
+    <programlisting>#include &quot;config.h&quot;</programlisting>
+    <programlisting>#include &lt;stdio.h&gt;</programlisting>
+    <programlisting>#include &lt;stdlib.h&gt;</programlisting>
+    <programlisting>#include &lt;stddef.h&gt;</programlisting>
+    <programlisting>#include &lt;ctype.h&gt;</programlisting>
+    <programlisting>#include &lt;string.h&gt;</programlisting>
+    <programlisting>#include &quot;bits.h&quot;</programlisting>
+    <programlisting>#include &quot;debug.h&quot;</programlisting>
+    <programlisting>#include &quot;printbuf.h&quot;</programlisting>
+    <programlisting>#include &quot;arraylist.h&quot;</programlisting>
+    <programlisting>#include &quot;json_object.h&quot;</programlisting>
+    <programlisting>#include &quot;json_tokener.h&quot;</programlisting>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="json__tokener_8c_1a17ba9d3d3f420182822febf73adca0a4">state</link> tok-&gt;stack[tok-&gt;depth].state</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="json__tokener_8c_1a87ee95a407326b09be35fa9f93916094">saved_state</link> tok-&gt;stack[tok-&gt;depth].saved_state</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="json__tokener_8c_1a7ccda8a3a0f47702f9fa962899b0a3a1">current</link> tok-&gt;stack[tok-&gt;depth].current</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="json__tokener_8c_1ab340ec2567c6b44f492f64bd7cd819d7">obj_field_name</link> tok-&gt;stack[tok-&gt;depth].obj_field_name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="json__tokener_8c_1ac9a41ea43e3ef9b9099f9308bba824f8">POP_CHAR</link> (((tok)-&gt;char_offset == len) ?                                          \
+   (((tok)-&gt;depth == 0 &amp;&amp; <link linkend="json__tokener_8c_1a17ba9d3d3f420182822febf73adca0a4">state</link> == <link linkend="json__tokener_8h_1af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d">json_tokener_state_eatws</link> &amp;&amp; <link linkend="json__tokener_8c_1a87ee95a407326b09be35fa9f93916094">saved_state</link> == <link linkend="json__tokener_8h_1af026dec71e4548e6200eb2f902f1c4e2ad80b689cb709967b67a348de3d8601d2">json_tokener_state_finish</link>) ? \
+    (((tok)-&gt;err = <link linkend="json__tokener_8h_1a0a31f0df8a532ef8be5c09ba40eacb59afe2fa9bde03155019b2df30f66a5fcd0">json_tokener_success</link>), 0)                              \
+    :                                                                   \
+    (((tok)-&gt;err = <link linkend="json__tokener_8h_1a0a31f0df8a532ef8be5c09ba40eacb59a9b26e920ca765df91c84e999561d8fb0">json_tokener_continue</link>), 0)                             \
+    ) :                                                                 \
+   (((dest) = *str), 1)                                                 \
+   )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="json__tokener_8c_1af90f7ae9bf7f086cd43118bf0cdf7074">ADVANCE_CHAR</link> ( ++(str), ((tok)-&gt;char_offset)++, c)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Variables</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const char * <link linkend="json__tokener_8c_1a60c445e8a28c3fe9b8157dbb99effbd8">json_null_str</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const char * <link linkend="json__tokener_8c_1aef75c66916802b3f84ebf8ff55c5ba49">json_true_str</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const char * <link linkend="json__tokener_8c_1a3b710b6f9996bc720118faeb172d467a">json_false_str</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const char * <link linkend="json__tokener_8c_1a6ede8ee7a4ec1fed68d10ea77294c966">json_tokener_errors</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structjson__tokener">json_tokener</link> * <link linkend="json__tokener_8c_1a55d6e8a6f6d90992c063a39e21769c52">json_tokener_new</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="json__tokener_8c_1af6645ff27c0ca82c6e314390814fcbeb">json_tokener_free</link> (
+struct <link linkend="structjson__tokener">json_tokener</link> * tok)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="json__tokener_8c_1a96b44faffe09b30a7d10628672f16c94">json_tokener_reset_level</link> (
+struct <link linkend="structjson__tokener">json_tokener</link> * tok, int depth)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="json__tokener_8c_1ae23dd7ad4737bfc18409af6173ab2b09">json_tokener_reset</link> (
+struct <link linkend="structjson__tokener">json_tokener</link> * tok)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structjson__object">json_object</link> * <link linkend="json__tokener_8c_1abf031fdf1e5caab71e2225a99588c6bb">json_tokener_parse</link> (
+const char * str)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="json__tokener_8c_1a9dd8c380e1619571aa097b2119a9bca9">strndup</link> (
+const char * str, size_t n)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structjson__object">json_object</link> * <link linkend="json__tokener_8c_1a0d9a666c21879647e8831f9cfa691673">json_tokener_parse_ex</link> (
+struct <link linkend="structjson__tokener">json_tokener</link> * tok, const char * str, int len)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/qt-json-editor-master/jsonc/json_tokener.c</para>
+    </simplesect>
+</section>

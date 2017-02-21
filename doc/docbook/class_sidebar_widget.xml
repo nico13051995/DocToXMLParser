@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_sidebar_widget">
+<title>SidebarWidget class Reference</title>
+        <section>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QVector&lt; BlockInfo &gt; lineNumbers</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QColor backgroundColor</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QColor lineNumberColor</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QColor indicatorColor</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QColor foldIndicatorColor</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QFont font</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int foldIndicatorWidth</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QPixmap rightArrowIcon</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QPixmap downArrowIcon</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_sidebar_widget_1adb5e207d7e93d3716178199118451364">SidebarWidget</link> (
+<link linkend="class_j_s_edit">JSEdit</link> * editor)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_sidebar_widget_1a5908595bfafd6a963901894cec3224bb">mousePressEvent</link> (
+QMouseEvent * event)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_sidebar_widget_1ae74f39b64dca90cf88e35ccbbe9eb5b6">paintEvent</link> (
+QPaintEvent * event)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_sidebar_widget_1adb5e207d7e93d3716178199118451364">
+                <title>SidebarWidget::SidebarWidget (JSEdit *editor)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_sidebar_widget_1a5908595bfafd6a963901894cec3224bb">
+                <title>void SidebarWidget::mousePressEvent (QMouseEvent *event)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_sidebar_widget_1ae74f39b64dca90cf88e35ccbbe9eb5b6">
+                <title>void SidebarWidget::paintEvent (QPaintEvent *event)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

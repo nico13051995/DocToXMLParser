@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="printbuf_8h">
+    <title>printbuf.h File Reference</title>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structprintbuf">printbuf</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="printbuf_8h_1a6f3a4dc87fab41c37e3eff42f40dc346">printbuf_memappend_fast</link> do {                                                         \
+  if ((p-&gt;size - p-&gt;bpos) &gt; bufsize) {                       \
+    memcpy(p-&gt;buf + p-&gt;bpos, (bufptr), bufsize);             \
+    p-&gt;bpos += bufsize;                                      \
+    p-&gt;buf[p-&gt;bpos]= &apos;\0&apos;;                                   \
+  } else {  <link linkend="printbuf_8h_1a22f09779a19db59a83e7cb8c2ce4c75f">printbuf_memappend</link>(p, (bufptr), bufsize); }      \
+} while (0)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structprintbuf">printbuf</link> * <link linkend="printbuf_8h_1a3e390ebc7660a18335edd89f640fd415">printbuf_new</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="printbuf_8h_1a22f09779a19db59a83e7cb8c2ce4c75f">printbuf_memappend</link> (
+struct <link linkend="structprintbuf">printbuf</link> * p, const char * buf, int size)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="printbuf_8h_1adf6214db6c8ce994c7f7f1180863c8a4">sprintbuf</link> (
+struct <link linkend="structprintbuf">printbuf</link> * p, const char * msg, ... )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="printbuf_8h_1a4393ee3dedb376af11c96fe97532292e">printbuf_reset</link> (
+struct <link linkend="structprintbuf">printbuf</link> * p)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="printbuf_8h_1ab525221c767ac65c58ddeea8a655a4e8">printbuf_free</link> (
+struct <link linkend="structprintbuf">printbuf</link> * p)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/qt-json-editor-master/jsonc/printbuf.h</para>
+    </simplesect>
+</section>

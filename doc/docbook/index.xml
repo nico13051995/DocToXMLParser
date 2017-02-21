@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <info>
+    <title>DocToXMLParser</title>
+    </info>
+    <chapter>
+        <title>Namespace Documentation</title>
+        <xi:include href="namespace_json.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespace_ui.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </chapter>
+        <xi:include href="md_qt-json-editor-master__r_e_a_d_m_e.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <chapter>
+        <title>Class Documentation</title>
+        <xi:include href="class_add_node_dlg.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structarray__list.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="struct_block_info.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_builder.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="unionjson__object_1_1data.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_ui_1_1_find_dialog.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_find_form.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_ui_1_1_find_replace_dialog.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_find_replace_form.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="struct_j_s_highlighter_1_1_highlighting_rule.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_item.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_item_attribute.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_j_s_block_data.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_j_s_doc_layout.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_j_s_edit.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_j_s_edit_private.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_j_s_highlighter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structjson__object.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structjson__object__iter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structjson__tokener.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structjson__tokener__srec.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_json_editor_main.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_json_serializable.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_json_tree_item.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_json_tree_model.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structlh__entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structlh__table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_main_window.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_paragraph.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_parser_config.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structprintbuf.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_q_abstract_item_model.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_q_dialog.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_q_main_window.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_q_object.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_q_plain_text_document_layout.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_q_plain_text_edit.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_q_syntax_highlighter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_q_text_block_user_data.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_q_widget.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_json_1_1_reader.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_reg_exp_tool.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_select_parser_window.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_settings.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_settings_container.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_sidebar_widget.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_json_1_1_value.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_w_d_config_dialog.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_xml_builder.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </chapter>
+    <chapter>
+        <title>File Documentation</title>
+        <xi:include href="builder_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="builder_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="main_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="mainwindow_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="mainwindow_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="item_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="item_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="item__attribute_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="item__attribute_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="jsonserializable_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="jsonserializable_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="paragraph_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="paragraph_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="parserconfig_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="parserconfig_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="settingscontainer_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="settingscontainer_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="addnodedlg_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="addnodedlg_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="finddialog_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="finddialog_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="findform_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="findform_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="findreplace__global_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="findreplacedialog_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="findreplacedialog_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="findreplaceform_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="findreplaceform_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="jsedit_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="jsedit_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_j_s_highlighter_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="arraylist_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="arraylist_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="bits_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="config_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="debug_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="debug_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="json_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="json__object_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="json__object_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="json__object__private_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="json__tokener_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="json__tokener_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="json__util_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="json__util_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="jsoncxx_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="jsoncxx_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="linkhash_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="linkhash_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="printbuf_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="printbuf_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="jsoneditormain_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="jsoneditormain_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="jsontreeitem_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="jsontreeitem_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="jsontreemodel_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="jsontreemodel_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_r_e_a_d_m_e_8md.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="version_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="regexp_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="regexp_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="selectparserwindow_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="selectparserwindow_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="settings_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="settings_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="wdconfigdialog_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="wdconfigdialog_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="xmlbuilder_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="xmlbuilder_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </chapter>
+</book>

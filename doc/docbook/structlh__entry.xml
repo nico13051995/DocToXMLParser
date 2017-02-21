@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structlh__entry">
+<title>lh_entry struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="linkhash_8h">&lt;linkhash.h&gt;</link></programlisting>
+</para>
+        <section>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * k</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const void * v</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct lh_entry * next</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct lh_entry * prev</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>An entry in the hash table </para>
+                <para>Definition at line 52 of file linkhash.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>linkhash.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+            <simplesect>
+                <title>void* lh_entry::k</title>                
+<para>The key. </para>
+
+                <para>Definition at line 56 of file linkhash.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>linkhash.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>const void* lh_entry::v</title>                
+<para>The value. </para>
+
+                <para>Definition at line 60 of file linkhash.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>linkhash.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>struct lh_entry* lh_entry::next</title>                
+<para>The next entry </para>
+
+                <para>Definition at line 64 of file linkhash.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>linkhash.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>struct lh_entry* lh_entry::prev</title>                
+<para>The previous entry. </para>
+
+                <para>Definition at line 68 of file linkhash.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>linkhash.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

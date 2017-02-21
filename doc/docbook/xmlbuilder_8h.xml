@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="xmlbuilder_8h">
+    <title>xmlbuilder.h File Reference</title>
+    <programlisting>#include &lt;QObject&gt;</programlisting>
+    <programlisting>#include &lt;QXmlStreamWriter&gt;</programlisting>
+    <programlisting>#include &quot;builder.h&quot;</programlisting>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_xml_builder">XmlBuilder</link></para>
+<para><emphasis>The XmlBuilder class
+implementation of Builder for XML generator.</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/xmlbuilder.h</para>
+    </simplesect>
+</section>

@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_reg_exp_tool">
+<title>RegExpTool class Reference</title>
+<para>
+    <programlisting>#include <link linkend="regexp_8h">&lt;regexp.h&gt;</link></programlisting>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString pattern</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString text</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QRegularExpression rx</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QRegularExpression::MatchType matchType</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QRegularExpression::PatternOptions patternOptions</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QRegularExpression::MatchOptions matchOptions</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_reg_exp_tool_1a08defd4a7b37e54d7278cb0e25b03922">RegExpTool</link> (
+QObject * parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QStringList <link linkend="class_reg_exp_tool_1a15bf497425b5baaebf81697af4e59ad2">globalMatch</link> (
+QString text, QString pattern)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_reg_exp_tool_1a91de829aa5c85a794348421a28b4b73c">setPatter</link> (
+QString pattern)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const QStringList <link linkend="class_reg_exp_tool_1a4db3c1e4ddabf6246d41be920f60b7be">getGroupsNames</link> (
+QString pattern)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>The <link linkend="class_reg_exp_tool">RegExpTool</link> class Specific class tool for fast parsing document. </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_reg_exp_tool_1a08defd4a7b37e54d7278cb0e25b03922">
+                <title>RegExpTool::RegExpTool (QObject *parent=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_reg_exp_tool_1a15bf497425b5baaebf81697af4e59ad2">
+                <title>QStringList RegExpTool::globalMatch (QString text, QString pattern=QString())</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_reg_exp_tool_1a91de829aa5c85a794348421a28b4b73c">
+                <title>bool RegExpTool::setPatter (QString pattern)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_reg_exp_tool_1a4db3c1e4ddabf6246d41be920f60b7be">
+                <title>const QStringList RegExpTool::getGroupsNames (QString pattern=QString())</title> <emphasis></emphasis>
+                
+            </section>
+</section>

@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_parser_config">
+<title>ParserConfig class Reference</title>
+<para>
+    <programlisting>#include <link linkend="parserconfig_8h">&lt;parserconfig.h&gt;</link></programlisting>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString path</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString header</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString footer</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QList&lt; Item * &gt; currentTemplate<para><emphasis>currentTemplate
+list of item readed from config files</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_parser_config_1a69cccb111fc3b3d4716c92e676f13b9f">ParserConfig</link> (
+QString path, QObject * parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_parser_config_1a9a23d768f0a279e163e1f0f49dfc0d9e">~ParserConfig</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_parser_config_1a8693076fd02fe0bdad9cab47c31e83cd">isValid</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QList&lt; <link linkend="class_item">Item</link> * &gt; <link linkend="class_parser_config_1a59e44b4b1bc104b9de240cb7640bb63f">getCurrentTemplate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString <link linkend="class_parser_config_1a0a9a65b537b8c7f4041d2b913c46fde7">getName</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString <link linkend="class_parser_config_1a9c35e5cd102e56c35a1030b643daed58">getPath</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString <link linkend="class_parser_config_1ac42d4bcd85b1bb65840a5325926b96d4">getFooter</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString <link linkend="class_parser_config_1a336cf3ab9bd7c8bc894dcc2b383d3a7b">getHeader</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>The <link linkend="class_parser_config">ParserConfig</link> class. </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_parser_config_1a69cccb111fc3b3d4716c92e676f13b9f">
+                <title>ParserConfig::ParserConfig (QString path, QObject *parent=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_parser_config_1a9a23d768f0a279e163e1f0f49dfc0d9e">
+                <title>ParserConfig::~ParserConfig ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_parser_config_1a8693076fd02fe0bdad9cab47c31e83cd">
+                <title>bool ParserConfig::isValid ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_parser_config_1a59e44b4b1bc104b9de240cb7640bb63f">
+                <title>QList&lt; Item * &gt; ParserConfig::getCurrentTemplate () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_parser_config_1a0a9a65b537b8c7f4041d2b913c46fde7">
+                <title>QString ParserConfig::getName () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_parser_config_1a9c35e5cd102e56c35a1030b643daed58">
+                <title>QString ParserConfig::getPath () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_parser_config_1ac42d4bcd85b1bb65840a5325926b96d4">
+                <title>QString ParserConfig::getFooter () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_parser_config_1a336cf3ab9bd7c8bc894dcc2b383d3a7b">
+                <title>QString ParserConfig::getHeader () const</title> <emphasis></emphasis>
+                
+            </section>
+</section>

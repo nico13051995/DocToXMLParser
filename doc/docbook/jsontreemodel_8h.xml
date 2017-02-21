@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="jsontreemodel_8h">
+    <title>jsontreemodel.h File Reference</title>
+    <programlisting>#include &lt;QAbstractItemModel&gt;</programlisting>
+    <programlisting>#include &lt;QModelIndex&gt;</programlisting>
+    <programlisting>#include &lt;QVariant&gt;</programlisting>
+    <programlisting>#include &quot;jsontreeitem.h&quot;</programlisting>
+    <programlisting>#include &quot;jsonc/jsoncxx.h&quot;</programlisting>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_json_tree_model">JsonTreeModel</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/qt-json-editor-master/jsontreemodel.h</para>
+    </simplesect>
+</section>

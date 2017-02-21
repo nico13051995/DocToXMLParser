@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="debug_8h">
+    <title>debug.h File Reference</title>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="debug_8h_1a50f21a239fa040a10ad4cfdb4278b02b">MC_SET_DEBUG</link> if (0) <link linkend="debug_8h_1af65a73617b71476020a005b20bf02726">mc_set_debug</link>(x)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="debug_8h_1acb272a4b4444b69cd995236f167f90ba">MC_GET_DEBUG</link> (0)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="debug_8h_1acf1e895cb5eb7f334cbe51901e6bb918">MC_SET_SYSLOG</link> if (0) <link linkend="debug_8h_1aadb888da410116384e75a00db30da705">mc_set_syslog</link>(x)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="debug_8h_1a25591d3d4754c0c6d1f2b5463fb4977e">MC_ABORT</link> if (0) <link linkend="debug_8h_1a44913dbc4f1abf6614d42b22b941c092">mc_abort</link>(x, ##__VA_ARGS__)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="debug_8h_1afda355b35d18bf2e6a2a22d5c8eef42c">MC_DEBUG</link> if (0) <link linkend="debug_8h_1a600cf4cbbe19c0c15ca3710210e35aba">mc_debug</link>(x, ##__VA_ARGS__)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="debug_8h_1a11ba39cecbe449af5b86fa2f78e9da9d">MC_ERROR</link> if (0) <link linkend="debug_8h_1abf22ea3a331c7ff21c23da91a07c7cb2">mc_error</link>(x, ##__VA_ARGS__)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="debug_8h_1a5ef640ce1e9e61c5f6632aefbbfa0041">MC_INFO</link> if (0) <link linkend="debug_8h_1acbb92996a994e316ff65ed3a026e12a4">mc_info</link>(x, ##__VA_ARGS__)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="debug_8h_1af65a73617b71476020a005b20bf02726">mc_set_debug</link> (
+int debug)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="debug_8h_1a3b3ab3ae8b438384fb109a2e38646b6e">mc_get_debug</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="debug_8h_1aadb888da410116384e75a00db30da705">mc_set_syslog</link> (
+int syslog)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="debug_8h_1a44913dbc4f1abf6614d42b22b941c092">mc_abort</link> (
+const char * msg, ... )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="debug_8h_1a600cf4cbbe19c0c15ca3710210e35aba">mc_debug</link> (
+const char * msg, ... )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="debug_8h_1abf22ea3a331c7ff21c23da91a07c7cb2">mc_error</link> (
+const char * msg, ... )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="debug_8h_1acbb92996a994e316ff65ed3a026e12a4">mc_info</link> (
+const char * msg, ... )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/qt-json-editor-master/jsonc/debug.h</para>
+    </simplesect>
+</section>

@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_json_serializable">
+<title>JsonSerializable class Reference</title>
+<para>
+    <programlisting>#include <link linkend="jsonserializable_8h">&lt;jsonserializable.h&gt;</link></programlisting>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_json_serializable_1ab5bc08152c95bca5aad8f1a4e2c09998">JsonSerializable</link> (
+QObject * parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual bool <link linkend="class_json_serializable_1a881aaead36cbf7d097bddfa08f204fd9">load</link> (
+QJsonObject obj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual bool <link linkend="class_json_serializable_1a98939816a5704c8d4c46f8571a5ae214">save</link> (
+QJsonObject obj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>The <link linkend="class_json_serializable">JsonSerializable</link> class Wraper interface for create <link linkend="namespace_json">Json</link> serializable objects. </para>
+    </simplesect>
+            <section xml:id="class_json_serializable_1ab5bc08152c95bca5aad8f1a4e2c09998">
+                <title>JsonSerializable::JsonSerializable (QObject *parent=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_serializable_1a881aaead36cbf7d097bddfa08f204fd9">
+                <title>virtual bool JsonSerializable::load (QJsonObject obj)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_serializable_1a98939816a5704c8d4c46f8571a5ae214">
+                <title>virtual bool JsonSerializable::save (QJsonObject obj)=0</title> <emphasis></emphasis>
+                
+            </section>
+</section>

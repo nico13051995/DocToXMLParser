@@ -1,0 +1,120 @@
+\hypertarget{class_settings}{}\section{Settings Class Reference}
+\label{class_settings}\index{Settings@{Settings}}
+
+
+The \hyperlink{class_settings}{Settings} class simple singelton for get program settings (DI)  
+
+
+
+
+{\ttfamily \#include $<$settings.\+h$>$}
+
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String\+List \hyperlink{class_settings_af7963b6de1f353af5b721422f91f8096}{get\+Supported\+Maps} ()
+\item 
+bool \hyperlink{class_settings_a62312388f51c4c1a185a933128ec2e50}{remove\+Map} (Q\+String path)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_settings_a5dcb3f0c7e2e145a4553edd78cf5fa5c}{add\+New\+Map} (Q\+String path)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_settings}{Settings} $\ast$ \hyperlink{class_settings_a5134bac1c68824ef48651c8469cf8722}{get\+Instance} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_settings}{Settings} class simple singelton for get program settings (DI) 
+
+Definition at line 12 of file settings.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_settings_a5dcb3f0c7e2e145a4553edd78cf5fa5c}\label{class_settings_a5dcb3f0c7e2e145a4553edd78cf5fa5c}} 
+\index{Settings@{Settings}!add\+New\+Map@{add\+New\+Map}}
+\index{add\+New\+Map@{add\+New\+Map}!Settings@{Settings}}
+\subsubsection{\texorpdfstring{add\+New\+Map()}{addNewMap()}}
+{\footnotesize\ttfamily bool Settings\+::add\+New\+Map (\begin{DoxyParamCaption}\item[{Q\+String}]{path }\end{DoxyParamCaption})}
+
+
+
+Definition at line 28 of file settings.\+cpp.
+
+
+\begin{DoxyCode}
+29 \{
+30     QStringList paths = settings->value(\textcolor{stringliteral}{"supportedMaps/items"}).toStringList();
+31     paths.append(path);
+32     settings->setValue(\textcolor{stringliteral}{"supportedMaps/items"}, QVariant::fromValue(paths));
+33     settings->sync();
+34     \textcolor{keywordflow}{if}(settings->status() != QSettings::NoError)
+35         QMessageBox::warning(NULL, \textcolor{stringliteral}{"ERR"}, \textcolor{stringliteral}{"Problem with settings"});
+36 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_settings_a5134bac1c68824ef48651c8469cf8722}\label{class_settings_a5134bac1c68824ef48651c8469cf8722}} 
+\index{Settings@{Settings}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Settings@{Settings}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily \hyperlink{class_settings}{Settings} $\ast$ Settings\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 17 of file settings.\+cpp.
+
+
+\begin{DoxyCode}
+18 \{
+19     \textcolor{keywordflow}{if}(Settings::instance == NULL)
+20         Settings::instance = \textcolor{keyword}{new} \hyperlink{class_settings}{Settings}();
+21     \textcolor{keywordflow}{return} Settings::instance;
+22 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_settings_af7963b6de1f353af5b721422f91f8096}\label{class_settings_af7963b6de1f353af5b721422f91f8096}} 
+\index{Settings@{Settings}!get\+Supported\+Maps@{get\+Supported\+Maps}}
+\index{get\+Supported\+Maps@{get\+Supported\+Maps}!Settings@{Settings}}
+\subsubsection{\texorpdfstring{get\+Supported\+Maps}{getSupportedMaps}}
+{\footnotesize\ttfamily Q\+String\+List Settings\+::get\+Supported\+Maps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 23 of file settings.\+cpp.
+
+
+\begin{DoxyCode}
+24 \{
+25     \textcolor{keywordflow}{return} settings->value(\textcolor{stringliteral}{"supportedMaps/items"}).toStringList();
+26 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_settings_a62312388f51c4c1a185a933128ec2e50}\label{class_settings_a62312388f51c4c1a185a933128ec2e50}} 
+\index{Settings@{Settings}!remove\+Map@{remove\+Map}}
+\index{remove\+Map@{remove\+Map}!Settings@{Settings}}
+\subsubsection{\texorpdfstring{remove\+Map}{removeMap}}
+{\footnotesize\ttfamily bool Settings\+::remove\+Map (\begin{DoxyParamCaption}\item[{Q\+String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 38 of file settings.\+cpp.
+
+
+\begin{DoxyCode}
+39 \{
+40     QStringList paths = settings->value(\textcolor{stringliteral}{"supportedMaps/items"}).toStringList();
+41     paths.removeAll(path);
+42     settings->setValue(\textcolor{stringliteral}{"supportedMaps/items"}, QVariant::fromValue(paths));
+43     settings->sync();
+44     \textcolor{keywordflow}{if}(settings->status() != QSettings::NoError)
+45         QMessageBox::warning(NULL, \textcolor{stringliteral}{"ERR"}, \textcolor{stringliteral}{"Problem with settings"});
+46 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{settings_8h}{settings.\+h}\item 
+\hyperlink{settings_8cpp}{settings.\+cpp}\end{DoxyCompactItemize}

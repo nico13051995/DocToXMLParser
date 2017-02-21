@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_j_s_doc_layout">
+<title>JSDocLayout class Reference</title>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_j_s_doc_layout_1ac36ca8ee49e1346ef73c9128a19731d2">JSDocLayout</link> (
+QTextDocument * doc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_j_s_doc_layout_1a181d392df06a4e6fca1f38b3a5a86a2c">forceUpdate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="class_j_s_doc_layout_1ac36ca8ee49e1346ef73c9128a19731d2">
+                <title>JSDocLayout::JSDocLayout (QTextDocument *doc)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_doc_layout_1a181d392df06a4e6fca1f38b3a5a86a2c">
+                <title>void JSDocLayout::forceUpdate ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

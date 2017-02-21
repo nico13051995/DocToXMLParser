@@ -1,0 +1,281 @@
+\hypertarget{class_parser_config}{}\section{Parser\+Config Class Reference}
+\label{class_parser_config}\index{Parser\+Config@{Parser\+Config}}
+
+
+The \hyperlink{class_parser_config}{Parser\+Config} class.  
+
+
+
+
+{\ttfamily \#include $<$parserconfig.\+h$>$}
+
+Inheritance diagram for Parser\+Config\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_parser_config}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_parser_config_af0029e03ae57af23c7f85393635ecb56}{read\+Json} (Q\+String path)
+\begin{DoxyCompactList}\small\item\em read\+Json \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_parser_config_a69cccb111fc3b3d4716c92e676f13b9f}{Parser\+Config} (Q\+String path, Q\+Object $\ast$parent=0)
+\item 
+\hyperlink{class_parser_config_a9a23d768f0a279e163e1f0f49dfc0d9e}{$\sim$\+Parser\+Config} ()
+\item 
+bool \hyperlink{class_parser_config_a8693076fd02fe0bdad9cab47c31e83cd}{is\+Valid} ()
+\item 
+Q\+List$<$ \hyperlink{class_item}{Item} $\ast$ $>$ \hyperlink{class_parser_config_a59e44b4b1bc104b9de240cb7640bb63f}{get\+Current\+Template} () const
+\item 
+Q\+String \hyperlink{class_parser_config_a0a9a65b537b8c7f4041d2b913c46fde7}{get\+Name} () const
+\item 
+Q\+String \hyperlink{class_parser_config_a9c35e5cd102e56c35a1030b643daed58}{get\+Path} () const
+\item 
+Q\+String \hyperlink{class_parser_config_ac42d4bcd85b1bb65840a5325926b96d4}{get\+Footer} () const
+\item 
+Q\+String \hyperlink{class_parser_config_a336cf3ab9bd7c8bc894dcc2b383d3a7b}{get\+Header} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_parser_config}{Parser\+Config} class. 
+
+Definition at line 19 of file parserconfig.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_parser_config_a69cccb111fc3b3d4716c92e676f13b9f}\label{class_parser_config_a69cccb111fc3b3d4716c92e676f13b9f}} 
+\index{Parser\+Config@{Parser\+Config}!Parser\+Config@{Parser\+Config}}
+\index{Parser\+Config@{Parser\+Config}!Parser\+Config@{Parser\+Config}}
+\subsubsection{\texorpdfstring{Parser\+Config()}{ParserConfig()}}
+{\footnotesize\ttfamily Parser\+Config\+::\+Parser\+Config (\begin{DoxyParamCaption}\item[{Q\+String}]{path,  }\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 28 of file parserconfig.\+cpp.
+
+
+\begin{DoxyCode}
+28                                                         : QObject(parent)
+29 \{
+30     this->path = path;
+31     \hyperlink{class_parser_config_af0029e03ae57af23c7f85393635ecb56}{readJson}(path);
+32 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_parser_config_a9a23d768f0a279e163e1f0f49dfc0d9e}\label{class_parser_config_a9a23d768f0a279e163e1f0f49dfc0d9e}} 
+\index{Parser\+Config@{Parser\+Config}!````~Parser\+Config@{$\sim$\+Parser\+Config}}
+\index{````~Parser\+Config@{$\sim$\+Parser\+Config}!Parser\+Config@{Parser\+Config}}
+\subsubsection{\texorpdfstring{$\sim$\+Parser\+Config()}{~ParserConfig()}}
+{\footnotesize\ttfamily Parser\+Config\+::$\sim$\+Parser\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 34 of file parserconfig.\+cpp.
+
+
+\begin{DoxyCode}
+35 \{
+36     \textcolor{keywordflow}{for}(\hyperlink{class_item}{Item}* value : currentTemplate)
+37     \{
+38         \textcolor{keyword}{delete} value;
+39     \}
+40 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_parser_config_a59e44b4b1bc104b9de240cb7640bb63f}\label{class_parser_config_a59e44b4b1bc104b9de240cb7640bb63f}} 
+\index{Parser\+Config@{Parser\+Config}!get\+Current\+Template@{get\+Current\+Template}}
+\index{get\+Current\+Template@{get\+Current\+Template}!Parser\+Config@{Parser\+Config}}
+\subsubsection{\texorpdfstring{get\+Current\+Template()}{getCurrentTemplate()}}
+{\footnotesize\ttfamily Q\+List$<$ \hyperlink{class_item}{Item} $\ast$ $>$ Parser\+Config\+::get\+Current\+Template (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 3 of file parserconfig.\+cpp.
+
+
+\begin{DoxyCode}
+4 \{
+5     \textcolor{keywordflow}{return} currentTemplate;
+6 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_parser_config_ac42d4bcd85b1bb65840a5325926b96d4}\label{class_parser_config_ac42d4bcd85b1bb65840a5325926b96d4}} 
+\index{Parser\+Config@{Parser\+Config}!get\+Footer@{get\+Footer}}
+\index{get\+Footer@{get\+Footer}!Parser\+Config@{Parser\+Config}}
+\subsubsection{\texorpdfstring{get\+Footer()}{getFooter()}}
+{\footnotesize\ttfamily Q\+String Parser\+Config\+::get\+Footer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 18 of file parserconfig.\+cpp.
+
+
+\begin{DoxyCode}
+19 \{
+20     \textcolor{keywordflow}{return} footer;
+21 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_parser_config_a336cf3ab9bd7c8bc894dcc2b383d3a7b}\label{class_parser_config_a336cf3ab9bd7c8bc894dcc2b383d3a7b}} 
+\index{Parser\+Config@{Parser\+Config}!get\+Header@{get\+Header}}
+\index{get\+Header@{get\+Header}!Parser\+Config@{Parser\+Config}}
+\subsubsection{\texorpdfstring{get\+Header()}{getHeader()}}
+{\footnotesize\ttfamily Q\+String Parser\+Config\+::get\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 23 of file parserconfig.\+cpp.
+
+
+\begin{DoxyCode}
+24 \{
+25     \textcolor{keywordflow}{return} header;
+26 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_parser_config_a0a9a65b537b8c7f4041d2b913c46fde7}\label{class_parser_config_a0a9a65b537b8c7f4041d2b913c46fde7}} 
+\index{Parser\+Config@{Parser\+Config}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Parser\+Config@{Parser\+Config}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily Q\+String Parser\+Config\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 8 of file parserconfig.\+cpp.
+
+
+\begin{DoxyCode}
+9 \{
+10     \textcolor{keywordflow}{return} name;
+11 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_parser_config_a9c35e5cd102e56c35a1030b643daed58}\label{class_parser_config_a9c35e5cd102e56c35a1030b643daed58}} 
+\index{Parser\+Config@{Parser\+Config}!get\+Path@{get\+Path}}
+\index{get\+Path@{get\+Path}!Parser\+Config@{Parser\+Config}}
+\subsubsection{\texorpdfstring{get\+Path()}{getPath()}}
+{\footnotesize\ttfamily Q\+String Parser\+Config\+::get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 13 of file parserconfig.\+cpp.
+
+
+\begin{DoxyCode}
+14 \{
+15     \textcolor{keywordflow}{return} path;
+16 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_parser_config_a8693076fd02fe0bdad9cab47c31e83cd}\label{class_parser_config_a8693076fd02fe0bdad9cab47c31e83cd}} 
+\index{Parser\+Config@{Parser\+Config}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!Parser\+Config@{Parser\+Config}}
+\subsubsection{\texorpdfstring{is\+Valid()}{isValid()}}
+{\footnotesize\ttfamily bool Parser\+Config\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file parserconfig.\+cpp.
+
+
+\begin{DoxyCode}
+43 \{
+44     \textcolor{keywordflow}{return} !currentTemplate.isEmpty();
+45 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_parser_config_af0029e03ae57af23c7f85393635ecb56}\label{class_parser_config_af0029e03ae57af23c7f85393635ecb56}} 
+\index{Parser\+Config@{Parser\+Config}!read\+Json@{read\+Json}}
+\index{read\+Json@{read\+Json}!Parser\+Config@{Parser\+Config}}
+\subsubsection{\texorpdfstring{read\+Json}{readJson}}
+{\footnotesize\ttfamily bool Parser\+Config\+::read\+Json (\begin{DoxyParamCaption}\item[{Q\+String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+read\+Json 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & to json file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if true then reading is successfull else all so bad \+:( 
+\end{DoxyReturn}
+
+
+Definition at line 47 of file parserconfig.\+cpp.
+
+
+\begin{DoxyCode}
+48 \{
+49     QList<Item*> \_currentTemplate;
+50     QString val;
+51     QFile file;
+52     file.setFileName(path);
+53     file.open(QIODevice::ReadOnly | QIODevice::Text);
+54     \textcolor{keywordflow}{if}(!file.exists())
+55         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+56 
+57     val = file.readAll();
+58     file.close();
+59     name = QFileInfo(path).baseName();
+60 
+61     QJsonArray items;
+62     QJsonDocument document = QJsonDocument::fromJson(val.toUtf8());
+63     \textcolor{keywordflow}{if}(document.isObject())
+64     \{
+65         QJsonObject root = document.object();
+66         \textcolor{keywordflow}{if}(root.contains(\textcolor{stringliteral}{"name"}))
+67         \{
+68             name = root[\textcolor{stringliteral}{"name"}].toString();
+69         \}
+70         \textcolor{keywordflow}{if}(root.contains(\textcolor{stringliteral}{"header"}))
+71         \{
+72             header = root[\textcolor{stringliteral}{"header"}].toString();
+73         \}
+74         \textcolor{keywordflow}{if}(root.contains(\textcolor{stringliteral}{"footer"}))
+75         \{
+76             footer = root[\textcolor{stringliteral}{"footer"}].toString();
+77         \}
+78         \textcolor{keywordflow}{if}(!root.contains(\textcolor{stringliteral}{"items"}) || !root[\textcolor{stringliteral}{"items"}].isArray())
+79             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+80         items = root[\textcolor{stringliteral}{"items"}].toArray();
+81     \}
+82     \textcolor{keywordflow}{if}(document.isArray())
+83     \{
+84         items = document.array();
+85     \}
+86 
+87     \textcolor{comment}{// qWarning() << document.toJson();}
+88     \textcolor{keywordflow}{for}(QJsonValue value : items)
+89     \{
+90         \hyperlink{class_item}{Item} *item = \textcolor{keyword}{new} \hyperlink{class_item}{Item}(value.toObject());
+91         \textcolor{comment}{/* for(Item *child : item->getChildrens())}
+92 \textcolor{comment}{            \_currentTemplate.append(child);*/}
+93         \_currentTemplate.append(item);
+94     \}
+95     currentTemplate = \_currentTemplate;
+96     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+97     \textcolor{comment}{//   qDebug() << currentTemplate;}
+98     \textcolor{comment}{/*QJsonValue value = sett2.value(QString("appName"));}
+99 \textcolor{comment}{      qWarning() << value;}
+100 \textcolor{comment}{      QJsonObject item = value.toObject();}
+101 \textcolor{comment}{      qWarning() << tr("QJsonObject of description: ") << item;}
+102 \textcolor{comment}{}
+103 \textcolor{comment}{      qWarning() << tr("QJsonObject[appName] of description: ") << item["description"];}
+104 \textcolor{comment}{      QJsonValue subobj = item["description"];}
+105 \textcolor{comment}{      qWarning() << subobj.toString();}
+106 \textcolor{comment}{}
+107 \textcolor{comment}{      qWarning() << tr("QJsonObject[appName] of value: ") << item["imp"];}
+108 \textcolor{comment}{      QJsonArray test = item["imp"].toArray();}
+109 \textcolor{comment}{      qWarning() << test[1].toString();*/}
+110 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+models/\hyperlink{parserconfig_8h}{parserconfig.\+h}\item 
+models/\hyperlink{parserconfig_8cpp}{parserconfig.\+cpp}\end{DoxyCompactItemize}

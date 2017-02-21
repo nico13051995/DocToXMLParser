@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="jsedit_8h">
+    <title>jsedit.h File Reference</title>
+    <programlisting>#include &lt;QColor&gt;</programlisting>
+    <programlisting>#include &lt;QPlainTextEdit&gt;</programlisting>
+    <programlisting>#include &lt;QScopedPointer&gt;</programlisting>
+    <programlisting>#include &lt;QtGui&gt;</programlisting>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_j_s_block_data">JSBlockData</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_j_s_edit">JSEdit</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_j_s_highlighter">JSHighlighter</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/qt-json-editor-master/jsedit.h</para>
+    </simplesect>
+</section>

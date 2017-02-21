@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="jsoneditormain_8h">
+    <title>jsoneditormain.h File Reference</title>
+    <programlisting>#include &lt;QMainWindow&gt;</programlisting>
+    <programlisting>#include &lt;QModelIndex&gt;</programlisting>
+    <programlisting>#include &lt;QTextEdit&gt;</programlisting>
+    <programlisting>#include &quot;jsonc/jsoncxx.h&quot;</programlisting>
+    <programlisting>#include &quot;jsontreeitem.h&quot;</programlisting>
+    <programlisting>#include &quot;dialogs/finddialog.h&quot;</programlisting>
+    <programlisting>#include &quot;dialogs/findreplacedialog.h&quot;</programlisting>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_json_editor_main">JsonEditorMain</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_ui">Ui</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/qt-json-editor-master/jsoneditormain.h</para>
+    </simplesect>
+</section>

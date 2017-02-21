@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="wdconfigdialog_8cpp">
+    <title>wdconfigdialog.cpp File Reference</title>
+    <programlisting>#include &quot;wdconfigdialog.h&quot;</programlisting>
+    <programlisting>#include &quot;ui_wdconfigdialog.h&quot;</programlisting>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/wdconfigdialog.cpp</para>
+    </simplesect>
+</section>

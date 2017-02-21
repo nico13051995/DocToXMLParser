@@ -1,0 +1,409 @@
+\hypertarget{class_json_tree_model}{}\section{Json\+Tree\+Model Class Reference}
+\label{class_json_tree_model}\index{Json\+Tree\+Model@{Json\+Tree\+Model}}
+
+
+{\ttfamily \#include $<$jsontreemodel.\+h$>$}
+
+Inheritance diagram for Json\+Tree\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_json_tree_model}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_json_tree_model_ae578e41b3c06ef9ae969b0e7e43c8f98}{Json\+Tree\+Model} (const Q\+String\+List \&headers, const \hyperlink{class_json_1_1_value}{Json\+::\+Value} \&\hyperlink{class_json_tree_model_a6fb35b30bb69bc63a6faa6b123256ac5}{data}, Q\+Object $\ast$\hyperlink{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}{parent}=0)
+\item 
+\hyperlink{class_json_tree_model_aa727dca0c93d6a6dd5ff01fad68b4d13}{$\sim$\+Json\+Tree\+Model} ()
+\item 
+Q\+Variant \hyperlink{class_json_tree_model_a6fb35b30bb69bc63a6faa6b123256ac5}{data} (const Q\+Model\+Index \&\hyperlink{class_json_tree_model_ac8be89cc178ef5151479be23006d18e3}{index}, int role) const
+\item 
+Q\+Variant \hyperlink{class_json_tree_model_ac7bebf8fa62b65a6bed96dba108c00a0}{header\+Data} (int section, Qt\+::\+Orientation orientation, int role=Qt\+::\+Display\+Role) const
+\item 
+Q\+Model\+Index \hyperlink{class_json_tree_model_ac8be89cc178ef5151479be23006d18e3}{index} (int row, int column, const Q\+Model\+Index \&\hyperlink{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}{parent}=Q\+Model\+Index()) const
+\item 
+Q\+Model\+Index \hyperlink{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}{parent} (const Q\+Model\+Index \&\hyperlink{class_json_tree_model_ac8be89cc178ef5151479be23006d18e3}{index}) const
+\item 
+int \hyperlink{class_json_tree_model_a7b9499f0aac83100742eaf4e0f160933}{row\+Count} (const Q\+Model\+Index \&\hyperlink{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}{parent}=Q\+Model\+Index()) const
+\item 
+int \hyperlink{class_json_tree_model_a65c133944c24a5121f8a4f89775e18a6}{column\+Count} (const Q\+Model\+Index \&\hyperlink{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}{parent}=Q\+Model\+Index()) const
+\item 
+Qt\+::\+Item\+Flags \hyperlink{class_json_tree_model_ab85e55867599e981b4e6697271998b0f}{flags} (const Q\+Model\+Index \&\hyperlink{class_json_tree_model_ac8be89cc178ef5151479be23006d18e3}{index}) const
+\item 
+bool \hyperlink{class_json_tree_model_a0bf2bb16623502aa6a2a4043079f276c}{set\+Data} (const Q\+Model\+Index \&\hyperlink{class_json_tree_model_ac8be89cc178ef5151479be23006d18e3}{index}, const Q\+Variant \&value, int role=Qt\+::\+Edit\+Role)
+\item 
+bool \hyperlink{class_json_tree_model_aba2b3c92fedfff20fd926a3ff2c6b266}{set\+Header\+Data} (int section, Qt\+::\+Orientation orientation, const Q\+Variant \&value, int role=Qt\+::\+Edit\+Role)
+\item 
+bool \hyperlink{class_json_tree_model_aabc3f2fa08ef557663f8a4e49a214ef4}{insert\+Columns} (int position, int columns, const Q\+Model\+Index \&\hyperlink{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}{parent}=Q\+Model\+Index())
+\item 
+bool \hyperlink{class_json_tree_model_a238f7748e25bf703b09775e7a1f97609}{remove\+Columns} (int position, int columns, const Q\+Model\+Index \&\hyperlink{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}{parent}=Q\+Model\+Index())
+\item 
+bool \hyperlink{class_json_tree_model_a44b67b632a69a48b087a5bc7bdf7caf5}{insert\+Rows} (int position, int rows, const Q\+Model\+Index \&\hyperlink{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}{parent}=Q\+Model\+Index())
+\item 
+bool \hyperlink{class_json_tree_model_ae62d2fc8a4989d5d13880ee4ba45559f}{remove\+Rows} (int position, int rows, const Q\+Model\+Index \&\hyperlink{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}{parent}=Q\+Model\+Index())
+\item 
+\hyperlink{class_json_tree_item}{Json\+Tree\+Item} $\ast$ \hyperlink{class_json_tree_model_a2c9c8c6a1feb5de57d38d808061a6482}{get\+Root\+Item} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 10 of file jsontreemodel.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_json_tree_model_ae578e41b3c06ef9ae969b0e7e43c8f98}\label{class_json_tree_model_ae578e41b3c06ef9ae969b0e7e43c8f98}} 
+\index{Json\+Tree\+Model@{Json\+Tree\+Model}!Json\+Tree\+Model@{Json\+Tree\+Model}}
+\index{Json\+Tree\+Model@{Json\+Tree\+Model}!Json\+Tree\+Model@{Json\+Tree\+Model}}
+\subsubsection{\texorpdfstring{Json\+Tree\+Model()}{JsonTreeModel()}}
+{\footnotesize\ttfamily Json\+Tree\+Model\+::\+Json\+Tree\+Model (\begin{DoxyParamCaption}\item[{const Q\+String\+List \&}]{headers,  }\item[{const \hyperlink{class_json_1_1_value}{Json\+::\+Value} \&}]{data,  }\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file jsontreemodel.\+cpp.
+
+
+\begin{DoxyCode}
+7     : QAbstractItemModel(\hyperlink{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}{parent})
+8 \{
+9     QVector<QVariant> rootData;
+10     \textcolor{keywordflow}{foreach} (QString header, headers)
+11         rootData << header;
+12 
+13     rootItem = \textcolor{keyword}{new} \hyperlink{class_json_tree_item}{JsonTreeItem}(rootData);
+14     setupModelData(data, rootItem);
+15 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_model_aa727dca0c93d6a6dd5ff01fad68b4d13}\label{class_json_tree_model_aa727dca0c93d6a6dd5ff01fad68b4d13}} 
+\index{Json\+Tree\+Model@{Json\+Tree\+Model}!````~Json\+Tree\+Model@{$\sim$\+Json\+Tree\+Model}}
+\index{````~Json\+Tree\+Model@{$\sim$\+Json\+Tree\+Model}!Json\+Tree\+Model@{Json\+Tree\+Model}}
+\subsubsection{\texorpdfstring{$\sim$\+Json\+Tree\+Model()}{~JsonTreeModel()}}
+{\footnotesize\ttfamily Json\+Tree\+Model\+::$\sim$\+Json\+Tree\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file jsontreemodel.\+cpp.
+
+
+\begin{DoxyCode}
+18 \{
+19     \textcolor{keyword}{delete} rootItem;
+20 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_json_tree_model_a65c133944c24a5121f8a4f89775e18a6}\label{class_json_tree_model_a65c133944c24a5121f8a4f89775e18a6}} 
+\index{Json\+Tree\+Model@{Json\+Tree\+Model}!column\+Count@{column\+Count}}
+\index{column\+Count@{column\+Count}!Json\+Tree\+Model@{Json\+Tree\+Model}}
+\subsubsection{\texorpdfstring{column\+Count()}{columnCount()}}
+{\footnotesize\ttfamily int Json\+Tree\+Model\+::column\+Count (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 22 of file jsontreemodel.\+cpp.
+
+
+\begin{DoxyCode}
+23 \{
+24     \textcolor{keywordflow}{return} rootItem->\hyperlink{class_json_tree_item_ad66ee4ac09255aa32fb05ffbd4057413}{columnCount}();
+25 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_model_a6fb35b30bb69bc63a6faa6b123256ac5}\label{class_json_tree_model_a6fb35b30bb69bc63a6faa6b123256ac5}} 
+\index{Json\+Tree\+Model@{Json\+Tree\+Model}!data@{data}}
+\index{data@{data}!Json\+Tree\+Model@{Json\+Tree\+Model}}
+\subsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily Q\+Variant Json\+Tree\+Model\+::data (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{index,  }\item[{int}]{role }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 27 of file jsontreemodel.\+cpp.
+
+
+\begin{DoxyCode}
+28 \{
+29     \textcolor{keywordflow}{if} (!\hyperlink{class_json_tree_model_ac8be89cc178ef5151479be23006d18e3}{index}.isValid())
+30         \textcolor{keywordflow}{return} QVariant();
+31 
+32     \textcolor{keywordflow}{if} (role != Qt::DisplayRole && role != Qt::EditRole)
+33         \textcolor{keywordflow}{return} QVariant();
+34 
+35     \hyperlink{class_json_tree_item}{JsonTreeItem} *item = getItem(\hyperlink{class_json_tree_model_ac8be89cc178ef5151479be23006d18e3}{index});
+36 
+37     \textcolor{keywordflow}{return} item->\hyperlink{class_json_tree_item_a3cd46e11efb01a8c7f59d6bf3c4582d4}{data}(\hyperlink{class_json_tree_model_ac8be89cc178ef5151479be23006d18e3}{index}.column());
+38 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_model_ab85e55867599e981b4e6697271998b0f}\label{class_json_tree_model_ab85e55867599e981b4e6697271998b0f}} 
+\index{Json\+Tree\+Model@{Json\+Tree\+Model}!flags@{flags}}
+\index{flags@{flags}!Json\+Tree\+Model@{Json\+Tree\+Model}}
+\subsubsection{\texorpdfstring{flags()}{flags()}}
+{\footnotesize\ttfamily Qt\+::\+Item\+Flags Json\+Tree\+Model\+::flags (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 40 of file jsontreemodel.\+cpp.
+
+
+\begin{DoxyCode}
+41 \{
+42     \textcolor{keywordflow}{if} (!\hyperlink{class_json_tree_model_ac8be89cc178ef5151479be23006d18e3}{index}.isValid())
+43         \textcolor{keywordflow}{return} 0;
+44 
+45     \textcolor{keywordflow}{return} Qt::ItemIsEditable | Qt::ItemIsEnabled | Qt::ItemIsSelectable;
+46 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_model_a2c9c8c6a1feb5de57d38d808061a6482}\label{class_json_tree_model_a2c9c8c6a1feb5de57d38d808061a6482}} 
+\index{Json\+Tree\+Model@{Json\+Tree\+Model}!get\+Root\+Item@{get\+Root\+Item}}
+\index{get\+Root\+Item@{get\+Root\+Item}!Json\+Tree\+Model@{Json\+Tree\+Model}}
+\subsubsection{\texorpdfstring{get\+Root\+Item()}{getRootItem()}}
+{\footnotesize\ttfamily \hyperlink{class_json_tree_item}{Json\+Tree\+Item} $\ast$ Json\+Tree\+Model\+::get\+Root\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 248 of file jsontreemodel.\+cpp.
+
+
+\begin{DoxyCode}
+249 \{
+250     \textcolor{keywordflow}{return} rootItem;
+251 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_model_ac7bebf8fa62b65a6bed96dba108c00a0}\label{class_json_tree_model_ac7bebf8fa62b65a6bed96dba108c00a0}} 
+\index{Json\+Tree\+Model@{Json\+Tree\+Model}!header\+Data@{header\+Data}}
+\index{header\+Data@{header\+Data}!Json\+Tree\+Model@{Json\+Tree\+Model}}
+\subsubsection{\texorpdfstring{header\+Data()}{headerData()}}
+{\footnotesize\ttfamily Q\+Variant Json\+Tree\+Model\+::header\+Data (\begin{DoxyParamCaption}\item[{int}]{section,  }\item[{Qt\+::\+Orientation}]{orientation,  }\item[{int}]{role = {\ttfamily Qt\+:\+:DisplayRole} }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 57 of file jsontreemodel.\+cpp.
+
+
+\begin{DoxyCode}
+59 \{
+60     \textcolor{keywordflow}{if} (orientation == Qt::Horizontal && role == Qt::DisplayRole)
+61         \textcolor{keywordflow}{return} rootItem->\hyperlink{class_json_tree_item_a3cd46e11efb01a8c7f59d6bf3c4582d4}{data}(section);
+62 
+63     \textcolor{keywordflow}{return} QVariant();
+64 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_model_ac8be89cc178ef5151479be23006d18e3}\label{class_json_tree_model_ac8be89cc178ef5151479be23006d18e3}} 
+\index{Json\+Tree\+Model@{Json\+Tree\+Model}!index@{index}}
+\index{index@{index}!Json\+Tree\+Model@{Json\+Tree\+Model}}
+\subsubsection{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily Q\+Model\+Index Json\+Tree\+Model\+::index (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column,  }\item[{const Q\+Model\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 66 of file jsontreemodel.\+cpp.
+
+
+\begin{DoxyCode}
+67 \{
+68     \textcolor{keywordflow}{if} (\hyperlink{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}{parent}.isValid() && \hyperlink{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}{parent}.column() != 0)
+69         \textcolor{keywordflow}{return} QModelIndex();
+70 
+71     \hyperlink{class_json_tree_item}{JsonTreeItem} *parentItem = getItem(\hyperlink{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}{parent});
+72 
+73     \hyperlink{class_json_tree_item}{JsonTreeItem} *childItem = parentItem->\hyperlink{class_json_tree_item_a24864c7936a43d9059277a20497341b9}{child}(row);
+74     \textcolor{keywordflow}{if} (childItem)
+75         \textcolor{keywordflow}{return} createIndex(row, column, childItem);
+76     \textcolor{keywordflow}{else}
+77         \textcolor{keywordflow}{return} QModelIndex();
+78 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_model_aabc3f2fa08ef557663f8a4e49a214ef4}\label{class_json_tree_model_aabc3f2fa08ef557663f8a4e49a214ef4}} 
+\index{Json\+Tree\+Model@{Json\+Tree\+Model}!insert\+Columns@{insert\+Columns}}
+\index{insert\+Columns@{insert\+Columns}!Json\+Tree\+Model@{Json\+Tree\+Model}}
+\subsubsection{\texorpdfstring{insert\+Columns()}{insertColumns()}}
+{\footnotesize\ttfamily bool Json\+Tree\+Model\+::insert\+Columns (\begin{DoxyParamCaption}\item[{int}]{position,  }\item[{int}]{columns,  }\item[{const Q\+Model\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 80 of file jsontreemodel.\+cpp.
+
+
+\begin{DoxyCode}
+81 \{
+82     \textcolor{keywordtype}{bool} success;
+83 
+84     beginInsertColumns(\hyperlink{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}{parent}, position, position + columns - 1);
+85     success = rootItem->\hyperlink{class_json_tree_item_a189b5b2926b94dc53f3aaa366cf66b05}{insertColumns}(position, columns);
+86     endInsertColumns();
+87 
+88     \textcolor{keywordflow}{return} success;
+89 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_model_a44b67b632a69a48b087a5bc7bdf7caf5}\label{class_json_tree_model_a44b67b632a69a48b087a5bc7bdf7caf5}} 
+\index{Json\+Tree\+Model@{Json\+Tree\+Model}!insert\+Rows@{insert\+Rows}}
+\index{insert\+Rows@{insert\+Rows}!Json\+Tree\+Model@{Json\+Tree\+Model}}
+\subsubsection{\texorpdfstring{insert\+Rows()}{insertRows()}}
+{\footnotesize\ttfamily bool Json\+Tree\+Model\+::insert\+Rows (\begin{DoxyParamCaption}\item[{int}]{position,  }\item[{int}]{rows,  }\item[{const Q\+Model\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 91 of file jsontreemodel.\+cpp.
+
+
+\begin{DoxyCode}
+92 \{
+93     \hyperlink{class_json_tree_item}{JsonTreeItem} *parentItem = getItem(\hyperlink{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}{parent});
+94     \textcolor{keywordtype}{bool} success;
+95 
+96     beginInsertRows(\hyperlink{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}{parent}, position, position + rows - 1);
+97     success = parentItem->\hyperlink{class_json_tree_item_a890a0b7cf4aabcaa43e0726d672ba34a}{insertChildren}(position, rows, rootItem->
+      \hyperlink{class_json_tree_item_ad66ee4ac09255aa32fb05ffbd4057413}{columnCount}());
+98     endInsertRows();
+99 
+100     \textcolor{keywordflow}{return} success;
+101 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}\label{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}} 
+\index{Json\+Tree\+Model@{Json\+Tree\+Model}!parent@{parent}}
+\index{parent@{parent}!Json\+Tree\+Model@{Json\+Tree\+Model}}
+\subsubsection{\texorpdfstring{parent()}{parent()}}
+{\footnotesize\ttfamily Q\+Model\+Index Json\+Tree\+Model\+::parent (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 103 of file jsontreemodel.\+cpp.
+
+
+\begin{DoxyCode}
+104 \{
+105     \textcolor{keywordflow}{if} (!\hyperlink{class_json_tree_model_ac8be89cc178ef5151479be23006d18e3}{index}.isValid())
+106         \textcolor{keywordflow}{return} QModelIndex();
+107 
+108     \hyperlink{class_json_tree_item}{JsonTreeItem} *childItem = getItem(\hyperlink{class_json_tree_model_ac8be89cc178ef5151479be23006d18e3}{index});
+109     \hyperlink{class_json_tree_item}{JsonTreeItem} *parentItem = childItem->\hyperlink{class_json_tree_item_a1777c30033cacb28a800b34423dcee38}{parent}();
+110 
+111     \textcolor{keywordflow}{if} (parentItem == rootItem)
+112         \textcolor{keywordflow}{return} QModelIndex();
+113 
+114     \textcolor{keywordflow}{return} createIndex(parentItem->\hyperlink{class_json_tree_item_a39c277f6a181ec177b483b38e97e70d5}{childNumber}(), 0, parentItem);
+115 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_model_a238f7748e25bf703b09775e7a1f97609}\label{class_json_tree_model_a238f7748e25bf703b09775e7a1f97609}} 
+\index{Json\+Tree\+Model@{Json\+Tree\+Model}!remove\+Columns@{remove\+Columns}}
+\index{remove\+Columns@{remove\+Columns}!Json\+Tree\+Model@{Json\+Tree\+Model}}
+\subsubsection{\texorpdfstring{remove\+Columns()}{removeColumns()}}
+{\footnotesize\ttfamily bool Json\+Tree\+Model\+::remove\+Columns (\begin{DoxyParamCaption}\item[{int}]{position,  }\item[{int}]{columns,  }\item[{const Q\+Model\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 117 of file jsontreemodel.\+cpp.
+
+
+\begin{DoxyCode}
+118 \{
+119     \textcolor{keywordtype}{bool} success;
+120 
+121     beginRemoveColumns(\hyperlink{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}{parent}, position, position + columns - 1);
+122     success = rootItem->\hyperlink{class_json_tree_item_a7cb315d624881ca9fbb193c5432a82b2}{removeColumns}(position, columns);
+123     endRemoveColumns();
+124 
+125     \textcolor{keywordflow}{if} (rootItem->\hyperlink{class_json_tree_item_ad66ee4ac09255aa32fb05ffbd4057413}{columnCount}() == 0)
+126         \hyperlink{class_json_tree_model_ae62d2fc8a4989d5d13880ee4ba45559f}{removeRows}(0, \hyperlink{class_json_tree_model_a7b9499f0aac83100742eaf4e0f160933}{rowCount}());
+127 
+128     \textcolor{keywordflow}{return} success;
+129 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_model_ae62d2fc8a4989d5d13880ee4ba45559f}\label{class_json_tree_model_ae62d2fc8a4989d5d13880ee4ba45559f}} 
+\index{Json\+Tree\+Model@{Json\+Tree\+Model}!remove\+Rows@{remove\+Rows}}
+\index{remove\+Rows@{remove\+Rows}!Json\+Tree\+Model@{Json\+Tree\+Model}}
+\subsubsection{\texorpdfstring{remove\+Rows()}{removeRows()}}
+{\footnotesize\ttfamily bool Json\+Tree\+Model\+::remove\+Rows (\begin{DoxyParamCaption}\item[{int}]{position,  }\item[{int}]{rows,  }\item[{const Q\+Model\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 131 of file jsontreemodel.\+cpp.
+
+
+\begin{DoxyCode}
+132 \{
+133     \hyperlink{class_json_tree_item}{JsonTreeItem} *parentItem = getItem(\hyperlink{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}{parent});
+134     \textcolor{keywordtype}{bool} success = \textcolor{keyword}{true};
+135 
+136     beginRemoveRows(\hyperlink{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}{parent}, position, position + rows - 1);
+137     success = parentItem->\hyperlink{class_json_tree_item_a37ef4384835286e1afcc6f42de7b1c6a}{removeChildren}(position, rows);
+138     endRemoveRows();
+139 
+140     \textcolor{keywordflow}{return} success;
+141 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_model_a7b9499f0aac83100742eaf4e0f160933}\label{class_json_tree_model_a7b9499f0aac83100742eaf4e0f160933}} 
+\index{Json\+Tree\+Model@{Json\+Tree\+Model}!row\+Count@{row\+Count}}
+\index{row\+Count@{row\+Count}!Json\+Tree\+Model@{Json\+Tree\+Model}}
+\subsubsection{\texorpdfstring{row\+Count()}{rowCount()}}
+{\footnotesize\ttfamily int Json\+Tree\+Model\+::row\+Count (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 143 of file jsontreemodel.\+cpp.
+
+
+\begin{DoxyCode}
+144 \{
+145     \hyperlink{class_json_tree_item}{JsonTreeItem} *parentItem = getItem(\hyperlink{class_json_tree_model_aea54120cdf66d49e8f0ad176eed8fc99}{parent});
+146 
+147     \textcolor{keywordflow}{return} parentItem->\hyperlink{class_json_tree_item_a24d3056cd6f6f2d442cbd0d9756b89c1}{childCount}();
+148 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_model_a0bf2bb16623502aa6a2a4043079f276c}\label{class_json_tree_model_a0bf2bb16623502aa6a2a4043079f276c}} 
+\index{Json\+Tree\+Model@{Json\+Tree\+Model}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Json\+Tree\+Model@{Json\+Tree\+Model}}
+\subsubsection{\texorpdfstring{set\+Data()}{setData()}}
+{\footnotesize\ttfamily bool Json\+Tree\+Model\+::set\+Data (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{index,  }\item[{const Q\+Variant \&}]{value,  }\item[{int}]{role = {\ttfamily Qt\+:\+:EditRole} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 150 of file jsontreemodel.\+cpp.
+
+
+\begin{DoxyCode}
+152 \{
+153     \textcolor{keywordflow}{if} (role != Qt::EditRole)
+154         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+155 
+156     \hyperlink{class_json_tree_item}{JsonTreeItem} *item = getItem(\hyperlink{class_json_tree_model_ac8be89cc178ef5151479be23006d18e3}{index});
+157     \textcolor{keywordtype}{bool} result = item->\hyperlink{class_json_tree_item_a7b60096836271a128a142c023a769e12}{setData}(\hyperlink{class_json_tree_model_ac8be89cc178ef5151479be23006d18e3}{index}.column(), value);
+158 
+159     \textcolor{keywordflow}{if} (result)
+160         emit dataChanged(\hyperlink{class_json_tree_model_ac8be89cc178ef5151479be23006d18e3}{index}, \hyperlink{class_json_tree_model_ac8be89cc178ef5151479be23006d18e3}{index});
+161 
+162     \textcolor{keywordflow}{return} result;
+163 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_tree_model_aba2b3c92fedfff20fd926a3ff2c6b266}\label{class_json_tree_model_aba2b3c92fedfff20fd926a3ff2c6b266}} 
+\index{Json\+Tree\+Model@{Json\+Tree\+Model}!set\+Header\+Data@{set\+Header\+Data}}
+\index{set\+Header\+Data@{set\+Header\+Data}!Json\+Tree\+Model@{Json\+Tree\+Model}}
+\subsubsection{\texorpdfstring{set\+Header\+Data()}{setHeaderData()}}
+{\footnotesize\ttfamily bool Json\+Tree\+Model\+::set\+Header\+Data (\begin{DoxyParamCaption}\item[{int}]{section,  }\item[{Qt\+::\+Orientation}]{orientation,  }\item[{const Q\+Variant \&}]{value,  }\item[{int}]{role = {\ttfamily Qt\+:\+:EditRole} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 165 of file jsontreemodel.\+cpp.
+
+
+\begin{DoxyCode}
+167 \{
+168     \textcolor{keywordflow}{if} (role != Qt::EditRole || orientation != Qt::Horizontal)
+169         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+170 
+171     \textcolor{keywordtype}{bool} result = rootItem->\hyperlink{class_json_tree_item_a7b60096836271a128a142c023a769e12}{setData}(section, value);
+172 
+173     \textcolor{keywordflow}{if} (result)
+174         emit headerDataChanged(orientation, section, section);
+175 
+176     \textcolor{keywordflow}{return} result;
+177 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+qt-\/json-\/editor-\/master/\hyperlink{jsontreemodel_8h}{jsontreemodel.\+h}\item 
+qt-\/json-\/editor-\/master/\hyperlink{jsontreemodel_8cpp}{jsontreemodel.\+cpp}\end{DoxyCompactItemize}

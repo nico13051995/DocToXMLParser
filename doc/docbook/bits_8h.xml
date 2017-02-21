@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="bits_8h">
+    <title>bits.h File Reference</title>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="bits_8h_1a3dde282dc23d0eaa3c4840df8dc262d4">json_min</link> ((a) &lt; (b) ? (a) : (b))</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="bits_8h_1a57d63d199d4b9ea40359253618951300">json_max</link> ((a) &gt; (b) ? (a) : (b))</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="bits_8h_1a1cf38b22d3a118ad48d9282c32c048aa">hexdigit</link> (((x) &lt;= &apos;9&apos;) ? (x) - &apos;0&apos; : ((x) &amp; 7) + 9)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="bits_8h_1a863a898e607f8c2ff87b7052e326740f">error_ptr</link> ((void*)error)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="bits_8h_1a4a887e5fb7cde221bcab9c6f39d93fc1">is_error</link> ((unsigned long)ptr &gt; (unsigned long)-4000L)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/qt-json-editor-master/jsonc/bits.h</para>
+    </simplesect>
+</section>

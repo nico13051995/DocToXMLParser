@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_j_s_highlighter_8h">
+    <title>JSHighlighter.h File Reference</title>
+    <programlisting>#include &lt;QSyntaxHighlighter&gt;</programlisting>
+    <programlisting>#include &lt;QTextDocument&gt;</programlisting>
+    <programlisting>#include &lt;QTextFormat&gt;</programlisting>
+    <programlisting>#include &lt;QStringList&gt;</programlisting>
+    <programlisting>#include &lt;QRegExp&gt;</programlisting>
+    <programlisting>#include &lt;QVector&gt;</programlisting>
+    <programlisting>#include &lt;QTextCharFormat&gt;</programlisting>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_j_s_highlighter">JSHighlighter</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="struct_j_s_highlighter_1_1_highlighting_rule">JSHighlighter::HighlightingRule</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/qt-json-editor-master/JSHighlighter.h</para>
+    </simplesect>
+</section>

@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="arraylist_8h">
+    <title>arraylist.h File Reference</title>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structarray__list">array_list</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="arraylist_8h_1acd30d910b398421574eb1f59e78617f5">ARRAY_LIST_DEFAULT_SIZE</link> 32</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Typedefs</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef void()  <link linkend="arraylist_8h_1a90d2ce204a483fa38f5514bad67222aa">array_list_free_fn</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structarray__list">array_list</link> * <link linkend="arraylist_8h_1a0d4bfac055dfd98e17296142abf4d894">array_list_new</link> (
+<link linkend="arraylist_8h_1a90d2ce204a483fa38f5514bad67222aa">array_list_free_fn</link> * free_fn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="arraylist_8h_1acd00fb70f7ca82f23b48b812c3498f67">array_list_free</link> (
+struct <link linkend="structarray__list">array_list</link> * al)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * <link linkend="arraylist_8h_1aa16207e545b6c1265299abcfa418dc2b">array_list_get_idx</link> (
+struct <link linkend="structarray__list">array_list</link> * al, int i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="arraylist_8h_1a21b8e4c59e52fbc5a9a5a098e3f96e76">array_list_put_idx</link> (
+struct <link linkend="structarray__list">array_list</link> * al, int i, void * data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="arraylist_8h_1a6e995608aa464244ff3184fb43574dc8">array_list_add</link> (
+struct <link linkend="structarray__list">array_list</link> * al, void * data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="arraylist_8h_1aa8393b4aa3dc447660371530439ab70f">array_list_length</link> (
+struct <link linkend="structarray__list">array_list</link> * al)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/qt-json-editor-master/jsonc/arraylist.h</para>
+    </simplesect>
+</section>

@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_ui_1_1_find_replace_dialog">
+<title>Ui::FindReplaceDialog class Reference</title>
+<para>
+    <programlisting>#include <link linkend="findreplacedialog_8h">&lt;findreplacedialog.h&gt;</link></programlisting>
+</para>
+        <section>
+            <title>Protected Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Ui::FindReplaceDialog * ui</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_ui_1_1_find_replace_dialog_1a2631641ec6995a87bc4da0a99fb6f9bd">FindReplaceDialog</link> (
+QWidget * parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="class_ui_1_1_find_replace_dialog_1a03c6e4f0710004d55e45d97b0911cf27">~FindReplaceDialog</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_ui_1_1_find_replace_dialog_1a3d3cd91477be5d6529e9aa3de21958a6">setTextEdit</link> (
+QTextEdit * textEdit)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="class_ui_1_1_find_replace_dialog_1ad9216d8059c559596baa5ddcbda3ec0b">writeSettings</link> (
+QSettings &amp; settings, const QString &amp; prefix)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="class_ui_1_1_find_replace_dialog_1a2be8b8724a5f9a7e6dff30348f94761c">readSettings</link> (
+QSettings &amp; settings, const QString &amp; prefix)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_ui_1_1_find_replace_dialog_1a793bc999abeaedd4262d39161f521f35">changeEvent</link> (
+QEvent * e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>A find/replace dialog.</para>
+
+<para>It relies on a <link linkend="class_find_replace_form">FindReplaceForm</link> object (see that class for the functionalities provided). </para>
+                <para>Definition at line 23 of file findreplacedialog.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>findreplacedialog.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_ui_1_1_find_replace_dialog_1a2631641ec6995a87bc4da0a99fb6f9bd">
+                <title>FindReplaceDialog::FindReplaceDialog (QWidget *parent=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_ui_1_1_find_replace_dialog_1a03c6e4f0710004d55e45d97b0911cf27">
+                <title>FindReplaceDialog::~FindReplaceDialog ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_ui_1_1_find_replace_dialog_1a3d3cd91477be5d6529e9aa3de21958a6">
+                <title>void FindReplaceDialog::setTextEdit (QTextEdit *textEdit)</title> <emphasis></emphasis>
+                
+<para>Associates the text editor where to perform the search 
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>textEdit</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="class_ui_1_1_find_replace_dialog_1ad9216d8059c559596baa5ddcbda3ec0b">
+                <title>void FindReplaceDialog::writeSettings (QSettings &amp;settings, const QString &amp;prefix=&quot;FindReplaceDialog&quot;)</title> <emphasis></emphasis>
+                
+<para>Writes the state of the form to the passed settings. 
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>settings</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>prefix</entry>
+                                <entry>
+<para>the prefix to insert in the settings </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="class_ui_1_1_find_replace_dialog_1a2be8b8724a5f9a7e6dff30348f94761c">
+                <title>void FindReplaceDialog::readSettings (QSettings &amp;settings, const QString &amp;prefix=&quot;FindReplaceDialog&quot;)</title> <emphasis></emphasis>
+                
+<para>Reads the state of the form from the passed settings. 
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>settings</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>prefix</entry>
+                                <entry>
+<para>the prefix to look for in the settings </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="class_ui_1_1_find_replace_dialog_1a793bc999abeaedd4262d39161f521f35">
+                <title>void FindReplaceDialog::changeEvent (QEvent *e)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

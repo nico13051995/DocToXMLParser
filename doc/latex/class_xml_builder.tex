@@ -1,0 +1,131 @@
+\hypertarget{class_xml_builder}{}\section{Xml\+Builder Class Reference}
+\label{class_xml_builder}\index{Xml\+Builder@{Xml\+Builder}}
+
+
+The \hyperlink{class_xml_builder}{Xml\+Builder} class implementation of \hyperlink{class_builder}{Builder} for X\+ML generator.  
+
+
+
+
+{\ttfamily \#include $<$xmlbuilder.\+h$>$}
+
+Inheritance diagram for Xml\+Builder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_xml_builder}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_xml_builder_affc2a88fc3eaefab78f1142cc2756aad}{Xml\+Builder} (Q\+String \hyperlink{class_builder_ad8ac906f8ce85ebcd061c4ee8e6f6a01}{name}, Q\+String \hyperlink{class_builder_ae3800e384b079c2d66ab4d8f98cbb4ad}{header}, Q\+String \hyperlink{class_builder_a5ace791b99eb11341d6f39e35fdd2ce7}{footer})
+\item 
+Q\+Object $\ast$ \hyperlink{class_xml_builder_a29a46891d09f490c19c1063884b66f33}{build} (Q\+List$<$ \hyperlink{class_item}{Item} $\ast$$>$ items, Q\+List$<$ \hyperlink{class_paragraph}{Paragraph} $>$ paragraphs)
+\item 
+Q\+String \hyperlink{class_xml_builder_af445b2645cb7bc6e15ccca26fca26c83}{get\+Result\+As\+String} ()
+\begin{DoxyCompactList}\small\item\em get\+Result\+As\+String -\/ get X\+ML string from Q\+Xml\+Stream\+Writer \end{DoxyCompactList}\item 
+Q\+Xml\+Stream\+Writer $\ast$ \hyperlink{class_xml_builder_ac30c219c08203e1a18e38e7e43c3252e}{get\+Xml} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_xml_builder}{Xml\+Builder} class implementation of \hyperlink{class_builder}{Builder} for X\+ML generator. 
+
+Definition at line 12 of file xmlbuilder.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_xml_builder_affc2a88fc3eaefab78f1142cc2756aad}\label{class_xml_builder_affc2a88fc3eaefab78f1142cc2756aad}} 
+\index{Xml\+Builder@{Xml\+Builder}!Xml\+Builder@{Xml\+Builder}}
+\index{Xml\+Builder@{Xml\+Builder}!Xml\+Builder@{Xml\+Builder}}
+\subsubsection{\texorpdfstring{Xml\+Builder()}{XmlBuilder()}}
+{\footnotesize\ttfamily Xml\+Builder\+::\+Xml\+Builder (\begin{DoxyParamCaption}\item[{Q\+String}]{name,  }\item[{Q\+String}]{header,  }\item[{Q\+String}]{footer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file xmlbuilder.\+cpp.
+
+
+\begin{DoxyCode}
+9                                                                    : \hyperlink{class_builder_a90a875243096a42ca4069258c52a1ad4}{Builder}(
+      \hyperlink{class_builder_ad8ac906f8ce85ebcd061c4ee8e6f6a01}{name}, \hyperlink{class_builder_ae3800e384b079c2d66ab4d8f98cbb4ad}{header}, \hyperlink{class_builder_a5ace791b99eb11341d6f39e35fdd2ce7}{footer})
+10 \{
+11     result = \textcolor{keyword}{new} QString();
+12     xml = \textcolor{keyword}{new} QXmlStreamWriter(result);
+13     xml->setAutoFormatting(\textcolor{keyword}{true});
+14 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_xml_builder_a29a46891d09f490c19c1063884b66f33}\label{class_xml_builder_a29a46891d09f490c19c1063884b66f33}} 
+\index{Xml\+Builder@{Xml\+Builder}!build@{build}}
+\index{build@{build}!Xml\+Builder@{Xml\+Builder}}
+\subsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily Q\+Object $\ast$ Xml\+Builder\+::build (\begin{DoxyParamCaption}\item[{Q\+List$<$ \hyperlink{class_item}{Item} $\ast$$>$}]{items,  }\item[{Q\+List$<$ \hyperlink{class_paragraph}{Paragraph} $>$}]{paragraphs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_builder_a92d31ffc3502acebf0cd074e8b084751}{Builder}.
+
+
+
+Definition at line 16 of file xmlbuilder.\+cpp.
+
+
+\begin{DoxyCode}
+17 \{
+18     result->clear();
+19     *result += \hyperlink{class_builder_ae3800e384b079c2d66ab4d8f98cbb4ad}{header};
+20     \hyperlink{class_xml_builder_a29a46891d09f490c19c1063884b66f33}{build}(QStringList(), items, paragraphs);
+21     *result += \hyperlink{class_builder_a5ace791b99eb11341d6f39e35fdd2ce7}{footer};
+22     \textcolor{keywordflow}{return} (QObject*)result;
+23 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_xml_builder_af445b2645cb7bc6e15ccca26fca26c83}\label{class_xml_builder_af445b2645cb7bc6e15ccca26fca26c83}} 
+\index{Xml\+Builder@{Xml\+Builder}!get\+Result\+As\+String@{get\+Result\+As\+String}}
+\index{get\+Result\+As\+String@{get\+Result\+As\+String}!Xml\+Builder@{Xml\+Builder}}
+\subsubsection{\texorpdfstring{get\+Result\+As\+String()}{getResultAsString()}}
+{\footnotesize\ttfamily Q\+String Xml\+Builder\+::get\+Result\+As\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+Result\+As\+String -\/ get X\+ML string from Q\+Xml\+Stream\+Writer 
+
+\begin{DoxyReturn}{Returns}
+string with result X\+ML 
+\end{DoxyReturn}
+
+
+Definition at line 25 of file xmlbuilder.\+cpp.
+
+
+\begin{DoxyCode}
+26 \{
+27     \textcolor{keywordflow}{return} *result;
+28 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_xml_builder_ac30c219c08203e1a18e38e7e43c3252e}\label{class_xml_builder_ac30c219c08203e1a18e38e7e43c3252e}} 
+\index{Xml\+Builder@{Xml\+Builder}!get\+Xml@{get\+Xml}}
+\index{get\+Xml@{get\+Xml}!Xml\+Builder@{Xml\+Builder}}
+\subsubsection{\texorpdfstring{get\+Xml()}{getXml()}}
+{\footnotesize\ttfamily Q\+Xml\+Stream\+Writer $\ast$ Xml\+Builder\+::get\+Xml (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file xmlbuilder.\+cpp.
+
+
+\begin{DoxyCode}
+5 \{
+6     \textcolor{keywordflow}{return} xml;
+7 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{xmlbuilder_8h}{xmlbuilder.\+h}\item 
+\hyperlink{xmlbuilder_8cpp}{xmlbuilder.\+cpp}\end{DoxyCompactItemize}

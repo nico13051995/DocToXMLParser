@@ -1,0 +1,131 @@
+\hypertarget{class_ui_1_1_find_dialog}{}\section{Ui\+:\+:Find\+Dialog Class Reference}
+\label{class_ui_1_1_find_dialog}\index{Ui\+::\+Find\+Dialog@{Ui\+::\+Find\+Dialog}}
+
+
+{\ttfamily \#include $<$finddialog.\+h$>$}
+
+Inheritance diagram for Ui\+:\+:Find\+Dialog\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_ui_1_1_find_dialog}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ui_1_1_find_dialog_af9dc0e86bec39e9b3a0b954a603a8e76}{Find\+Dialog} (Q\+Widget $\ast$parent=0)
+\item 
+\hyperlink{class_ui_1_1_find_dialog_ad558e82173272809593fb557f6ec88b0}{$\sim$\+Find\+Dialog} ()
+\item 
+void \hyperlink{class_ui_1_1_find_dialog_a8d54b1576e6325b41e5989fa2cec0d26}{write\+Settings} (Q\+Settings \&settings, const Q\+String \&prefix=\char`\"{}Find\+Dialog\char`\"{})
+\item 
+void \hyperlink{class_ui_1_1_find_dialog_adcb3b60f3a1a4a41f7edddf7b203ba44}{read\+Settings} (Q\+Settings \&settings, const Q\+String \&prefix=\char`\"{}Find\+Dialog\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A find dialog (it is basically the same as \hyperlink{class_ui_1_1_find_replace_dialog}{Find\+Replace\+Dialog} without the replace related widgets). 
+
+Definition at line 21 of file finddialog.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_ui_1_1_find_dialog_af9dc0e86bec39e9b3a0b954a603a8e76}\label{class_ui_1_1_find_dialog_af9dc0e86bec39e9b3a0b954a603a8e76}} 
+\index{Ui\+::\+Find\+Dialog@{Ui\+::\+Find\+Dialog}!Find\+Dialog@{Find\+Dialog}}
+\index{Find\+Dialog@{Find\+Dialog}!Ui\+::\+Find\+Dialog@{Ui\+::\+Find\+Dialog}}
+\subsubsection{\texorpdfstring{Find\+Dialog()}{FindDialog()}}
+{\footnotesize\ttfamily Find\+Dialog\+::\+Find\+Dialog (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file finddialog.\+cpp.
+
+
+\begin{DoxyCode}
+9                                       :
+10     \hyperlink{class_ui_1_1_find_replace_dialog_a2631641ec6995a87bc4da0a99fb6f9bd}{FindReplaceDialog}(parent)
+11 \{
+12     \hyperlink{class_ui_1_1_find_replace_dialog_a29b7e2e415bc683d3dd089b366cccf4a}{ui}->findReplaceForm->hideReplaceWidgets();
+13     setWindowTitle(tr(\textcolor{stringliteral}{"Find"}));
+14 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_ui_1_1_find_dialog_ad558e82173272809593fb557f6ec88b0}\label{class_ui_1_1_find_dialog_ad558e82173272809593fb557f6ec88b0}} 
+\index{Ui\+::\+Find\+Dialog@{Ui\+::\+Find\+Dialog}!````~Find\+Dialog@{$\sim$\+Find\+Dialog}}
+\index{````~Find\+Dialog@{$\sim$\+Find\+Dialog}!Ui\+::\+Find\+Dialog@{Ui\+::\+Find\+Dialog}}
+\subsubsection{\texorpdfstring{$\sim$\+Find\+Dialog()}{~FindDialog()}}
+{\footnotesize\ttfamily Find\+Dialog\+::$\sim$\+Find\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 16 of file finddialog.\+cpp.
+
+
+\begin{DoxyCode}
+17 \{
+18 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ui_1_1_find_dialog_adcb3b60f3a1a4a41f7edddf7b203ba44}\label{class_ui_1_1_find_dialog_adcb3b60f3a1a4a41f7edddf7b203ba44}} 
+\index{Ui\+::\+Find\+Dialog@{Ui\+::\+Find\+Dialog}!read\+Settings@{read\+Settings}}
+\index{read\+Settings@{read\+Settings}!Ui\+::\+Find\+Dialog@{Ui\+::\+Find\+Dialog}}
+\subsubsection{\texorpdfstring{read\+Settings()}{readSettings()}}
+{\footnotesize\ttfamily void Find\+Dialog\+::read\+Settings (\begin{DoxyParamCaption}\item[{Q\+Settings \&}]{settings,  }\item[{const Q\+String \&}]{prefix = {\ttfamily \char`\"{}FindDialog\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Reads the state of the form from the passed settings. 
+\begin{DoxyParams}{Parameters}
+{\em settings} & \\
+\hline
+{\em prefix} & the prefix to look for in the settings \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_ui_1_1_find_replace_dialog_a2be8b8724a5f9a7e6dff30348f94761c}{Ui\+::\+Find\+Replace\+Dialog}.
+
+
+
+Definition at line 24 of file finddialog.\+cpp.
+
+
+\begin{DoxyCode}
+24                                                                         \{
+25     \hyperlink{class_ui_1_1_find_replace_dialog_a2be8b8724a5f9a7e6dff30348f94761c}{FindReplaceDialog::readSettings}(settings, prefix);
+26 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_ui_1_1_find_dialog_a8d54b1576e6325b41e5989fa2cec0d26}\label{class_ui_1_1_find_dialog_a8d54b1576e6325b41e5989fa2cec0d26}} 
+\index{Ui\+::\+Find\+Dialog@{Ui\+::\+Find\+Dialog}!write\+Settings@{write\+Settings}}
+\index{write\+Settings@{write\+Settings}!Ui\+::\+Find\+Dialog@{Ui\+::\+Find\+Dialog}}
+\subsubsection{\texorpdfstring{write\+Settings()}{writeSettings()}}
+{\footnotesize\ttfamily void Find\+Dialog\+::write\+Settings (\begin{DoxyParamCaption}\item[{Q\+Settings \&}]{settings,  }\item[{const Q\+String \&}]{prefix = {\ttfamily \char`\"{}FindDialog\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Writes the state of the form to the passed settings. 
+\begin{DoxyParams}{Parameters}
+{\em settings} & \\
+\hline
+{\em prefix} & the prefix to insert in the settings \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_ui_1_1_find_replace_dialog_ad9216d8059c559596baa5ddcbda3ec0b}{Ui\+::\+Find\+Replace\+Dialog}.
+
+
+
+Definition at line 20 of file finddialog.\+cpp.
+
+
+\begin{DoxyCode}
+20                                                                          \{
+21     \hyperlink{class_ui_1_1_find_replace_dialog_ad9216d8059c559596baa5ddcbda3ec0b}{FindReplaceDialog::writeSettings}(settings, prefix);
+22 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+qt-\/json-\/editor-\/master/dialogs/\hyperlink{finddialog_8h}{finddialog.\+h}\item 
+qt-\/json-\/editor-\/master/dialogs/\hyperlink{finddialog_8cpp}{finddialog.\+cpp}\end{DoxyCompactItemize}

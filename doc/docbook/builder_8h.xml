@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="builder_8h">
+    <title>builder.h File Reference</title>
+    <programlisting>#include &lt;QObject&gt;</programlisting>
+    <programlisting>#include &quot;models/item.h&quot;</programlisting>
+    <programlisting>#include &quot;models/paragraph.h&quot;</programlisting>
+    <programlisting>#include &quot;regexp.h&quot;</programlisting>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_builder">Builder</link></para>
+<para><emphasis>The Builder interface for future extend of current functionality
+create other builders.</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/builder.h</para>
+    </simplesect>
+</section>

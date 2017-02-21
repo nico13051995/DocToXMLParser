@@ -1,0 +1,70 @@
+\hypertarget{class_json_1_1_reader}{}\section{Json\+:\+:Reader Class Reference}
+\label{class_json_1_1_reader}\index{Json\+::\+Reader@{Json\+::\+Reader}}
+
+
+{\ttfamily \#include $<$jsoncxx.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_json_1_1_reader_a0b3c4e24c8393354bab57a6ba3ffc27f}{Reader} ()
+\item 
+bool \hyperlink{class_json_1_1_reader_ada62b16488d21737bcf87a31ce5281d6}{parse} (const std\+::string \&document, \hyperlink{class_json_1_1_value}{Value} \&root)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 83 of file jsoncxx.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_json_1_1_reader_a0b3c4e24c8393354bab57a6ba3ffc27f}\label{class_json_1_1_reader_a0b3c4e24c8393354bab57a6ba3ffc27f}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!Reader@{Reader}}
+\index{Reader@{Reader}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{Reader()}{Reader()}}
+{\footnotesize\ttfamily Json\+::\+Reader\+::\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+8     \{
+9     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_json_1_1_reader_ada62b16488d21737bcf87a31ce5281d6}\label{class_json_1_1_reader_ada62b16488d21737bcf87a31ce5281d6}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!parse@{parse}}
+\index{parse@{parse}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::parse (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{document,  }\item[{\hyperlink{class_json_1_1_value}{Value} \&}]{root }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+12     \{
+13         \hyperlink{structjson__object}{json\_object} *obj = \hyperlink{json__tokener_8c_abf031fdf1e5caab71e2225a99588c6bb}{json\_tokener\_parse}( document.data() );
+14 
+15         \textcolor{keywordflow}{if}( \hyperlink{bits_8h_a4a887e5fb7cde221bcab9c6f39d93fc1}{is\_error}(obj) )
+16             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+17 
+18         root.SetObj( obj );
+19 
+20         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+21     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+qt-\/json-\/editor-\/master/jsonc/\hyperlink{jsoncxx_8h}{jsoncxx.\+h}\item 
+qt-\/json-\/editor-\/master/jsonc/\hyperlink{jsoncxx_8cpp}{jsoncxx.\+cpp}\end{DoxyCompactItemize}

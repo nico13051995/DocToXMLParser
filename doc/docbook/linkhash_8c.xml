@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="linkhash_8c">
+    <title>linkhash.c File Reference</title>
+    <programlisting>#include &lt;stdio.h&gt;</programlisting>
+    <programlisting>#include &lt;string.h&gt;</programlisting>
+    <programlisting>#include &lt;stdlib.h&gt;</programlisting>
+    <programlisting>#include &lt;stdarg.h&gt;</programlisting>
+    <programlisting>#include &lt;stddef.h&gt;</programlisting>
+    <programlisting>#include &lt;limits.h&gt;</programlisting>
+    <programlisting>#include &quot;linkhash.h&quot;</programlisting>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="linkhash_8c_1a1294160fa0e80cee04cd745a401f43a4">lh_abort</link> (
+const char * msg, ... )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>unsigned long <link linkend="linkhash_8c_1a2e560f0d3e5a20f6b0bfa4049737db23">lh_ptr_hash</link> (
+const void * k)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="linkhash_8c_1a6ce3cb97560072c40f5caeaba85f756a">lh_ptr_equal</link> (
+const void * k1, const void * k2)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>unsigned long <link linkend="linkhash_8c_1a1fcf495b9c4ce169630cb31f638b8435">lh_char_hash</link> (
+const void * k)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="linkhash_8c_1ae4e9f21fb1a556c7a50c6b7ea61f2079">lh_char_equal</link> (
+const void * k1, const void * k2)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structlh__table">lh_table</link> * <link linkend="linkhash_8c_1ac3ba464ac43c083397b1f1d34f2ddf55">lh_table_new</link> (
+int size, const char * name, <link linkend="linkhash_8h_1a481b0bb1ab1d6a83713d9c27aa9f07d2">lh_entry_free_fn</link> * free_fn, <link linkend="linkhash_8h_1a91d16eb45069d235a198d2184a77d0ae">lh_hash_fn</link> * hash_fn, <link linkend="linkhash_8h_1af74a0690267598a0ed6f0a9b66674573">lh_equal_fn</link> * equal_fn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structlh__table">lh_table</link> * <link linkend="linkhash_8c_1a0aaf11e11ee5b0925279a52eab04bc38">lh_kchar_table_new</link> (
+int size, const char * name, <link linkend="linkhash_8h_1a481b0bb1ab1d6a83713d9c27aa9f07d2">lh_entry_free_fn</link> * free_fn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structlh__table">lh_table</link> * <link linkend="linkhash_8c_1a705513954267a16cc1d40a284a7c441e">lh_kptr_table_new</link> (
+int size, const char * name, <link linkend="linkhash_8h_1a481b0bb1ab1d6a83713d9c27aa9f07d2">lh_entry_free_fn</link> * free_fn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="linkhash_8c_1a5322eccf3394af7dc1ebb22af8f8c562">lh_table_resize</link> (
+struct <link linkend="structlh__table">lh_table</link> * t, int new_size)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="linkhash_8c_1a81653acf740cf8c9fe672e6cd16df0cf">lh_table_free</link> (
+struct <link linkend="structlh__table">lh_table</link> * t)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="linkhash_8c_1a22b897763cc34a98c21c7fe82d151004">lh_table_insert</link> (
+struct <link linkend="structlh__table">lh_table</link> * t, void * k, const void * v)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structlh__entry">lh_entry</link> * <link linkend="linkhash_8c_1ad3b6ca2d967a6c3021ee6c39e014a918">lh_table_lookup_entry</link> (
+struct <link linkend="structlh__table">lh_table</link> * t, const void * k)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const void * <link linkend="linkhash_8c_1a49c27f18a174eaf126d1b7953df13cb1">lh_table_lookup</link> (
+struct <link linkend="structlh__table">lh_table</link> * t, const void * k)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="linkhash_8c_1ae5885a71c3457190fb1dc2d6e20dde3b">lh_table_delete_entry</link> (
+struct <link linkend="structlh__table">lh_table</link> * t, struct <link linkend="structlh__entry">lh_entry</link> * e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="linkhash_8c_1a2fed2c78f70d229edb2d00775ffe593c">lh_table_delete</link> (
+struct <link linkend="structlh__table">lh_table</link> * t, const void * k)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/qt-json-editor-master/jsonc/linkhash.c</para>
+    </simplesect>
+</section>

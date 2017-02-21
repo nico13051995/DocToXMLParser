@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_settings">
+<title>Settings class Reference</title>
+<para>
+    <programlisting>#include <link linkend="settings_8h">&lt;settings.h&gt;</link></programlisting>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QSettings * settings</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static Settings * instance</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_settings_1ab7169a6eefce79566dd07db3b1e5e967">Settings</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_settings_1a4a65be5921dfc9fddc476e5320541d89">~Settings</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="class_settings">Settings</link> * <link linkend="class_settings_1a5134bac1c68824ef48651c8469cf8722">getInstance</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_settings_1a5dcb3f0c7e2e145a4553edd78cf5fa5c">addNewMap</link> (
+QString path)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>The <link linkend="class_settings">Settings</link> class simple singelton for get program settings (DI) </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_settings_1ab7169a6eefce79566dd07db3b1e5e967">
+                <title>Settings::Settings ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_settings_1a4a65be5921dfc9fddc476e5320541d89">
+                <title>Settings::~Settings ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_settings_1a5134bac1c68824ef48651c8469cf8722">
+                <title>Settings * Settings::getInstance ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_settings_1a5dcb3f0c7e2e145a4553edd78cf5fa5c">
+                <title>bool Settings::addNewMap (QString path)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

@@ -1,0 +1,155 @@
+\hypertarget{class_select_parser_window}{}\section{Select\+Parser\+Window Class Reference}
+\label{class_select_parser_window}\index{Select\+Parser\+Window@{Select\+Parser\+Window}}
+
+
+The \hyperlink{class_select_parser_window}{Select\+Parser\+Window} class.  
+
+
+
+
+{\ttfamily \#include $<$selectparserwindow.\+h$>$}
+
+Inheritance diagram for Select\+Parser\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_select_parser_window}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_select_parser_window_a8d16e81dd47f921fae24e502c5394944}{Select\+Parser\+Window} (Q\+List$<$ \hyperlink{class_parser_config}{Parser\+Config} $\ast$$>$ $\ast$list, Q\+Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_select_parser_window}{Select\+Parser\+Window}. \end{DoxyCompactList}\item 
+\hyperlink{class_select_parser_window_ab4e0f7c430edbbfd05ed21e8f9737db9}{$\sim$\+Select\+Parser\+Window} ()
+\item 
+void \hyperlink{class_select_parser_window_a6adc7dff83529e4770d8b54ad13edeb7}{show\+Event} (Q\+Show\+Event $\ast$e)
+\begin{DoxyCompactList}\small\item\em show\+Event -\/ prefunction for update UI \end{DoxyCompactList}\item 
+\hyperlink{class_parser_config}{Parser\+Config} $\ast$ \hyperlink{class_select_parser_window_ab6397caf6e7270309a5b57befb3f144f}{get\+Current\+Config} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_select_parser_window}{Select\+Parser\+Window} class. 
+
+Definition at line 16 of file selectparserwindow.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_select_parser_window_a8d16e81dd47f921fae24e502c5394944}\label{class_select_parser_window_a8d16e81dd47f921fae24e502c5394944}} 
+\index{Select\+Parser\+Window@{Select\+Parser\+Window}!Select\+Parser\+Window@{Select\+Parser\+Window}}
+\index{Select\+Parser\+Window@{Select\+Parser\+Window}!Select\+Parser\+Window@{Select\+Parser\+Window}}
+\subsubsection{\texorpdfstring{Select\+Parser\+Window()}{SelectParserWindow()}}
+{\footnotesize\ttfamily Select\+Parser\+Window\+::\+Select\+Parser\+Window (\begin{DoxyParamCaption}\item[{Q\+List$<$ \hyperlink{class_parser_config}{Parser\+Config} $\ast$$>$ $\ast$}]{list,  }\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{class_select_parser_window}{Select\+Parser\+Window}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & -\/ list for init started configurations \\
+\hline
+{\em parent} & -\/ parent windows pointer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 4 of file selectparserwindow.\+cpp.
+
+
+\begin{DoxyCode}
+4                                                                                    :
+5     QDialog(parent),
+6     ui(\textcolor{keyword}{new} Ui::SelectParserWindow)
+7 \{
+8     currentConfig = NULL;
+9     ui->setupUi(\textcolor{keyword}{this});
+10     this->list = list;
+11     connect(ui->comboBox, SIGNAL(currentIndexChanged(\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(currentIndexChanged(\textcolor{keywordtype}{int})));
+12     connect(ui->importSelectFile, SIGNAL(pressed()), \textcolor{keyword}{this}, SLOT(showFileDialog()));
+13     connect(ui->importBtn, SIGNAL(pressed()), \textcolor{keyword}{this}, SLOT(\textcolor{keyword}{import}()));
+14     connect(ui->removeBtn, SIGNAL(pressed()), \textcolor{keyword}{this}, SLOT(\textcolor{keyword}{remove}()));
+15     connect(ui->editBtn, SIGNAL(pressed()), \textcolor{keyword}{this}, SLOT(edit()));
+16 
+17 \textcolor{comment}{//    connect(ui->import\_info, SIGNAL())}
+18 
+19 
+20 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_select_parser_window_ab4e0f7c430edbbfd05ed21e8f9737db9}\label{class_select_parser_window_ab4e0f7c430edbbfd05ed21e8f9737db9}} 
+\index{Select\+Parser\+Window@{Select\+Parser\+Window}!````~Select\+Parser\+Window@{$\sim$\+Select\+Parser\+Window}}
+\index{````~Select\+Parser\+Window@{$\sim$\+Select\+Parser\+Window}!Select\+Parser\+Window@{Select\+Parser\+Window}}
+\subsubsection{\texorpdfstring{$\sim$\+Select\+Parser\+Window()}{~SelectParserWindow()}}
+{\footnotesize\ttfamily Select\+Parser\+Window\+::$\sim$\+Select\+Parser\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file selectparserwindow.\+cpp.
+
+
+\begin{DoxyCode}
+23 \{
+24     \textcolor{keyword}{delete} ui;
+25 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_select_parser_window_ab6397caf6e7270309a5b57befb3f144f}\label{class_select_parser_window_ab6397caf6e7270309a5b57befb3f144f}} 
+\index{Select\+Parser\+Window@{Select\+Parser\+Window}!get\+Current\+Config@{get\+Current\+Config}}
+\index{get\+Current\+Config@{get\+Current\+Config}!Select\+Parser\+Window@{Select\+Parser\+Window}}
+\subsubsection{\texorpdfstring{get\+Current\+Config()}{getCurrentConfig()}}
+{\footnotesize\ttfamily \hyperlink{class_parser_config}{Parser\+Config} $\ast$ Select\+Parser\+Window\+::get\+Current\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 47 of file selectparserwindow.\+cpp.
+
+
+\begin{DoxyCode}
+48 \{
+49     \textcolor{keywordflow}{if}(currentConfig == NULL)
+50     \{
+51         currentConfig = list->first();
+52     \}
+53     \textcolor{keywordflow}{return} currentConfig;
+54 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_select_parser_window_a6adc7dff83529e4770d8b54ad13edeb7}\label{class_select_parser_window_a6adc7dff83529e4770d8b54ad13edeb7}} 
+\index{Select\+Parser\+Window@{Select\+Parser\+Window}!show\+Event@{show\+Event}}
+\index{show\+Event@{show\+Event}!Select\+Parser\+Window@{Select\+Parser\+Window}}
+\subsubsection{\texorpdfstring{show\+Event()}{showEvent()}}
+{\footnotesize\ttfamily void Select\+Parser\+Window\+::show\+Event (\begin{DoxyParamCaption}\item[{Q\+Show\+Event $\ast$}]{e }\end{DoxyParamCaption})}
+
+
+
+show\+Event -\/ prefunction for update UI 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file selectparserwindow.\+cpp.
+
+
+\begin{DoxyCode}
+28 \{
+29     QDialog::showEvent(e);
+30     ui->import\_info->setText(\textcolor{stringliteral}{"Wait"});
+31     QPalette palette = ui->import\_info->palette();
+32     palette.setColor(ui->import\_info->foregroundRole(), Qt::blue);
+33     ui->import\_info->setPalette(palette);
+34 
+35     update();
+36 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{selectparserwindow_8h}{selectparserwindow.\+h}\item 
+\hyperlink{selectparserwindow_8cpp}{selectparserwindow.\+cpp}\end{DoxyCompactItemize}

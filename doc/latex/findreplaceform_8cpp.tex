@@ -1,0 +1,98 @@
+\hypertarget{findreplaceform_8cpp}{}\section{qt-\/json-\/editor-\/master/dialogs/findreplaceform.cpp File Reference}
+\label{findreplaceform_8cpp}\index{qt-\/json-\/editor-\/master/dialogs/findreplaceform.\+cpp@{qt-\/json-\/editor-\/master/dialogs/findreplaceform.\+cpp}}
+{\ttfamily \#include $<$Qt\+Gui$>$}\newline
+{\ttfamily \#include $<$Q\+Text\+Edit$>$}\newline
+{\ttfamily \#include $<$Q\+Reg\+Exp$>$}\newline
+{\ttfamily \#include $<$Q\+Settings$>$}\newline
+{\ttfamily \#include \char`\"{}findreplaceform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ui\+\_\+findreplaceform.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{findreplaceform_8cpp_ad0e85b6e1a23bc6895c0b0173fe84fb8}{T\+E\+X\+T\+\_\+\+T\+O\+\_\+\+F\+I\+ND}~\char`\"{}text\+To\+Find\char`\"{}
+\item 
+\#define \hyperlink{findreplaceform_8cpp_ae47c14ca9975586733a09e6d551dad02}{T\+E\+X\+T\+\_\+\+T\+O\+\_\+\+R\+E\+P\+L\+A\+CE}~\char`\"{}text\+To\+Replace\char`\"{}
+\item 
+\#define \hyperlink{findreplaceform_8cpp_a47c8ca9e44c58a42f6fe68e4203a013e}{D\+O\+W\+N\+\_\+\+R\+A\+D\+IO}~\char`\"{}down\+Radio\char`\"{}
+\item 
+\#define \hyperlink{findreplaceform_8cpp_a8c493bff457c3ec968f611c4d562e2ba}{U\+P\+\_\+\+R\+A\+D\+IO}~\char`\"{}up\+Radio\char`\"{}
+\item 
+\#define \hyperlink{findreplaceform_8cpp_a187fe30bbd8393046e13732d0ced8e39}{C\+A\+S\+E\+\_\+\+C\+H\+E\+CK}~\char`\"{}case\+Check\char`\"{}
+\item 
+\#define \hyperlink{findreplaceform_8cpp_a30b2264592edd78f0d0a3a9b67cdfaf8}{W\+H\+O\+L\+E\+\_\+\+C\+H\+E\+CK}~\char`\"{}whole\+Check\char`\"{}
+\item 
+\#define \hyperlink{findreplaceform_8cpp_a19c3030804a7b73372b7d4de85d75804}{R\+E\+G\+E\+X\+P\+\_\+\+C\+H\+E\+CK}~\char`\"{}regexp\+Check\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{findreplaceform_8cpp_a187fe30bbd8393046e13732d0ced8e39}\label{findreplaceform_8cpp_a187fe30bbd8393046e13732d0ced8e39}} 
+\index{findreplaceform.\+cpp@{findreplaceform.\+cpp}!C\+A\+S\+E\+\_\+\+C\+H\+E\+CK@{C\+A\+S\+E\+\_\+\+C\+H\+E\+CK}}
+\index{C\+A\+S\+E\+\_\+\+C\+H\+E\+CK@{C\+A\+S\+E\+\_\+\+C\+H\+E\+CK}!findreplaceform.\+cpp@{findreplaceform.\+cpp}}
+\subsubsection{\texorpdfstring{C\+A\+S\+E\+\_\+\+C\+H\+E\+CK}{CASE\_CHECK}}
+{\footnotesize\ttfamily \#define C\+A\+S\+E\+\_\+\+C\+H\+E\+CK~\char`\"{}case\+Check\char`\"{}}
+
+
+
+Definition at line 18 of file findreplaceform.\+cpp.
+
+\mbox{\Hypertarget{findreplaceform_8cpp_a47c8ca9e44c58a42f6fe68e4203a013e}\label{findreplaceform_8cpp_a47c8ca9e44c58a42f6fe68e4203a013e}} 
+\index{findreplaceform.\+cpp@{findreplaceform.\+cpp}!D\+O\+W\+N\+\_\+\+R\+A\+D\+IO@{D\+O\+W\+N\+\_\+\+R\+A\+D\+IO}}
+\index{D\+O\+W\+N\+\_\+\+R\+A\+D\+IO@{D\+O\+W\+N\+\_\+\+R\+A\+D\+IO}!findreplaceform.\+cpp@{findreplaceform.\+cpp}}
+\subsubsection{\texorpdfstring{D\+O\+W\+N\+\_\+\+R\+A\+D\+IO}{DOWN\_RADIO}}
+{\footnotesize\ttfamily \#define D\+O\+W\+N\+\_\+\+R\+A\+D\+IO~\char`\"{}down\+Radio\char`\"{}}
+
+
+
+Definition at line 16 of file findreplaceform.\+cpp.
+
+\mbox{\Hypertarget{findreplaceform_8cpp_a19c3030804a7b73372b7d4de85d75804}\label{findreplaceform_8cpp_a19c3030804a7b73372b7d4de85d75804}} 
+\index{findreplaceform.\+cpp@{findreplaceform.\+cpp}!R\+E\+G\+E\+X\+P\+\_\+\+C\+H\+E\+CK@{R\+E\+G\+E\+X\+P\+\_\+\+C\+H\+E\+CK}}
+\index{R\+E\+G\+E\+X\+P\+\_\+\+C\+H\+E\+CK@{R\+E\+G\+E\+X\+P\+\_\+\+C\+H\+E\+CK}!findreplaceform.\+cpp@{findreplaceform.\+cpp}}
+\subsubsection{\texorpdfstring{R\+E\+G\+E\+X\+P\+\_\+\+C\+H\+E\+CK}{REGEXP\_CHECK}}
+{\footnotesize\ttfamily \#define R\+E\+G\+E\+X\+P\+\_\+\+C\+H\+E\+CK~\char`\"{}regexp\+Check\char`\"{}}
+
+
+
+Definition at line 20 of file findreplaceform.\+cpp.
+
+\mbox{\Hypertarget{findreplaceform_8cpp_ad0e85b6e1a23bc6895c0b0173fe84fb8}\label{findreplaceform_8cpp_ad0e85b6e1a23bc6895c0b0173fe84fb8}} 
+\index{findreplaceform.\+cpp@{findreplaceform.\+cpp}!T\+E\+X\+T\+\_\+\+T\+O\+\_\+\+F\+I\+ND@{T\+E\+X\+T\+\_\+\+T\+O\+\_\+\+F\+I\+ND}}
+\index{T\+E\+X\+T\+\_\+\+T\+O\+\_\+\+F\+I\+ND@{T\+E\+X\+T\+\_\+\+T\+O\+\_\+\+F\+I\+ND}!findreplaceform.\+cpp@{findreplaceform.\+cpp}}
+\subsubsection{\texorpdfstring{T\+E\+X\+T\+\_\+\+T\+O\+\_\+\+F\+I\+ND}{TEXT\_TO\_FIND}}
+{\footnotesize\ttfamily \#define T\+E\+X\+T\+\_\+\+T\+O\+\_\+\+F\+I\+ND~\char`\"{}text\+To\+Find\char`\"{}}
+
+
+
+Definition at line 14 of file findreplaceform.\+cpp.
+
+\mbox{\Hypertarget{findreplaceform_8cpp_ae47c14ca9975586733a09e6d551dad02}\label{findreplaceform_8cpp_ae47c14ca9975586733a09e6d551dad02}} 
+\index{findreplaceform.\+cpp@{findreplaceform.\+cpp}!T\+E\+X\+T\+\_\+\+T\+O\+\_\+\+R\+E\+P\+L\+A\+CE@{T\+E\+X\+T\+\_\+\+T\+O\+\_\+\+R\+E\+P\+L\+A\+CE}}
+\index{T\+E\+X\+T\+\_\+\+T\+O\+\_\+\+R\+E\+P\+L\+A\+CE@{T\+E\+X\+T\+\_\+\+T\+O\+\_\+\+R\+E\+P\+L\+A\+CE}!findreplaceform.\+cpp@{findreplaceform.\+cpp}}
+\subsubsection{\texorpdfstring{T\+E\+X\+T\+\_\+\+T\+O\+\_\+\+R\+E\+P\+L\+A\+CE}{TEXT\_TO\_REPLACE}}
+{\footnotesize\ttfamily \#define T\+E\+X\+T\+\_\+\+T\+O\+\_\+\+R\+E\+P\+L\+A\+CE~\char`\"{}text\+To\+Replace\char`\"{}}
+
+
+
+Definition at line 15 of file findreplaceform.\+cpp.
+
+\mbox{\Hypertarget{findreplaceform_8cpp_a8c493bff457c3ec968f611c4d562e2ba}\label{findreplaceform_8cpp_a8c493bff457c3ec968f611c4d562e2ba}} 
+\index{findreplaceform.\+cpp@{findreplaceform.\+cpp}!U\+P\+\_\+\+R\+A\+D\+IO@{U\+P\+\_\+\+R\+A\+D\+IO}}
+\index{U\+P\+\_\+\+R\+A\+D\+IO@{U\+P\+\_\+\+R\+A\+D\+IO}!findreplaceform.\+cpp@{findreplaceform.\+cpp}}
+\subsubsection{\texorpdfstring{U\+P\+\_\+\+R\+A\+D\+IO}{UP\_RADIO}}
+{\footnotesize\ttfamily \#define U\+P\+\_\+\+R\+A\+D\+IO~\char`\"{}up\+Radio\char`\"{}}
+
+
+
+Definition at line 17 of file findreplaceform.\+cpp.
+
+\mbox{\Hypertarget{findreplaceform_8cpp_a30b2264592edd78f0d0a3a9b67cdfaf8}\label{findreplaceform_8cpp_a30b2264592edd78f0d0a3a9b67cdfaf8}} 
+\index{findreplaceform.\+cpp@{findreplaceform.\+cpp}!W\+H\+O\+L\+E\+\_\+\+C\+H\+E\+CK@{W\+H\+O\+L\+E\+\_\+\+C\+H\+E\+CK}}
+\index{W\+H\+O\+L\+E\+\_\+\+C\+H\+E\+CK@{W\+H\+O\+L\+E\+\_\+\+C\+H\+E\+CK}!findreplaceform.\+cpp@{findreplaceform.\+cpp}}
+\subsubsection{\texorpdfstring{W\+H\+O\+L\+E\+\_\+\+C\+H\+E\+CK}{WHOLE\_CHECK}}
+{\footnotesize\ttfamily \#define W\+H\+O\+L\+E\+\_\+\+C\+H\+E\+CK~\char`\"{}whole\+Check\char`\"{}}
+
+
+
+Definition at line 19 of file findreplaceform.\+cpp.
+

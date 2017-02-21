@@ -1,0 +1,241 @@
+\hypertarget{class_ui_1_1_find_replace_dialog}{}\section{Ui\+:\+:Find\+Replace\+Dialog Class Reference}
+\label{class_ui_1_1_find_replace_dialog}\index{Ui\+::\+Find\+Replace\+Dialog@{Ui\+::\+Find\+Replace\+Dialog}}
+
+
+{\ttfamily \#include $<$findreplacedialog.\+h$>$}
+
+Inheritance diagram for Ui\+:\+:Find\+Replace\+Dialog\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_ui_1_1_find_replace_dialog}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_ui_1_1_find_replace_dialog_ac4d4fa5eb9fdda240d855f05b5b6df68}{find\+Next} ()
+\item 
+void \hyperlink{class_ui_1_1_find_replace_dialog_af48970c4a221387bc4df6b7f521af693}{find\+Prev} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ui_1_1_find_replace_dialog_a2631641ec6995a87bc4da0a99fb6f9bd}{Find\+Replace\+Dialog} (Q\+Widget $\ast$parent=0)
+\item 
+virtual \hyperlink{class_ui_1_1_find_replace_dialog_a03c6e4f0710004d55e45d97b0911cf27}{$\sim$\+Find\+Replace\+Dialog} ()
+\item 
+void \hyperlink{class_ui_1_1_find_replace_dialog_a3d3cd91477be5d6529e9aa3de21958a6}{set\+Text\+Edit} (Q\+Text\+Edit $\ast$text\+Edit)
+\item 
+virtual void \hyperlink{class_ui_1_1_find_replace_dialog_ad9216d8059c559596baa5ddcbda3ec0b}{write\+Settings} (Q\+Settings \&settings, const Q\+String \&prefix=\char`\"{}Find\+Replace\+Dialog\char`\"{})
+\item 
+virtual void \hyperlink{class_ui_1_1_find_replace_dialog_a2be8b8724a5f9a7e6dff30348f94761c}{read\+Settings} (Q\+Settings \&settings, const Q\+String \&prefix=\char`\"{}Find\+Replace\+Dialog\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_ui_1_1_find_replace_dialog_a793bc999abeaedd4262d39161f521f35}{change\+Event} (Q\+Event $\ast$e)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ui_1_1_find_replace_dialog}{Ui\+::\+Find\+Replace\+Dialog} $\ast$ \hyperlink{class_ui_1_1_find_replace_dialog_a29b7e2e415bc683d3dd089b366cccf4a}{ui}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A find/replace dialog.
+
+It relies on a \hyperlink{class_find_replace_form}{Find\+Replace\+Form} object (see that class for the functionalities provided). 
+
+Definition at line 23 of file findreplacedialog.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_ui_1_1_find_replace_dialog_a2631641ec6995a87bc4da0a99fb6f9bd}\label{class_ui_1_1_find_replace_dialog_a2631641ec6995a87bc4da0a99fb6f9bd}} 
+\index{Ui\+::\+Find\+Replace\+Dialog@{Ui\+::\+Find\+Replace\+Dialog}!Find\+Replace\+Dialog@{Find\+Replace\+Dialog}}
+\index{Find\+Replace\+Dialog@{Find\+Replace\+Dialog}!Ui\+::\+Find\+Replace\+Dialog@{Ui\+::\+Find\+Replace\+Dialog}}
+\subsubsection{\texorpdfstring{Find\+Replace\+Dialog()}{FindReplaceDialog()}}
+{\footnotesize\ttfamily Find\+Replace\+Dialog\+::\+Find\+Replace\+Dialog (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file findreplacedialog.\+cpp.
+
+
+\begin{DoxyCode}
+9                                                     :
+10     QDialog(parent),
+11     \hyperlink{class_ui_1_1_find_replace_dialog_a29b7e2e415bc683d3dd089b366cccf4a}{ui}(\textcolor{keyword}{new} \hyperlink{class_ui_1_1_find_replace_dialog}{Ui::FindReplaceDialog})
+12 \{
+13     \hyperlink{class_ui_1_1_find_replace_dialog_a29b7e2e415bc683d3dd089b366cccf4a}{ui}->setupUi(\textcolor{keyword}{this});
+14 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_ui_1_1_find_replace_dialog_a03c6e4f0710004d55e45d97b0911cf27}\label{class_ui_1_1_find_replace_dialog_a03c6e4f0710004d55e45d97b0911cf27}} 
+\index{Ui\+::\+Find\+Replace\+Dialog@{Ui\+::\+Find\+Replace\+Dialog}!````~Find\+Replace\+Dialog@{$\sim$\+Find\+Replace\+Dialog}}
+\index{````~Find\+Replace\+Dialog@{$\sim$\+Find\+Replace\+Dialog}!Ui\+::\+Find\+Replace\+Dialog@{Ui\+::\+Find\+Replace\+Dialog}}
+\subsubsection{\texorpdfstring{$\sim$\+Find\+Replace\+Dialog()}{~FindReplaceDialog()}}
+{\footnotesize\ttfamily Find\+Replace\+Dialog\+::$\sim$\+Find\+Replace\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 16 of file findreplacedialog.\+cpp.
+
+
+\begin{DoxyCode}
+17 \{
+18     \textcolor{keyword}{delete} \hyperlink{class_ui_1_1_find_replace_dialog_a29b7e2e415bc683d3dd089b366cccf4a}{ui};
+19 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ui_1_1_find_replace_dialog_a793bc999abeaedd4262d39161f521f35}\label{class_ui_1_1_find_replace_dialog_a793bc999abeaedd4262d39161f521f35}} 
+\index{Ui\+::\+Find\+Replace\+Dialog@{Ui\+::\+Find\+Replace\+Dialog}!change\+Event@{change\+Event}}
+\index{change\+Event@{change\+Event}!Ui\+::\+Find\+Replace\+Dialog@{Ui\+::\+Find\+Replace\+Dialog}}
+\subsubsection{\texorpdfstring{change\+Event()}{changeEvent()}}
+{\footnotesize\ttfamily void Find\+Replace\+Dialog\+::change\+Event (\begin{DoxyParamCaption}\item[{Q\+Event $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 21 of file findreplacedialog.\+cpp.
+
+
+\begin{DoxyCode}
+22 \{
+23     QDialog::changeEvent(e);
+24     \textcolor{keywordflow}{switch} (e->type()) \{
+25     \textcolor{keywordflow}{case} QEvent::LanguageChange:
+26         \hyperlink{class_ui_1_1_find_replace_dialog_a29b7e2e415bc683d3dd089b366cccf4a}{ui}->retranslateUi(\textcolor{keyword}{this});
+27         \textcolor{keywordflow}{break};
+28     \textcolor{keywordflow}{default}:
+29         \textcolor{keywordflow}{break};
+30     \}
+31 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_ui_1_1_find_replace_dialog_ac4d4fa5eb9fdda240d855f05b5b6df68}\label{class_ui_1_1_find_replace_dialog_ac4d4fa5eb9fdda240d855f05b5b6df68}} 
+\index{Ui\+::\+Find\+Replace\+Dialog@{Ui\+::\+Find\+Replace\+Dialog}!find\+Next@{find\+Next}}
+\index{find\+Next@{find\+Next}!Ui\+::\+Find\+Replace\+Dialog@{Ui\+::\+Find\+Replace\+Dialog}}
+\subsubsection{\texorpdfstring{find\+Next}{findNext}}
+{\footnotesize\ttfamily void Find\+Replace\+Dialog\+::find\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Finds the next occurrence 
+
+Definition at line 45 of file findreplacedialog.\+cpp.
+
+
+\begin{DoxyCode}
+45                                  \{
+46     \hyperlink{class_ui_1_1_find_replace_dialog_a29b7e2e415bc683d3dd089b366cccf4a}{ui}->findReplaceForm->\hyperlink{class_ui_1_1_find_replace_dialog_ac4d4fa5eb9fdda240d855f05b5b6df68}{findNext}();
+47 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_ui_1_1_find_replace_dialog_af48970c4a221387bc4df6b7f521af693}\label{class_ui_1_1_find_replace_dialog_af48970c4a221387bc4df6b7f521af693}} 
+\index{Ui\+::\+Find\+Replace\+Dialog@{Ui\+::\+Find\+Replace\+Dialog}!find\+Prev@{find\+Prev}}
+\index{find\+Prev@{find\+Prev}!Ui\+::\+Find\+Replace\+Dialog@{Ui\+::\+Find\+Replace\+Dialog}}
+\subsubsection{\texorpdfstring{find\+Prev}{findPrev}}
+{\footnotesize\ttfamily void Find\+Replace\+Dialog\+::find\+Prev (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Finds the previous occurrence 
+
+Definition at line 49 of file findreplacedialog.\+cpp.
+
+
+\begin{DoxyCode}
+49                                  \{
+50     \hyperlink{class_ui_1_1_find_replace_dialog_a29b7e2e415bc683d3dd089b366cccf4a}{ui}->findReplaceForm->\hyperlink{class_ui_1_1_find_replace_dialog_af48970c4a221387bc4df6b7f521af693}{findPrev}();
+51 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_ui_1_1_find_replace_dialog_a2be8b8724a5f9a7e6dff30348f94761c}\label{class_ui_1_1_find_replace_dialog_a2be8b8724a5f9a7e6dff30348f94761c}} 
+\index{Ui\+::\+Find\+Replace\+Dialog@{Ui\+::\+Find\+Replace\+Dialog}!read\+Settings@{read\+Settings}}
+\index{read\+Settings@{read\+Settings}!Ui\+::\+Find\+Replace\+Dialog@{Ui\+::\+Find\+Replace\+Dialog}}
+\subsubsection{\texorpdfstring{read\+Settings()}{readSettings()}}
+{\footnotesize\ttfamily void Find\+Replace\+Dialog\+::read\+Settings (\begin{DoxyParamCaption}\item[{Q\+Settings \&}]{settings,  }\item[{const Q\+String \&}]{prefix = {\ttfamily \char`\"{}FindReplaceDialog\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Reads the state of the form from the passed settings. 
+\begin{DoxyParams}{Parameters}
+{\em settings} & \\
+\hline
+{\em prefix} & the prefix to look for in the settings \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_ui_1_1_find_dialog_adcb3b60f3a1a4a41f7edddf7b203ba44}{Ui\+::\+Find\+Dialog}.
+
+
+
+Definition at line 41 of file findreplacedialog.\+cpp.
+
+
+\begin{DoxyCode}
+41                                                                                \{
+42     \hyperlink{class_ui_1_1_find_replace_dialog_a29b7e2e415bc683d3dd089b366cccf4a}{ui}->findReplaceForm->\hyperlink{class_ui_1_1_find_replace_dialog_a2be8b8724a5f9a7e6dff30348f94761c}{readSettings}(settings, prefix);
+43 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_ui_1_1_find_replace_dialog_a3d3cd91477be5d6529e9aa3de21958a6}\label{class_ui_1_1_find_replace_dialog_a3d3cd91477be5d6529e9aa3de21958a6}} 
+\index{Ui\+::\+Find\+Replace\+Dialog@{Ui\+::\+Find\+Replace\+Dialog}!set\+Text\+Edit@{set\+Text\+Edit}}
+\index{set\+Text\+Edit@{set\+Text\+Edit}!Ui\+::\+Find\+Replace\+Dialog@{Ui\+::\+Find\+Replace\+Dialog}}
+\subsubsection{\texorpdfstring{set\+Text\+Edit()}{setTextEdit()}}
+{\footnotesize\ttfamily void Find\+Replace\+Dialog\+::set\+Text\+Edit (\begin{DoxyParamCaption}\item[{Q\+Text\+Edit $\ast$}]{text\+Edit }\end{DoxyParamCaption})}
+
+Associates the text editor where to perform the search 
+\begin{DoxyParams}{Parameters}
+{\em text\+Edit} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 33 of file findreplacedialog.\+cpp.
+
+
+\begin{DoxyCode}
+33                                                        \{
+34     \hyperlink{class_ui_1_1_find_replace_dialog_a29b7e2e415bc683d3dd089b366cccf4a}{ui}->findReplaceForm->\hyperlink{class_ui_1_1_find_replace_dialog_a3d3cd91477be5d6529e9aa3de21958a6}{setTextEdit}(textEdit);
+35 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_ui_1_1_find_replace_dialog_ad9216d8059c559596baa5ddcbda3ec0b}\label{class_ui_1_1_find_replace_dialog_ad9216d8059c559596baa5ddcbda3ec0b}} 
+\index{Ui\+::\+Find\+Replace\+Dialog@{Ui\+::\+Find\+Replace\+Dialog}!write\+Settings@{write\+Settings}}
+\index{write\+Settings@{write\+Settings}!Ui\+::\+Find\+Replace\+Dialog@{Ui\+::\+Find\+Replace\+Dialog}}
+\subsubsection{\texorpdfstring{write\+Settings()}{writeSettings()}}
+{\footnotesize\ttfamily void Find\+Replace\+Dialog\+::write\+Settings (\begin{DoxyParamCaption}\item[{Q\+Settings \&}]{settings,  }\item[{const Q\+String \&}]{prefix = {\ttfamily \char`\"{}FindReplaceDialog\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Writes the state of the form to the passed settings. 
+\begin{DoxyParams}{Parameters}
+{\em settings} & \\
+\hline
+{\em prefix} & the prefix to insert in the settings \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_ui_1_1_find_dialog_a8d54b1576e6325b41e5989fa2cec0d26}{Ui\+::\+Find\+Dialog}.
+
+
+
+Definition at line 37 of file findreplacedialog.\+cpp.
+
+
+\begin{DoxyCode}
+37                                                                                 \{
+38     \hyperlink{class_ui_1_1_find_replace_dialog_a29b7e2e415bc683d3dd089b366cccf4a}{ui}->findReplaceForm->\hyperlink{class_ui_1_1_find_replace_dialog_ad9216d8059c559596baa5ddcbda3ec0b}{writeSettings}(settings, prefix);
+39 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_ui_1_1_find_replace_dialog_a29b7e2e415bc683d3dd089b366cccf4a}\label{class_ui_1_1_find_replace_dialog_a29b7e2e415bc683d3dd089b366cccf4a}} 
+\index{Ui\+::\+Find\+Replace\+Dialog@{Ui\+::\+Find\+Replace\+Dialog}!ui@{ui}}
+\index{ui@{ui}!Ui\+::\+Find\+Replace\+Dialog@{Ui\+::\+Find\+Replace\+Dialog}}
+\subsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily \hyperlink{class_ui_1_1_find_replace_dialog}{Ui\+::\+Find\+Replace\+Dialog}$\ast$ Ui\+::\+Find\+Replace\+Dialog\+::ui\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 63 of file findreplacedialog.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+qt-\/json-\/editor-\/master/dialogs/\hyperlink{findreplacedialog_8h}{findreplacedialog.\+h}\item 
+qt-\/json-\/editor-\/master/dialogs/\hyperlink{findreplacedialog_8cpp}{findreplacedialog.\+cpp}\end{DoxyCompactItemize}

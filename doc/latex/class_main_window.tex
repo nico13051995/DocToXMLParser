@@ -1,0 +1,443 @@
+\hypertarget{class_main_window}{}\section{Main\+Window Class Reference}
+\label{class_main_window}\index{Main\+Window@{Main\+Window}}
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_window}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_main_window_ae454fa786ec097491d801d8bc7d3824c}{select\+Files\+With\+Dialog} (bool selected)
+\item 
+void \hyperlink{class_main_window_abcf1ecfd08a6967a28853153281ce4d8}{export\+To} ()
+\item 
+void \hyperlink{class_main_window_a48108540b64f60b2785c397cee553fbf}{performe\+Files} (Q\+String\+List files\+List, bool save=false)
+\item 
+void \hyperlink{class_main_window_ac7e1b1634d7b3e15641ca73422a4648d}{select\+Folder} (bool selected)
+\item 
+void \hyperlink{class_main_window_ab8d462abbdc0627822672281f8e07d50}{show\+Select\+Parser\+Config\+Dialog} ()
+\item 
+void \hyperlink{class_main_window_ab7a1a0cb0ab474a3fc80d17bf37c6b47}{show\+M\+S\+W\+Config\+Dialog} ()
+\item 
+void \hyperlink{class_main_window_addb903e5eac4179672e9825847af9be0}{generate\+Map\+Sample} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}{Main\+Window} (Q\+Widget $\ast$parent=0)
+\item 
+\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 28 of file mainwindow.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}\label{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}} 
+\index{Main\+Window@{Main\+Window}!Main\+Window@{Main\+Window}}
+\index{Main\+Window@{Main\+Window}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Main\+Window()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line 4 of file mainwindow.\+cpp.
+
+
+\begin{DoxyCode}
+4                                       :
+5     QMainWindow(parent),
+6     ui(\textcolor{keyword}{new} Ui::MainWindow)
+7 \{
+8     this->setWindowIcon(QIcon(\textcolor{stringliteral}{":/license/xml-icon.ico"}));
+9     selectConfigDialog = \textcolor{keyword}{new} \hyperlink{class_select_parser_window}{SelectParserWindow}(&supportedParserConfigs, \textcolor{keyword}{this});
+10     debugConfig = \textcolor{keyword}{new} \hyperlink{class_w_d_config_dialog}{WDConfigDialog}();
+11     showMSWordError = \textcolor{keyword}{false};
+12 
+13     ui->setupUi(\textcolor{keyword}{this});
+14     ui->progressBar->setValue(0);
+15     ui->status->setText(\textcolor{stringliteral}{"Done"});
+16 
+17     builder = \textcolor{keyword}{new} \hyperlink{class_xml_builder}{XmlBuilder}(\textcolor{stringliteral}{"XmlVNTU"}, \textcolor{stringliteral}{""}, \textcolor{stringliteral}{""});
+18 
+19     connect(ui->actionOpen, SIGNAL(triggered(\textcolor{keywordtype}{bool})), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_main_window_ae454fa786ec097491d801d8bc7d3824c}{selectFilesWithDialog}(\textcolor{keywordtype}{bool})));
+20     connect(ui->actionOpen\_folder, SIGNAL(triggered(\textcolor{keywordtype}{bool})), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_main_window_ac7e1b1634d7b3e15641ca73422a4648d}{selectFolder}(\textcolor{keywordtype}{bool})));
+21     connect(ui->actionExport\_to, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(\hyperlink{class_main_window_abcf1ecfd08a6967a28853153281ce4d8}{exportTo}()));
+22     connect(ui->actionSelect\_parser\_config, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_main_window_ab8d462abbdc0627822672281f8e07d50}{showSelectParserConfigDialog}()));
+23     connect(ui->actionDebug\_WD, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_main_window_ab7a1a0cb0ab474a3fc80d17bf37c6b47}{showMSWConfigDialog}()));
+24     connect(debugConfig, SIGNAL(visibleChange(\textcolor{keywordtype}{bool})), \textcolor{keyword}{this}, SLOT(visibleMSChange(\textcolor{keywordtype}{bool})));
+25     connect(debugConfig, SIGNAL(hideExChange(\textcolor{keywordtype}{bool})), \textcolor{keyword}{this}, SLOT(hideExMSChange(\textcolor{keywordtype}{bool})));
+26     connect(debugConfig, SIGNAL(showMSErrChange(\textcolor{keywordtype}{bool})), \textcolor{keyword}{this}, SLOT(showMSErrChange(\textcolor{keywordtype}{bool})));
+27 
+28 
+29     connect(ui->actionGenerate\_map\_sample, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_main_window_addb903e5eac4179672e9825847af9be0}{generateMapSample}()));
+30     connect(ui->actionAbout\_Qt, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(aboutQt()));
+31     connect(ui->actionAbout, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(aboutParser()));
+32 
+33     supportedParserConfigs.append(\textcolor{keyword}{new} \hyperlink{class_parser_config}{ParserConfig}(\hyperlink{mainwindow_8h_a72c1937b26ce9a87266ca6c802b047a0}{DEFAULT\_PATH}, \textcolor{keyword}{this}));
+34     \textcolor{keywordflow}{for}(QString path : \hyperlink{class_settings_a5134bac1c68824ef48651c8469cf8722}{Settings::getInstance}()->getSupportedMaps())
+35     \{
+36         \hyperlink{class_parser_config}{ParserConfig} *temp = \textcolor{keyword}{new} \hyperlink{class_parser_config}{ParserConfig}(path, \textcolor{keyword}{this});
+37         \textcolor{keywordflow}{if}(!temp->\hyperlink{class_parser_config_a8693076fd02fe0bdad9cab47c31e83cd}{isValid}())
+38         \{
+39             \hyperlink{class_settings_a5134bac1c68824ef48651c8469cf8722}{Settings::getInstance}()->\hyperlink{class_settings_a62312388f51c4c1a185a933128ec2e50}{removeMap}(path);
+40             \textcolor{keyword}{delete} temp;
+41             \textcolor{keywordflow}{continue};
+42         \}
+43         supportedParserConfigs.append(temp);
+44     \}
+45 
+46 
+47     wordApplication = \textcolor{keyword}{new} QAxObject(\textcolor{stringliteral}{"Word.Application"}, NULL);
+48     wordApplication->setProperty(\textcolor{stringliteral}{"Visible"}, QVariant(\textcolor{keyword}{false}));
+49     wordApplication->setProperty(\textcolor{stringliteral}{"OpenConflictDocument"}, QVariant(\textcolor{keyword}{true}));
+50 
+51     connect(wordApplication,
+52             SIGNAL(exception(\textcolor{keywordtype}{int}, \textcolor{keyword}{const} QString &, \textcolor{keyword}{const} QString &, \textcolor{keyword}{const} QString &)),
+53             \textcolor{keyword}{this},
+54             SLOT(onAxWidgetException(\textcolor{keywordtype}{int}, \textcolor{keyword}{const} QString &, \textcolor{keyword}{const} QString &, \textcolor{keyword}{const} QString &)));
+55     documents = wordApplication->querySubObject(\textcolor{stringliteral}{"Documents"});
+56     connect(documents,
+57             SIGNAL(exception(\textcolor{keywordtype}{int}, \textcolor{keyword}{const} QString &, \textcolor{keyword}{const} QString &, \textcolor{keyword}{const} QString &)),
+58             \textcolor{keyword}{this},
+59             SLOT(onAxWidgetException(\textcolor{keywordtype}{int}, \textcolor{keyword}{const} QString &, \textcolor{keyword}{const} QString &, \textcolor{keyword}{const} QString &)));
+60 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}} 
+\index{Main\+Window@{Main\+Window}!````~Main\+Window@{$\sim$\+Main\+Window}}
+\index{````~Main\+Window@{$\sim$\+Main\+Window}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{$\sim$\+Main\+Window()}{~MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::$\sim$\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 76 of file mainwindow.\+cpp.
+
+
+\begin{DoxyCode}
+77 \{
+78     \textcolor{keyword}{delete} ui;
+79     \textcolor{keyword}{delete} selectConfigDialog;
+80     \textcolor{comment}{//documents->dynamicCall("Close (Boolean)", false);}
+81     wordApplication->dynamicCall(\textcolor{stringliteral}{"Quit (void)"});
+82     wordApplication->clear();
+83     \textcolor{keyword}{delete} documents;
+84     \textcolor{keyword}{delete} wordApplication;
+85 
+86 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_main_window_abcf1ecfd08a6967a28853153281ce4d8}\label{class_main_window_abcf1ecfd08a6967a28853153281ce4d8}} 
+\index{Main\+Window@{Main\+Window}!export\+To@{export\+To}}
+\index{export\+To@{export\+To}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{export\+To}{exportTo}}
+{\footnotesize\ttfamily void Main\+Window\+::export\+To (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Save result to X\+ML file (File\+Dialog) 
+
+Definition at line 184 of file mainwindow.\+cpp.
+
+
+\begin{DoxyCode}
+185 \{
+186     QString path = QFileDialog::getSaveFileName(\textcolor{keyword}{this}, \textcolor{stringliteral}{"Save to xml"}, \textcolor{stringliteral}{""}, \textcolor{stringliteral}{"XML(*.xml)"});
+187     qDebug() << path;
+188     QFile file(path);
+189     file.open(QFile::WriteOnly);
+190     \textcolor{keywordflow}{if}(file.isWritable())
+191     \{
+192         file.write(ui->textBrowser->toPlainText().toUtf8());
+193         file.close();
+194         changeStatus(\textcolor{stringliteral}{"Export success"}, Qt::darkGreen);
+195     \}
+196     changeStatus(\textcolor{stringliteral}{"Export faild"}, Qt::darkRed);
+197 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_main_window_addb903e5eac4179672e9825847af9be0}\label{class_main_window_addb903e5eac4179672e9825847af9be0}} 
+\index{Main\+Window@{Main\+Window}!generate\+Map\+Sample@{generate\+Map\+Sample}}
+\index{generate\+Map\+Sample@{generate\+Map\+Sample}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{generate\+Map\+Sample}{generateMapSample}}
+{\footnotesize\ttfamily void Main\+Window\+::generate\+Map\+Sample (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Generation of sample parser file with set path for save out file. \begin{DoxyReturn}{Returns}
+file from \+:/default.json 
+\end{DoxyReturn}
+
+
+Definition at line 169 of file mainwindow.\+cpp.
+
+
+\begin{DoxyCode}
+170 \{
+171     QString path = QFileDialog::getSaveFileName(\textcolor{keyword}{this}, \textcolor{stringliteral}{"Create sample"}, \textcolor{stringliteral}{"sample"}, \textcolor{stringliteral}{"Json(*.json)"});
+172     QFile file(path);
+173     QFile sample(\hyperlink{mainwindow_8h_a72c1937b26ce9a87266ca6c802b047a0}{DEFAULT\_PATH});
+174     sample.open(QFile::ReadOnly);
+175     file.open(QFile::WriteOnly);
+176     \textcolor{keywordflow}{if}(file.isWritable())
+177     \{
+178         file.write(sample.readAll());
+179         file.close();
+180     \}
+181     changeStatus(\textcolor{stringliteral}{"Generation of sample success"});
+182 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_main_window_a48108540b64f60b2785c397cee553fbf}\label{class_main_window_a48108540b64f60b2785c397cee553fbf}} 
+\index{Main\+Window@{Main\+Window}!performe\+Files@{performe\+Files}}
+\index{performe\+Files@{performe\+Files}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{performe\+Files}{performeFiles}}
+{\footnotesize\ttfamily void Main\+Window\+::performe\+Files (\begin{DoxyParamCaption}\item[{Q\+String\+List}]{files\+List,  }\item[{bool}]{save = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Main calculation function 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em files\+List} & List of files path \\
+\hline
+\mbox{\tt in}  & {\em save} & If true then save result to xml file after calculation is done \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 199 of file mainwindow.\+cpp.
+
+
+\begin{DoxyCode}
+200 \{
+201 
+202     ui->progressBar->setValue(0);
+203     \textcolor{keywordtype}{int} counter=1;
+204     \textcolor{keywordflow}{for}(QString fileName : filesList)
+205     \{
+206         \textcolor{keywordtype}{double} filePart = (double)1/filesList.size();
+207         changeStatus(\textcolor{stringliteral}{"Load file:"} + fileName, Qt::darkBlue);
+208         QAxObject *document = documents->querySubObject(\textcolor{stringliteral}{"Open(QString, QVariant, QVariant)"}, fileName.
+      replace(\textcolor{charliteral}{'/'}, \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'} ), \textcolor{keyword}{false}, \textcolor{keyword}{false});
+209         \textcolor{comment}{/* QAxObject *words = document->querySubObject("Words");}
+210 \textcolor{comment}{        QAxObject *sentences = document->querySubObject("Sentences");*/}
+211         \textcolor{keywordflow}{if}(document == NULL)
+212         \{
+213             QMessageBox::information(\textcolor{keyword}{this},\textcolor{stringliteral}{"Info"}, \textcolor{stringliteral}{"File is not existed or name is not supported. Try rename
+       the file :)"});
+214             \textcolor{keywordflow}{return};
+215         \}
+216         QAxObject *paragraphs = document->querySubObject(\textcolor{stringliteral}{"Paragraphs"});
+217         QAxObject *headWords = document->querySubObject(\textcolor{stringliteral}{"Sections"})->querySubObject(\textcolor{stringliteral}{"Item(QVariant)"}, 1)->
+      querySubObject(\textcolor{stringliteral}{"Headers"})->querySubObject(\textcolor{stringliteral}{"Item(QVariant)"}, 1)
+218                 ->querySubObject(\textcolor{stringliteral}{"Range"})->querySubObject(\textcolor{stringliteral}{"Words"});
+219 
+220         \textcolor{comment}{/*}
+221 \textcolor{comment}{        if(sentences != NULL)}
+222 \textcolor{comment}{        \{}
+223 \textcolor{comment}{            QString textResult;}
+224 \textcolor{comment}{            int countWord = sentences->dynamicCall("Count()").toInt();}
+225 \textcolor{comment}{            for (int a = 1; a <= countWord; a++)\{}
+226 \textcolor{comment}{                textResult.append(sentences->querySubObject("Item(QVariant)",
+       a)->dynamicCall("Text()").toString());}
+227 \textcolor{comment}{                qDebug() << textResult;}
+228 \textcolor{comment}{            \}}
+229 \textcolor{comment}{}
+230 \textcolor{comment}{        \}*/}
+231 
+232         QJsonObject result;
+233 
+234         QAxObject *activeDoc=wordApplication->querySubObject(\textcolor{stringliteral}{"ActiveDocument"});
+235         connect(activeDoc,
+236                 SIGNAL(exception(\textcolor{keywordtype}{int}, \textcolor{keyword}{const} QString &, \textcolor{keyword}{const} QString &, \textcolor{keyword}{const} QString &)),
+237                 \textcolor{keyword}{this},
+238                 SLOT(onAxWidgetException(\textcolor{keywordtype}{int}, \textcolor{keyword}{const} QString &, \textcolor{keyword}{const} QString &, \textcolor{keyword}{const} QString &)));
+239         \textcolor{comment}{// QAxObject *range=activeDoc->querySubObject("Range");}
+240         QVariant v = activeDoc->dynamicCall(\textcolor{stringliteral}{"ConvertNumbersToText()"});
+241         \textcolor{comment}{// range->querySubObject("ListFormat()")->dynamicCall("ConvertNumbersToText()");}
+242 
+243         \textcolor{comment}{// lists->querySubObject("Item(QVariant)", a)->dynamicCall("ConvertNumbersToText()").toString();}
+244 
+245 
+246 
+247         \textcolor{keywordtype}{int} countWord = headWords->dynamicCall(\textcolor{stringliteral}{"Count()"}).toInt();
+248         QString textResult;
+249         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} a = 1; a <= countWord; a++)\{
+250             textResult.append(headWords->querySubObject(\textcolor{stringliteral}{"Item(QVariant)"}, a)->dynamicCall(\textcolor{stringliteral}{"Text()"}).
+      toString());
+251         \}
+252         result[\textcolor{stringliteral}{"name"}] = QJsonValue(textResult);
+253         \textcolor{comment}{/*RegExpTool regExp;}
+254 \textcolor{comment}{        QStringList list = regExp.globalMatch(textResult, "(\(\backslash\)\(\backslash\)w+.+?) *, *(\(\backslash\)\(\backslash\)s?.+\(\backslash\)\(\backslash\)s?)+ *, *(\(\backslash\)\(\backslash\)d+) *, №
+       (\(\backslash\)\(\backslash\)d+)");}
+255 \textcolor{comment}{        qDebug() << textResult;}
+256 \textcolor{comment}{        qDebug() << list;}
+257 \textcolor{comment}{*/}
+258         QList<Paragraph> listTets;
+259         listTets.append(\hyperlink{class_paragraph}{Paragraph}(textResult, QFont()));
+260 
+261         \textcolor{keywordflow}{if}(paragraphs != NULL)
+262         \{
+263             \textcolor{keywordtype}{int} countParagraphs = paragraphs->dynamicCall(\textcolor{stringliteral}{"Count()"}).toInt();
+264             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} a = 1; a <= countParagraphs; a++)\{
+265                 QAxObject *range = paragraphs->querySubObject(\textcolor{stringliteral}{"Item(QVariant)"}, a)->querySubObject(\textcolor{stringliteral}{"Range"})
+      ;
+266                 \textcolor{comment}{/* QAxObject *words = range->querySubObject("Words");}
+267 \textcolor{comment}{                int countWord = words->dynamicCall("Count()").toInt();}
+268 \textcolor{comment}{                QString textResult;}
+269 \textcolor{comment}{                for (int a = 1; a <= countWord; a++)\{}
+270 \textcolor{comment}{                    textResult.append(words->querySubObject("Item(QVariant)",
+       a)->dynamicCall("Text()").toString());}
+271 \textcolor{comment}{                \}}
+272 \textcolor{comment}{                listTets.append(textResult);*/}
+273                 QString value = range->dynamicCall(\textcolor{stringliteral}{"Text()"}).toString();
+274                 QAxObject *fontAxObject = range->querySubObject(\textcolor{stringliteral}{"Font()"});
+275                 QString fontName = fontAxObject->dynamicCall(\textcolor{stringliteral}{"Name()"}).toString();
+276                 \textcolor{keywordtype}{int} fontSize = fontAxObject->dynamicCall(\textcolor{stringliteral}{"Size()"}).toInt();
+277                 \textcolor{keywordtype}{bool} fontItalic = fontAxObject->dynamicCall(\textcolor{stringliteral}{"Italic()"}).toBool();
+278                 QFont rangeFont = QFont(fontName, fontSize, -1, fontItalic);
+279                 qDebug() << \textcolor{stringliteral}{"TEXT: "} << value << \textcolor{stringliteral}{"\(\backslash\)nFONT: "} << rangeFont;
+280 
+281 
+282                 \textcolor{keywordflow}{if}(value != \textcolor{stringliteral}{"\(\backslash\)r"})
+283                     listTets.append(\hyperlink{class_paragraph}{Paragraph}(value, rangeFont));
+284                 \textcolor{comment}{//qDebug() << textResult;}
+285 
+286                 changeProgress(filePart*counter*100 + (((\textcolor{keywordtype}{double})a/countParagraphs)*filePart*100));
+287 
+288             \}
+289 
+290         \}
+291         \textcolor{keywordflow}{if}(builder != NULL)
+292         \{
+293             \textcolor{keyword}{delete} builder;
+294         \}
+295         builder = \textcolor{keyword}{new} \hyperlink{class_xml_builder}{XmlBuilder}(selectConfigDialog->\hyperlink{class_select_parser_window_ab6397caf6e7270309a5b57befb3f144f}{getCurrentConfig}()->
+      \hyperlink{class_parser_config_a0a9a65b537b8c7f4041d2b913c46fde7}{getName}(), selectConfigDialog->\hyperlink{class_select_parser_window_ab6397caf6e7270309a5b57befb3f144f}{getCurrentConfig}()->
+      \hyperlink{class_parser_config_a336cf3ab9bd7c8bc894dcc2b383d3a7b}{getHeader}(), selectConfigDialog->\hyperlink{class_select_parser_window_ab6397caf6e7270309a5b57befb3f144f}{getCurrentConfig}()->
+      \hyperlink{class_parser_config_ac42d4bcd85b1bb65840a5325926b96d4}{getFooter}());
+296         changeStatus(\textcolor{stringliteral}{"Procces file"}, Qt::darkBlue);
+297         QString res = *(QString*)builder->\hyperlink{class_builder_a92d31ffc3502acebf0cd074e8b084751}{build}(selectConfigDialog->
+      \hyperlink{class_select_parser_window_ab6397caf6e7270309a5b57befb3f144f}{getCurrentConfig}()->\hyperlink{class_parser_config_a59e44b4b1bc104b9de240cb7640bb63f}{getCurrentTemplate}(), listTets);
+298         ui->textBrowser->setPlainText(res);
+299         \textcolor{comment}{// qDebug() << res;}
+300 
+301         \textcolor{keywordflow}{if}(save)
+302         \{
+303             QFileInfo info(fileName);
+304             QFile file(info.absolutePath() + \textcolor{stringliteral}{"/"} + info.baseName() + \textcolor{stringliteral}{".xml"});
+305             file.open(QFile::WriteOnly);
+306             \textcolor{keywordflow}{if}(file.isWritable())
+307             \{
+308                 file.write(res.toUtf8());
+309                 file.close();
+310             \}
+311             \textcolor{comment}{//qDebug() << info.absolutePath() + info.baseName() + ".xml";}
+312         \}
+313         document->dynamicCall(\textcolor{stringliteral}{"Close (Boolean)"}, \textcolor{keyword}{false});
+314         \textcolor{keyword}{delete} headWords;
+315         \textcolor{keyword}{delete} paragraphs;
+316         \textcolor{keyword}{delete} document;
+317         counter++;
+318     \}
+319     changeStatus(\textcolor{stringliteral}{"Success"}, Qt::darkGreen);
+320     \textcolor{comment}{// ui->progressBar->setValue(0);}
+321 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_main_window_ae454fa786ec097491d801d8bc7d3824c}\label{class_main_window_ae454fa786ec097491d801d8bc7d3824c}} 
+\index{Main\+Window@{Main\+Window}!select\+Files\+With\+Dialog@{select\+Files\+With\+Dialog}}
+\index{select\+Files\+With\+Dialog@{select\+Files\+With\+Dialog}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{select\+Files\+With\+Dialog}{selectFilesWithDialog}}
+{\footnotesize\ttfamily void Main\+Window\+::select\+Files\+With\+Dialog (\begin{DoxyParamCaption}\item[{bool}]{selected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Open file dialog and call performe\+Files 
+
+Definition at line 132 of file mainwindow.\+cpp.
+
+
+\begin{DoxyCode}
+133 \{
+134     QStringList filesList = QFileDialog::getOpenFileNames(\textcolor{keyword}{this});
+135     \hyperlink{class_main_window_a48108540b64f60b2785c397cee553fbf}{performeFiles}(filesList);
+136 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_main_window_ac7e1b1634d7b3e15641ca73422a4648d}\label{class_main_window_ac7e1b1634d7b3e15641ca73422a4648d}} 
+\index{Main\+Window@{Main\+Window}!select\+Folder@{select\+Folder}}
+\index{select\+Folder@{select\+Folder}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{select\+Folder}{selectFolder}}
+{\footnotesize\ttfamily void Main\+Window\+::select\+Folder (\begin{DoxyParamCaption}\item[{bool}]{selected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Open folder dialog and call performe\+Files 
+
+Definition at line 138 of file mainwindow.\+cpp.
+
+
+\begin{DoxyCode}
+139 \{
+140     QString dirPath = QFileDialog::getExistingDirectory(\textcolor{keyword}{this}, tr(\textcolor{stringliteral}{"Open Directory"}),
+141                                                         QString(),
+142                                                         QFileDialog::ShowDirsOnly
+143                                                         | QFileDialog::DontResolveSymlinks);
+144     QStringList filesList;
+145     QDir dirObj(dirPath);
+146     \textcolor{keywordflow}{if}(dirObj.exists())
+147     \{
+148         QFileInfoList filesInfo = dirObj.entryInfoList(QDir::Files);
+149         \textcolor{keywordflow}{for}(QFileInfo info : filesInfo)
+150         \{
+151             \textcolor{keywordflow}{if}(info.suffix() == \textcolor{stringliteral}{"doc"} || info.suffix() == \textcolor{stringliteral}{"docx"} || info.suffix() == \textcolor{stringliteral}{"pdf"})
+152                 filesList.append(info.filePath());
+153         \}
+154         \hyperlink{class_main_window_a48108540b64f60b2785c397cee553fbf}{performeFiles}(filesList, \textcolor{keyword}{true});
+155     \}
+156 
+157 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_main_window_ab7a1a0cb0ab474a3fc80d17bf37c6b47}\label{class_main_window_ab7a1a0cb0ab474a3fc80d17bf37c6b47}} 
+\index{Main\+Window@{Main\+Window}!show\+M\+S\+W\+Config\+Dialog@{show\+M\+S\+W\+Config\+Dialog}}
+\index{show\+M\+S\+W\+Config\+Dialog@{show\+M\+S\+W\+Config\+Dialog}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{show\+M\+S\+W\+Config\+Dialog}{showMSWConfigDialog}}
+{\footnotesize\ttfamily void Main\+Window\+::show\+M\+S\+W\+Config\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Show dialog with Microsoft Word configuaration such as enable debug mode and so on. 
+
+Definition at line 164 of file mainwindow.\+cpp.
+
+
+\begin{DoxyCode}
+165 \{
+166     debugConfig->show();
+167 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_main_window_ab8d462abbdc0627822672281f8e07d50}\label{class_main_window_ab8d462abbdc0627822672281f8e07d50}} 
+\index{Main\+Window@{Main\+Window}!show\+Select\+Parser\+Config\+Dialog@{show\+Select\+Parser\+Config\+Dialog}}
+\index{show\+Select\+Parser\+Config\+Dialog@{show\+Select\+Parser\+Config\+Dialog}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{show\+Select\+Parser\+Config\+Dialog}{showSelectParserConfigDialog}}
+{\footnotesize\ttfamily void Main\+Window\+::show\+Select\+Parser\+Config\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Show dialog with parser configuaration 
+
+Definition at line 159 of file mainwindow.\+cpp.
+
+
+\begin{DoxyCode}
+160 \{
+161     selectConfigDialog->show();
+162 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{mainwindow_8h}{mainwindow.\+h}\item 
+\hyperlink{mainwindow_8cpp}{mainwindow.\+cpp}\end{DoxyCompactItemize}

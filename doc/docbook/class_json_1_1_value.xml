@@ -1,0 +1,365 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_json_1_1_value">
+<title>Json::Value class Reference</title>
+<para>
+    <programlisting>#include <link linkend="jsoncxx_8h">&lt;jsoncxx.h&gt;</link></programlisting>
+</para>
+        <section>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::string m_strErrMsg</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Protected Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>json_object * m_objValue</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>ValueType m_eType</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::vector&lt; std::string &gt; m_allKeys</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::map&lt; std::string, json_object * &gt; m_valueMap</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_json_1_1_value_1a3dd8ad60321f45f8d51c864e3a96a848">Value</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_json_1_1_value_1ad1deffd768f7603cc7d4c5eccf03916d">Value</link> (
+<link linkend="structjson__object">json_object</link> * obj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_json_1_1_value_1a287dea48da3912d02756735bf677b27b">~Value</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_json_1_1_value_1a03430deb0b2a143e0fe2d743cceabab3">SetObj</link> (
+<link linkend="structjson__object">json_object</link> * obj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="class_json_1_1_value_1a2dd28c1e9957927b2c4601eeb2fb56e1">asInt</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="class_json_1_1_value_1afd24002a18aef907ad746b1cb9eda0a2">asDouble</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_1_1_value_1ab693fb7b9b1595bb0adc49658bbf780d">asBool</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const char * <link linkend="class_json_1_1_value_1a42268ca4dfc386562bee8707045b2263">asString</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const char * <link linkend="class_json_1_1_value_1a6733eb0c71d6e2a59fea9f96ec28bf3a">asCString</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_1_1_value_1abde4070e21e46dc4f8203f66582cb19f">isNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_1_1_value_1ab1f02651cb89d0f18b63a036959391ba">isBool</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_1_1_value_1aff51d8b52979ca06cf9d909accd5f695">isInt</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_1_1_value_1a4a2e2a790e19a1c09fc5dd12d7ad47b5">isDouble</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_1_1_value_1a71e1f82cf1c3eaf969d400dcffb163a6">isString</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_1_1_value_1a1627eb9d6568d6d0252fa8bb711c0a59">isArray</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_1_1_value_1a8cf96c0f2a552051fcfc78ffee60e037">isObject</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>unsigned int <link linkend="class_json_1_1_value_1a3cde6bd042f16442791fa816a60332e5">size</link> (
+)<para><emphasis>Number of values in array or object.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_1_1_value_1a0519a551e37ee6665d74742b3f96bab3">empty</link> (
+)<para><emphasis>Return true if empty array, empty object, or null;
+otherwise, false.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_json_1_1_value_1a501a4d67e6c875255c2ecc03ccd2019b">clear</link> (
+)<para><emphasis>Remove all object members and array elements.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="namespace_json_1a7d654b75c16a57007925868e38212b4e">ValueType</link> <link linkend="class_json_1_1_value_1a8ce61157a011894f0252ceed232312de">type</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_1_1_value_1a0daec7ab118bed59dea6b16d1511bc47">isMember</link> (
+const std::string &amp; sKey)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_json_1_1_value">Value</link> <link linkend="class_json_1_1_value_1a72e69b730d35131d867f47f13980c9c2">operator[]</link> (
+const std::string &amp; key)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_json_1_1_value">Value</link> <link linkend="class_json_1_1_value_1a9cc9f4b9ec45429586e60472a7c25059">operator[]</link> (
+const unsigned int i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::vector&lt; std::string &gt; <link linkend="class_json_1_1_value_1af7ab87d24164058af2b20e67ac4a1093">getAllKeys</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="namespace_json_1a7d654b75c16a57007925868e38212b4e">ValueType</link> <link linkend="class_json_1_1_value_1ad24bf765750e8ea535d28bcf981d551a">init_type</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_json_1_1_value_1a3dd8ad60321f45f8d51c864e3a96a848">
+                <title>Json::Value::Value ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1ad1deffd768f7603cc7d4c5eccf03916d">
+                <title>Json::Value::Value (json_object *obj)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1a287dea48da3912d02756735bf677b27b">
+                <title>Json::Value::~Value ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1a03430deb0b2a143e0fe2d743cceabab3">
+                <title>void Json::Value::SetObj (json_object *obj)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1a2dd28c1e9957927b2c4601eeb2fb56e1">
+                <title>int Json::Value::asInt () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1afd24002a18aef907ad746b1cb9eda0a2">
+                <title>double Json::Value::asDouble () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1ab693fb7b9b1595bb0adc49658bbf780d">
+                <title>bool Json::Value::asBool () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1a42268ca4dfc386562bee8707045b2263">
+                <title>const char * Json::Value::asString ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1a6733eb0c71d6e2a59fea9f96ec28bf3a">
+                <title>const char * Json::Value::asCString ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1abde4070e21e46dc4f8203f66582cb19f">
+                <title>bool Json::Value::isNull () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1ab1f02651cb89d0f18b63a036959391ba">
+                <title>bool Json::Value::isBool () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1aff51d8b52979ca06cf9d909accd5f695">
+                <title>bool Json::Value::isInt () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1a4a2e2a790e19a1c09fc5dd12d7ad47b5">
+                <title>bool Json::Value::isDouble () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1a71e1f82cf1c3eaf969d400dcffb163a6">
+                <title>bool Json::Value::isString () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1a1627eb9d6568d6d0252fa8bb711c0a59">
+                <title>bool Json::Value::isArray () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1a8cf96c0f2a552051fcfc78ffee60e037">
+                <title>bool Json::Value::isObject () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1a3cde6bd042f16442791fa816a60332e5">
+                <title>unsigned int Json::Value::size () const</title> <emphasis>Number of values in array or object.</emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1a0519a551e37ee6665d74742b3f96bab3">
+                <title>bool Json::Value::empty () const</title> <emphasis>Return true if empty array, empty object, or null;
+otherwise, false.</emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1a501a4d67e6c875255c2ecc03ccd2019b">
+                <title>void Json::Value::clear ()</title> <emphasis>Remove all object members and array elements.</emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1a8ce61157a011894f0252ceed232312de">
+                <title>ValueType Json::Value::type () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1a0daec7ab118bed59dea6b16d1511bc47">
+                <title>bool Json::Value::isMember (const std::string &amp;sKey) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1a72e69b730d35131d867f47f13980c9c2">
+                <title>Value Json::Value::operator[] (const std::string &amp;key)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1a9cc9f4b9ec45429586e60472a7c25059">
+                <title>Value Json::Value::operator[] (const unsigned int i)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1af7ab87d24164058af2b20e67ac4a1093">
+                <title>std::vector&lt; std::string &gt; Json::Value::getAllKeys ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_1_1_value_1ad24bf765750e8ea535d28bcf981d551a">
+                <title>ValueType Json::Value::init_type () const</title> <emphasis></emphasis>
+                
+            </section>
+</section>

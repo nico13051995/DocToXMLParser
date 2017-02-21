@@ -1,0 +1,200 @@
+\hypertarget{class_add_node_dlg}{}\section{Add\+Node\+Dlg Class Reference}
+\label{class_add_node_dlg}\index{Add\+Node\+Dlg@{Add\+Node\+Dlg}}
+
+
+{\ttfamily \#include $<$addnodedlg.\+h$>$}
+
+Inheritance diagram for Add\+Node\+Dlg\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_add_node_dlg}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_add_node_dlg_a4ec72774fa593b3478b30b93fc6bc66e}{Add\+Node\+Dlg} (Q\+Widget $\ast$parent=0)
+\item 
+\hyperlink{class_add_node_dlg_ac8fbcff62ff505714198a9318eca0c0f}{$\sim$\+Add\+Node\+Dlg} ()
+\item 
+Q\+String \hyperlink{class_add_node_dlg_a68b5c4fdf57e5fd7545df5b6f1dfbccd}{get\+Value} ()
+\item 
+Q\+String \hyperlink{class_add_node_dlg_a71a6ea544a25bea1ab8d540f7ad72629}{get\+Type} ()
+\item 
+Q\+String \hyperlink{class_add_node_dlg_aa57ccdcce3ed1af8633a44ddb5048595}{get\+Name} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_add_node_dlg_a950d325bb996a975c520cf18ddc1950d}{change\+Event} (Q\+Event $\ast$e)
+\item 
+void \hyperlink{class_add_node_dlg_a1f953c07a5711c3064c73d627910e273}{hide\+Event} (Q\+Hide\+Event $\ast$e)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 10 of file addnodedlg.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_add_node_dlg_a4ec72774fa593b3478b30b93fc6bc66e}\label{class_add_node_dlg_a4ec72774fa593b3478b30b93fc6bc66e}} 
+\index{Add\+Node\+Dlg@{Add\+Node\+Dlg}!Add\+Node\+Dlg@{Add\+Node\+Dlg}}
+\index{Add\+Node\+Dlg@{Add\+Node\+Dlg}!Add\+Node\+Dlg@{Add\+Node\+Dlg}}
+\subsubsection{\texorpdfstring{Add\+Node\+Dlg()}{AddNodeDlg()}}
+{\footnotesize\ttfamily Add\+Node\+Dlg\+::\+Add\+Node\+Dlg (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file addnodedlg.\+cpp.
+
+
+\begin{DoxyCode}
+5                                       :
+6     QDialog(parent),
+7     ui(\textcolor{keyword}{new} Ui::AddNodeDlg)
+8 \{
+9     ui->setupUi(\textcolor{keyword}{this});
+10     connect(ui->buttonBox, SIGNAL(accepted()), \textcolor{keyword}{this}, SLOT(okButton()));
+11     connect(ui->nodeType, SIGNAL(currentIndexChanged(QString)), \textcolor{keyword}{this}, SLOT(onCurrentIndexChanged(QString)))
+      ;
+12 
+13     QStringList typeItems;
+14     typeItems.append(QString(tr(\textcolor{stringliteral}{"array"})));
+15     typeItems.append(QString(tr(\textcolor{stringliteral}{"object"})));
+16     typeItems.append(QString(tr(\textcolor{stringliteral}{"boolean"})));
+17     typeItems.append(QString(tr(\textcolor{stringliteral}{"null"})));
+18     typeItems.append(QString(tr(\textcolor{stringliteral}{"int"})));
+19     typeItems.append(QString(tr(\textcolor{stringliteral}{"double"})));
+20     typeItems.append(QString(tr(\textcolor{stringliteral}{"string"})));
+21     ui->nodeType->addItems(typeItems);
+22 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_add_node_dlg_ac8fbcff62ff505714198a9318eca0c0f}\label{class_add_node_dlg_ac8fbcff62ff505714198a9318eca0c0f}} 
+\index{Add\+Node\+Dlg@{Add\+Node\+Dlg}!````~Add\+Node\+Dlg@{$\sim$\+Add\+Node\+Dlg}}
+\index{````~Add\+Node\+Dlg@{$\sim$\+Add\+Node\+Dlg}!Add\+Node\+Dlg@{Add\+Node\+Dlg}}
+\subsubsection{\texorpdfstring{$\sim$\+Add\+Node\+Dlg()}{~AddNodeDlg()}}
+{\footnotesize\ttfamily Add\+Node\+Dlg\+::$\sim$\+Add\+Node\+Dlg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 24 of file addnodedlg.\+cpp.
+
+
+\begin{DoxyCode}
+25 \{
+26     \textcolor{keyword}{delete} ui;
+27 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_add_node_dlg_a950d325bb996a975c520cf18ddc1950d}\label{class_add_node_dlg_a950d325bb996a975c520cf18ddc1950d}} 
+\index{Add\+Node\+Dlg@{Add\+Node\+Dlg}!change\+Event@{change\+Event}}
+\index{change\+Event@{change\+Event}!Add\+Node\+Dlg@{Add\+Node\+Dlg}}
+\subsubsection{\texorpdfstring{change\+Event()}{changeEvent()}}
+{\footnotesize\ttfamily void Add\+Node\+Dlg\+::change\+Event (\begin{DoxyParamCaption}\item[{Q\+Event $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 29 of file addnodedlg.\+cpp.
+
+
+\begin{DoxyCode}
+30 \{
+31     QDialog::changeEvent(e);
+32     \textcolor{keywordflow}{switch} (e->type()) \{
+33     \textcolor{keywordflow}{case} QEvent::LanguageChange:
+34         ui->retranslateUi(\textcolor{keyword}{this});
+35         \textcolor{keywordflow}{break};
+36     \textcolor{keywordflow}{default}:
+37         \textcolor{keywordflow}{break};
+38     \}
+39 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_add_node_dlg_aa57ccdcce3ed1af8633a44ddb5048595}\label{class_add_node_dlg_aa57ccdcce3ed1af8633a44ddb5048595}} 
+\index{Add\+Node\+Dlg@{Add\+Node\+Dlg}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Add\+Node\+Dlg@{Add\+Node\+Dlg}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily Q\+String Add\+Node\+Dlg\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 46 of file addnodedlg.\+cpp.
+
+
+\begin{DoxyCode}
+47 \{
+48     \textcolor{keywordflow}{return} m\_name;
+49 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_add_node_dlg_a71a6ea544a25bea1ab8d540f7ad72629}\label{class_add_node_dlg_a71a6ea544a25bea1ab8d540f7ad72629}} 
+\index{Add\+Node\+Dlg@{Add\+Node\+Dlg}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!Add\+Node\+Dlg@{Add\+Node\+Dlg}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}}
+{\footnotesize\ttfamily Q\+String Add\+Node\+Dlg\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 51 of file addnodedlg.\+cpp.
+
+
+\begin{DoxyCode}
+52 \{
+53     \textcolor{keywordflow}{return} m\_type;
+54 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_add_node_dlg_a68b5c4fdf57e5fd7545df5b6f1dfbccd}\label{class_add_node_dlg_a68b5c4fdf57e5fd7545df5b6f1dfbccd}} 
+\index{Add\+Node\+Dlg@{Add\+Node\+Dlg}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!Add\+Node\+Dlg@{Add\+Node\+Dlg}}
+\subsubsection{\texorpdfstring{get\+Value()}{getValue()}}
+{\footnotesize\ttfamily Q\+String Add\+Node\+Dlg\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 41 of file addnodedlg.\+cpp.
+
+
+\begin{DoxyCode}
+42 \{
+43     \textcolor{keywordflow}{return} m\_value;
+44 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_add_node_dlg_a1f953c07a5711c3064c73d627910e273}\label{class_add_node_dlg_a1f953c07a5711c3064c73d627910e273}} 
+\index{Add\+Node\+Dlg@{Add\+Node\+Dlg}!hide\+Event@{hide\+Event}}
+\index{hide\+Event@{hide\+Event}!Add\+Node\+Dlg@{Add\+Node\+Dlg}}
+\subsubsection{\texorpdfstring{hide\+Event()}{hideEvent()}}
+{\footnotesize\ttfamily void Add\+Node\+Dlg\+::hide\+Event (\begin{DoxyParamCaption}\item[{Q\+Hide\+Event $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 77 of file addnodedlg.\+cpp.
+
+
+\begin{DoxyCode}
+78 \{
+79     \textcolor{keywordflow}{if} (ui->nodeTitle->text().length() == 0)
+80     \{
+81         QMessageBox::information(\textcolor{keyword}{this}, tr(\textcolor{stringliteral}{"Tip"}), tr(\textcolor{stringliteral}{"Node name must be filled"}));
+82         \textcolor{keywordflow}{return};
+83     \}
+84 
+85     \textcolor{keywordflow}{if} (ui->nodeType->currentText() == tr(\textcolor{stringliteral}{"boolean"}))
+86         \textcolor{keywordflow}{if} (ui->nodeValue->text().toLower().compare(tr(\textcolor{stringliteral}{"true"})) != 0
+87             && ui->nodeValue->text().toLower().compare(tr(\textcolor{stringliteral}{"false"})) != 0)
+88         \{
+89             QMessageBox::information(\textcolor{keyword}{this}, tr(\textcolor{stringliteral}{"Tip"}), tr(\textcolor{stringliteral}{"Boolean values must be true or false"}));
+90             \textcolor{keywordflow}{return};
+91         \}
+92 
+93     QDialog::hideEvent(e);
+94 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+qt-\/json-\/editor-\/master/\hyperlink{addnodedlg_8h}{addnodedlg.\+h}\item 
+qt-\/json-\/editor-\/master/\hyperlink{addnodedlg_8cpp}{addnodedlg.\+cpp}\end{DoxyCompactItemize}

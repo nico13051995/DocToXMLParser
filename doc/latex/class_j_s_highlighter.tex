@@ -1,0 +1,597 @@
+\hypertarget{class_j_s_highlighter}{}\section{J\+S\+Highlighter Class Reference}
+\label{class_j_s_highlighter}\index{J\+S\+Highlighter@{J\+S\+Highlighter}}
+
+
+{\ttfamily \#include $<$jsedit.\+h$>$}
+
+Inheritance diagram for J\+S\+Highlighter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_j_s_highlighter}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_j_s_highlighter_1_1_highlighting_rule}{Highlighting\+Rule}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_j_s_highlighter_a0b110ce0492f6ac3c2310de65fcd7919}{J\+S\+Highlighter} (Q\+Text\+Document $\ast$parent=0)
+\item 
+void \hyperlink{class_j_s_highlighter_a19b04c73d5d10e9eb9bb0acccaa85886}{set\+Color} (\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213}{J\+S\+Edit\+::\+Color\+Component} component, const Q\+Color \&color)
+\item 
+void \hyperlink{class_j_s_highlighter_a3d552ad1d44a4192bff7ceac306b706e}{mark} (const Q\+String \&str, Qt\+::\+Case\+Sensitivity case\+Sensitivity)
+\item 
+Q\+String\+List \hyperlink{class_j_s_highlighter_af01421450f2260f630488f63a8912445}{keywords} () const
+\item 
+void \hyperlink{class_j_s_highlighter_ad8409e0cec9cd61dd4667c2e5b714c12}{set\+Keywords} (const Q\+String\+List \&\hyperlink{class_j_s_highlighter_af01421450f2260f630488f63a8912445}{keywords})
+\item 
+void \hyperlink{class_j_s_highlighter_aab4501a701fd36da2510f3bd26422e7a}{Set\+Rule} (Q\+String kind, Q\+String pattern, Q\+Text\+Char\+Format format)
+\item 
+\hyperlink{class_j_s_highlighter_a0b110ce0492f6ac3c2310de65fcd7919}{J\+S\+Highlighter} (Q\+Text\+Document $\ast$parent=0)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Vector$<$ \hyperlink{struct_j_s_highlighter_1_1_highlighting_rule}{Highlighting\+Rule} $>$ \hyperlink{class_j_s_highlighter_a42499ae459e9a65266f1a08e7cd7d214}{highlighting\+Rules}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_j_s_highlighter_affb286d1e0dc29cabcc336a3ef13cc23}{highlight\+Block} (const Q\+String \&text)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 121 of file jsedit.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_j_s_highlighter_a0b110ce0492f6ac3c2310de65fcd7919}\label{class_j_s_highlighter_a0b110ce0492f6ac3c2310de65fcd7919}} 
+\index{J\+S\+Highlighter@{J\+S\+Highlighter}!J\+S\+Highlighter@{J\+S\+Highlighter}}
+\index{J\+S\+Highlighter@{J\+S\+Highlighter}!J\+S\+Highlighter@{J\+S\+Highlighter}}
+\subsubsection{\texorpdfstring{J\+S\+Highlighter()}{JSHighlighter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily J\+S\+Highlighter\+::\+J\+S\+Highlighter (\begin{DoxyParamCaption}\item[{Q\+Text\+Document $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 33 of file jsedit.\+cpp.
+
+
+\begin{DoxyCode}
+34     : QSyntaxHighlighter(parent)
+35     , m\_markCaseSensitivity(Qt::CaseInsensitive)
+36 \{
+37     \textcolor{comment}{// default color scheme}
+38     m\_colors[\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213a51b1886888e6bf8841064a795bd6ab8d}{JSEdit::Normal}]     = QColor(\textcolor{stringliteral}{"#000000"});
+39     m\_colors[\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213a430947e4b883553d04f618a799095f4d}{JSEdit::Comment}]    = QColor(\textcolor{stringliteral}{"#808080"});
+40     m\_colors[\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213aeebc6c595d9a8bc74d3b03bd4c8f2d1f}{JSEdit::Number}]     = QColor(\textcolor{stringliteral}{"#008000"});
+41     m\_colors[\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213a60b69a2cc0268b2048fceadf7067e231}{JSEdit::String}]     = QColor(\textcolor{stringliteral}{"#800000"});
+42     m\_colors[\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213a7cf7fcdce0c49ff9995b8d8a02a3b127}{JSEdit::Operator}]   = QColor(\textcolor{stringliteral}{"#808000"});
+43     m\_colors[\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213a06246136a94298b2d147a9d3dea7fd89}{JSEdit::Identifier}] = QColor(\textcolor{stringliteral}{"#000020"});
+44     m\_colors[\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213ad70548abdd876f2648764b7924b90251}{JSEdit::Keyword}]    = QColor(\textcolor{stringliteral}{"#000080"});
+45     m\_colors[\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213a8b227288b9e8c72ccb15968f3127f6c2}{JSEdit::BuiltIn}]    = QColor(\textcolor{stringliteral}{"#008080"});
+46     m\_colors[\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213a098e62a1854a46cb2b58c49ee5d78208}{JSEdit::Marker}]     = QColor(\textcolor{stringliteral}{"#ffff00"});
+47 
+48     \textcolor{comment}{// https://developer.mozilla.org/en/JavaScript/Reference/Reserved\_Words}
+49     m\_keywords << \textcolor{stringliteral}{"break"};
+50     m\_keywords << \textcolor{stringliteral}{"case"};
+51     m\_keywords << \textcolor{stringliteral}{"catch"};
+52     m\_keywords << \textcolor{stringliteral}{"continue"};
+53     m\_keywords << \textcolor{stringliteral}{"default"};
+54     m\_keywords << \textcolor{stringliteral}{"delete"};
+55     m\_keywords << \textcolor{stringliteral}{"do"};
+56     m\_keywords << \textcolor{stringliteral}{"else"};
+57     m\_keywords << \textcolor{stringliteral}{"finally"};
+58     m\_keywords << \textcolor{stringliteral}{"for"};
+59     m\_keywords << \textcolor{stringliteral}{"function"};
+60     m\_keywords << \textcolor{stringliteral}{"if"};
+61     m\_keywords << \textcolor{stringliteral}{"in"};
+62     m\_keywords << \textcolor{stringliteral}{"instanceof"};
+63     m\_keywords << \textcolor{stringliteral}{"new"};
+64     m\_keywords << \textcolor{stringliteral}{"return"};
+65     m\_keywords << \textcolor{stringliteral}{"switch"};
+66     m\_keywords << \textcolor{stringliteral}{"this"};
+67     m\_keywords << \textcolor{stringliteral}{"throw"};
+68     m\_keywords << \textcolor{stringliteral}{"try"};
+69     m\_keywords << \textcolor{stringliteral}{"typeof"};
+70     m\_keywords << \textcolor{stringliteral}{"var"};
+71     m\_keywords << \textcolor{stringliteral}{"void"};
+72     m\_keywords << \textcolor{stringliteral}{"while"};
+73     m\_keywords << \textcolor{stringliteral}{"with"};
+74 
+75     m\_keywords << \textcolor{stringliteral}{"true"};
+76     m\_keywords << \textcolor{stringliteral}{"false"};
+77     m\_keywords << \textcolor{stringliteral}{"null"};
+78 
+79     \textcolor{comment}{// built-in and other popular objects + properties}
+80     m\_knownIds << \textcolor{stringliteral}{"Object"};
+81     m\_knownIds << \textcolor{stringliteral}{"prototype"};
+82     m\_knownIds << \textcolor{stringliteral}{"create"};
+83     m\_knownIds << \textcolor{stringliteral}{"defineProperty"};
+84     m\_knownIds << \textcolor{stringliteral}{"defineProperties"};
+85     m\_knownIds << \textcolor{stringliteral}{"getOwnPropertyDescriptor"};
+86     m\_knownIds << \textcolor{stringliteral}{"keys"};
+87     m\_knownIds << \textcolor{stringliteral}{"getOwnPropertyNames"};
+88     m\_knownIds << \textcolor{stringliteral}{"constructor"};
+89     m\_knownIds << \textcolor{stringliteral}{"\_\_parent\_\_"};
+90     m\_knownIds << \textcolor{stringliteral}{"\_\_proto\_\_"};
+91     m\_knownIds << \textcolor{stringliteral}{"\_\_defineGetter\_\_"};
+92     m\_knownIds << \textcolor{stringliteral}{"\_\_defineSetter\_\_"};
+93     m\_knownIds << \textcolor{stringliteral}{"eval"};
+94     m\_knownIds << \textcolor{stringliteral}{"hasOwnProperty"};
+95     m\_knownIds << \textcolor{stringliteral}{"isPrototypeOf"};
+96     m\_knownIds << \textcolor{stringliteral}{"\_\_lookupGetter\_\_"};
+97     m\_knownIds << \textcolor{stringliteral}{"\_\_lookupSetter\_\_"};
+98     m\_knownIds << \textcolor{stringliteral}{"\_\_noSuchMethod\_\_"};
+99     m\_knownIds << \textcolor{stringliteral}{"propertyIsEnumerable"};
+100     m\_knownIds << \textcolor{stringliteral}{"toSource"};
+101     m\_knownIds << \textcolor{stringliteral}{"toLocaleString"};
+102     m\_knownIds << \textcolor{stringliteral}{"toString"};
+103     m\_knownIds << \textcolor{stringliteral}{"unwatch"};
+104     m\_knownIds << \textcolor{stringliteral}{"valueOf"};
+105     m\_knownIds << \textcolor{stringliteral}{"watch"};
+106 
+107     m\_knownIds << \textcolor{stringliteral}{"Function"};
+108     m\_knownIds << \textcolor{stringliteral}{"arguments"};
+109     m\_knownIds << \textcolor{stringliteral}{"arity"};
+110     m\_knownIds << \textcolor{stringliteral}{"caller"};
+111     m\_knownIds << \textcolor{stringliteral}{"constructor"};
+112     m\_knownIds << \textcolor{stringliteral}{"length"};
+113     m\_knownIds << \textcolor{stringliteral}{"name"};
+114     m\_knownIds << \textcolor{stringliteral}{"apply"};
+115     m\_knownIds << \textcolor{stringliteral}{"bind"};
+116     m\_knownIds << \textcolor{stringliteral}{"call"};
+117 
+118     m\_knownIds << \textcolor{stringliteral}{"String"};
+119     m\_knownIds << \textcolor{stringliteral}{"fromCharCode"};
+120     m\_knownIds << \textcolor{stringliteral}{"length"};
+121     m\_knownIds << \textcolor{stringliteral}{"charAt"};
+122     m\_knownIds << \textcolor{stringliteral}{"charCodeAt"};
+123     m\_knownIds << \textcolor{stringliteral}{"concat"};
+124     m\_knownIds << \textcolor{stringliteral}{"indexOf"};
+125     m\_knownIds << \textcolor{stringliteral}{"lastIndexOf"};
+126     m\_knownIds << \textcolor{stringliteral}{"localCompare"};
+127     m\_knownIds << \textcolor{stringliteral}{"match"};
+128     m\_knownIds << \textcolor{stringliteral}{"quote"};
+129     m\_knownIds << \textcolor{stringliteral}{"replace"};
+130     m\_knownIds << \textcolor{stringliteral}{"search"};
+131     m\_knownIds << \textcolor{stringliteral}{"slice"};
+132     m\_knownIds << \textcolor{stringliteral}{"split"};
+133     m\_knownIds << \textcolor{stringliteral}{"substr"};
+134     m\_knownIds << \textcolor{stringliteral}{"substring"};
+135     m\_knownIds << \textcolor{stringliteral}{"toLocaleLowerCase"};
+136     m\_knownIds << \textcolor{stringliteral}{"toLocaleUpperCase"};
+137     m\_knownIds << \textcolor{stringliteral}{"toLowerCase"};
+138     m\_knownIds << \textcolor{stringliteral}{"toUpperCase"};
+139     m\_knownIds << \textcolor{stringliteral}{"trim"};
+140     m\_knownIds << \textcolor{stringliteral}{"trimLeft"};
+141     m\_knownIds << \textcolor{stringliteral}{"trimRight"};
+142 
+143     m\_knownIds << \textcolor{stringliteral}{"Array"};
+144     m\_knownIds << \textcolor{stringliteral}{"isArray"};
+145     m\_knownIds << \textcolor{stringliteral}{"index"};
+146     m\_knownIds << \textcolor{stringliteral}{"input"};
+147     m\_knownIds << \textcolor{stringliteral}{"pop"};
+148     m\_knownIds << \textcolor{stringliteral}{"push"};
+149     m\_knownIds << \textcolor{stringliteral}{"reverse"};
+150     m\_knownIds << \textcolor{stringliteral}{"shift"};
+151     m\_knownIds << \textcolor{stringliteral}{"sort"};
+152     m\_knownIds << \textcolor{stringliteral}{"splice"};
+153     m\_knownIds << \textcolor{stringliteral}{"unshift"};
+154     m\_knownIds << \textcolor{stringliteral}{"concat"};
+155     m\_knownIds << \textcolor{stringliteral}{"join"};
+156     m\_knownIds << \textcolor{stringliteral}{"filter"};
+157     m\_knownIds << \textcolor{stringliteral}{"forEach"};
+158     m\_knownIds << \textcolor{stringliteral}{"every"};
+159     m\_knownIds << \textcolor{stringliteral}{"map"};
+160     m\_knownIds << \textcolor{stringliteral}{"some"};
+161     m\_knownIds << \textcolor{stringliteral}{"reduce"};
+162     m\_knownIds << \textcolor{stringliteral}{"reduceRight"};
+163 
+164     m\_knownIds << \textcolor{stringliteral}{"RegExp"};
+165     m\_knownIds << \textcolor{stringliteral}{"global"};
+166     m\_knownIds << \textcolor{stringliteral}{"ignoreCase"};
+167     m\_knownIds << \textcolor{stringliteral}{"lastIndex"};
+168     m\_knownIds << \textcolor{stringliteral}{"multiline"};
+169     m\_knownIds << \textcolor{stringliteral}{"source"};
+170     m\_knownIds << \textcolor{stringliteral}{"exec"};
+171     m\_knownIds << \textcolor{stringliteral}{"test"};
+172 
+173     m\_knownIds << \textcolor{stringliteral}{"JSON"};
+174     m\_knownIds << \textcolor{stringliteral}{"parse"};
+175     m\_knownIds << \textcolor{stringliteral}{"stringify"};
+176 
+177     m\_knownIds << \textcolor{stringliteral}{"decodeURI"};
+178     m\_knownIds << \textcolor{stringliteral}{"decodeURIComponent"};
+179     m\_knownIds << \textcolor{stringliteral}{"encodeURI"};
+180     m\_knownIds << \textcolor{stringliteral}{"encodeURIComponent"};
+181     m\_knownIds << \textcolor{stringliteral}{"eval"};
+182     m\_knownIds << \textcolor{stringliteral}{"isFinite"};
+183     m\_knownIds << \textcolor{stringliteral}{"isNaN"};
+184     m\_knownIds << \textcolor{stringliteral}{"parseFloat"};
+185     m\_knownIds << \textcolor{stringliteral}{"parseInt"};
+186     m\_knownIds << \textcolor{stringliteral}{"Infinity"};
+187     m\_knownIds << \textcolor{stringliteral}{"NaN"};
+188     m\_knownIds << \textcolor{stringliteral}{"undefined"};
+189 
+190     m\_knownIds << \textcolor{stringliteral}{"Math"};
+191     m\_knownIds << \textcolor{stringliteral}{"E"};
+192     m\_knownIds << \textcolor{stringliteral}{"LN2"};
+193     m\_knownIds << \textcolor{stringliteral}{"LN10"};
+194     m\_knownIds << \textcolor{stringliteral}{"LOG2E"};
+195     m\_knownIds << \textcolor{stringliteral}{"LOG10E"};
+196     m\_knownIds << \textcolor{stringliteral}{"PI"};
+197     m\_knownIds << \textcolor{stringliteral}{"SQRT1\_2"};
+198     m\_knownIds << \textcolor{stringliteral}{"SQRT2"};
+199     m\_knownIds << \textcolor{stringliteral}{"abs"};
+200     m\_knownIds << \textcolor{stringliteral}{"acos"};
+201     m\_knownIds << \textcolor{stringliteral}{"asin"};
+202     m\_knownIds << \textcolor{stringliteral}{"atan"};
+203     m\_knownIds << \textcolor{stringliteral}{"atan2"};
+204     m\_knownIds << \textcolor{stringliteral}{"ceil"};
+205     m\_knownIds << \textcolor{stringliteral}{"cos"};
+206     m\_knownIds << \textcolor{stringliteral}{"exp"};
+207     m\_knownIds << \textcolor{stringliteral}{"floor"};
+208     m\_knownIds << \textcolor{stringliteral}{"log"};
+209     m\_knownIds << \textcolor{stringliteral}{"max"};
+210     m\_knownIds << \textcolor{stringliteral}{"min"};
+211     m\_knownIds << \textcolor{stringliteral}{"pow"};
+212     m\_knownIds << \textcolor{stringliteral}{"random"};
+213     m\_knownIds << \textcolor{stringliteral}{"round"};
+214     m\_knownIds << \textcolor{stringliteral}{"sin"};
+215     m\_knownIds << \textcolor{stringliteral}{"sqrt"};
+216     m\_knownIds << \textcolor{stringliteral}{"tan"};
+217 
+218     m\_knownIds << \textcolor{stringliteral}{"document"};
+219     m\_knownIds << \textcolor{stringliteral}{"window"};
+220     m\_knownIds << \textcolor{stringliteral}{"navigator"};
+221     m\_knownIds << \textcolor{stringliteral}{"userAgent"};
+222 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_j_s_highlighter_a0b110ce0492f6ac3c2310de65fcd7919}\label{class_j_s_highlighter_a0b110ce0492f6ac3c2310de65fcd7919}} 
+\index{J\+S\+Highlighter@{J\+S\+Highlighter}!J\+S\+Highlighter@{J\+S\+Highlighter}}
+\index{J\+S\+Highlighter@{J\+S\+Highlighter}!J\+S\+Highlighter@{J\+S\+Highlighter}}
+\subsubsection{\texorpdfstring{J\+S\+Highlighter()}{JSHighlighter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily J\+S\+Highlighter\+::\+J\+S\+Highlighter (\begin{DoxyParamCaption}\item[{Q\+Text\+Document $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 34 of file J\+S\+Highlighter.\+h.
+
+
+\begin{DoxyCode}
+34                                             : QSyntaxHighlighter(parent)
+35     \{
+36         QTextCharFormat keywordFormat;
+37         keywordFormat.setForeground(Qt::black);
+38         keywordFormat.setFontWeight(QFont::Bold);
+39         QStringList keywordPatterns;
+40         keywordPatterns << \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)bvar\(\backslash\)\(\backslash\)b"} << \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)bArray\(\backslash\)\(\backslash\)b"} << \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)bfunction\(\backslash\)\(\backslash\)b"}
+41                         << \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)breturn\(\backslash\)\(\backslash\)b"} << \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)barguments\(\backslash\)\(\backslash\)b"} << \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)bif\(\backslash\)\(\backslash\)b"}
+42                         << \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)belse\(\backslash\)\(\backslash\)b"} << \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)bfor\(\backslash\)\(\backslash\)b"} << \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)bswitch\(\backslash\)\(\backslash\)b"}
+43                         << \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)bcase\(\backslash\)\(\backslash\)b"} << \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)bbreak\(\backslash\)\(\backslash\)b"} << \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)bwhile\(\backslash\)\(\backslash\)b"};
+44         \textcolor{keywordtype}{int} i = 0;
+45         \textcolor{keywordflow}{foreach} (\textcolor{keyword}{const} QString &pattern, keywordPatterns) \{
+46             \hyperlink{class_j_s_highlighter_aab4501a701fd36da2510f3bd26422e7a}{SetRule}(QString(\textcolor{stringliteral}{"00\_KeyWord\_%1"}).arg(i),pattern,keywordFormat);
+47             ++i;
+48         \}
+49         \textcolor{comment}{// Values}
+50         QTextCharFormat valueFormat, classFormat;
+51         valueFormat.setForeground(Qt::blue);
+52         \hyperlink{class_j_s_highlighter_aab4501a701fd36da2510f3bd26422e7a}{SetRule}(\textcolor{stringliteral}{"03\_Values"},\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)btrue\(\backslash\)\(\backslash\)b|\(\backslash\)\(\backslash\)bfalse\(\backslash\)\(\backslash\)b|\(\backslash\)\(\backslash\)b[0-9]+\(\backslash\)\(\backslash\)b"},valueFormat);
+53         QTextCharFormat functionFormat;
+54         \textcolor{comment}{//functionFormat.setFontItalic(false);}
+55         functionFormat.setForeground(Qt::darkBlue);
+56         \hyperlink{class_j_s_highlighter_aab4501a701fd36da2510f3bd26422e7a}{SetRule}(\textcolor{stringliteral}{"04\_Functions"},\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)b[A-Za-z0-9\_]+(?=\(\backslash\)\(\backslash\)()"},functionFormat);
+57         \textcolor{comment}{// Qt Classes}
+58         classFormat.setFontWeight(QFont::Bold);
+59         classFormat.setForeground(Qt::darkMagenta);
+60         \hyperlink{class_j_s_highlighter_aab4501a701fd36da2510f3bd26422e7a}{SetRule}(\textcolor{stringliteral}{"06\_QtClasses"},\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)bQ[A-Z]+[A-Za-z]+\(\backslash\)\(\backslash\)b"},classFormat);
+61         \textcolor{comment}{// Quotation}
+62         QTextCharFormat quotationFormat;
+63         quotationFormat.setForeground(Qt::blue);
+64         \hyperlink{class_j_s_highlighter_aab4501a701fd36da2510f3bd26422e7a}{SetRule}(\textcolor{stringliteral}{"z1\_Quotations"},\textcolor{stringliteral}{"\(\backslash\)"[^\(\backslash\)"]*\(\backslash\)""},quotationFormat);
+65         \textcolor{comment}{// Single Line Comments}
+66         QTextCharFormat singleLineCommentFormat;
+67         singleLineCommentFormat.setForeground(Qt::darkGreen);
+68         \hyperlink{class_j_s_highlighter_aab4501a701fd36da2510f3bd26422e7a}{SetRule}(\textcolor{stringliteral}{"z2\_SingleLineComments"},\textcolor{stringliteral}{"//[^\(\backslash\)n]*"},singleLineCommentFormat);
+69     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_j_s_highlighter_affb286d1e0dc29cabcc336a3ef13cc23}\label{class_j_s_highlighter_affb286d1e0dc29cabcc336a3ef13cc23}} 
+\index{J\+S\+Highlighter@{J\+S\+Highlighter}!highlight\+Block@{highlight\+Block}}
+\index{highlight\+Block@{highlight\+Block}!J\+S\+Highlighter@{J\+S\+Highlighter}}
+\subsubsection{\texorpdfstring{highlight\+Block()}{highlightBlock()}}
+{\footnotesize\ttfamily void J\+S\+Highlighter\+::highlight\+Block (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 230 of file jsedit.\+cpp.
+
+
+\begin{DoxyCode}
+231 \{
+232     \textcolor{comment}{// parsing state}
+233     \textcolor{keyword}{enum} \{
+234         Start = 0,
+235         Number = 1,
+236         Identifier = 2,
+237         String = 3,
+238         Comment = 4,
+239         Regex = 5
+240     \};
+241 
+242     QList<int> bracketPositions;
+243 
+244     \textcolor{keywordtype}{int} blockState = previousBlockState();
+245     \textcolor{keywordtype}{int} bracketLevel = blockState >> 4;
+246     \textcolor{keywordtype}{int} \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = blockState & 15;
+247     \textcolor{keywordflow}{if} (blockState < 0) \{
+248         bracketLevel = 0;
+249         state = Start;
+250     \}
+251 
+252     \textcolor{keywordtype}{int} start = 0;
+253     \textcolor{keywordtype}{int} i = 0;
+254     \textcolor{keywordflow}{while} (i <= text.length()) \{
+255         QChar ch = (i < text.length()) ? text.at(i) : QChar();
+256         QChar next = (i < text.length() - 1) ? text.at(i + 1) : QChar();
+257 
+258         \textcolor{keywordflow}{switch} (state) \{
+259 
+260         \textcolor{keywordflow}{case} Start:
+261             start = i;
+262             \textcolor{keywordflow}{if} (ch.isSpace()) \{
+263                 ++i;
+264             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ch.isDigit()) \{
+265                 ++i;
+266                 state = Number;
+267             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ch.isLetter() || ch == \textcolor{charliteral}{'\_'}) \{
+268                 ++i;
+269                 state = Identifier;
+270             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ch == \textcolor{charliteral}{'\(\backslash\)''} || ch == \textcolor{charliteral}{'\(\backslash\)"'}) \{
+271                 ++i;
+272                 state = String;
+273             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ch == \textcolor{charliteral}{'/'} && next == \textcolor{charliteral}{'*'}) \{
+274                 ++i;
+275                 ++i;
+276                 state = Comment;
+277             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ch == \textcolor{charliteral}{'/'} && next == \textcolor{charliteral}{'/'}) \{
+278                 i = text.length();
+279                 setFormat(start, text.length(), m\_colors[\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213a430947e4b883553d04f618a799095f4d}{JSEdit::Comment}]);
+280             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ch == \textcolor{charliteral}{'/'} && next != \textcolor{charliteral}{'*'}) \{
+281                 ++i;
+282                 state = Regex;
+283             \} \textcolor{keywordflow}{else} \{
+284                 \textcolor{keywordflow}{if} (!QString(\textcolor{stringliteral}{"()\{\}[]"}).contains(ch))
+285                     setFormat(start, 1, m\_colors[\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213a7cf7fcdce0c49ff9995b8d8a02a3b127}{JSEdit::Operator}]);
+286                 \textcolor{keywordflow}{if} (ch ==\textcolor{charliteral}{'\{'} || ch == \textcolor{charliteral}{'\}'}) \{
+287                     bracketPositions += i;
+288                     \textcolor{keywordflow}{if} (ch == \textcolor{charliteral}{'\{'})
+289                         bracketLevel++;
+290                     \textcolor{keywordflow}{else}
+291                         bracketLevel--;
+292                 \}
+293                 ++i;
+294                 state = Start;
+295             \}
+296             \textcolor{keywordflow}{break};
+297 
+298         \textcolor{keywordflow}{case} Number:
+299             \textcolor{keywordflow}{if} (ch.isSpace() || !ch.isDigit()) \{
+300                 setFormat(start, i - start, m\_colors[\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213aeebc6c595d9a8bc74d3b03bd4c8f2d1f}{JSEdit::Number}]);
+301                 state = Start;
+302             \} \textcolor{keywordflow}{else} \{
+303                 ++i;
+304             \}
+305             \textcolor{keywordflow}{break};
+306 
+307         \textcolor{keywordflow}{case} Identifier:
+308             \textcolor{keywordflow}{if} (ch.isSpace() || !(ch.isDigit() || ch.isLetter() || ch == \textcolor{charliteral}{'\_'})) \{
+309                 QString token = text.mid(start, i - start).trimmed();
+310                 \textcolor{keywordflow}{if} (m\_keywords.contains(token))
+311                     setFormat(start, i - start, m\_colors[\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213ad70548abdd876f2648764b7924b90251}{JSEdit::Keyword}]);
+312                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (m\_knownIds.contains(token))
+313                     setFormat(start, i - start, m\_colors[\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213a8b227288b9e8c72ccb15968f3127f6c2}{JSEdit::BuiltIn}]);
+314                 state = Start;
+315             \} \textcolor{keywordflow}{else} \{
+316                 ++i;
+317             \}
+318             \textcolor{keywordflow}{break};
+319 
+320         \textcolor{keywordflow}{case} String:
+321             \textcolor{keywordflow}{if} (ch == text.at(start)) \{
+322                 QChar prev = (i > 0) ? text.at(i - 1) : QChar();
+323                 \textcolor{keywordflow}{if} (prev != \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}) \{
+324                     ++i;
+325                     setFormat(start, i - start, m\_colors[\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213a60b69a2cc0268b2048fceadf7067e231}{JSEdit::String}]);
+326                     state = Start;
+327                 \} \textcolor{keywordflow}{else} \{
+328                     ++i;
+329                 \}
+330             \} \textcolor{keywordflow}{else} \{
+331                 ++i;
+332             \}
+333             \textcolor{keywordflow}{break};
+334 
+335         \textcolor{keywordflow}{case} Comment:
+336             \textcolor{keywordflow}{if} (ch == \textcolor{charliteral}{'*'} && next == \textcolor{charliteral}{'/'}) \{
+337                 ++i;
+338                 ++i;
+339                 setFormat(start, i - start, m\_colors[\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213a430947e4b883553d04f618a799095f4d}{JSEdit::Comment}]);
+340                 state = Start;
+341             \} \textcolor{keywordflow}{else} \{
+342                 ++i;
+343             \}
+344             \textcolor{keywordflow}{break};
+345 
+346         \textcolor{keywordflow}{case} Regex:
+347             \textcolor{keywordflow}{if} (ch == \textcolor{charliteral}{'/'}) \{
+348                 QChar prev = (i > 0) ? text.at(i - 1) : QChar();
+349                 \textcolor{keywordflow}{if} (prev != \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}) \{
+350                     ++i;
+351                     setFormat(start, i - start, m\_colors[\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213a60b69a2cc0268b2048fceadf7067e231}{JSEdit::String}]);
+352                     state = Start;
+353                 \} \textcolor{keywordflow}{else} \{
+354                     ++i;
+355                 \}
+356             \} \textcolor{keywordflow}{else} \{
+357                 ++i;
+358             \}
+359             \textcolor{keywordflow}{break};
+360 
+361         \textcolor{keywordflow}{default}:
+362             state = Start;
+363             \textcolor{keywordflow}{break};
+364         \}
+365     \}
+366 
+367     \textcolor{keywordflow}{if} (state == Comment)
+368         setFormat(start, text.length(), m\_colors[\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213a430947e4b883553d04f618a799095f4d}{JSEdit::Comment}]);
+369     \textcolor{keywordflow}{else}
+370         state = Start;
+371 
+372     \textcolor{keywordflow}{if} (!m\_markString.isEmpty()) \{
+373         \textcolor{keywordtype}{int} pos = 0;
+374         \textcolor{keywordtype}{int} len = m\_markString.length();
+375         QTextCharFormat markerFormat;
+376         markerFormat.setBackground(m\_colors[\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213a098e62a1854a46cb2b58c49ee5d78208}{JSEdit::Marker}]);
+377         markerFormat.setForeground(m\_colors[\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213a51b1886888e6bf8841064a795bd6ab8d}{JSEdit::Normal}]);
+378         \textcolor{keywordflow}{for} (;;) \{
+379             pos = text.indexOf(m\_markString, pos, m\_markCaseSensitivity);
+380             \textcolor{keywordflow}{if} (pos < 0)
+381                 \textcolor{keywordflow}{break};
+382             setFormat(pos, len, markerFormat);
+383             ++pos;
+384         \}
+385     \}
+386 
+387     \textcolor{keywordflow}{if} (!bracketPositions.isEmpty()) \{
+388         \hyperlink{class_j_s_block_data}{JSBlockData} *blockData = \textcolor{keyword}{reinterpret\_cast<}\hyperlink{class_j_s_block_data}{JSBlockData}*\textcolor{keyword}{>}(currentBlock().
+      userData());
+389         \textcolor{keywordflow}{if} (!blockData) \{
+390             blockData = \textcolor{keyword}{new} \hyperlink{class_j_s_block_data}{JSBlockData};
+391             currentBlock().setUserData(blockData);
+392         \}
+393         blockData->\hyperlink{class_j_s_block_data_af1084b33f21551858059f78de49485a3}{bracketPositions} = bracketPositions;
+394     \}
+395 
+396     blockState = (state & 15) | (bracketLevel << 4);
+397     setCurrentBlockState(blockState);
+398 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_j_s_highlighter_af01421450f2260f630488f63a8912445}\label{class_j_s_highlighter_af01421450f2260f630488f63a8912445}} 
+\index{J\+S\+Highlighter@{J\+S\+Highlighter}!keywords@{keywords}}
+\index{keywords@{keywords}!J\+S\+Highlighter@{J\+S\+Highlighter}}
+\subsubsection{\texorpdfstring{keywords()}{keywords()}}
+{\footnotesize\ttfamily Q\+String\+List J\+S\+Highlighter\+::keywords (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 407 of file jsedit.\+cpp.
+
+
+\begin{DoxyCode}
+408 \{
+409     \textcolor{keywordflow}{return} m\_keywords.toList();
+410 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_j_s_highlighter_a3d552ad1d44a4192bff7ceac306b706e}\label{class_j_s_highlighter_a3d552ad1d44a4192bff7ceac306b706e}} 
+\index{J\+S\+Highlighter@{J\+S\+Highlighter}!mark@{mark}}
+\index{mark@{mark}!J\+S\+Highlighter@{J\+S\+Highlighter}}
+\subsubsection{\texorpdfstring{mark()}{mark()}}
+{\footnotesize\ttfamily void J\+S\+Highlighter\+::mark (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{str,  }\item[{Qt\+::\+Case\+Sensitivity}]{case\+Sensitivity }\end{DoxyParamCaption})}
+
+
+
+Definition at line 400 of file jsedit.\+cpp.
+
+
+\begin{DoxyCode}
+401 \{
+402     m\_markString = str;
+403     m\_markCaseSensitivity = caseSensitivity;
+404     rehighlight();
+405 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_j_s_highlighter_a19b04c73d5d10e9eb9bb0acccaa85886}\label{class_j_s_highlighter_a19b04c73d5d10e9eb9bb0acccaa85886}} 
+\index{J\+S\+Highlighter@{J\+S\+Highlighter}!set\+Color@{set\+Color}}
+\index{set\+Color@{set\+Color}!J\+S\+Highlighter@{J\+S\+Highlighter}}
+\subsubsection{\texorpdfstring{set\+Color()}{setColor()}}
+{\footnotesize\ttfamily void J\+S\+Highlighter\+::set\+Color (\begin{DoxyParamCaption}\item[{\hyperlink{class_j_s_edit_a5a465193a1344e5be9b04f5ff7883213}{J\+S\+Edit\+::\+Color\+Component}}]{component,  }\item[{const Q\+Color \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Definition at line 224 of file jsedit.\+cpp.
+
+
+\begin{DoxyCode}
+225 \{
+226     m\_colors[component] = color;
+227     rehighlight();
+228 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_j_s_highlighter_ad8409e0cec9cd61dd4667c2e5b714c12}\label{class_j_s_highlighter_ad8409e0cec9cd61dd4667c2e5b714c12}} 
+\index{J\+S\+Highlighter@{J\+S\+Highlighter}!set\+Keywords@{set\+Keywords}}
+\index{set\+Keywords@{set\+Keywords}!J\+S\+Highlighter@{J\+S\+Highlighter}}
+\subsubsection{\texorpdfstring{set\+Keywords()}{setKeywords()}}
+{\footnotesize\ttfamily void J\+S\+Highlighter\+::set\+Keywords (\begin{DoxyParamCaption}\item[{const Q\+String\+List \&}]{keywords }\end{DoxyParamCaption})}
+
+
+
+Definition at line 412 of file jsedit.\+cpp.
+
+
+\begin{DoxyCode}
+413 \{
+414     m\_keywords = QSet<QString>::fromList(\hyperlink{class_j_s_highlighter_af01421450f2260f630488f63a8912445}{keywords});
+415     rehighlight();
+416 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_j_s_highlighter_aab4501a701fd36da2510f3bd26422e7a}\label{class_j_s_highlighter_aab4501a701fd36da2510f3bd26422e7a}} 
+\index{J\+S\+Highlighter@{J\+S\+Highlighter}!Set\+Rule@{Set\+Rule}}
+\index{Set\+Rule@{Set\+Rule}!J\+S\+Highlighter@{J\+S\+Highlighter}}
+\subsubsection{\texorpdfstring{Set\+Rule()}{SetRule()}}
+{\footnotesize\ttfamily void J\+S\+Highlighter\+::\+Set\+Rule (\begin{DoxyParamCaption}\item[{Q\+String}]{kind,  }\item[{Q\+String}]{pattern,  }\item[{Q\+Text\+Char\+Format}]{format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 26 of file J\+S\+Highlighter.\+h.
+
+
+\begin{DoxyCode}
+27     \{
+28         HighlightingRule rule;
+29         rule.pattern = QRegExp(pattern);
+30         rule.format = format;
+31         \hyperlink{class_j_s_highlighter_a42499ae459e9a65266f1a08e7cd7d214}{highlightingRules}.append(rule);
+32     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_j_s_highlighter_a42499ae459e9a65266f1a08e7cd7d214}\label{class_j_s_highlighter_a42499ae459e9a65266f1a08e7cd7d214}} 
+\index{J\+S\+Highlighter@{J\+S\+Highlighter}!highlighting\+Rules@{highlighting\+Rules}}
+\index{highlighting\+Rules@{highlighting\+Rules}!J\+S\+Highlighter@{J\+S\+Highlighter}}
+\subsubsection{\texorpdfstring{highlighting\+Rules}{highlightingRules}}
+{\footnotesize\ttfamily Q\+Vector$<$\hyperlink{struct_j_s_highlighter_1_1_highlighting_rule}{Highlighting\+Rule}$>$ J\+S\+Highlighter\+::highlighting\+Rules}
+
+
+
+Definition at line 24 of file J\+S\+Highlighter.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+qt-\/json-\/editor-\/master/\hyperlink{jsedit_8h}{jsedit.\+h}\item 
+qt-\/json-\/editor-\/master/\hyperlink{_j_s_highlighter_8h}{J\+S\+Highlighter.\+h}\item 
+qt-\/json-\/editor-\/master/\hyperlink{jsedit_8cpp}{jsedit.\+cpp}\end{DoxyCompactItemize}

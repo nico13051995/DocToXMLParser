@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_j_s_highlighter">
+<title>JSHighlighter class Reference</title>
+<para>
+    <programlisting>#include <link linkend="jsedit_8h">&lt;jsedit.h&gt;</link></programlisting>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="struct_j_s_highlighter_1_1_highlighting_rule">JSHighlighter::HighlightingRule</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QSet&lt; QString &gt; m_keywords</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QSet&lt; QString &gt; m_knownIds</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QHash&lt; JSEdit::ColorComponent, QColor &gt; m_colors</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString m_markString</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Qt::CaseSensitivity m_markCaseSensitivity</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QVector&lt; HighlightingRule &gt; highlightingRules</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_j_s_highlighter_1a0b110ce0492f6ac3c2310de65fcd7919">JSHighlighter</link> (
+QTextDocument * parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_j_s_highlighter_1a19b04c73d5d10e9eb9bb0acccaa85886">setColor</link> (
+<link linkend="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213">JSEdit::ColorComponent</link> component, const QColor &amp; color)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_j_s_highlighter_1a3d552ad1d44a4192bff7ceac306b706e">mark</link> (
+const QString &amp; str, Qt::CaseSensitivity caseSensitivity)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QStringList <link linkend="class_j_s_highlighter_1af01421450f2260f630488f63a8912445">keywords</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_j_s_highlighter_1ad8409e0cec9cd61dd4667c2e5b714c12">setKeywords</link> (
+const QStringList &amp; keywords)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_j_s_highlighter_1aab4501a701fd36da2510f3bd26422e7a">SetRule</link> (
+QString kind, QString pattern, QTextCharFormat format)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_j_s_highlighter_1a0b110ce0492f6ac3c2310de65fcd7919">JSHighlighter</link> (
+QTextDocument * parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_j_s_highlighter_1affb286d1e0dc29cabcc336a3ef13cc23">highlightBlock</link> (
+const QString &amp; text)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_j_s_highlighter_1a0b110ce0492f6ac3c2310de65fcd7919">
+                <title>JSHighlighter::JSHighlighter (QTextDocument *parent=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_highlighter_1a19b04c73d5d10e9eb9bb0acccaa85886">
+                <title>void JSHighlighter::setColor (JSEdit::ColorComponent component, const QColor &amp;color)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_highlighter_1a3d552ad1d44a4192bff7ceac306b706e">
+                <title>void JSHighlighter::mark (const QString &amp;str, Qt::CaseSensitivity caseSensitivity)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_highlighter_1af01421450f2260f630488f63a8912445">
+                <title>QStringList JSHighlighter::keywords () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_highlighter_1ad8409e0cec9cd61dd4667c2e5b714c12">
+                <title>void JSHighlighter::setKeywords (const QStringList &amp;keywords)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_highlighter_1aab4501a701fd36da2510f3bd26422e7a">
+                <title>void JSHighlighter::SetRule (QString kind, QString pattern, QTextCharFormat format)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_highlighter_1a0b110ce0492f6ac3c2310de65fcd7919">
+                <title>JSHighlighter::JSHighlighter (QTextDocument *parent=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_highlighter_1affb286d1e0dc29cabcc336a3ef13cc23">
+                <title>void JSHighlighter::highlightBlock (const QString &amp;text)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

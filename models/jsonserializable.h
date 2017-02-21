@@ -5,6 +5,10 @@
 #include <QJsonObject>
 #include <QJsonArray>
 
+/**
+ * @brief The JsonSerializable class
+ * Wraper interface for create Json serializable objects
+ */
 class JsonSerializable : public QObject
 {
     Q_OBJECT

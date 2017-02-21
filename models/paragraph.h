@@ -3,7 +3,10 @@
 
 #include <QString>
 #include <QFont>
-
+/**
+ * @brief The Paragraph class
+ * Model for contain info about paragraph
+ */
 class Paragraph
 {
 

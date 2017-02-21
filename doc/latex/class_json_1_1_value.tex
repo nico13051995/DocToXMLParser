@@ -1,0 +1,708 @@
+\hypertarget{class_json_1_1_value}{}\section{Json\+:\+:Value Class Reference}
+\label{class_json_1_1_value}\index{Json\+::\+Value@{Json\+::\+Value}}
+
+
+{\ttfamily \#include $<$jsoncxx.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_json_1_1_value_a3dd8ad60321f45f8d51c864e3a96a848}{Value} ()
+\item 
+\hyperlink{class_json_1_1_value_ad1deffd768f7603cc7d4c5eccf03916d}{Value} (\hyperlink{structjson__object}{json\+\_\+object} $\ast$obj)
+\item 
+\hyperlink{class_json_1_1_value_a287dea48da3912d02756735bf677b27b}{$\sim$\+Value} ()
+\item 
+void \hyperlink{class_json_1_1_value_a03430deb0b2a143e0fe2d743cceabab3}{Set\+Obj} (\hyperlink{structjson__object}{json\+\_\+object} $\ast$obj)
+\item 
+int \hyperlink{class_json_1_1_value_a2dd28c1e9957927b2c4601eeb2fb56e1}{as\+Int} () const
+\item 
+double \hyperlink{class_json_1_1_value_afd24002a18aef907ad746b1cb9eda0a2}{as\+Double} () const
+\item 
+bool \hyperlink{class_json_1_1_value_ab693fb7b9b1595bb0adc49658bbf780d}{as\+Bool} () const
+\item 
+const char $\ast$ \hyperlink{class_json_1_1_value_a42268ca4dfc386562bee8707045b2263}{as\+String} ()
+\item 
+const char $\ast$ \hyperlink{class_json_1_1_value_a6733eb0c71d6e2a59fea9f96ec28bf3a}{as\+C\+String} ()
+\item 
+bool \hyperlink{class_json_1_1_value_abde4070e21e46dc4f8203f66582cb19f}{is\+Null} () const
+\item 
+bool \hyperlink{class_json_1_1_value_ab1f02651cb89d0f18b63a036959391ba}{is\+Bool} () const
+\item 
+bool \hyperlink{class_json_1_1_value_aff51d8b52979ca06cf9d909accd5f695}{is\+Int} () const
+\item 
+bool \hyperlink{class_json_1_1_value_a4a2e2a790e19a1c09fc5dd12d7ad47b5}{is\+Double} () const
+\item 
+bool \hyperlink{class_json_1_1_value_a71e1f82cf1c3eaf969d400dcffb163a6}{is\+String} () const
+\item 
+bool \hyperlink{class_json_1_1_value_a1627eb9d6568d6d0252fa8bb711c0a59}{is\+Array} () const
+\item 
+bool \hyperlink{class_json_1_1_value_a8cf96c0f2a552051fcfc78ffee60e037}{is\+Object} () const
+\item 
+unsigned int \hyperlink{class_json_1_1_value_a3cde6bd042f16442791fa816a60332e5}{size} () const
+\begin{DoxyCompactList}\small\item\em Number of values in array or object. \end{DoxyCompactList}\item 
+bool \hyperlink{class_json_1_1_value_a0519a551e37ee6665d74742b3f96bab3}{empty} () const
+\begin{DoxyCompactList}\small\item\em Return true if empty array, empty object, or null; otherwise, false. \end{DoxyCompactList}\item 
+void \hyperlink{class_json_1_1_value_a501a4d67e6c875255c2ecc03ccd2019b}{clear} ()
+\begin{DoxyCompactList}\small\item\em Remove all object members and array elements. \end{DoxyCompactList}\item 
+\hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4e}{Value\+Type} \hyperlink{class_json_1_1_value_a8ce61157a011894f0252ceed232312de}{type} () const
+\item 
+bool \hyperlink{class_json_1_1_value_a0daec7ab118bed59dea6b16d1511bc47}{is\+Member} (const std\+::string \&s\+Key) const
+\item 
+\hyperlink{class_json_1_1_value}{Value} \hyperlink{class_json_1_1_value_a72e69b730d35131d867f47f13980c9c2}{operator\mbox{[}$\,$\mbox{]}} (const std\+::string \&key)
+\item 
+\hyperlink{class_json_1_1_value}{Value} \hyperlink{class_json_1_1_value_a9cc9f4b9ec45429586e60472a7c25059}{operator\mbox{[}$\,$\mbox{]}} (const unsigned int i)
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_json_1_1_value_af7ab87d24164058af2b20e67ac4a1093}{get\+All\+Keys} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_json_1_1_value_aced2ebc80b7cdb15b35e858df1f0b886}{m\+\_\+str\+Err\+Msg}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4e}{Value\+Type} \hyperlink{class_json_1_1_value_ad24bf765750e8ea535d28bcf981d551a}{init\+\_\+type} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structjson__object}{json\+\_\+object} $\ast$ \hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\+\_\+obj\+Value}
+\item 
+\hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4e}{Value\+Type} \hyperlink{class_json_1_1_value_ae6116e08a5c1833f858c1d29156365b1}{m\+\_\+e\+Type}
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_json_1_1_value_a914e4896d12ffa87726125d2f60ea9c0}{m\+\_\+all\+Keys}
+\item 
+std\+::map$<$ std\+::string, \hyperlink{structjson__object}{json\+\_\+object} $\ast$ $>$ \hyperlink{class_json_1_1_value_a2b9203575d8ff75f02d30e09befb1204}{m\+\_\+value\+Map}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 29 of file jsoncxx.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_json_1_1_value_a3dd8ad60321f45f8d51c864e3a96a848}\label{class_json_1_1_value_a3dd8ad60321f45f8d51c864e3a96a848}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!Value@{Value}}
+\index{Value@{Value}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{Value()}{Value()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Json\+::\+Value\+::\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 23 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+24     \{
+25         \hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue} = NULL;
+26         \hyperlink{class_json_1_1_value_ae6116e08a5c1833f858c1d29156365b1}{m\_eType} = \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eaf3bec0dbeafa6b0fdc48db16179b6369}{unknowValue};
+27     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_ad1deffd768f7603cc7d4c5eccf03916d}\label{class_json_1_1_value_ad1deffd768f7603cc7d4c5eccf03916d}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!Value@{Value}}
+\index{Value@{Value}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{Value()}{Value()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Json\+::\+Value\+::\+Value (\begin{DoxyParamCaption}\item[{\hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+30     \{
+31         \hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue} = \hyperlink{json__object_8c_ac09dff4e88b4d925c272b3b5061c0182}{json\_object\_get}( obj );
+32         \hyperlink{class_json_1_1_value_ae6116e08a5c1833f858c1d29156365b1}{m\_eType} = \hyperlink{class_json_1_1_value_ad24bf765750e8ea535d28bcf981d551a}{init\_type}();
+33 
+34         \textcolor{keywordflow}{if} (\hyperlink{class_json_1_1_value_ae6116e08a5c1833f858c1d29156365b1}{m\_eType} == \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eae8386dcfc36d1ae897745f7b4f77a1f6}{objectValue})
+35         \{
+36             \hyperlink{json__object_8h_acf5f514a9e0061c10fc08055762639ee}{json\_object\_object\_foreach}( \hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue}, key, value )\{
+37                 \hyperlink{class_json_1_1_value_a914e4896d12ffa87726125d2f60ea9c0}{m\_allKeys}.push\_back(key);
+38                 \hyperlink{class_json_1_1_value_a2b9203575d8ff75f02d30e09befb1204}{m\_valueMap}.insert(std::pair<std::string, json\_object*>(key, value));
+39             \}
+40         \}
+41     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_a287dea48da3912d02756735bf677b27b}\label{class_json_1_1_value_a287dea48da3912d02756735bf677b27b}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!````~Value@{$\sim$\+Value}}
+\index{````~Value@{$\sim$\+Value}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{$\sim$\+Value()}{~Value()}}
+{\footnotesize\ttfamily Json\+::\+Value\+::$\sim$\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 43 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+44     \{
+45         \hyperlink{json__object_8c_a24340b9a57fb8c4df72915d001437202}{json\_object\_put}( \hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue} );
+46     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_json_1_1_value_ab693fb7b9b1595bb0adc49658bbf780d}\label{class_json_1_1_value_ab693fb7b9b1595bb0adc49658bbf780d}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!as\+Bool@{as\+Bool}}
+\index{as\+Bool@{as\+Bool}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{as\+Bool()}{asBool()}}
+{\footnotesize\ttfamily bool Json\+::\+Value\+::as\+Bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 199 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+200     \{
+201         \textcolor{keywordflow}{switch} ( \hyperlink{class_json_1_1_value_ae6116e08a5c1833f858c1d29156365b1}{m\_eType} )
+202         \{
+203         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea7d9899633b4409bd3fc107e6737f8391}{nullValue}:
+204             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+205         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eae5a9d708d5c9e23ae9bf98898522512d}{intValue}:
+206         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eaea788d9a3bb00adc6d68d97d43e1ccd3}{uintValue}:
+207             \textcolor{keywordflow}{return} \hyperlink{json__object_8c_a53d286175d6a30ea1c961623a724a48f}{json\_object\_get\_int}(\hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue}) != 0;
+208         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eab837c7b869c14d8be712deb45c9e490e}{realValue}:
+209             \textcolor{keywordflow}{return} \hyperlink{json__object_8c_ad7a7a813a948a1be644d2334281bf09a}{json\_object\_get\_double}(\hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue}) != 0.0;
+210         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea14c30dbf4da86f7b809be299f671f7fd}{booleanValue}:
+211             \textcolor{keywordflow}{return} \hyperlink{json__object_8c_a1e624d8e948b31562b6dfc7a936b85ed}{json\_object\_get\_boolean}(\hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue})?\textcolor{keyword}{true}:\textcolor{keyword}{false};
+212         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea804ef857affea2d415843c73f261c258}{stringValue}:
+213             \textcolor{keywordflow}{return} \hyperlink{json__object_8c_a48160f5bba7d298343045d2daca5e07a}{json\_object\_get\_string}(\hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue})  &&  
+      \hyperlink{json__object_8c_a48160f5bba7d298343045d2daca5e07a}{json\_object\_get\_string}(\hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue})[0] != 0;
+214         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eadc8f264f36b55b063c78126b335415f4}{arrayValue}:
+215         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eae8386dcfc36d1ae897745f7b4f77a1f6}{objectValue}:
+216             \textcolor{keywordflow}{return} this->\hyperlink{class_json_1_1_value_a3cde6bd042f16442791fa816a60332e5}{size}() != 0;
+217         \textcolor{keywordflow}{default}:
+218             \textcolor{keywordflow}{break};
+219         \}
+220         \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \textcolor{comment}{// unreachable;}
+221     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_a6733eb0c71d6e2a59fea9f96ec28bf3a}\label{class_json_1_1_value_a6733eb0c71d6e2a59fea9f96ec28bf3a}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!as\+C\+String@{as\+C\+String}}
+\index{as\+C\+String@{as\+C\+String}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{as\+C\+String()}{asCString()}}
+{\footnotesize\ttfamily const char $\ast$ Json\+::\+Value\+::as\+C\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 156 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+157     \{
+158         \textcolor{keywordflow}{switch} ( \hyperlink{class_json_1_1_value_ae6116e08a5c1833f858c1d29156365b1}{m\_eType} )
+159         \{
+160         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea7d9899633b4409bd3fc107e6737f8391}{nullValue}:
+161             \textcolor{keywordflow}{return} \textcolor{stringliteral}{""};
+162         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea804ef857affea2d415843c73f261c258}{stringValue}:
+163             \textcolor{keywordflow}{return} \hyperlink{json__object_8c_a48160f5bba7d298343045d2daca5e07a}{json\_object\_get\_string}(\hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue});
+164         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eae5a9d708d5c9e23ae9bf98898522512d}{intValue}:
+165         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eaea788d9a3bb00adc6d68d97d43e1ccd3}{uintValue}:
+166         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eab837c7b869c14d8be712deb45c9e490e}{realValue}:
+167         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea14c30dbf4da86f7b809be299f671f7fd}{booleanValue}:
+168         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eadc8f264f36b55b063c78126b335415f4}{arrayValue}:
+169         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eae8386dcfc36d1ae897745f7b4f77a1f6}{objectValue}:
+170         \textcolor{keywordflow}{default}:
+171             \textcolor{keywordflow}{return} \textcolor{stringliteral}{""};
+172             \textcolor{keywordflow}{break};
+173         \}
+174         \textcolor{keywordflow}{return} \textcolor{stringliteral}{""};
+175     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_afd24002a18aef907ad746b1cb9eda0a2}\label{class_json_1_1_value_afd24002a18aef907ad746b1cb9eda0a2}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!as\+Double@{as\+Double}}
+\index{as\+Double@{as\+Double}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{as\+Double()}{asDouble()}}
+{\footnotesize\ttfamily double Json\+::\+Value\+::as\+Double (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 177 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+178     \{
+179         \textcolor{keywordflow}{switch} ( \hyperlink{class_json_1_1_value_ae6116e08a5c1833f858c1d29156365b1}{m\_eType} )
+180         \{
+181         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea7d9899633b4409bd3fc107e6737f8391}{nullValue}:
+182             \textcolor{keywordflow}{return} 0.0;
+183         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eae5a9d708d5c9e23ae9bf98898522512d}{intValue}:
+184         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eaea788d9a3bb00adc6d68d97d43e1ccd3}{uintValue}:
+185         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eab837c7b869c14d8be712deb45c9e490e}{realValue}:
+186             \textcolor{keywordflow}{return} \hyperlink{json__object_8c_ad7a7a813a948a1be644d2334281bf09a}{json\_object\_get\_double}(\hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue});
+187         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea14c30dbf4da86f7b809be299f671f7fd}{booleanValue}:
+188             \textcolor{keywordflow}{return} (\textcolor{keywordtype}{int})\hyperlink{json__object_8c_ad7a7a813a948a1be644d2334281bf09a}{json\_object\_get\_double}(\hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue}) ? 1.0 : 0.0;
+189         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea804ef857affea2d415843c73f261c258}{stringValue}:
+190         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eadc8f264f36b55b063c78126b335415f4}{arrayValue}:
+191         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eae8386dcfc36d1ae897745f7b4f77a1f6}{objectValue}:
+192             \textcolor{comment}{//JSON\_ASSERT\_MESSAGE( false, "Type is not convertible to double" );}
+193         \textcolor{keywordflow}{default}:
+194             \textcolor{keywordflow}{return} 0.0;
+195         \}
+196         \textcolor{keywordflow}{return} 0; \textcolor{comment}{// unreachable;}
+197     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_a2dd28c1e9957927b2c4601eeb2fb56e1}\label{class_json_1_1_value_a2dd28c1e9957927b2c4601eeb2fb56e1}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!as\+Int@{as\+Int}}
+\index{as\+Int@{as\+Int}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{as\+Int()}{asInt()}}
+{\footnotesize\ttfamily int Json\+::\+Value\+::as\+Int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 96 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+97     \{
+98         \textcolor{keywordflow}{switch} ( \hyperlink{class_json_1_1_value_ae6116e08a5c1833f858c1d29156365b1}{m\_eType} )
+99         \{
+100         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea7d9899633b4409bd3fc107e6737f8391}{nullValue}:
+101             \textcolor{keywordflow}{return} 0;
+102         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eae5a9d708d5c9e23ae9bf98898522512d}{intValue}:
+103             \textcolor{keywordflow}{return} \hyperlink{json__object_8c_a53d286175d6a30ea1c961623a724a48f}{json\_object\_get\_int}(\hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue});
+104         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eaea788d9a3bb00adc6d68d97d43e1ccd3}{uintValue}:
+105             \textcolor{keywordflow}{return} \hyperlink{json__object_8c_a53d286175d6a30ea1c961623a724a48f}{json\_object\_get\_int}(\hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue});
+106         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eab837c7b869c14d8be712deb45c9e490e}{realValue}:
+107             \textcolor{keywordflow}{return} (\textcolor{keywordtype}{int})\hyperlink{json__object_8c_ad7a7a813a948a1be644d2334281bf09a}{json\_object\_get\_double}(\hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue});
+108         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea14c30dbf4da86f7b809be299f671f7fd}{booleanValue}:
+109             \textcolor{keywordflow}{return} \hyperlink{json__object_8c_a1e624d8e948b31562b6dfc7a936b85ed}{json\_object\_get\_boolean}(\hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue})? 1 : 0;
+110         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea804ef857affea2d415843c73f261c258}{stringValue}:
+111         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eadc8f264f36b55b063c78126b335415f4}{arrayValue}:
+112         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eae8386dcfc36d1ae897745f7b4f77a1f6}{objectValue}:
+113             \textcolor{comment}{//JSON\_ASSERT\_MESSAGE( false, "Type is not convertible to int" );}
+114         \textcolor{keywordflow}{default}:
+115             \textcolor{keywordflow}{break};
+116         \}
+117         \textcolor{keywordflow}{return} 0; \textcolor{comment}{// unreachable;}
+118     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_a42268ca4dfc386562bee8707045b2263}\label{class_json_1_1_value_a42268ca4dfc386562bee8707045b2263}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!as\+String@{as\+String}}
+\index{as\+String@{as\+String}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{as\+String()}{asString()}}
+{\footnotesize\ttfamily const char $\ast$ Json\+::\+Value\+::as\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 120 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+121     \{
+122         \textcolor{keywordtype}{char}* str = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[500];
+123         \textcolor{keywordflow}{switch} ( \hyperlink{class_json_1_1_value_ae6116e08a5c1833f858c1d29156365b1}{m\_eType} )
+124         \{
+125         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea7d9899633b4409bd3fc107e6737f8391}{nullValue}:
+126             strcpy(str, \textcolor{stringliteral}{"Null"});
+127             \textcolor{keywordflow}{break};
+128         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea804ef857affea2d415843c73f261c258}{stringValue}:
+129             strcpy(str, \hyperlink{json__object_8c_a48160f5bba7d298343045d2daca5e07a}{json\_object\_get\_string}(\hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue}));
+130             \textcolor{keywordflow}{break};
+131         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eae5a9d708d5c9e23ae9bf98898522512d}{intValue}:
+132         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eaea788d9a3bb00adc6d68d97d43e1ccd3}{uintValue}:
+133             sprintf(str, \textcolor{stringliteral}{"%i"}, \hyperlink{json__object_8c_a53d286175d6a30ea1c961623a724a48f}{json\_object\_get\_int}(\hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue}));
+134             \textcolor{keywordflow}{break};
+135         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eab837c7b869c14d8be712deb45c9e490e}{realValue}:
+136             sprintf(str, \textcolor{stringliteral}{"%lf"}, \hyperlink{json__object_8c_ad7a7a813a948a1be644d2334281bf09a}{json\_object\_get\_double}(
+      \hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue}));
+137             \textcolor{keywordflow}{break};
+138         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea14c30dbf4da86f7b809be299f671f7fd}{booleanValue}:
+139             \hyperlink{json__object_8c_a1e624d8e948b31562b6dfc7a936b85ed}{json\_object\_get\_boolean}(\hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue}) == \textcolor{keyword}{true} ? strcpy(str, \textcolor{stringliteral}{"
+      true"}) : strcpy(str, \textcolor{stringliteral}{"false"});
+140             \textcolor{keywordflow}{break};
+141         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eadc8f264f36b55b063c78126b335415f4}{arrayValue}:
+142             \textcolor{comment}{//strcpy(str, "[array]");}
+143             strcpy(str, \textcolor{stringliteral}{""});
+144             \textcolor{keywordflow}{break};
+145         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eae8386dcfc36d1ae897745f7b4f77a1f6}{objectValue}:
+146             \textcolor{comment}{//strcpy(str, "");}
+147             strcpy(str, \textcolor{stringliteral}{""});
+148             \textcolor{keywordflow}{break};
+149         \textcolor{keywordflow}{default}:
+150             \textcolor{keywordflow}{return} \textcolor{stringliteral}{"[null]"};
+151             \textcolor{keywordflow}{break};
+152         \}
+153         \textcolor{keywordflow}{return} str;
+154     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_a501a4d67e6c875255c2ecc03ccd2019b}\label{class_json_1_1_value_a501a4d67e6c875255c2ecc03ccd2019b}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!clear@{clear}}
+\index{clear@{clear}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Json\+::\+Value\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Remove all object members and array elements. 
+
+
+
+Definition at line 287 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+288     \{
+289         \textcolor{comment}{/*}
+290 \textcolor{comment}{        if (m\_allKeys.size() > 0)}
+291 \textcolor{comment}{        \{}
+292 \textcolor{comment}{            json\_object\_object\_foreach( m\_objValue, key, value )}
+293 \textcolor{comment}{            \{}
+294 \textcolor{comment}{                json\_object\_object\_del(value, key);}
+295 \textcolor{comment}{            \}}
+296 \textcolor{comment}{        \}}
+297 \textcolor{comment}{        */}
+298 
+299         \hyperlink{class_json_1_1_value_a914e4896d12ffa87726125d2f60ea9c0}{m\_allKeys}.clear();
+300         \hyperlink{class_json_1_1_value_a2b9203575d8ff75f02d30e09befb1204}{m\_valueMap}.clear();
+301         \textcolor{keyword}{delete} \hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue};
+302         \hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue} = NULL;
+303         \hyperlink{class_json_1_1_value_ae6116e08a5c1833f858c1d29156365b1}{m\_eType} = \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eaf3bec0dbeafa6b0fdc48db16179b6369}{unknowValue};
+304     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_a0519a551e37ee6665d74742b3f96bab3}\label{class_json_1_1_value_a0519a551e37ee6665d74742b3f96bab3}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!empty@{empty}}
+\index{empty@{empty}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily bool Json\+::\+Value\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return true if empty array, empty object, or null; otherwise, false. 
+
+\mbox{\Hypertarget{class_json_1_1_value_af7ab87d24164058af2b20e67ac4a1093}\label{class_json_1_1_value_af7ab87d24164058af2b20e67ac4a1093}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!get\+All\+Keys@{get\+All\+Keys}}
+\index{get\+All\+Keys@{get\+All\+Keys}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{get\+All\+Keys()}{getAllKeys()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Json\+::\+Value\+::get\+All\+Keys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 306 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+307     \{
+308         \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_value_a914e4896d12ffa87726125d2f60ea9c0}{m\_allKeys};
+309     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_ad24bf765750e8ea535d28bcf981d551a}\label{class_json_1_1_value_ad24bf765750e8ea535d28bcf981d551a}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!init\+\_\+type@{init\+\_\+type}}
+\index{init\+\_\+type@{init\+\_\+type}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{init\+\_\+type()}{init\_type()}}
+{\footnotesize\ttfamily \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4e}{Value\+Type} Json\+::\+Value\+::init\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 64 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+65     \{
+66         \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06c}{json\_type} \hyperlink{class_json_1_1_value_a8ce61157a011894f0252ceed232312de}{type} = \hyperlink{json__object_8c_a64a6ffafbde09313fae2f0f2aeb2407f}{json\_object\_get\_type}( 
+      \hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue} );
+67         \textcolor{keywordflow}{switch}( type )
+68         \{
+69         \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca127e62d156e13517471fcde3378979c1}{json\_type\_null}:
+70             \textcolor{keywordflow}{return} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea7d9899633b4409bd3fc107e6737f8391}{nullValue};
+71         \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca5d15299e90dbb9935ff6d3e2c22a285c}{json\_type\_boolean}:
+72             \textcolor{keywordflow}{return} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea14c30dbf4da86f7b809be299f671f7fd}{booleanValue};
+73         \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac6ac2d9a16577d00210fea64d16b47cd}{json\_type\_double}:
+74             \textcolor{keywordflow}{return} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eab837c7b869c14d8be712deb45c9e490e}{realValue};
+75         \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06ca7bf325c213b43c5f970ae2d4443ab956}{json\_type\_int}:
+76             \textcolor{keywordflow}{return} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eae5a9d708d5c9e23ae9bf98898522512d}{intValue};
+77         \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac966c8008f0b2c07da59ee8a60ad440f}{json\_type\_object}:
+78             \textcolor{keywordflow}{return} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eae8386dcfc36d1ae897745f7b4f77a1f6}{objectValue};
+79         \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cae536c8c9da4648e6b9348abddde6113c}{json\_type\_array}:
+80             \textcolor{keywordflow}{return} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eadc8f264f36b55b063c78126b335415f4}{arrayValue};
+81         \textcolor{keywordflow}{case} \hyperlink{json__object_8h_ac75c61993722a9b8aaa44704072ec06cac9f56e57c09245522d764015a054faa6}{json\_type\_string}:
+82             \textcolor{keywordflow}{return} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea804ef857affea2d415843c73f261c258}{stringValue};
+83         \textcolor{keywordflow}{default}:
+84             \textcolor{keywordflow}{return} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea7d9899633b4409bd3fc107e6737f8391}{nullValue};
+85         \}
+86         \textcolor{keywordflow}{return} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea7d9899633b4409bd3fc107e6737f8391}{nullValue};
+87     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_a1627eb9d6568d6d0252fa8bb711c0a59}\label{class_json_1_1_value_a1627eb9d6568d6d0252fa8bb711c0a59}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!is\+Array@{is\+Array}}
+\index{is\+Array@{is\+Array}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{is\+Array()}{isArray()}}
+{\footnotesize\ttfamily bool Json\+::\+Value\+::is\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_json_1_1_value_ab1f02651cb89d0f18b63a036959391ba}\label{class_json_1_1_value_ab1f02651cb89d0f18b63a036959391ba}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!is\+Bool@{is\+Bool}}
+\index{is\+Bool@{is\+Bool}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{is\+Bool()}{isBool()}}
+{\footnotesize\ttfamily bool Json\+::\+Value\+::is\+Bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_json_1_1_value_a4a2e2a790e19a1c09fc5dd12d7ad47b5}\label{class_json_1_1_value_a4a2e2a790e19a1c09fc5dd12d7ad47b5}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!is\+Double@{is\+Double}}
+\index{is\+Double@{is\+Double}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{is\+Double()}{isDouble()}}
+{\footnotesize\ttfamily bool Json\+::\+Value\+::is\+Double (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_json_1_1_value_aff51d8b52979ca06cf9d909accd5f695}\label{class_json_1_1_value_aff51d8b52979ca06cf9d909accd5f695}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!is\+Int@{is\+Int}}
+\index{is\+Int@{is\+Int}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{is\+Int()}{isInt()}}
+{\footnotesize\ttfamily bool Json\+::\+Value\+::is\+Int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 275 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+276     \{
+277         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+278     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_a0daec7ab118bed59dea6b16d1511bc47}\label{class_json_1_1_value_a0daec7ab118bed59dea6b16d1511bc47}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!is\+Member@{is\+Member}}
+\index{is\+Member@{is\+Member}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{is\+Member()}{isMember()}}
+{\footnotesize\ttfamily bool Json\+::\+Value\+::is\+Member (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s\+Key }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 264 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+265     \{
+266         \hyperlink{json__object_8h_acf5f514a9e0061c10fc08055762639ee}{json\_object\_object\_foreach}( \hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue}, key, value )\{
+267             \textcolor{keywordflow}{if}( sKey == key )
+268             \{
+269                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+270             \}
+271         \}
+272         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+273     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_abde4070e21e46dc4f8203f66582cb19f}\label{class_json_1_1_value_abde4070e21e46dc4f8203f66582cb19f}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!is\+Null@{is\+Null}}
+\index{is\+Null@{is\+Null}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{is\+Null()}{isNull()}}
+{\footnotesize\ttfamily bool Json\+::\+Value\+::is\+Null (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_json_1_1_value_a8cf96c0f2a552051fcfc78ffee60e037}\label{class_json_1_1_value_a8cf96c0f2a552051fcfc78ffee60e037}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!is\+Object@{is\+Object}}
+\index{is\+Object@{is\+Object}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{is\+Object()}{isObject()}}
+{\footnotesize\ttfamily bool Json\+::\+Value\+::is\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 283 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+284     \{
+285         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+286     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_a71e1f82cf1c3eaf969d400dcffb163a6}\label{class_json_1_1_value_a71e1f82cf1c3eaf969d400dcffb163a6}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!is\+String@{is\+String}}
+\index{is\+String@{is\+String}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{is\+String()}{isString()}}
+{\footnotesize\ttfamily bool Json\+::\+Value\+::is\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 279 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+280     \{
+281         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+282     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_a72e69b730d35131d867f47f13980c9c2}\label{class_json_1_1_value_a72e69b730d35131d867f47f13980c9c2}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_value}{Value} Json\+::\+Value\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 244 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+245     \{
+246         \textcolor{comment}{/*}
+247 \textcolor{comment}{        json\_object\_object\_foreach( m\_objValue, key, value )\{}
+248 \textcolor{comment}{            if( sKey == key )}
+249 \textcolor{comment}{            \{}
+250 \textcolor{comment}{                return Value(value);}
+251 \textcolor{comment}{            \}}
+252 \textcolor{comment}{        \}}
+253 \textcolor{comment}{}
+254 \textcolor{comment}{        return Value();}
+255 \textcolor{comment}{        */}
+256         \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_value_a3dd8ad60321f45f8d51c864e3a96a848}{Value}(\hyperlink{class_json_1_1_value_a2b9203575d8ff75f02d30e09befb1204}{m\_valueMap}[sKey]);
+257     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_a9cc9f4b9ec45429586e60472a7c25059}\label{class_json_1_1_value_a9cc9f4b9ec45429586e60472a7c25059}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_value}{Value} Json\+::\+Value\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const unsigned int}]{i }\end{DoxyParamCaption})}
+
+
+
+Definition at line 259 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+260     \{
+261         \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_value_a3dd8ad60321f45f8d51c864e3a96a848}{Value}( \hyperlink{json__object_8c_ad1add4f980f1568f3cdc6d22521bf9e1}{json\_object\_array\_get\_idx}( 
+      \hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue}, i ) );
+262     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_a03430deb0b2a143e0fe2d743cceabab3}\label{class_json_1_1_value_a03430deb0b2a143e0fe2d743cceabab3}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!Set\+Obj@{Set\+Obj}}
+\index{Set\+Obj@{Set\+Obj}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{Set\+Obj()}{SetObj()}}
+{\footnotesize\ttfamily void Json\+::\+Value\+::\+Set\+Obj (\begin{DoxyParamCaption}\item[{\hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Definition at line 48 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+49     \{
+50         \hyperlink{json__object_8c_a24340b9a57fb8c4df72915d001437202}{json\_object\_put}( \hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue} );
+51 
+52         \hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue} = \hyperlink{json__object_8c_ac09dff4e88b4d925c272b3b5061c0182}{json\_object\_get}( obj );
+53         \hyperlink{class_json_1_1_value_ae6116e08a5c1833f858c1d29156365b1}{m\_eType} = \hyperlink{class_json_1_1_value_ad24bf765750e8ea535d28bcf981d551a}{init\_type}();
+54 
+55         \textcolor{keywordflow}{if} (\hyperlink{class_json_1_1_value_ae6116e08a5c1833f858c1d29156365b1}{m\_eType} == \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eae8386dcfc36d1ae897745f7b4f77a1f6}{objectValue})
+56         \{
+57             \hyperlink{json__object_8h_acf5f514a9e0061c10fc08055762639ee}{json\_object\_object\_foreach}( \hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue}, key, value )\{
+58                 \hyperlink{class_json_1_1_value_a914e4896d12ffa87726125d2f60ea9c0}{m\_allKeys}.push\_back(key);
+59                 \hyperlink{class_json_1_1_value_a2b9203575d8ff75f02d30e09befb1204}{m\_valueMap}.insert(std::pair<std::string, json\_object*>(key, value));
+60             \}
+61         \}
+62     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_a3cde6bd042f16442791fa816a60332e5}\label{class_json_1_1_value_a3cde6bd042f16442791fa816a60332e5}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!size@{size}}
+\index{size@{size}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily unsigned int Json\+::\+Value\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Number of values in array or object. 
+
+
+
+Definition at line 223 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+224     \{
+225         \textcolor{keywordflow}{switch} ( \hyperlink{class_json_1_1_value_ae6116e08a5c1833f858c1d29156365b1}{m\_eType} )
+226         \{
+227         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea7d9899633b4409bd3fc107e6737f8391}{nullValue}:
+228         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eae5a9d708d5c9e23ae9bf98898522512d}{intValue}:
+229         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eaea788d9a3bb00adc6d68d97d43e1ccd3}{uintValue}:
+230         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eab837c7b869c14d8be712deb45c9e490e}{realValue}:
+231         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea14c30dbf4da86f7b809be299f671f7fd}{booleanValue}:
+232         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea804ef857affea2d415843c73f261c258}{stringValue}:
+233             \textcolor{keywordflow}{return} 0;
+234         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eadc8f264f36b55b063c78126b335415f4}{arrayValue}:
+235             \textcolor{keywordflow}{return} \hyperlink{json__object_8c_ab4effb08356b83d77b4e1914467a2078}{json\_object\_array\_length}(\hyperlink{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}{m\_objValue});
+236         \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eae8386dcfc36d1ae897745f7b4f77a1f6}{objectValue}:
+237             \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_value_a914e4896d12ffa87726125d2f60ea9c0}{m\_allKeys}.size();
+238         \textcolor{keywordflow}{default}:
+239             \textcolor{keywordflow}{break};
+240         \}
+241         \textcolor{keywordflow}{return} 0;
+242     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_a8ce61157a011894f0252ceed232312de}\label{class_json_1_1_value_a8ce61157a011894f0252ceed232312de}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!type@{type}}
+\index{type@{type}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4e}{Value\+Type} Json\+::\+Value\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 89 of file jsoncxx.\+cpp.
+
+
+\begin{DoxyCode}
+90     \{
+91         \textcolor{keywordflow}{if}( \hyperlink{class_json_1_1_value_ae6116e08a5c1833f858c1d29156365b1}{m\_eType} == \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eaf3bec0dbeafa6b0fdc48db16179b6369}{unknowValue} )
+92             \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_value_ad24bf765750e8ea535d28bcf981d551a}{init\_type}();
+93         \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_value_ae6116e08a5c1833f858c1d29156365b1}{m\_eType};
+94     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_json_1_1_value_a914e4896d12ffa87726125d2f60ea9c0}\label{class_json_1_1_value_a914e4896d12ffa87726125d2f60ea9c0}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!m\+\_\+all\+Keys@{m\+\_\+all\+Keys}}
+\index{m\+\_\+all\+Keys@{m\+\_\+all\+Keys}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{m\+\_\+all\+Keys}{m\_allKeys}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Json\+::\+Value\+::m\+\_\+all\+Keys\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 79 of file jsoncxx.\+h.
+
+\mbox{\Hypertarget{class_json_1_1_value_ae6116e08a5c1833f858c1d29156365b1}\label{class_json_1_1_value_ae6116e08a5c1833f858c1d29156365b1}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!m\+\_\+e\+Type@{m\+\_\+e\+Type}}
+\index{m\+\_\+e\+Type@{m\+\_\+e\+Type}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{m\+\_\+e\+Type}{m\_eType}}
+{\footnotesize\ttfamily \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4e}{Value\+Type} Json\+::\+Value\+::m\+\_\+e\+Type\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 78 of file jsoncxx.\+h.
+
+\mbox{\Hypertarget{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}\label{class_json_1_1_value_a3a705e06c2dbc4a6e142b58b0cbca57e}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!m\+\_\+obj\+Value@{m\+\_\+obj\+Value}}
+\index{m\+\_\+obj\+Value@{m\+\_\+obj\+Value}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{m\+\_\+obj\+Value}{m\_objValue}}
+{\footnotesize\ttfamily \hyperlink{structjson__object}{json\+\_\+object}$\ast$ Json\+::\+Value\+::m\+\_\+obj\+Value\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 77 of file jsoncxx.\+h.
+
+\mbox{\Hypertarget{class_json_1_1_value_aced2ebc80b7cdb15b35e858df1f0b886}\label{class_json_1_1_value_aced2ebc80b7cdb15b35e858df1f0b886}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!m\+\_\+str\+Err\+Msg@{m\+\_\+str\+Err\+Msg}}
+\index{m\+\_\+str\+Err\+Msg@{m\+\_\+str\+Err\+Msg}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{m\+\_\+str\+Err\+Msg}{m\_strErrMsg}}
+{\footnotesize\ttfamily std\+::string Json\+::\+Value\+::m\+\_\+str\+Err\+Msg}
+
+
+
+Definition at line 72 of file jsoncxx.\+h.
+
+\mbox{\Hypertarget{class_json_1_1_value_a2b9203575d8ff75f02d30e09befb1204}\label{class_json_1_1_value_a2b9203575d8ff75f02d30e09befb1204}} 
+\index{Json\+::\+Value@{Json\+::\+Value}!m\+\_\+value\+Map@{m\+\_\+value\+Map}}
+\index{m\+\_\+value\+Map@{m\+\_\+value\+Map}!Json\+::\+Value@{Json\+::\+Value}}
+\subsubsection{\texorpdfstring{m\+\_\+value\+Map}{m\_valueMap}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, \hyperlink{structjson__object}{json\+\_\+object}$\ast$$>$ Json\+::\+Value\+::m\+\_\+value\+Map\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 80 of file jsoncxx.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+qt-\/json-\/editor-\/master/jsonc/\hyperlink{jsoncxx_8h}{jsoncxx.\+h}\item 
+qt-\/json-\/editor-\/master/jsonc/\hyperlink{jsoncxx_8cpp}{jsoncxx.\+cpp}\end{DoxyCompactItemize}

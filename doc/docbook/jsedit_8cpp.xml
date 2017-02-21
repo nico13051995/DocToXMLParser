@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="jsedit_8cpp">
+    <title>jsedit.cpp File Reference</title>
+    <programlisting>#include &quot;jsedit.h&quot;</programlisting>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="struct_block_info">BlockInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_sidebar_widget">SidebarWidget</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_j_s_doc_layout">JSDocLayout</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_j_s_edit_private">JSEditPrivate</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="jsedit_8cpp_1ae7c8b4f1e2c34d86a6d575835429a903">Q_DECLARE_TYPEINFO</link> (
+<link linkend="struct_block_info">BlockInfo</link> , Q_PRIMITIVE_TYPE )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="jsedit_8cpp_1a57fcd8bf6a68ec8510518ad2837bc5de">findClosingMatch</link> (
+const QTextDocument * doc, int cursorPosition)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="jsedit_8cpp_1ab053b406c3998913e2682a290f318c2a">findOpeningMatch</link> (
+const QTextDocument * doc, int cursorPosition)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="jsedit_8cpp_1aefab3032cbf05a680d50d82c95c0ded1">findClosingConstruct</link> (
+const QTextBlock &amp; block)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/qt-json-editor-master/jsedit.cpp</para>
+    </simplesect>
+</section>

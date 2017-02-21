@@ -1,0 +1,359 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="json__object_8c">
+    <title>json_object.c File Reference</title>
+    <programlisting>#include &quot;config.h&quot;</programlisting>
+    <programlisting>#include &lt;stdio.h&gt;</programlisting>
+    <programlisting>#include &lt;stdlib.h&gt;</programlisting>
+    <programlisting>#include &lt;stddef.h&gt;</programlisting>
+    <programlisting>#include &lt;string.h&gt;</programlisting>
+    <programlisting>#include &quot;debug.h&quot;</programlisting>
+    <programlisting>#include &quot;printbuf.h&quot;</programlisting>
+    <programlisting>#include &quot;linkhash.h&quot;</programlisting>
+    <programlisting>#include &quot;arraylist.h&quot;</programlisting>
+    <programlisting>#include &quot;json_object.h&quot;</programlisting>
+    <programlisting>#include &quot;json_object_private.h&quot;</programlisting>
+        <section>
+            <title>Variables</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const char * <link linkend="json__object_8c_1a27427f89f2fc995639e366635fbe58ac">json_number_chars</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const char * <link linkend="json__object_8c_1a20dbe4913551cefa6b4b0a77fd4397c4">json_hex_chars</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="json__object_8c_1a9dd8c380e1619571aa097b2119a9bca9">strndup</link> (
+const char * str, size_t n)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="json__object_8c_1a8d9188effc6115797e52b65c506550a8">json_object_generic_delete</link> (
+struct <link linkend="structjson__object">json_object</link> * jso)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static struct <link linkend="structjson__object">json_object</link> * <link linkend="json__object_8c_1acbd01fa1d6628290730a5e60ef2f0b8a">json_object_new</link> (
+enum <link linkend="json__object_8h_1ac75c61993722a9b8aaa44704072ec06c">json_type</link> o_type)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="json__object_8c_1aa22493bc43df72a281720c4e87bcb645">json_escape_str</link> (
+struct <link linkend="structprintbuf">printbuf</link> * pb, char * str)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structjson__object">json_object</link> * <link linkend="json__object_8c_1ac09dff4e88b4d925c272b3b5061c0182">json_object_get</link> (
+struct <link linkend="structjson__object">json_object</link> * obj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="json__object_8c_1a24340b9a57fb8c4df72915d001437202">json_object_put</link> (
+struct <link linkend="structjson__object">json_object</link> * obj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="json__object_8c_1abc94bbc222b1ea03b2407a69119a7579">json_object_is_type</link> (
+struct <link linkend="structjson__object">json_object</link> * obj, enum <link linkend="json__object_8h_1ac75c61993722a9b8aaa44704072ec06c">json_type</link> type)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>enum <link linkend="json__object_8h_1ac75c61993722a9b8aaa44704072ec06c">json_type</link> <link linkend="json__object_8c_1a64a6ffafbde09313fae2f0f2aeb2407f">json_object_get_type</link> (
+struct <link linkend="structjson__object">json_object</link> * obj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const char * <link linkend="json__object_8c_1a5b0d99d5f750bd2e41470337c5604b5b">json_object_to_json_string</link> (
+struct <link linkend="structjson__object">json_object</link> * obj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="json__object_8c_1aa2fedfc58240025abd01964d9cc5c329">json_object_object_to_json_string</link> (
+struct <link linkend="structjson__object">json_object</link> * jso, struct <link linkend="structprintbuf">printbuf</link> * pb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="json__object_8c_1a0ebac74c4875b7eec0e80988a0592228">json_object_lh_entry_free</link> (
+struct <link linkend="structlh__entry">lh_entry</link> * ent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="json__object_8c_1ac41848d5ccb6dcde8e429173dabde57a">json_object_object_delete</link> (
+struct <link linkend="structjson__object">json_object</link> * jso)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structjson__object">json_object</link> * <link linkend="json__object_8c_1af0ed3555604f39ac74b5e28bc5b1f82c">json_object_new_object</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structlh__table">lh_table</link> * <link linkend="json__object_8c_1ab75239692d97f2de68d2786e40897310">json_object_get_object</link> (
+struct <link linkend="structjson__object">json_object</link> * obj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="json__object_8c_1aa0142d91f394071c45e7157b594760cf">json_object_object_add</link> (
+struct <link linkend="structjson__object">json_object</link> * obj, const char * key, struct <link linkend="structjson__object">json_object</link> * val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structjson__object">json_object</link> * <link linkend="json__object_8c_1a00916eb22aa886f47ea7529950ca40f9">json_object_object_get</link> (
+struct <link linkend="structjson__object">json_object</link> * obj, const char * key)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="json__object_8c_1a08b477b92e8f5f10b3714f4505164a53">json_object_object_del</link> (
+struct <link linkend="structjson__object">json_object</link> * obj, const char * key)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="json__object_8c_1a19f940e9d7f5c5b3930931016c9521ce">json_object_boolean_to_json_string</link> (
+struct <link linkend="structjson__object">json_object</link> * jso, struct <link linkend="structprintbuf">printbuf</link> * pb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structjson__object">json_object</link> * <link linkend="json__object_8c_1a1bb59b93df42cafe49e8ff8c500690a6">json_object_new_boolean</link> (
+<link linkend="json__object_8h_1a621c38f1f10a1c565d897e3178b16d6e">boolean</link> b)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="json__object_8h_1a621c38f1f10a1c565d897e3178b16d6e">boolean</link> <link linkend="json__object_8c_1a1e624d8e948b31562b6dfc7a936b85ed">json_object_get_boolean</link> (
+struct <link linkend="structjson__object">json_object</link> * obj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="json__object_8c_1ade7e4ad6a20af2f079c446f583e2de66">json_object_int_to_json_string</link> (
+struct <link linkend="structjson__object">json_object</link> * jso, struct <link linkend="structprintbuf">printbuf</link> * pb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structjson__object">json_object</link> * <link linkend="json__object_8c_1af4dc3777b8751243c620a2cc65c89e26">json_object_new_int</link> (
+int i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="json__object_8c_1a53d286175d6a30ea1c961623a724a48f">json_object_get_int</link> (
+struct <link linkend="structjson__object">json_object</link> * obj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="json__object_8c_1accf334c34b45cd7daa539e8a78f8de75">json_object_double_to_json_string</link> (
+struct <link linkend="structjson__object">json_object</link> * jso, struct <link linkend="structprintbuf">printbuf</link> * pb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structjson__object">json_object</link> * <link linkend="json__object_8c_1a2e9c761833a4f5d0a0c60640377e3cec">json_object_new_double</link> (
+double d)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="json__object_8c_1ad7a7a813a948a1be644d2334281bf09a">json_object_get_double</link> (
+struct <link linkend="structjson__object">json_object</link> * obj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="json__object_8c_1aec0064eb5787efeec16a333a461a0c88">json_object_string_to_json_string</link> (
+struct <link linkend="structjson__object">json_object</link> * jso, struct <link linkend="structprintbuf">printbuf</link> * pb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="json__object_8c_1acfc72638a73a01e7dfcccd92de1660b4">json_object_string_delete</link> (
+struct <link linkend="structjson__object">json_object</link> * jso)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structjson__object">json_object</link> * <link linkend="json__object_8c_1a48eb92a8208e6718e55edf1130e8e4b8">json_object_new_string</link> (
+const char * s)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structjson__object">json_object</link> * <link linkend="json__object_8c_1a9d14fd03ed7520c4aa33ab53b4569414">json_object_new_string_len</link> (
+const char * s, int len)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const char * <link linkend="json__object_8c_1a48160f5bba7d298343045d2daca5e07a">json_object_get_string</link> (
+struct <link linkend="structjson__object">json_object</link> * obj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="json__object_8c_1af3ff481f43908e36781e1e427a6642a1">json_object_array_to_json_string</link> (
+struct <link linkend="structjson__object">json_object</link> * jso, struct <link linkend="structprintbuf">printbuf</link> * pb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="json__object_8c_1ae9ac30f025d853a14db650389102d6a1">json_object_array_entry_free</link> (
+void * data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="json__object_8c_1af68d85a2115a1a3a8392384e8aa37139">json_object_array_delete</link> (
+struct <link linkend="structjson__object">json_object</link> * jso)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structjson__object">json_object</link> * <link linkend="json__object_8c_1a9b5af06e9a99e16c6d9b6459a685ea3f">json_object_new_array</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structarray__list">array_list</link> * <link linkend="json__object_8c_1a752c3cf951a5c2fdc4dfdc9c1fbd8862">json_object_get_array</link> (
+struct <link linkend="structjson__object">json_object</link> * obj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="json__object_8c_1ab4effb08356b83d77b4e1914467a2078">json_object_array_length</link> (
+struct <link linkend="structjson__object">json_object</link> * obj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="json__object_8c_1ab244fb124c64bb3499c48b4fc66c4377">json_object_array_add</link> (
+struct <link linkend="structjson__object">json_object</link> * obj, struct <link linkend="structjson__object">json_object</link> * val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="json__object_8c_1acc8a81e4bae9eed2f993b95cfab5df70">json_object_array_put_idx</link> (
+struct <link linkend="structjson__object">json_object</link> * obj, int idx, struct <link linkend="structjson__object">json_object</link> * val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structjson__object">json_object</link> * <link linkend="json__object_8c_1ad1add4f980f1568f3cdc6d22521bf9e1">json_object_array_get_idx</link> (
+struct <link linkend="structjson__object">json_object</link> * obj, int idx)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/qt-json-editor-master/jsonc/json_object.c</para>
+    </simplesect>
+</section>

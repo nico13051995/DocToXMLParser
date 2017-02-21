@@ -1,0 +1,254 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_json_tree_model">
+<title>JsonTreeModel class Reference</title>
+<para>
+    <programlisting>#include <link linkend="jsontreemodel_8h">&lt;jsontreemodel.h&gt;</link></programlisting>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>JsonTreeItem * rootItem</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_json_tree_model_1ae578e41b3c06ef9ae969b0e7e43c8f98">JsonTreeModel</link> (
+const QStringList &amp; headers, const <link linkend="class_json_1_1_value">Json::Value</link> &amp; data, QObject * parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_json_tree_model_1aa727dca0c93d6a6dd5ff01fad68b4d13">~JsonTreeModel</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QVariant <link linkend="class_json_tree_model_1a6fb35b30bb69bc63a6faa6b123256ac5">data</link> (
+const QModelIndex &amp; index, int role)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QVariant <link linkend="class_json_tree_model_1ac7bebf8fa62b65a6bed96dba108c00a0">headerData</link> (
+int section, Qt::Orientation orientation, int role)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QModelIndex <link linkend="class_json_tree_model_1ac8be89cc178ef5151479be23006d18e3">index</link> (
+int row, int column, const QModelIndex &amp; parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QModelIndex <link linkend="class_json_tree_model_1aea54120cdf66d49e8f0ad176eed8fc99">parent</link> (
+const QModelIndex &amp; index)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="class_json_tree_model_1a7b9499f0aac83100742eaf4e0f160933">rowCount</link> (
+const QModelIndex &amp; parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="class_json_tree_model_1a65c133944c24a5121f8a4f89775e18a6">columnCount</link> (
+const QModelIndex &amp; parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Qt::ItemFlags <link linkend="class_json_tree_model_1ab85e55867599e981b4e6697271998b0f">flags</link> (
+const QModelIndex &amp; index)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_tree_model_1a0bf2bb16623502aa6a2a4043079f276c">setData</link> (
+const QModelIndex &amp; index, const QVariant &amp; value, int role)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_tree_model_1aba2b3c92fedfff20fd926a3ff2c6b266">setHeaderData</link> (
+int section, Qt::Orientation orientation, const QVariant &amp; value, int role)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_tree_model_1aabc3f2fa08ef557663f8a4e49a214ef4">insertColumns</link> (
+int position, int columns, const QModelIndex &amp; parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_tree_model_1a238f7748e25bf703b09775e7a1f97609">removeColumns</link> (
+int position, int columns, const QModelIndex &amp; parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_tree_model_1a44b67b632a69a48b087a5bc7bdf7caf5">insertRows</link> (
+int position, int rows, const QModelIndex &amp; parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_json_tree_model_1ae62d2fc8a4989d5d13880ee4ba45559f">removeRows</link> (
+int position, int rows, const QModelIndex &amp; parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_json_tree_item">JsonTreeItem</link> * <link linkend="class_json_tree_model_1a2c9c8c6a1feb5de57d38d808061a6482">getRootItem</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_json_tree_model_1aece2b0000f76aded790ed08b7cb7f280">setupModelData</link> (
+const <link linkend="class_json_1_1_value">Json::Value</link> &amp; lines, <link linkend="class_json_tree_item">JsonTreeItem</link> * parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString <link linkend="class_json_tree_model_1a85635e18ae052f13f9c909952ea803b4">getTypeString</link> (
+int vType)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_json_tree_item">JsonTreeItem</link> * <link linkend="class_json_tree_model_1a01c6e9e0ef7b334a86a693875a089969">getItem</link> (
+const QModelIndex &amp; index)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_json_tree_model_1ae578e41b3c06ef9ae969b0e7e43c8f98">
+                <title>JsonTreeModel::JsonTreeModel (const QStringList &amp;headers, const Json::Value &amp;data, QObject *parent=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_model_1aa727dca0c93d6a6dd5ff01fad68b4d13">
+                <title>JsonTreeModel::~JsonTreeModel ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_model_1a6fb35b30bb69bc63a6faa6b123256ac5">
+                <title>QVariant JsonTreeModel::data (const QModelIndex &amp;index, int role) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_model_1ac7bebf8fa62b65a6bed96dba108c00a0">
+                <title>QVariant JsonTreeModel::headerData (int section, Qt::Orientation orientation, int role=Qt::DisplayRole) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_model_1ac8be89cc178ef5151479be23006d18e3">
+                <title>QModelIndex JsonTreeModel::index (int row, int column, const QModelIndex &amp;parent=QModelIndex()) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_model_1aea54120cdf66d49e8f0ad176eed8fc99">
+                <title>QModelIndex JsonTreeModel::parent (const QModelIndex &amp;index) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_model_1a7b9499f0aac83100742eaf4e0f160933">
+                <title>int JsonTreeModel::rowCount (const QModelIndex &amp;parent=QModelIndex()) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_model_1a65c133944c24a5121f8a4f89775e18a6">
+                <title>int JsonTreeModel::columnCount (const QModelIndex &amp;parent=QModelIndex()) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_model_1ab85e55867599e981b4e6697271998b0f">
+                <title>Qt::ItemFlags JsonTreeModel::flags (const QModelIndex &amp;index) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_model_1a0bf2bb16623502aa6a2a4043079f276c">
+                <title>bool JsonTreeModel::setData (const QModelIndex &amp;index, const QVariant &amp;value, int role=Qt::EditRole)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_model_1aba2b3c92fedfff20fd926a3ff2c6b266">
+                <title>bool JsonTreeModel::setHeaderData (int section, Qt::Orientation orientation, const QVariant &amp;value, int role=Qt::EditRole)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_model_1aabc3f2fa08ef557663f8a4e49a214ef4">
+                <title>bool JsonTreeModel::insertColumns (int position, int columns, const QModelIndex &amp;parent=QModelIndex())</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_model_1a238f7748e25bf703b09775e7a1f97609">
+                <title>bool JsonTreeModel::removeColumns (int position, int columns, const QModelIndex &amp;parent=QModelIndex())</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_model_1a44b67b632a69a48b087a5bc7bdf7caf5">
+                <title>bool JsonTreeModel::insertRows (int position, int rows, const QModelIndex &amp;parent=QModelIndex())</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_model_1ae62d2fc8a4989d5d13880ee4ba45559f">
+                <title>bool JsonTreeModel::removeRows (int position, int rows, const QModelIndex &amp;parent=QModelIndex())</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_model_1a2c9c8c6a1feb5de57d38d808061a6482">
+                <title>JsonTreeItem * JsonTreeModel::getRootItem ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_model_1aece2b0000f76aded790ed08b7cb7f280">
+                <title>void JsonTreeModel::setupModelData (const Json::Value &amp;lines, JsonTreeItem *parent)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_model_1a85635e18ae052f13f9c909952ea803b4">
+                <title>QString JsonTreeModel::getTypeString (int vType)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_json_tree_model_1a01c6e9e0ef7b334a86a693875a089969">
+                <title>JsonTreeItem * JsonTreeModel::getItem (const QModelIndex &amp;index) const</title> <emphasis></emphasis>
+                
+            </section>
+</section>

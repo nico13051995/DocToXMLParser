@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="json__util_8h">
+    <title>json_util.h File Reference</title>
+    <programlisting>#include &quot;json_object.h&quot;</programlisting>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="json__util_8h_1a084b6afc8f7fbef88976aabe4aca7efd">JSON_FILE_BUF_SIZE</link> 4096</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structjson__object">json_object</link> * <link linkend="json__util_8h_1abefd9aa2f4d36ffc0f8474e042e9a398">json_object_from_file</link> (
+char * filename)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="json__util_8h_1a00f5c43b3035faa4e4f3e55cf59707ee">json_object_to_file</link> (
+char * filename, struct <link linkend="structjson__object">json_object</link> * obj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/qt-json-editor-master/jsonc/json_util.h</para>
+    </simplesect>
+</section>

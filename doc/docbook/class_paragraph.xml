@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_paragraph">
+<title>Paragraph class Reference</title>
+<para>
+    <programlisting>#include <link linkend="paragraph_8h">&lt;paragraph.h&gt;</link></programlisting>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString text</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QFont font</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_paragraph_1acad2e234873847c33313f5a5f0a209f5">Paragraph</link> (
+QString text, QFont font)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QFont <link linkend="class_paragraph_1abc3bbbf36f4318623d483190b30e08a9">getFont</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_paragraph_1ac1b3f012dcb54c04c252a48fda13a9fd">setFont</link> (
+const QFont &amp; value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString <link linkend="class_paragraph_1aa05a7f3553a718ee03b4df6fdcd35d1a">getText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_paragraph_1ae509ab5115df3836870de1cbc78029dd">setText</link> (
+const QString &amp; value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>The <link linkend="class_paragraph">Paragraph</link> class Model for contain info about paragraph. </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_paragraph_1acad2e234873847c33313f5a5f0a209f5">
+                <title>Paragraph::Paragraph (QString text, QFont font)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_paragraph_1abc3bbbf36f4318623d483190b30e08a9">
+                <title>QFont Paragraph::getFont () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_paragraph_1ac1b3f012dcb54c04c252a48fda13a9fd">
+                <title>void Paragraph::setFont (const QFont &amp;value)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_paragraph_1aa05a7f3553a718ee03b4df6fdcd35d1a">
+                <title>QString Paragraph::getText () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_paragraph_1ae509ab5115df3836870de1cbc78029dd">
+                <title>void Paragraph::setText (const QString &amp;value)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

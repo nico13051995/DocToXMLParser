@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="findform_8cpp">
+    <title>findform.cpp File Reference</title>
+    <programlisting>#include &lt;QtGui&gt;</programlisting>
+    <programlisting>#include &lt;QTextEdit&gt;</programlisting>
+    <programlisting>#include &lt;QRegExp&gt;</programlisting>
+    <programlisting>#include &quot;findform.h&quot;</programlisting>
+    <programlisting>#include &quot;ui_findreplaceform.h&quot;</programlisting>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/qt-json-editor-master/dialogs/findform.cpp</para>
+    </simplesect>
+</section>

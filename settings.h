@@ -6,6 +6,9 @@
 #include <QFile>
 #include <QMessageBox>
 
+/**
+ * @brief The Settings class simple singelton for get program settings (DI)
+ */
 class Settings
 {
     QSettings *settings;

@@ -1,0 +1,120 @@
+\hypertarget{json__util_8c}{}\section{qt-\/json-\/editor-\/master/jsonc/json\+\_\+util.c File Reference}
+\label{json__util_8c}\index{qt-\/json-\/editor-\/master/jsonc/json\+\_\+util.\+c@{qt-\/json-\/editor-\/master/jsonc/json\+\_\+util.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}bits.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}printbuf.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}json\+\_\+object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}json\+\_\+tokener.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}json\+\_\+util.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$ \hyperlink{json__util_8c_abefd9aa2f4d36ffc0f8474e042e9a398}{json\+\_\+object\+\_\+from\+\_\+file} (char $\ast$filename)
+\item 
+int \hyperlink{json__util_8c_a00f5c43b3035faa4e4f3e55cf59707ee}{json\+\_\+object\+\_\+to\+\_\+file} (char $\ast$filename, struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{json__util_8c_abefd9aa2f4d36ffc0f8474e042e9a398}\label{json__util_8c_abefd9aa2f4d36ffc0f8474e042e9a398}} 
+\index{json\+\_\+util.\+c@{json\+\_\+util.\+c}!json\+\_\+object\+\_\+from\+\_\+file@{json\+\_\+object\+\_\+from\+\_\+file}}
+\index{json\+\_\+object\+\_\+from\+\_\+file@{json\+\_\+object\+\_\+from\+\_\+file}!json\+\_\+util.\+c@{json\+\_\+util.\+c}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+from\+\_\+file()}{json\_object\_from\_file()}}
+{\footnotesize\ttfamily struct \hyperlink{structjson__object}{json\+\_\+object}$\ast$ json\+\_\+object\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+
+
+Definition at line 55 of file json\+\_\+util.\+c.
+
+
+\begin{DoxyCode}
+56 \{
+57   \textcolor{keyword}{struct }\hyperlink{structprintbuf}{printbuf} *pb;
+58   \textcolor{keyword}{struct }\hyperlink{structjson__object}{json\_object} *obj;
+59   \textcolor{keywordtype}{char} buf[\hyperlink{json__util_8h_a084b6afc8f7fbef88976aabe4aca7efd}{JSON\_FILE\_BUF\_SIZE}];
+60   \textcolor{keywordtype}{int} fd, ret;
+61 
+62   \textcolor{keywordflow}{if}((fd = open(filename, O\_RDONLY)) < 0) \{
+63     \hyperlink{debug_8h_a11ba39cecbe449af5b86fa2f78e9da9d}{MC\_ERROR}(\textcolor{stringliteral}{"json\_object\_from\_file: error reading file %s: %s\(\backslash\)n"},
+64          filename, strerror(errno));
+65     \textcolor{keywordflow}{return} (\textcolor{keyword}{struct} \hyperlink{structjson__object}{json\_object}*)\hyperlink{bits_8h_a863a898e607f8c2ff87b7052e326740f}{error\_ptr}(-1);
+66   \}
+67   \textcolor{keywordflow}{if}(!(pb = \hyperlink{printbuf_8c_a3e390ebc7660a18335edd89f640fd415}{printbuf\_new}())) \{
+68     \hyperlink{debug_8h_a11ba39cecbe449af5b86fa2f78e9da9d}{MC\_ERROR}(\textcolor{stringliteral}{"json\_object\_from\_file: printbuf\_new failed\(\backslash\)n"});
+69     \textcolor{keywordflow}{return} (\textcolor{keyword}{struct} \hyperlink{structjson__object}{json\_object}*)\hyperlink{bits_8h_a863a898e607f8c2ff87b7052e326740f}{error\_ptr}(-1);
+70   \}
+71   \textcolor{keywordflow}{while}((ret = read(fd, buf, \hyperlink{json__util_8h_a084b6afc8f7fbef88976aabe4aca7efd}{JSON\_FILE\_BUF\_SIZE})) > 0) \{
+72     \hyperlink{printbuf_8c_a22f09779a19db59a83e7cb8c2ce4c75f}{printbuf\_memappend}(pb, buf, ret);
+73   \}
+74   close(fd);
+75   \textcolor{keywordflow}{if}(ret < 0) \{
+76     \hyperlink{debug_8h_a25591d3d4754c0c6d1f2b5463fb4977e}{MC\_ABORT}(\textcolor{stringliteral}{"json\_object\_from\_file: error reading file %s: %s\(\backslash\)n"},
+77          filename, strerror(errno));
+78     \hyperlink{printbuf_8c_ab525221c767ac65c58ddeea8a655a4e8}{printbuf\_free}(pb);
+79     \textcolor{keywordflow}{return} (\textcolor{keyword}{struct} \hyperlink{structjson__object}{json\_object}*)\hyperlink{bits_8h_a863a898e607f8c2ff87b7052e326740f}{error\_ptr}(-1);
+80   \}
+81   obj = \hyperlink{json__tokener_8c_abf031fdf1e5caab71e2225a99588c6bb}{json\_tokener\_parse}(pb->\hyperlink{structprintbuf_a5d7cf8ac260f1f7c50fecaf9bd7bc651}{buf});
+82   \hyperlink{printbuf_8c_ab525221c767ac65c58ddeea8a655a4e8}{printbuf\_free}(pb);
+83   \textcolor{keywordflow}{return} obj;
+84 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__util_8c_a00f5c43b3035faa4e4f3e55cf59707ee}\label{json__util_8c_a00f5c43b3035faa4e4f3e55cf59707ee}} 
+\index{json\+\_\+util.\+c@{json\+\_\+util.\+c}!json\+\_\+object\+\_\+to\+\_\+file@{json\+\_\+object\+\_\+to\+\_\+file}}
+\index{json\+\_\+object\+\_\+to\+\_\+file@{json\+\_\+object\+\_\+to\+\_\+file}!json\+\_\+util.\+c@{json\+\_\+util.\+c}}
+\subsubsection{\texorpdfstring{json\+\_\+object\+\_\+to\+\_\+file()}{json\_object\_to\_file()}}
+{\footnotesize\ttfamily int json\+\_\+object\+\_\+to\+\_\+file (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename,  }\item[{struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Definition at line 86 of file json\+\_\+util.\+c.
+
+
+\begin{DoxyCode}
+87 \{
+88   \textcolor{keyword}{const} \textcolor{keywordtype}{char} *json\_str;
+89   \textcolor{keywordtype}{int} fd, ret;
+90   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} wpos, wsize;
+91 
+92   \textcolor{keywordflow}{if}(!obj) \{
+93     \hyperlink{debug_8h_a11ba39cecbe449af5b86fa2f78e9da9d}{MC\_ERROR}(\textcolor{stringliteral}{"json\_object\_to\_file: object is null\(\backslash\)n"});
+94     \textcolor{keywordflow}{return} -1;
+95   \}
+96 
+97   \textcolor{keywordflow}{if}((fd = open(filename, O\_WRONLY | O\_TRUNC | O\_CREAT, 0644)) < 0) \{
+98     \hyperlink{debug_8h_a11ba39cecbe449af5b86fa2f78e9da9d}{MC\_ERROR}(\textcolor{stringliteral}{"json\_object\_to\_file: error opening file %s: %s\(\backslash\)n"},
+99          filename, strerror(errno));
+100     \textcolor{keywordflow}{return} -1;
+101   \}
+102 
+103   \textcolor{keywordflow}{if}(!(json\_str = \hyperlink{json__object_8c_a5b0d99d5f750bd2e41470337c5604b5b}{json\_object\_to\_json\_string}(obj))) \{ \textcolor{keywordflow}{return} -1; \}
+104 
+105 
+106   wsize = (\textcolor{keywordtype}{unsigned} int)(strlen(json\_str) & UINT\_MAX); \textcolor{comment}{/* CAW: probably unnecessary, but the most 64bit
+       safe */}
+107   wpos = 0;
+108   \textcolor{keywordflow}{while}(wpos < wsize) \{
+109     \textcolor{keywordflow}{if}((ret = write(fd, json\_str + wpos, wsize-wpos)) < 0) \{
+110       close(fd);
+111       \hyperlink{debug_8h_a11ba39cecbe449af5b86fa2f78e9da9d}{MC\_ERROR}(\textcolor{stringliteral}{"json\_object\_to\_file: error writing file %s: %s\(\backslash\)n"},
+112          filename, strerror(errno));
+113       \textcolor{keywordflow}{return} -1;
+114     \}
+115 
+116     \textcolor{comment}{/* because of the above check for ret < 0, we can safely cast and add */}
+117     wpos += (\textcolor{keywordtype}{unsigned} int)ret;
+118   \}
+119 
+120   close(fd);
+121   \textcolor{keywordflow}{return} 0;
+122 \}
+\end{DoxyCode}

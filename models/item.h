@@ -4,6 +4,11 @@
 #include <QObject>
 #include "item_attribute.h"
 
+
+/**
+ * @brief The Item class
+ * Main model for searching
+ */
 class Item : public JsonSerializable
 {
     Q_OBJECT
@@ -12,9 +17,9 @@ class Item : public JsonSerializable
     QString regexp;
     QString value;
     int type;
-    bool enable;
+    bool enable; // if true item will be ignored and dont added to result file
     bool useParentGroups; // parent scope prepeand to child
-    bool useParentScope;
+    bool useParentScope; // use parent fided results
     bool isList; //if true then try find next similar
     bool compareFontProperties;
     QList<ItemAttribute*> atributes;

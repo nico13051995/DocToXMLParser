@@ -1,0 +1,82 @@
+\hypertarget{class_json_serializable}{}\section{Json\+Serializable Class Reference}
+\label{class_json_serializable}\index{Json\+Serializable@{Json\+Serializable}}
+
+
+The \hyperlink{class_json_serializable}{Json\+Serializable} class Wraper interface for create \hyperlink{namespace_json}{Json} serializable objects.  
+
+
+
+
+{\ttfamily \#include $<$jsonserializable.\+h$>$}
+
+Inheritance diagram for Json\+Serializable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_json_serializable}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_json_serializable_ab5bc08152c95bca5aad8f1a4e2c09998}{Json\+Serializable} (Q\+Object $\ast$parent=0)
+\item 
+virtual bool \hyperlink{class_json_serializable_a881aaead36cbf7d097bddfa08f204fd9}{load} (Q\+Json\+Object obj)=0
+\item 
+virtual bool \hyperlink{class_json_serializable_a98939816a5704c8d4c46f8571a5ae214}{save} (Q\+Json\+Object obj)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_json_serializable}{Json\+Serializable} class Wraper interface for create \hyperlink{namespace_json}{Json} serializable objects. 
+
+Definition at line 12 of file jsonserializable.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_json_serializable_ab5bc08152c95bca5aad8f1a4e2c09998}\label{class_json_serializable_ab5bc08152c95bca5aad8f1a4e2c09998}} 
+\index{Json\+Serializable@{Json\+Serializable}!Json\+Serializable@{Json\+Serializable}}
+\index{Json\+Serializable@{Json\+Serializable}!Json\+Serializable@{Json\+Serializable}}
+\subsubsection{\texorpdfstring{Json\+Serializable()}{JsonSerializable()}}
+{\footnotesize\ttfamily Json\+Serializable\+::\+Json\+Serializable (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line 3 of file jsonserializable.\+cpp.
+
+
+\begin{DoxyCode}
+3                                                   : QObject(parent)
+4 \{
+5 
+6 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_json_serializable_a881aaead36cbf7d097bddfa08f204fd9}\label{class_json_serializable_a881aaead36cbf7d097bddfa08f204fd9}} 
+\index{Json\+Serializable@{Json\+Serializable}!load@{load}}
+\index{load@{load}!Json\+Serializable@{Json\+Serializable}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily virtual bool Json\+Serializable\+::load (\begin{DoxyParamCaption}\item[{Q\+Json\+Object}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_item_aa089e9749b9a19492d45bb02c2135b48}{Item}, and \hyperlink{class_item_attribute_a5504e3f5abf4e2f48eba7893fc6d297e}{Item\+Attribute}.
+
+\mbox{\Hypertarget{class_json_serializable_a98939816a5704c8d4c46f8571a5ae214}\label{class_json_serializable_a98939816a5704c8d4c46f8571a5ae214}} 
+\index{Json\+Serializable@{Json\+Serializable}!save@{save}}
+\index{save@{save}!Json\+Serializable@{Json\+Serializable}}
+\subsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily virtual bool Json\+Serializable\+::save (\begin{DoxyParamCaption}\item[{Q\+Json\+Object}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_item_a0922eea7bc56f3f87a134210b56dde2c}{Item}, and \hyperlink{class_item_attribute_a5622c9174b2b4e5c1d37b2e76d4ca2d9}{Item\+Attribute}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+models/\hyperlink{jsonserializable_8h}{jsonserializable.\+h}\item 
+models/\hyperlink{jsonserializable_8cpp}{jsonserializable.\+cpp}\end{DoxyCompactItemize}

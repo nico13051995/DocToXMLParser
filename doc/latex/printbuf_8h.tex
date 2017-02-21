@@ -1,0 +1,183 @@
+\hypertarget{printbuf_8h}{}\section{qt-\/json-\/editor-\/master/jsonc/printbuf.h File Reference}
+\label{printbuf_8h}\index{qt-\/json-\/editor-\/master/jsonc/printbuf.\+h@{qt-\/json-\/editor-\/master/jsonc/printbuf.\+h}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structprintbuf}{printbuf}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\+\_\+memappend\+\_\+fast}(p,  bufptr,  bufsize)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structprintbuf}{printbuf} $\ast$ \hyperlink{printbuf_8h_a3e390ebc7660a18335edd89f640fd415}{printbuf\+\_\+new} (void)
+\item 
+int \hyperlink{printbuf_8h_a22f09779a19db59a83e7cb8c2ce4c75f}{printbuf\+\_\+memappend} (struct \hyperlink{structprintbuf}{printbuf} $\ast$p, const char $\ast$buf, int size)
+\item 
+int \hyperlink{printbuf_8h_adf6214db6c8ce994c7f7f1180863c8a4}{sprintbuf} (struct \hyperlink{structprintbuf}{printbuf} $\ast$p, const char $\ast$msg,...)
+\item 
+void \hyperlink{printbuf_8h_a4393ee3dedb376af11c96fe97532292e}{printbuf\+\_\+reset} (struct \hyperlink{structprintbuf}{printbuf} $\ast$p)
+\item 
+void \hyperlink{printbuf_8h_ab525221c767ac65c58ddeea8a655a4e8}{printbuf\+\_\+free} (struct \hyperlink{structprintbuf}{printbuf} $\ast$p)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}\label{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}} 
+\index{printbuf.\+h@{printbuf.\+h}!printbuf\+\_\+memappend\+\_\+fast@{printbuf\+\_\+memappend\+\_\+fast}}
+\index{printbuf\+\_\+memappend\+\_\+fast@{printbuf\+\_\+memappend\+\_\+fast}!printbuf.\+h@{printbuf.\+h}}
+\subsubsection{\texorpdfstring{printbuf\+\_\+memappend\+\_\+fast}{printbuf\_memappend\_fast}}
+{\footnotesize\ttfamily \#define printbuf\+\_\+memappend\+\_\+fast(\begin{DoxyParamCaption}\item[{}]{p,  }\item[{}]{bufptr,  }\item[{}]{bufsize }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                         \(\backslash\)
+  if ((p->size - p->bpos) > bufsize) \{                       \(\backslash\)
+    memcpy(p->buf + p->bpos, (bufptr), bufsize);             \(\backslash\)
+    p->bpos += bufsize;                                      \(\backslash\)
+    p->buf[p->bpos]= \textcolor{charliteral}{'\(\backslash\)0'};                                   \(\backslash\)
+  \} \textcolor{keywordflow}{else} \{  \hyperlink{printbuf_8h_a22f09779a19db59a83e7cb8c2ce4c75f}{printbuf\_memappend}(p, (bufptr), bufsize); \}      \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+
+
+Definition at line 42 of file printbuf.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{printbuf_8h_ab525221c767ac65c58ddeea8a655a4e8}\label{printbuf_8h_ab525221c767ac65c58ddeea8a655a4e8}} 
+\index{printbuf.\+h@{printbuf.\+h}!printbuf\+\_\+free@{printbuf\+\_\+free}}
+\index{printbuf\+\_\+free@{printbuf\+\_\+free}!printbuf.\+h@{printbuf.\+h}}
+\subsubsection{\texorpdfstring{printbuf\+\_\+free()}{printbuf\_free()}}
+{\footnotesize\ttfamily void printbuf\+\_\+free (\begin{DoxyParamCaption}\item[{struct \hyperlink{structprintbuf}{printbuf} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Definition at line 143 of file printbuf.\+c.
+
+
+\begin{DoxyCode}
+144 \{
+145   \textcolor{keywordflow}{if}(p) \{
+146     free(p->\hyperlink{structprintbuf_a5d7cf8ac260f1f7c50fecaf9bd7bc651}{buf});
+147     free(p);
+148   \}
+149 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{printbuf_8h_a22f09779a19db59a83e7cb8c2ce4c75f}\label{printbuf_8h_a22f09779a19db59a83e7cb8c2ce4c75f}} 
+\index{printbuf.\+h@{printbuf.\+h}!printbuf\+\_\+memappend@{printbuf\+\_\+memappend}}
+\index{printbuf\+\_\+memappend@{printbuf\+\_\+memappend}!printbuf.\+h@{printbuf.\+h}}
+\subsubsection{\texorpdfstring{printbuf\+\_\+memappend()}{printbuf\_memappend()}}
+{\footnotesize\ttfamily int printbuf\+\_\+memappend (\begin{DoxyParamCaption}\item[{struct \hyperlink{structprintbuf}{printbuf} $\ast$}]{p,  }\item[{const char $\ast$}]{buf,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line 48 of file printbuf.\+c.
+
+
+\begin{DoxyCode}
+49 \{
+50   \textcolor{keywordtype}{char} *t;
+51   \textcolor{keywordflow}{if}(p->\hyperlink{structprintbuf_a12ce6440eaa06a55b96ebdc5a9778dd5}{size} - p->\hyperlink{structprintbuf_aba980ad7406329e32f557dfa0eb7b1b2}{bpos} <= \hyperlink{structprintbuf_a12ce6440eaa06a55b96ebdc5a9778dd5}{size}) \{
+52     \textcolor{keywordtype}{int} new\_size = \hyperlink{bits_8h_a57d63d199d4b9ea40359253618951300}{json\_max}(p->\hyperlink{structprintbuf_a12ce6440eaa06a55b96ebdc5a9778dd5}{size} * 2, p->\hyperlink{structprintbuf_aba980ad7406329e32f557dfa0eb7b1b2}{bpos} + \hyperlink{structprintbuf_a12ce6440eaa06a55b96ebdc5a9778dd5}{size} + 8);
+53 \textcolor{preprocessor}{#ifdef PRINTBUF\_DEBUG}
+54     \hyperlink{debug_8h_afda355b35d18bf2e6a2a22d5c8eef42c}{MC\_DEBUG}(\textcolor{stringliteral}{"printbuf\_memappend: realloc "}
+55          \textcolor{stringliteral}{"bpos=%d wrsize=%d old\_size=%d new\_size=%d\(\backslash\)n"},
+56          p->\hyperlink{structprintbuf_aba980ad7406329e32f557dfa0eb7b1b2}{bpos}, \hyperlink{structprintbuf_a12ce6440eaa06a55b96ebdc5a9778dd5}{size}, p->\hyperlink{structprintbuf_a12ce6440eaa06a55b96ebdc5a9778dd5}{size}, new\_size);
+57 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* PRINTBUF\_DEBUG */}\textcolor{preprocessor}{}
+58     \textcolor{keywordflow}{if}(!(t = (\textcolor{keywordtype}{char}*)realloc(p->\hyperlink{structprintbuf_a5d7cf8ac260f1f7c50fecaf9bd7bc651}{buf}, new\_size))) \textcolor{keywordflow}{return} -1;
+59     p->\hyperlink{structprintbuf_a12ce6440eaa06a55b96ebdc5a9778dd5}{size} = new\_size;
+60     p->\hyperlink{structprintbuf_a5d7cf8ac260f1f7c50fecaf9bd7bc651}{buf} = t;
+61   \}
+62   memcpy(p->\hyperlink{structprintbuf_a5d7cf8ac260f1f7c50fecaf9bd7bc651}{buf} + p->\hyperlink{structprintbuf_aba980ad7406329e32f557dfa0eb7b1b2}{bpos}, \hyperlink{structprintbuf_a5d7cf8ac260f1f7c50fecaf9bd7bc651}{buf}, \hyperlink{structprintbuf_a12ce6440eaa06a55b96ebdc5a9778dd5}{size});
+63   p->\hyperlink{structprintbuf_aba980ad7406329e32f557dfa0eb7b1b2}{bpos} += \hyperlink{structprintbuf_a12ce6440eaa06a55b96ebdc5a9778dd5}{size};
+64   p->\hyperlink{structprintbuf_a5d7cf8ac260f1f7c50fecaf9bd7bc651}{buf}[p->\hyperlink{structprintbuf_aba980ad7406329e32f557dfa0eb7b1b2}{bpos}]= \textcolor{charliteral}{'\(\backslash\)0'};
+65   \textcolor{keywordflow}{return} \hyperlink{structprintbuf_a12ce6440eaa06a55b96ebdc5a9778dd5}{size};
+66 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{printbuf_8h_a3e390ebc7660a18335edd89f640fd415}\label{printbuf_8h_a3e390ebc7660a18335edd89f640fd415}} 
+\index{printbuf.\+h@{printbuf.\+h}!printbuf\+\_\+new@{printbuf\+\_\+new}}
+\index{printbuf\+\_\+new@{printbuf\+\_\+new}!printbuf.\+h@{printbuf.\+h}}
+\subsubsection{\texorpdfstring{printbuf\+\_\+new()}{printbuf\_new()}}
+{\footnotesize\ttfamily struct \hyperlink{structprintbuf}{printbuf}$\ast$ printbuf\+\_\+new (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 32 of file printbuf.\+c.
+
+
+\begin{DoxyCode}
+33 \{
+34   \textcolor{keyword}{struct }\hyperlink{structprintbuf}{printbuf} *p;
+35 
+36   p = (\textcolor{keyword}{struct }\hyperlink{structprintbuf}{printbuf}*)calloc(1, \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \hyperlink{structprintbuf}{printbuf}));
+37   \textcolor{keywordflow}{if}(!p) \textcolor{keywordflow}{return} NULL;
+38   p->\hyperlink{structprintbuf_a12ce6440eaa06a55b96ebdc5a9778dd5}{size} = 32;
+39   p->\hyperlink{structprintbuf_aba980ad7406329e32f557dfa0eb7b1b2}{bpos} = 0;
+40   \textcolor{keywordflow}{if}(!(p->\hyperlink{structprintbuf_a5d7cf8ac260f1f7c50fecaf9bd7bc651}{buf} = (\textcolor{keywordtype}{char}*)malloc(p->\hyperlink{structprintbuf_a12ce6440eaa06a55b96ebdc5a9778dd5}{size}))) \{
+41     free(p);
+42     \textcolor{keywordflow}{return} NULL;
+43   \}
+44   \textcolor{keywordflow}{return} p;
+45 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{printbuf_8h_a4393ee3dedb376af11c96fe97532292e}\label{printbuf_8h_a4393ee3dedb376af11c96fe97532292e}} 
+\index{printbuf.\+h@{printbuf.\+h}!printbuf\+\_\+reset@{printbuf\+\_\+reset}}
+\index{printbuf\+\_\+reset@{printbuf\+\_\+reset}!printbuf.\+h@{printbuf.\+h}}
+\subsubsection{\texorpdfstring{printbuf\+\_\+reset()}{printbuf\_reset()}}
+{\footnotesize\ttfamily void printbuf\+\_\+reset (\begin{DoxyParamCaption}\item[{struct \hyperlink{structprintbuf}{printbuf} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Definition at line 137 of file printbuf.\+c.
+
+
+\begin{DoxyCode}
+138 \{
+139   p->\hyperlink{structprintbuf_a5d7cf8ac260f1f7c50fecaf9bd7bc651}{buf}[0] = \textcolor{charliteral}{'\(\backslash\)0'};
+140   p->\hyperlink{structprintbuf_aba980ad7406329e32f557dfa0eb7b1b2}{bpos} = 0;
+141 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{printbuf_8h_adf6214db6c8ce994c7f7f1180863c8a4}\label{printbuf_8h_adf6214db6c8ce994c7f7f1180863c8a4}} 
+\index{printbuf.\+h@{printbuf.\+h}!sprintbuf@{sprintbuf}}
+\index{sprintbuf@{sprintbuf}!printbuf.\+h@{printbuf.\+h}}
+\subsubsection{\texorpdfstring{sprintbuf()}{sprintbuf()}}
+{\footnotesize\ttfamily int sprintbuf (\begin{DoxyParamCaption}\item[{struct \hyperlink{structprintbuf}{printbuf} $\ast$}]{p,  }\item[{const char $\ast$}]{msg,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Definition at line 109 of file printbuf.\+c.
+
+
+\begin{DoxyCode}
+110 \{
+111   va\_list ap;
+112   \textcolor{keywordtype}{char} *t;
+113   \textcolor{keywordtype}{int} \hyperlink{structprintbuf_a12ce6440eaa06a55b96ebdc5a9778dd5}{size};
+114   \textcolor{keywordtype}{char} \hyperlink{structprintbuf_a5d7cf8ac260f1f7c50fecaf9bd7bc651}{buf}[128];
+115 
+116   \textcolor{comment}{/* user stack buffer first */}
+117   va\_start(ap, msg);
+118   size = vsnprintf(buf, 128, msg, ap);
+119   va\_end(ap);
+120   \textcolor{comment}{/* if string is greater than stack buffer, then use dynamic string}
+121 \textcolor{comment}{     with vasprintf.  Note: some implementation of vsnprintf return -1}
+122 \textcolor{comment}{     if output is truncated whereas some return the number of bytes that}
+123 \textcolor{comment}{     would have been written - this code handles both cases. */}
+124   \textcolor{keywordflow}{if}(size == -1 || size > 127) \{
+125     va\_start(ap, msg);
+126     \textcolor{keywordflow}{if}((size = vasprintf(&t, msg, ap)) == -1) \{ va\_end(ap); \textcolor{keywordflow}{return} -1; \}
+127     va\_end(ap);
+128     \hyperlink{printbuf_8c_a22f09779a19db59a83e7cb8c2ce4c75f}{printbuf\_memappend}(p, t, size);
+129     free(t);
+130     \textcolor{keywordflow}{return} \hyperlink{structprintbuf_a12ce6440eaa06a55b96ebdc5a9778dd5}{size};
+131   \} \textcolor{keywordflow}{else} \{
+132     \hyperlink{printbuf_8c_a22f09779a19db59a83e7cb8c2ce4c75f}{printbuf\_memappend}(p, buf, size);
+133     \textcolor{keywordflow}{return} \hyperlink{structprintbuf_a12ce6440eaa06a55b96ebdc5a9778dd5}{size};
+134   \}
+135 \}
+\end{DoxyCode}

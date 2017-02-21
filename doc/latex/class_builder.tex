@@ -1,0 +1,126 @@
+\hypertarget{class_builder}{}\section{Builder Class Reference}
+\label{class_builder}\index{Builder@{Builder}}
+
+
+The \hyperlink{class_builder}{Builder} interface for future extend of current functionality create other builders.  
+
+
+
+
+{\ttfamily \#include $<$builder.\+h$>$}
+
+Inheritance diagram for Builder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_builder}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_builder_a90a875243096a42ca4069258c52a1ad4}{Builder} (Q\+String \hyperlink{class_builder_ad8ac906f8ce85ebcd061c4ee8e6f6a01}{name}, Q\+String \hyperlink{class_builder_ae3800e384b079c2d66ab4d8f98cbb4ad}{header}, Q\+String \hyperlink{class_builder_a5ace791b99eb11341d6f39e35fdd2ce7}{footer})
+\item 
+virtual Q\+Object $\ast$ \hyperlink{class_builder_a92d31ffc3502acebf0cd074e8b084751}{build} (Q\+List$<$ \hyperlink{class_item}{Item} $\ast$$>$ items, Q\+List$<$ \hyperlink{class_paragraph}{Paragraph} $>$ paragraphs)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String \hyperlink{class_builder_ad8ac906f8ce85ebcd061c4ee8e6f6a01}{name}
+\item 
+Q\+String \hyperlink{class_builder_ae3800e384b079c2d66ab4d8f98cbb4ad}{header}
+\item 
+Q\+String \hyperlink{class_builder_a5ace791b99eb11341d6f39e35fdd2ce7}{footer}
+\item 
+\hyperlink{class_reg_exp_tool}{Reg\+Exp\+Tool} \hyperlink{class_builder_a87575206ceba9ffc2d5c70c5800fff18}{rx\+Tool}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_builder}{Builder} interface for future extend of current functionality create other builders. 
+
+Definition at line 13 of file builder.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_builder_a90a875243096a42ca4069258c52a1ad4}\label{class_builder_a90a875243096a42ca4069258c52a1ad4}} 
+\index{Builder@{Builder}!Builder@{Builder}}
+\index{Builder@{Builder}!Builder@{Builder}}
+\subsubsection{\texorpdfstring{Builder()}{Builder()}}
+{\footnotesize\ttfamily Builder\+::\+Builder (\begin{DoxyParamCaption}\item[{Q\+String}]{name,  }\item[{Q\+String}]{header,  }\item[{Q\+String}]{footer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file builder.\+cpp.
+
+
+\begin{DoxyCode}
+3                                                              : QObject(NULL)
+4 \{
+5     this->\hyperlink{class_builder_ad8ac906f8ce85ebcd061c4ee8e6f6a01}{name} = \hyperlink{class_builder_ad8ac906f8ce85ebcd061c4ee8e6f6a01}{name};
+6     this->\hyperlink{class_builder_ae3800e384b079c2d66ab4d8f98cbb4ad}{header} = \hyperlink{class_builder_ae3800e384b079c2d66ab4d8f98cbb4ad}{header};
+7     this->\hyperlink{class_builder_a5ace791b99eb11341d6f39e35fdd2ce7}{footer} = \hyperlink{class_builder_a5ace791b99eb11341d6f39e35fdd2ce7}{footer};
+8 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_builder_a92d31ffc3502acebf0cd074e8b084751}\label{class_builder_a92d31ffc3502acebf0cd074e8b084751}} 
+\index{Builder@{Builder}!build@{build}}
+\index{build@{build}!Builder@{Builder}}
+\subsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily virtual Q\+Object$\ast$ Builder\+::build (\begin{DoxyParamCaption}\item[{Q\+List$<$ \hyperlink{class_item}{Item} $\ast$$>$}]{items,  }\item[{Q\+List$<$ \hyperlink{class_paragraph}{Paragraph} $>$}]{paragraphs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_xml_builder_a29a46891d09f490c19c1063884b66f33}{Xml\+Builder}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_builder_a5ace791b99eb11341d6f39e35fdd2ce7}\label{class_builder_a5ace791b99eb11341d6f39e35fdd2ce7}} 
+\index{Builder@{Builder}!footer@{footer}}
+\index{footer@{footer}!Builder@{Builder}}
+\subsubsection{\texorpdfstring{footer}{footer}}
+{\footnotesize\ttfamily Q\+String Builder\+::footer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 27 of file builder.\+h.
+
+\mbox{\Hypertarget{class_builder_ae3800e384b079c2d66ab4d8f98cbb4ad}\label{class_builder_ae3800e384b079c2d66ab4d8f98cbb4ad}} 
+\index{Builder@{Builder}!header@{header}}
+\index{header@{header}!Builder@{Builder}}
+\subsubsection{\texorpdfstring{header}{header}}
+{\footnotesize\ttfamily Q\+String Builder\+::header\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 26 of file builder.\+h.
+
+\mbox{\Hypertarget{class_builder_ad8ac906f8ce85ebcd061c4ee8e6f6a01}\label{class_builder_ad8ac906f8ce85ebcd061c4ee8e6f6a01}} 
+\index{Builder@{Builder}!name@{name}}
+\index{name@{name}!Builder@{Builder}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily Q\+String Builder\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 24 of file builder.\+h.
+
+\mbox{\Hypertarget{class_builder_a87575206ceba9ffc2d5c70c5800fff18}\label{class_builder_a87575206ceba9ffc2d5c70c5800fff18}} 
+\index{Builder@{Builder}!rx\+Tool@{rx\+Tool}}
+\index{rx\+Tool@{rx\+Tool}!Builder@{Builder}}
+\subsubsection{\texorpdfstring{rx\+Tool}{rxTool}}
+{\footnotesize\ttfamily \hyperlink{class_reg_exp_tool}{Reg\+Exp\+Tool} Builder\+::rx\+Tool\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 29 of file builder.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{builder_8h}{builder.\+h}\item 
+\hyperlink{builder_8cpp}{builder.\+cpp}\end{DoxyCompactItemize}

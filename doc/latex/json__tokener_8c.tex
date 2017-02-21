@@ -1,0 +1,737 @@
+\hypertarget{json__tokener_8c}{}\section{qt-\/json-\/editor-\/master/jsonc/json\+\_\+tokener.c File Reference}
+\label{json__tokener_8c}\index{qt-\/json-\/editor-\/master/jsonc/json\+\_\+tokener.\+c@{qt-\/json-\/editor-\/master/jsonc/json\+\_\+tokener.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}bits.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}printbuf.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}arraylist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}json\+\_\+object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}json\+\_\+tokener.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state}~tok-\/$>$stack\mbox{[}tok-\/$>$depth\mbox{]}.state
+\item 
+\#define \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\+\_\+state}~tok-\/$>$stack\mbox{[}tok-\/$>$depth\mbox{]}.saved\+\_\+state
+\item 
+\#define \hyperlink{json__tokener_8c_a7ccda8a3a0f47702f9fa962899b0a3a1}{current}~tok-\/$>$stack\mbox{[}tok-\/$>$depth\mbox{]}.current
+\item 
+\#define \hyperlink{json__tokener_8c_ab340ec2567c6b44f492f64bd7cd819d7}{obj\+\_\+field\+\_\+name}~tok-\/$>$stack\mbox{[}tok-\/$>$depth\mbox{]}.obj\+\_\+field\+\_\+name
+\item 
+\#define \hyperlink{json__tokener_8c_ac9a41ea43e3ef9b9099f9308bba824f8}{P\+O\+P\+\_\+\+C\+H\+AR}(dest,  tok)
+\item 
+\#define \hyperlink{json__tokener_8c_af90f7ae9bf7f086cd43118bf0cdf7074}{A\+D\+V\+A\+N\+C\+E\+\_\+\+C\+H\+AR}(str,  tok)~( ++(str), ((tok)-\/$>$char\+\_\+offset)++, c)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structjson__tokener}{json\+\_\+tokener} $\ast$ \hyperlink{json__tokener_8c_a55d6e8a6f6d90992c063a39e21769c52}{json\+\_\+tokener\+\_\+new} (void)
+\item 
+void \hyperlink{json__tokener_8c_af6645ff27c0ca82c6e314390814fcbeb}{json\+\_\+tokener\+\_\+free} (struct \hyperlink{structjson__tokener}{json\+\_\+tokener} $\ast$tok)
+\item 
+void \hyperlink{json__tokener_8c_ae23dd7ad4737bfc18409af6173ab2b09}{json\+\_\+tokener\+\_\+reset} (struct \hyperlink{structjson__tokener}{json\+\_\+tokener} $\ast$tok)
+\item 
+struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$ \hyperlink{json__tokener_8c_abf031fdf1e5caab71e2225a99588c6bb}{json\+\_\+tokener\+\_\+parse} (const char $\ast$str)
+\item 
+char $\ast$ \hyperlink{json__tokener_8c_a9dd8c380e1619571aa097b2119a9bca9}{strndup} (const char $\ast$str, size\+\_\+t n)
+\item 
+struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$ \hyperlink{json__tokener_8c_a0d9a666c21879647e8831f9cfa691673}{json\+\_\+tokener\+\_\+parse\+\_\+ex} (struct \hyperlink{structjson__tokener}{json\+\_\+tokener} $\ast$tok, const char $\ast$str, int len)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{json__tokener_8c_a6ede8ee7a4ec1fed68d10ea77294c966}{json\+\_\+tokener\+\_\+errors} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{json__tokener_8c_af90f7ae9bf7f086cd43118bf0cdf7074}\label{json__tokener_8c_af90f7ae9bf7f086cd43118bf0cdf7074}} 
+\index{json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}!A\+D\+V\+A\+N\+C\+E\+\_\+\+C\+H\+AR@{A\+D\+V\+A\+N\+C\+E\+\_\+\+C\+H\+AR}}
+\index{A\+D\+V\+A\+N\+C\+E\+\_\+\+C\+H\+AR@{A\+D\+V\+A\+N\+C\+E\+\_\+\+C\+H\+AR}!json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}}
+\subsubsection{\texorpdfstring{A\+D\+V\+A\+N\+C\+E\+\_\+\+C\+H\+AR}{ADVANCE\_CHAR}}
+{\footnotesize\ttfamily \#define A\+D\+V\+A\+N\+C\+E\+\_\+\+C\+H\+AR(\begin{DoxyParamCaption}\item[{}]{str,  }\item[{}]{tok }\end{DoxyParamCaption})~( ++(str), ((tok)-\/$>$char\+\_\+offset)++, c)}
+
+
+
+Definition at line 176 of file json\+\_\+tokener.\+c.
+
+\mbox{\Hypertarget{json__tokener_8c_a7ccda8a3a0f47702f9fa962899b0a3a1}\label{json__tokener_8c_a7ccda8a3a0f47702f9fa962899b0a3a1}} 
+\index{json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}!current@{current}}
+\index{current@{current}!json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}}
+\subsubsection{\texorpdfstring{current}{current}}
+{\footnotesize\ttfamily \#define current~tok-\/$>$stack\mbox{[}tok-\/$>$depth\mbox{]}.current}
+
+
+
+Definition at line 140 of file json\+\_\+tokener.\+c.
+
+\mbox{\Hypertarget{json__tokener_8c_ab340ec2567c6b44f492f64bd7cd819d7}\label{json__tokener_8c_ab340ec2567c6b44f492f64bd7cd819d7}} 
+\index{json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}!obj\+\_\+field\+\_\+name@{obj\+\_\+field\+\_\+name}}
+\index{obj\+\_\+field\+\_\+name@{obj\+\_\+field\+\_\+name}!json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}}
+\subsubsection{\texorpdfstring{obj\+\_\+field\+\_\+name}{obj\_field\_name}}
+{\footnotesize\ttfamily \#define obj\+\_\+field\+\_\+name~tok-\/$>$stack\mbox{[}tok-\/$>$depth\mbox{]}.obj\+\_\+field\+\_\+name}
+
+
+
+Definition at line 141 of file json\+\_\+tokener.\+c.
+
+\mbox{\Hypertarget{json__tokener_8c_ac9a41ea43e3ef9b9099f9308bba824f8}\label{json__tokener_8c_ac9a41ea43e3ef9b9099f9308bba824f8}} 
+\index{json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}!P\+O\+P\+\_\+\+C\+H\+AR@{P\+O\+P\+\_\+\+C\+H\+AR}}
+\index{P\+O\+P\+\_\+\+C\+H\+AR@{P\+O\+P\+\_\+\+C\+H\+AR}!json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}}
+\subsubsection{\texorpdfstring{P\+O\+P\+\_\+\+C\+H\+AR}{POP\_CHAR}}
+{\footnotesize\ttfamily \#define P\+O\+P\+\_\+\+C\+H\+AR(\begin{DoxyParamCaption}\item[{}]{dest,  }\item[{}]{tok }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(((tok)->char\_offset == len) ?                                          \(\backslash\)
+   (((tok)->depth == 0 && \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} == \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\_tokener\_state\_eatws} && 
+      \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state} == \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ad80b689cb709967b67a348de3d8601d2}{json\_tokener\_state\_finish}) ? \(\backslash\)
+    (((tok)->err = \hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59afe2fa9bde03155019b2df30f66a5fcd0}{json\_tokener\_success}), 0)                              \(\backslash\)
+    :                                                                   \(\backslash\)
+    (((tok)->err = \hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a9b26e920ca765df91c84e999561d8fb0}{json\_tokener\_continue}), 0)                             \(\backslash\)
+    ) :                                                                 \(\backslash\)
+   (((dest) = *str), 1)                                                 \(\backslash\)
+   )
+\end{DoxyCode}
+
+
+Definition at line 161 of file json\+\_\+tokener.\+c.
+
+\mbox{\Hypertarget{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}\label{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}} 
+\index{json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}!saved\+\_\+state@{saved\+\_\+state}}
+\index{saved\+\_\+state@{saved\+\_\+state}!json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}}
+\subsubsection{\texorpdfstring{saved\+\_\+state}{saved\_state}}
+{\footnotesize\ttfamily \#define saved\+\_\+state~tok-\/$>$stack\mbox{[}tok-\/$>$depth\mbox{]}.saved\+\_\+state}
+
+
+
+Definition at line 139 of file json\+\_\+tokener.\+c.
+
+\mbox{\Hypertarget{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}\label{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}} 
+\index{json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}!state@{state}}
+\index{state@{state}!json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}}
+\subsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \#define state~tok-\/$>$stack\mbox{[}tok-\/$>$depth\mbox{]}.state}
+
+
+
+Definition at line 138 of file json\+\_\+tokener.\+c.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{json__tokener_8c_af6645ff27c0ca82c6e314390814fcbeb}\label{json__tokener_8c_af6645ff27c0ca82c6e314390814fcbeb}} 
+\index{json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}!json\+\_\+tokener\+\_\+free@{json\+\_\+tokener\+\_\+free}}
+\index{json\+\_\+tokener\+\_\+free@{json\+\_\+tokener\+\_\+free}!json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}}
+\subsubsection{\texorpdfstring{json\+\_\+tokener\+\_\+free()}{json\_tokener\_free()}}
+{\footnotesize\ttfamily void json\+\_\+tokener\+\_\+free (\begin{DoxyParamCaption}\item[{struct \hyperlink{structjson__tokener}{json\+\_\+tokener} $\ast$}]{tok }\end{DoxyParamCaption})}
+
+
+
+Definition at line 73 of file json\+\_\+tokener.\+c.
+
+
+\begin{DoxyCode}
+74 \{
+75   \hyperlink{json__tokener_8c_ae23dd7ad4737bfc18409af6173ab2b09}{json\_tokener\_reset}(tok);
+76   \textcolor{keywordflow}{if}(tok) \hyperlink{printbuf_8c_ab525221c767ac65c58ddeea8a655a4e8}{printbuf\_free}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb});
+77   free(tok);
+78 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__tokener_8c_a55d6e8a6f6d90992c063a39e21769c52}\label{json__tokener_8c_a55d6e8a6f6d90992c063a39e21769c52}} 
+\index{json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}!json\+\_\+tokener\+\_\+new@{json\+\_\+tokener\+\_\+new}}
+\index{json\+\_\+tokener\+\_\+new@{json\+\_\+tokener\+\_\+new}!json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}}
+\subsubsection{\texorpdfstring{json\+\_\+tokener\+\_\+new()}{json\_tokener\_new()}}
+{\footnotesize\ttfamily struct \hyperlink{structjson__tokener}{json\+\_\+tokener}$\ast$ json\+\_\+tokener\+\_\+new (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 62 of file json\+\_\+tokener.\+c.
+
+
+\begin{DoxyCode}
+63 \{
+64   \textcolor{keyword}{struct }\hyperlink{structjson__tokener}{json\_tokener} *tok;
+65 
+66   tok = (\textcolor{keyword}{struct }\hyperlink{structjson__tokener}{json\_tokener}*)calloc(1, \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \hyperlink{structjson__tokener}{json\_tokener}));
+67   \textcolor{keywordflow}{if} (!tok) \textcolor{keywordflow}{return} NULL;
+68   tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb} = \hyperlink{printbuf_8c_a3e390ebc7660a18335edd89f640fd415}{printbuf\_new}();
+69   \hyperlink{json__tokener_8c_ae23dd7ad4737bfc18409af6173ab2b09}{json\_tokener\_reset}(tok);
+70   \textcolor{keywordflow}{return} tok;
+71 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__tokener_8c_abf031fdf1e5caab71e2225a99588c6bb}\label{json__tokener_8c_abf031fdf1e5caab71e2225a99588c6bb}} 
+\index{json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}!json\+\_\+tokener\+\_\+parse@{json\+\_\+tokener\+\_\+parse}}
+\index{json\+\_\+tokener\+\_\+parse@{json\+\_\+tokener\+\_\+parse}!json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}}
+\subsubsection{\texorpdfstring{json\+\_\+tokener\+\_\+parse()}{json\_tokener\_parse()}}
+{\footnotesize\ttfamily struct \hyperlink{structjson__object}{json\+\_\+object}$\ast$ json\+\_\+tokener\+\_\+parse (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Definition at line 102 of file json\+\_\+tokener.\+c.
+
+
+\begin{DoxyCode}
+103 \{
+104   \textcolor{keyword}{struct }\hyperlink{structjson__tokener}{json\_tokener}* tok;
+105   \textcolor{keyword}{struct }\hyperlink{structjson__object}{json\_object}* obj;
+106 
+107   tok = \hyperlink{json__tokener_8c_a55d6e8a6f6d90992c063a39e21769c52}{json\_tokener\_new}();
+108   obj = \hyperlink{json__tokener_8c_a0d9a666c21879647e8831f9cfa691673}{json\_tokener\_parse\_ex}(tok, str, -1);
+109   \textcolor{keywordflow}{if}(tok->\hyperlink{structjson__tokener_acc71f03c5d2edbcb5a036a906e8c2faf}{err} != \hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59afe2fa9bde03155019b2df30f66a5fcd0}{json\_tokener\_success})
+110     obj = (\textcolor{keyword}{struct }\hyperlink{structjson__object}{json\_object}*)\hyperlink{bits_8h_a863a898e607f8c2ff87b7052e326740f}{error\_ptr}(-tok->\hyperlink{structjson__tokener_acc71f03c5d2edbcb5a036a906e8c2faf}{err});
+111   \hyperlink{json__tokener_8c_af6645ff27c0ca82c6e314390814fcbeb}{json\_tokener\_free}(tok);
+112   \textcolor{keywordflow}{return} obj;
+113 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__tokener_8c_a0d9a666c21879647e8831f9cfa691673}\label{json__tokener_8c_a0d9a666c21879647e8831f9cfa691673}} 
+\index{json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}!json\+\_\+tokener\+\_\+parse\+\_\+ex@{json\+\_\+tokener\+\_\+parse\+\_\+ex}}
+\index{json\+\_\+tokener\+\_\+parse\+\_\+ex@{json\+\_\+tokener\+\_\+parse\+\_\+ex}!json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}}
+\subsubsection{\texorpdfstring{json\+\_\+tokener\+\_\+parse\+\_\+ex()}{json\_tokener\_parse\_ex()}}
+{\footnotesize\ttfamily struct \hyperlink{structjson__object}{json\+\_\+object}$\ast$ json\+\_\+tokener\+\_\+parse\+\_\+ex (\begin{DoxyParamCaption}\item[{struct \hyperlink{structjson__tokener}{json\+\_\+tokener} $\ast$}]{tok,  }\item[{const char $\ast$}]{str,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+Definition at line 182 of file json\+\_\+tokener.\+c.
+
+
+\begin{DoxyCode}
+184 \{
+185   \textcolor{keyword}{struct }\hyperlink{structjson__object}{json\_object} *obj = NULL;
+186   \textcolor{keywordtype}{char} c = \textcolor{charliteral}{'\(\backslash\)1'};
+187 
+188   tok->\hyperlink{structjson__tokener_a9daae2516fd6df23555d33ef01020a76}{char\_offset} = 0;
+189   tok->\hyperlink{structjson__tokener_acc71f03c5d2edbcb5a036a906e8c2faf}{err} = \hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59afe2fa9bde03155019b2df30f66a5fcd0}{json\_tokener\_success};
+190 
+191   \textcolor{keywordflow}{while} (\hyperlink{json__tokener_8c_ac9a41ea43e3ef9b9099f9308bba824f8}{POP\_CHAR}(c, tok)) \{
+192 
+193   redo\_char:
+194     \textcolor{keywordflow}{switch}(\hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state}) \{
+195 
+196     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\_tokener\_state\_eatws}:
+197       \textcolor{comment}{/* Advance until we change state */}
+198       \textcolor{keywordflow}{while} (isspace(c)) \{
+199     \textcolor{keywordflow}{if} ((!\hyperlink{json__tokener_8c_af90f7ae9bf7f086cd43118bf0cdf7074}{ADVANCE\_CHAR}(str, tok)) || (!\hyperlink{json__tokener_8c_ac9a41ea43e3ef9b9099f9308bba824f8}{POP\_CHAR}(c, tok)))
+200       \textcolor{keywordflow}{goto} out;
+201       \}
+202       \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'/'}) \{
+203     \hyperlink{printbuf_8c_a4393ee3dedb376af11c96fe97532292e}{printbuf\_reset}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb});
+204     \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, &c, 1);
+205     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a0ff1d1935d49188aa1e6b998d43e655c}{json\_tokener\_state\_comment\_start};
+206       \} \textcolor{keywordflow}{else} \{
+207     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state};
+208     \textcolor{keywordflow}{goto} redo\_char;
+209       \}
+210       \textcolor{keywordflow}{break};
+211 
+212     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a7c4c0bed1ebde45f5a99de4278792d72}{json\_tokener\_state\_start}:
+213       \textcolor{keywordflow}{switch}(c) \{
+214       \textcolor{keywordflow}{case} \textcolor{charliteral}{'\{'}:
+215     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\_tokener\_state\_eatws};
+216     \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a8c7dbda177a5d83a36a64f7cb99b9a29}{json\_tokener\_state\_object\_field\_start};
+217     \hyperlink{json__tokener_8c_a7ccda8a3a0f47702f9fa962899b0a3a1}{current} = \hyperlink{json__object_8c_af0ed3555604f39ac74b5e28bc5b1f82c}{json\_object\_new\_object}();
+218     \textcolor{keywordflow}{break};
+219       \textcolor{keywordflow}{case} \textcolor{charliteral}{'['}:
+220     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\_tokener\_state\_eatws};
+221     \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ab3d763300f1914865be09d603ddc11f4}{json\_tokener\_state\_array};
+222     \hyperlink{json__tokener_8c_a7ccda8a3a0f47702f9fa962899b0a3a1}{current} = \hyperlink{json__object_8c_a9b5af06e9a99e16c6d9b6459a685ea3f}{json\_object\_new\_array}();
+223     \textcolor{keywordflow}{break};
+224       \textcolor{keywordflow}{case} \textcolor{charliteral}{'N'}:
+225       \textcolor{keywordflow}{case} \textcolor{charliteral}{'n'}:
+226     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a668fb2654c59608945370003403a5792}{json\_tokener\_state\_null};
+227     \hyperlink{printbuf_8c_a4393ee3dedb376af11c96fe97532292e}{printbuf\_reset}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb});
+228     tok->\hyperlink{structjson__tokener_a8eed213c0a37d09c1df66c8567e44471}{st\_pos} = 0;
+229     \textcolor{keywordflow}{goto} redo\_char;
+230       \textcolor{keywordflow}{case} \textcolor{charliteral}{'"'}:
+231       \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)''}:
+232     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2aa90ea4c327a285bfbbce49d42d491d65}{json\_tokener\_state\_string};
+233     \hyperlink{printbuf_8c_a4393ee3dedb376af11c96fe97532292e}{printbuf\_reset}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb});
+234     tok->\hyperlink{structjson__tokener_aea488b73085ac7c5969ae7fc29e25fa0}{quote\_char} = c;
+235     \textcolor{keywordflow}{break};
+236       \textcolor{keywordflow}{case} \textcolor{charliteral}{'T'}:
+237       \textcolor{keywordflow}{case} \textcolor{charliteral}{'t'}:
+238       \textcolor{keywordflow}{case} \textcolor{charliteral}{'F'}:
+239       \textcolor{keywordflow}{case} \textcolor{charliteral}{'f'}:
+240     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a3525b15ecd0a698281b3914115b6bd3e}{json\_tokener\_state\_boolean};
+241     \hyperlink{printbuf_8c_a4393ee3dedb376af11c96fe97532292e}{printbuf\_reset}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb});
+242     tok->\hyperlink{structjson__tokener_a8eed213c0a37d09c1df66c8567e44471}{st\_pos} = 0;
+243     \textcolor{keywordflow}{goto} redo\_char;
+244 \textcolor{preprocessor}{#if defined(\_\_GNUC\_\_)}
+245       \textcolor{keywordflow}{case} \textcolor{charliteral}{'0'} ... \textcolor{charliteral}{'9'}:
+246 \textcolor{preprocessor}{#else}
+247       \textcolor{keywordflow}{case} \textcolor{charliteral}{'0'}:
+248       \textcolor{keywordflow}{case} \textcolor{charliteral}{'1'}:
+249       \textcolor{keywordflow}{case} \textcolor{charliteral}{'2'}:
+250       \textcolor{keywordflow}{case} \textcolor{charliteral}{'3'}:
+251       \textcolor{keywordflow}{case} \textcolor{charliteral}{'4'}:
+252       \textcolor{keywordflow}{case} \textcolor{charliteral}{'5'}:
+253       \textcolor{keywordflow}{case} \textcolor{charliteral}{'6'}:
+254       \textcolor{keywordflow}{case} \textcolor{charliteral}{'7'}:
+255       \textcolor{keywordflow}{case} \textcolor{charliteral}{'8'}:
+256       \textcolor{keywordflow}{case} \textcolor{charliteral}{'9'}:
+257 \textcolor{preprocessor}{#endif}
+258       \textcolor{keywordflow}{case} \textcolor{charliteral}{'-'}:
+259     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a7ce18d281d322af690b45f3b8b599e81}{json\_tokener\_state\_number};
+260     \hyperlink{printbuf_8c_a4393ee3dedb376af11c96fe97532292e}{printbuf\_reset}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb});
+261     tok->\hyperlink{structjson__tokener_ad3bf0aa728ea14549d5aa6ca8dcba070}{is\_double} = 0;
+262     \textcolor{keywordflow}{goto} redo\_char;
+263       \textcolor{keywordflow}{default}:
+264     tok->\hyperlink{structjson__tokener_acc71f03c5d2edbcb5a036a906e8c2faf}{err} = \hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a3309fa8ea4ab3ee0a81c55b69d223710}{json\_tokener\_error\_parse\_unexpected};
+265     \textcolor{keywordflow}{goto} out;
+266       \}
+267       \textcolor{keywordflow}{break};
+268 
+269     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ad80b689cb709967b67a348de3d8601d2}{json\_tokener\_state\_finish}:
+270       \textcolor{keywordflow}{if}(tok->\hyperlink{structjson__tokener_ae0e5102b44cc1fc680be3e0fb5fff028}{depth} == 0) \textcolor{keywordflow}{goto} out;
+271       obj = \hyperlink{json__object_8c_ac09dff4e88b4d925c272b3b5061c0182}{json\_object\_get}(\hyperlink{json__tokener_8c_a7ccda8a3a0f47702f9fa962899b0a3a1}{current});
+272       json\_tokener\_reset\_level(tok, tok->\hyperlink{structjson__tokener_ae0e5102b44cc1fc680be3e0fb5fff028}{depth});
+273       tok->\hyperlink{structjson__tokener_ae0e5102b44cc1fc680be3e0fb5fff028}{depth}--;
+274       \textcolor{keywordflow}{goto} redo\_char;
+275 
+276     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a668fb2654c59608945370003403a5792}{json\_tokener\_state\_null}:
+277       \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, &c, 1);
+278       \textcolor{keywordflow}{if}(strncasecmp(json\_null\_str, tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}->\hyperlink{structprintbuf_a5d7cf8ac260f1f7c50fecaf9bd7bc651}{buf},
+279              \hyperlink{bits_8h_a3dde282dc23d0eaa3c4840df8dc262d4}{json\_min}(tok->\hyperlink{structjson__tokener_a8eed213c0a37d09c1df66c8567e44471}{st\_pos}+1, strlen(json\_null\_str))) == 0) \{
+280     \textcolor{keywordflow}{if}(tok->\hyperlink{structjson__tokener_a8eed213c0a37d09c1df66c8567e44471}{st\_pos} == strlen(json\_null\_str)) \{
+281       \hyperlink{json__tokener_8c_a7ccda8a3a0f47702f9fa962899b0a3a1}{current} = NULL;
+282       \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ad80b689cb709967b67a348de3d8601d2}{json\_tokener\_state\_finish};
+283       \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\_tokener\_state\_eatws};
+284       \textcolor{keywordflow}{goto} redo\_char;
+285     \}
+286       \} \textcolor{keywordflow}{else} \{
+287     tok->\hyperlink{structjson__tokener_acc71f03c5d2edbcb5a036a906e8c2faf}{err} = \hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a641bbb8d881fdd1e463f20a1a203b77c}{json\_tokener\_error\_parse\_null};
+288     \textcolor{keywordflow}{goto} out;
+289       \}
+290       tok->\hyperlink{structjson__tokener_a8eed213c0a37d09c1df66c8567e44471}{st\_pos}++;
+291       \textcolor{keywordflow}{break};
+292 
+293     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a0ff1d1935d49188aa1e6b998d43e655c}{json\_tokener\_state\_comment\_start}:
+294       \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'*'}) \{
+295     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a8c2680b8873a8dce85f0b1ac25882dc9}{json\_tokener\_state\_comment};
+296       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'/'}) \{
+297     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ad8151350b1ef50298bafbab244ac1162}{json\_tokener\_state\_comment\_eol};
+298       \} \textcolor{keywordflow}{else} \{
+299     tok->\hyperlink{structjson__tokener_acc71f03c5d2edbcb5a036a906e8c2faf}{err} = \hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a3588c05b1da8b909a8cbdef66b0a1a28}{json\_tokener\_error\_parse\_comment};
+300     \textcolor{keywordflow}{goto} out;
+301       \}
+302       \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, &c, 1);
+303       \textcolor{keywordflow}{break};
+304 
+305     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a8c2680b8873a8dce85f0b1ac25882dc9}{json\_tokener\_state\_comment}:
+306               \{
+307           \textcolor{comment}{/* Advance until we change state */}
+308           \textcolor{keyword}{const} \textcolor{keywordtype}{char} *case\_start = str;
+309           \textcolor{keywordflow}{while}(c != \textcolor{charliteral}{'*'}) \{
+310             \textcolor{keywordflow}{if} (!\hyperlink{json__tokener_8c_af90f7ae9bf7f086cd43118bf0cdf7074}{ADVANCE\_CHAR}(str, tok) || !\hyperlink{json__tokener_8c_ac9a41ea43e3ef9b9099f9308bba824f8}{POP\_CHAR}(c, tok)) \{
+311               \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, case\_start, str-case\_start);
+312               \textcolor{keywordflow}{goto} out;
+313             \} 
+314           \}
+315           \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, case\_start, 1+str-case\_start);
+316           \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a62cef297a37a98b1239ea4bbd39723e1}{json\_tokener\_state\_comment\_end};
+317         \}
+318             \textcolor{keywordflow}{break};
+319 
+320     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ad8151350b1ef50298bafbab244ac1162}{json\_tokener\_state\_comment\_eol}:
+321       \{
+322     \textcolor{comment}{/* Advance until we change state */}
+323     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *case\_start = str;
+324     \textcolor{keywordflow}{while}(c != \textcolor{charliteral}{'\(\backslash\)n'}) \{
+325       \textcolor{keywordflow}{if} (!\hyperlink{json__tokener_8c_af90f7ae9bf7f086cd43118bf0cdf7074}{ADVANCE\_CHAR}(str, tok) || !\hyperlink{json__tokener_8c_ac9a41ea43e3ef9b9099f9308bba824f8}{POP\_CHAR}(c, tok)) \{
+326         \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, case\_start, str-case\_start);
+327         \textcolor{keywordflow}{goto} out;
+328       \}
+329     \}
+330     \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, case\_start, str-case\_start);
+331     \hyperlink{debug_8h_afda355b35d18bf2e6a2a22d5c8eef42c}{MC\_DEBUG}(\textcolor{stringliteral}{"json\_tokener\_comment: %s\(\backslash\)n"}, tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}->\hyperlink{structprintbuf_a5d7cf8ac260f1f7c50fecaf9bd7bc651}{buf});
+332     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\_tokener\_state\_eatws};
+333       \}
+334       \textcolor{keywordflow}{break};
+335 
+336     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a62cef297a37a98b1239ea4bbd39723e1}{json\_tokener\_state\_comment\_end}:
+337       \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, &c, 1);
+338       \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'/'}) \{
+339     \hyperlink{debug_8h_afda355b35d18bf2e6a2a22d5c8eef42c}{MC\_DEBUG}(\textcolor{stringliteral}{"json\_tokener\_comment: %s\(\backslash\)n"}, tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}->\hyperlink{structprintbuf_a5d7cf8ac260f1f7c50fecaf9bd7bc651}{buf});
+340     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\_tokener\_state\_eatws};
+341       \} \textcolor{keywordflow}{else} \{
+342     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a8c2680b8873a8dce85f0b1ac25882dc9}{json\_tokener\_state\_comment};
+343       \}
+344       \textcolor{keywordflow}{break};
+345 
+346     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2aa90ea4c327a285bfbbce49d42d491d65}{json\_tokener\_state\_string}:
+347       \{
+348     \textcolor{comment}{/* Advance until we change state */}
+349     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *case\_start = str;
+350     \textcolor{keywordflow}{while}(1) \{
+351       \textcolor{keywordflow}{if}(c == tok->\hyperlink{structjson__tokener_aea488b73085ac7c5969ae7fc29e25fa0}{quote\_char}) \{
+352         \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, case\_start, str-case\_start);
+353         \hyperlink{json__tokener_8c_a7ccda8a3a0f47702f9fa962899b0a3a1}{current} = \hyperlink{json__object_8c_a48eb92a8208e6718e55edf1130e8e4b8}{json\_object\_new\_string}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}->
+      \hyperlink{structprintbuf_a5d7cf8ac260f1f7c50fecaf9bd7bc651}{buf});
+354         \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ad80b689cb709967b67a348de3d8601d2}{json\_tokener\_state\_finish};
+355         \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\_tokener\_state\_eatws};
+356         \textcolor{keywordflow}{break};
+357       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}) \{
+358         \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, case\_start, str-case\_start);
+359         \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2aa90ea4c327a285bfbbce49d42d491d65}{json\_tokener\_state\_string};
+360         \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a1cf793d73587f68c4f2b3b4f65ff728e}{json\_tokener\_state\_string\_escape};
+361         \textcolor{keywordflow}{break};
+362       \}
+363       \textcolor{keywordflow}{if} (!\hyperlink{json__tokener_8c_af90f7ae9bf7f086cd43118bf0cdf7074}{ADVANCE\_CHAR}(str, tok) || !\hyperlink{json__tokener_8c_ac9a41ea43e3ef9b9099f9308bba824f8}{POP\_CHAR}(c, tok)) \{
+364         \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, case\_start, str-case\_start);
+365         \textcolor{keywordflow}{goto} out;
+366       \}
+367     \}
+368       \}
+369       \textcolor{keywordflow}{break};
+370 
+371     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a1cf793d73587f68c4f2b3b4f65ff728e}{json\_tokener\_state\_string\_escape}:
+372       \textcolor{keywordflow}{switch}(c) \{
+373       \textcolor{keywordflow}{case} \textcolor{charliteral}{'"'}:
+374       \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}:
+375       \textcolor{keywordflow}{case} \textcolor{charliteral}{'/'}:
+376     \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, &c, 1);
+377     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state};
+378     \textcolor{keywordflow}{break};
+379       \textcolor{keywordflow}{case} \textcolor{charliteral}{'b'}:
+380       \textcolor{keywordflow}{case} \textcolor{charliteral}{'n'}:
+381       \textcolor{keywordflow}{case} \textcolor{charliteral}{'r'}:
+382       \textcolor{keywordflow}{case} \textcolor{charliteral}{'t'}:
+383     \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'b'}) \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, \textcolor{stringliteral}{"\(\backslash\)b"}, 1);
+384     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'n'}) \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, \textcolor{stringliteral}{"\(\backslash\)n"}, 1);
+385     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'r'}) \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, \textcolor{stringliteral}{"\(\backslash\)r"}, 1);
+386     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'t'}) \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, \textcolor{stringliteral}{"\(\backslash\)t"}, 1);
+387     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state};
+388     \textcolor{keywordflow}{break};
+389       \textcolor{keywordflow}{case} \textcolor{charliteral}{'u'}:
+390     tok->\hyperlink{structjson__tokener_a32fa73e43fb760e6845231a8482eb064}{ucs\_char} = 0;
+391     tok->\hyperlink{structjson__tokener_a8eed213c0a37d09c1df66c8567e44471}{st\_pos} = 0;
+392     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a6c852da2e694be56799c58c201d6dca0}{json\_tokener\_state\_escape\_unicode};
+393     \textcolor{keywordflow}{break};
+394       \textcolor{keywordflow}{default}:
+395     tok->\hyperlink{structjson__tokener_acc71f03c5d2edbcb5a036a906e8c2faf}{err} = \hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a033ce89ce7b8f9e591e4bea92121c4c7}{json\_tokener\_error\_parse\_string};
+396     \textcolor{keywordflow}{goto} out;
+397       \}
+398       \textcolor{keywordflow}{break};
+399 
+400     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a6c852da2e694be56799c58c201d6dca0}{json\_tokener\_state\_escape\_unicode}:
+401             \textcolor{comment}{/* Note that the following code is inefficient for handling large}
+402 \textcolor{comment}{       * chunks of extended chars, calling printbuf\_memappend() once}
+403 \textcolor{comment}{       * for each multi-byte character of input.}
+404 \textcolor{comment}{       * This is a good area for future optimization.}
+405 \textcolor{comment}{       */}
+406     \{
+407       \textcolor{comment}{/* Advance until we change state */}
+408       \textcolor{keywordflow}{while}(1) \{
+409         \textcolor{keywordflow}{if}(strchr(\hyperlink{json__object_8c_a20dbe4913551cefa6b4b0a77fd4397c4}{json\_hex\_chars}, c)) \{
+410           tok->\hyperlink{structjson__tokener_a32fa73e43fb760e6845231a8482eb064}{ucs\_char} += ((\textcolor{keywordtype}{unsigned} int)\hyperlink{bits_8h_a1cf38b22d3a118ad48d9282c32c048aa}{hexdigit}(c) << ((3-tok->
+      \hyperlink{structjson__tokener_a8eed213c0a37d09c1df66c8567e44471}{st\_pos}++)*4));
+411           \textcolor{keywordflow}{if}(tok->\hyperlink{structjson__tokener_a8eed213c0a37d09c1df66c8567e44471}{st\_pos} == 4) \{
+412         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} utf\_out[3];
+413         \textcolor{keywordflow}{if} (tok->\hyperlink{structjson__tokener_a32fa73e43fb760e6845231a8482eb064}{ucs\_char} < 0x80) \{
+414           utf\_out[0] = tok->\hyperlink{structjson__tokener_a32fa73e43fb760e6845231a8482eb064}{ucs\_char};
+415           \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, (\textcolor{keywordtype}{char}*)utf\_out, 1);
+416         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tok->\hyperlink{structjson__tokener_a32fa73e43fb760e6845231a8482eb064}{ucs\_char} < 0x800) \{
+417           utf\_out[0] = 0xc0 | (tok->\hyperlink{structjson__tokener_a32fa73e43fb760e6845231a8482eb064}{ucs\_char} >> 6);
+418           utf\_out[1] = 0x80 | (tok->\hyperlink{structjson__tokener_a32fa73e43fb760e6845231a8482eb064}{ucs\_char} & 0x3f);
+419           \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, (\textcolor{keywordtype}{char}*)utf\_out, 2);
+420         \} \textcolor{keywordflow}{else} \{
+421           utf\_out[0] = 0xe0 | (tok->\hyperlink{structjson__tokener_a32fa73e43fb760e6845231a8482eb064}{ucs\_char} >> 12);
+422           utf\_out[1] = 0x80 | ((tok->\hyperlink{structjson__tokener_a32fa73e43fb760e6845231a8482eb064}{ucs\_char} >> 6) & 0x3f);
+423           utf\_out[2] = 0x80 | (tok->\hyperlink{structjson__tokener_a32fa73e43fb760e6845231a8482eb064}{ucs\_char} & 0x3f);
+424           \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, (\textcolor{keywordtype}{char}*)utf\_out, 3);
+425         \}
+426         \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state};
+427         \textcolor{keywordflow}{break};
+428           \}
+429         \} \textcolor{keywordflow}{else} \{
+430           tok->\hyperlink{structjson__tokener_acc71f03c5d2edbcb5a036a906e8c2faf}{err} = \hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a033ce89ce7b8f9e591e4bea92121c4c7}{json\_tokener\_error\_parse\_string};
+431           \textcolor{keywordflow}{goto} out;
+432               \}
+433       \textcolor{keywordflow}{if} (!\hyperlink{json__tokener_8c_af90f7ae9bf7f086cd43118bf0cdf7074}{ADVANCE\_CHAR}(str, tok) || !\hyperlink{json__tokener_8c_ac9a41ea43e3ef9b9099f9308bba824f8}{POP\_CHAR}(c, tok))
+434         \textcolor{keywordflow}{goto} out;
+435     \}
+436       \}
+437       \textcolor{keywordflow}{break};
+438 
+439     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a3525b15ecd0a698281b3914115b6bd3e}{json\_tokener\_state\_boolean}:
+440       \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, &c, 1);
+441       \textcolor{keywordflow}{if}(strncasecmp(json\_true\_str, tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}->\hyperlink{structprintbuf_a5d7cf8ac260f1f7c50fecaf9bd7bc651}{buf},
+442              \hyperlink{bits_8h_a3dde282dc23d0eaa3c4840df8dc262d4}{json\_min}(tok->\hyperlink{structjson__tokener_a8eed213c0a37d09c1df66c8567e44471}{st\_pos}+1, strlen(json\_true\_str))) == 0) \{
+443     \textcolor{keywordflow}{if}(tok->\hyperlink{structjson__tokener_a8eed213c0a37d09c1df66c8567e44471}{st\_pos} == strlen(json\_true\_str)) \{
+444       \hyperlink{json__tokener_8c_a7ccda8a3a0f47702f9fa962899b0a3a1}{current} = \hyperlink{json__object_8c_a1bb59b93df42cafe49e8ff8c500690a6}{json\_object\_new\_boolean}(1);
+445       \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ad80b689cb709967b67a348de3d8601d2}{json\_tokener\_state\_finish};
+446       \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\_tokener\_state\_eatws};
+447       \textcolor{keywordflow}{goto} redo\_char;
+448     \}
+449       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(strncasecmp(json\_false\_str, tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}->\hyperlink{structprintbuf_a5d7cf8ac260f1f7c50fecaf9bd7bc651}{buf},
+450                 \hyperlink{bits_8h_a3dde282dc23d0eaa3c4840df8dc262d4}{json\_min}(tok->\hyperlink{structjson__tokener_a8eed213c0a37d09c1df66c8567e44471}{st\_pos}+1, strlen(json\_false\_str))) == 0) \{
+451     \textcolor{keywordflow}{if}(tok->\hyperlink{structjson__tokener_a8eed213c0a37d09c1df66c8567e44471}{st\_pos} == strlen(json\_false\_str)) \{
+452       \hyperlink{json__tokener_8c_a7ccda8a3a0f47702f9fa962899b0a3a1}{current} = \hyperlink{json__object_8c_a1bb59b93df42cafe49e8ff8c500690a6}{json\_object\_new\_boolean}(0);
+453       \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ad80b689cb709967b67a348de3d8601d2}{json\_tokener\_state\_finish};
+454       \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\_tokener\_state\_eatws};
+455       \textcolor{keywordflow}{goto} redo\_char;
+456     \}
+457       \} \textcolor{keywordflow}{else} \{
+458     tok->\hyperlink{structjson__tokener_acc71f03c5d2edbcb5a036a906e8c2faf}{err} = \hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59addbdfe084e20709da3d20c8ae8ca278c}{json\_tokener\_error\_parse\_boolean};
+459     \textcolor{keywordflow}{goto} out;
+460       \}
+461       tok->\hyperlink{structjson__tokener_a8eed213c0a37d09c1df66c8567e44471}{st\_pos}++;
+462       \textcolor{keywordflow}{break};
+463 
+464     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a7ce18d281d322af690b45f3b8b599e81}{json\_tokener\_state\_number}:
+465       \{
+466     \textcolor{comment}{/* Advance until we change state */}
+467     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *case\_start = str;
+468     \textcolor{keywordtype}{int} case\_len=0;
+469     \textcolor{keywordflow}{while}(c && strchr(\hyperlink{json__object_8c_a27427f89f2fc995639e366635fbe58ac}{json\_number\_chars}, c)) \{
+470       ++case\_len;
+471       \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'.'} || c == \textcolor{charliteral}{'e'}) tok->\hyperlink{structjson__tokener_ad3bf0aa728ea14549d5aa6ca8dcba070}{is\_double} = 1;
+472       \textcolor{keywordflow}{if} (!\hyperlink{json__tokener_8c_af90f7ae9bf7f086cd43118bf0cdf7074}{ADVANCE\_CHAR}(str, tok) || !\hyperlink{json__tokener_8c_ac9a41ea43e3ef9b9099f9308bba824f8}{POP\_CHAR}(c, tok)) \{
+473         \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, case\_start, case\_len);
+474         \textcolor{keywordflow}{goto} out;
+475       \}
+476     \}
+477         \textcolor{keywordflow}{if} (case\_len>0)
+478           \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, case\_start, case\_len);
+479       \}
+480       \{
+481         \textcolor{keywordtype}{int} numi;
+482         \textcolor{keywordtype}{double} numd;
+483         \textcolor{keywordflow}{if}(!tok->\hyperlink{structjson__tokener_ad3bf0aa728ea14549d5aa6ca8dcba070}{is\_double} && sscanf(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}->\hyperlink{structprintbuf_a5d7cf8ac260f1f7c50fecaf9bd7bc651}{buf}, \textcolor{stringliteral}{"%d"}, &numi) == 1) \{
+484           \hyperlink{json__tokener_8c_a7ccda8a3a0f47702f9fa962899b0a3a1}{current} = \hyperlink{json__object_8c_af4dc3777b8751243c620a2cc65c89e26}{json\_object\_new\_int}(numi);
+485         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tok->\hyperlink{structjson__tokener_ad3bf0aa728ea14549d5aa6ca8dcba070}{is\_double} && sscanf(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}->\hyperlink{structprintbuf_a5d7cf8ac260f1f7c50fecaf9bd7bc651}{buf}, \textcolor{stringliteral}{"%lf"}, &numd) == 1) \{
+486           \hyperlink{json__tokener_8c_a7ccda8a3a0f47702f9fa962899b0a3a1}{current} = \hyperlink{json__object_8c_a2e9c761833a4f5d0a0c60640377e3cec}{json\_object\_new\_double}(numd);
+487         \} \textcolor{keywordflow}{else} \{
+488           tok->\hyperlink{structjson__tokener_acc71f03c5d2edbcb5a036a906e8c2faf}{err} = \hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59ab1b3ad685eb97235d269cc5b9eb7ab81}{json\_tokener\_error\_parse\_number};
+489           \textcolor{keywordflow}{goto} out;
+490         \}
+491         \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ad80b689cb709967b67a348de3d8601d2}{json\_tokener\_state\_finish};
+492         \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\_tokener\_state\_eatws};
+493         \textcolor{keywordflow}{goto} redo\_char;
+494       \}
+495       \textcolor{keywordflow}{break};
+496 
+497     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ab3d763300f1914865be09d603ddc11f4}{json\_tokener\_state\_array}:
+498       \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{']'}) \{
+499     \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ad80b689cb709967b67a348de3d8601d2}{json\_tokener\_state\_finish};
+500     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\_tokener\_state\_eatws};
+501       \} \textcolor{keywordflow}{else} \{
+502     \textcolor{keywordflow}{if}(tok->\hyperlink{structjson__tokener_ae0e5102b44cc1fc680be3e0fb5fff028}{depth} >= \hyperlink{json__tokener_8h_ac4299cf4ed799b028e61cf7b2b0d5f1f}{JSON\_TOKENER\_MAX\_DEPTH}-1) \{
+503       tok->\hyperlink{structjson__tokener_acc71f03c5d2edbcb5a036a906e8c2faf}{err} = \hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a59b2c36d9cc30c3038e09b9ddee6c86c}{json\_tokener\_error\_depth};
+504       \textcolor{keywordflow}{goto} out;
+505     \}
+506     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2aa2a01798ebe318ea91c38a886418f771}{json\_tokener\_state\_array\_add};
+507     tok->\hyperlink{structjson__tokener_ae0e5102b44cc1fc680be3e0fb5fff028}{depth}++;
+508     json\_tokener\_reset\_level(tok, tok->\hyperlink{structjson__tokener_ae0e5102b44cc1fc680be3e0fb5fff028}{depth});
+509     \textcolor{keywordflow}{goto} redo\_char;
+510       \}
+511       \textcolor{keywordflow}{break};
+512 
+513     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2aa2a01798ebe318ea91c38a886418f771}{json\_tokener\_state\_array\_add}:
+514       \hyperlink{json__object_8c_ab244fb124c64bb3499c48b4fc66c4377}{json\_object\_array\_add}(\hyperlink{json__tokener_8c_a7ccda8a3a0f47702f9fa962899b0a3a1}{current}, obj);
+515       \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a4ec7762aeab3424cbb14354c94025865}{json\_tokener\_state\_array\_sep};
+516       \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\_tokener\_state\_eatws};
+517       \textcolor{keywordflow}{goto} redo\_char;
+518 
+519     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a4ec7762aeab3424cbb14354c94025865}{json\_tokener\_state\_array\_sep}:
+520       \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{']'}) \{
+521     \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ad80b689cb709967b67a348de3d8601d2}{json\_tokener\_state\_finish};
+522     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\_tokener\_state\_eatws};
+523       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{','}) \{
+524     \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ab3d763300f1914865be09d603ddc11f4}{json\_tokener\_state\_array};
+525     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\_tokener\_state\_eatws};
+526       \} \textcolor{keywordflow}{else} \{
+527     tok->\hyperlink{structjson__tokener_acc71f03c5d2edbcb5a036a906e8c2faf}{err} = \hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a574846740b785146f164a209dc89574e}{json\_tokener\_error\_parse\_array};
+528     \textcolor{keywordflow}{goto} out;
+529       \}
+530       \textcolor{keywordflow}{break};
+531 
+532     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a8c7dbda177a5d83a36a64f7cb99b9a29}{json\_tokener\_state\_object\_field\_start}:
+533       \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'\}'}) \{
+534     \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ad80b689cb709967b67a348de3d8601d2}{json\_tokener\_state\_finish};
+535     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\_tokener\_state\_eatws};
+536       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'"'} || c == \textcolor{charliteral}{'\(\backslash\)''}) \{
+537     tok->\hyperlink{structjson__tokener_aea488b73085ac7c5969ae7fc29e25fa0}{quote\_char} = c;
+538     \hyperlink{printbuf_8c_a4393ee3dedb376af11c96fe97532292e}{printbuf\_reset}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb});
+539     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a77375940a10806e81d99876d13be67fc}{json\_tokener\_state\_object\_field};
+540       \} \textcolor{keywordflow}{else} \{
+541     tok->\hyperlink{structjson__tokener_acc71f03c5d2edbcb5a036a906e8c2faf}{err} = \hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a2003bd8e96c6680cd22419c5ceafd4c0}{json\_tokener\_error\_parse\_object\_key\_name};
+542     \textcolor{keywordflow}{goto} out;
+543       \}
+544       \textcolor{keywordflow}{break};
+545 
+546     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a77375940a10806e81d99876d13be67fc}{json\_tokener\_state\_object\_field}:
+547       \{
+548     \textcolor{comment}{/* Advance until we change state */}
+549     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *case\_start = str;
+550     \textcolor{keywordflow}{while}(1) \{
+551       \textcolor{keywordflow}{if}(c == tok->\hyperlink{structjson__tokener_aea488b73085ac7c5969ae7fc29e25fa0}{quote\_char}) \{
+552         \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, case\_start, str-case\_start);
+553         \hyperlink{json__tokener_8c_ab340ec2567c6b44f492f64bd7cd819d7}{obj\_field\_name} = strdup(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}->\hyperlink{structprintbuf_a5d7cf8ac260f1f7c50fecaf9bd7bc651}{buf});
+554         \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a0220aea1d9204aadfffde92c7f73f5f7}{json\_tokener\_state\_object\_field\_end};
+555         \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\_tokener\_state\_eatws};
+556         \textcolor{keywordflow}{break};
+557       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}) \{
+558         \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, case\_start, str-case\_start);
+559         \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a77375940a10806e81d99876d13be67fc}{json\_tokener\_state\_object\_field};
+560         \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a1cf793d73587f68c4f2b3b4f65ff728e}{json\_tokener\_state\_string\_escape};
+561         \textcolor{keywordflow}{break};
+562       \}
+563       \textcolor{keywordflow}{if} (!\hyperlink{json__tokener_8c_af90f7ae9bf7f086cd43118bf0cdf7074}{ADVANCE\_CHAR}(str, tok) || !\hyperlink{json__tokener_8c_ac9a41ea43e3ef9b9099f9308bba824f8}{POP\_CHAR}(c, tok)) \{
+564         \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\_memappend\_fast}(tok->\hyperlink{structjson__tokener_a1cdc7f85d7bde95f81bb08b7e61d6684}{pb}, case\_start, str-case\_start);
+565         \textcolor{keywordflow}{goto} out;
+566       \}
+567     \}
+568       \}
+569       \textcolor{keywordflow}{break};
+570 
+571     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a0220aea1d9204aadfffde92c7f73f5f7}{json\_tokener\_state\_object\_field\_end}:
+572       \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{':'}) \{
+573     \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a4c7b7deac37355491572f6da84f208aa}{json\_tokener\_state\_object\_value};
+574     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\_tokener\_state\_eatws};
+575       \} \textcolor{keywordflow}{else} \{
+576     tok->\hyperlink{structjson__tokener_acc71f03c5d2edbcb5a036a906e8c2faf}{err} = \hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59af91a2a819b0d6344d6d4e1d2579f28fd}{json\_tokener\_error\_parse\_object\_key\_sep};
+577     \textcolor{keywordflow}{goto} out;
+578       \}
+579       \textcolor{keywordflow}{break};
+580 
+581     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a4c7b7deac37355491572f6da84f208aa}{json\_tokener\_state\_object\_value}:
+582       \textcolor{keywordflow}{if}(tok->\hyperlink{structjson__tokener_ae0e5102b44cc1fc680be3e0fb5fff028}{depth} >= \hyperlink{json__tokener_8h_ac4299cf4ed799b028e61cf7b2b0d5f1f}{JSON\_TOKENER\_MAX\_DEPTH}-1) \{
+583     tok->\hyperlink{structjson__tokener_acc71f03c5d2edbcb5a036a906e8c2faf}{err} = \hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a59b2c36d9cc30c3038e09b9ddee6c86c}{json\_tokener\_error\_depth};
+584     \textcolor{keywordflow}{goto} out;
+585       \}
+586       \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ade6bee72f2147e634b19eb84e58eb162}{json\_tokener\_state\_object\_value\_add};
+587       tok->\hyperlink{structjson__tokener_ae0e5102b44cc1fc680be3e0fb5fff028}{depth}++;
+588       json\_tokener\_reset\_level(tok, tok->\hyperlink{structjson__tokener_ae0e5102b44cc1fc680be3e0fb5fff028}{depth});
+589       \textcolor{keywordflow}{goto} redo\_char;
+590 
+591     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ade6bee72f2147e634b19eb84e58eb162}{json\_tokener\_state\_object\_value\_add}:
+592       \hyperlink{json__object_8c_aa0142d91f394071c45e7157b594760cf}{json\_object\_object\_add}(\hyperlink{json__tokener_8c_a7ccda8a3a0f47702f9fa962899b0a3a1}{current}, 
+      \hyperlink{json__tokener_8c_ab340ec2567c6b44f492f64bd7cd819d7}{obj\_field\_name}, obj);
+593       free(\hyperlink{json__tokener_8c_ab340ec2567c6b44f492f64bd7cd819d7}{obj\_field\_name});
+594       \hyperlink{json__tokener_8c_ab340ec2567c6b44f492f64bd7cd819d7}{obj\_field\_name} = NULL;
+595       \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2adaf3e06c5fc04fd4f04040cd67698215}{json\_tokener\_state\_object\_sep};
+596       \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\_tokener\_state\_eatws};
+597       \textcolor{keywordflow}{goto} redo\_char;
+598 
+599     \textcolor{keywordflow}{case} \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2adaf3e06c5fc04fd4f04040cd67698215}{json\_tokener\_state\_object\_sep}:
+600       \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'\}'}) \{
+601     \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ad80b689cb709967b67a348de3d8601d2}{json\_tokener\_state\_finish};
+602     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\_tokener\_state\_eatws};
+603       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{','}) \{
+604     \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a8c7dbda177a5d83a36a64f7cb99b9a29}{json\_tokener\_state\_object\_field\_start};
+605     \hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} = \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\_tokener\_state\_eatws};
+606       \} \textcolor{keywordflow}{else} \{
+607     tok->\hyperlink{structjson__tokener_acc71f03c5d2edbcb5a036a906e8c2faf}{err} = \hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a9ddb98741aebf7ac44735b4a43717013}{json\_tokener\_error\_parse\_object\_value\_sep};
+608     \textcolor{keywordflow}{goto} out;
+609       \}
+610       \textcolor{keywordflow}{break};
+611 
+612     \}
+613     \textcolor{keywordflow}{if} (!\hyperlink{json__tokener_8c_af90f7ae9bf7f086cd43118bf0cdf7074}{ADVANCE\_CHAR}(str, tok))
+614       \textcolor{keywordflow}{goto} out;
+615   \} \textcolor{comment}{/* while(POP\_CHAR) */}
+616 
+617  out:
+618   \textcolor{keywordflow}{if} (!c) \{ \textcolor{comment}{/* We hit an eof char (0) */}
+619     \textcolor{keywordflow}{if}(\hyperlink{json__tokener_8c_a17ba9d3d3f420182822febf73adca0a4}{state} != \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ad80b689cb709967b67a348de3d8601d2}{json\_tokener\_state\_finish} &&
+620        \hyperlink{json__tokener_8c_a87ee95a407326b09be35fa9f93916094}{saved\_state} != \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ad80b689cb709967b67a348de3d8601d2}{json\_tokener\_state\_finish})
+621       tok->\hyperlink{structjson__tokener_acc71f03c5d2edbcb5a036a906e8c2faf}{err} = \hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a8f774f4c7869afdd9b92295fca3a9ded}{json\_tokener\_error\_parse\_eof};
+622   \}
+623 
+624   \textcolor{keywordflow}{if}(tok->\hyperlink{structjson__tokener_acc71f03c5d2edbcb5a036a906e8c2faf}{err} == \hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59afe2fa9bde03155019b2df30f66a5fcd0}{json\_tokener\_success}) \textcolor{keywordflow}{return} 
+      \hyperlink{json__object_8c_ac09dff4e88b4d925c272b3b5061c0182}{json\_object\_get}(\hyperlink{json__tokener_8c_a7ccda8a3a0f47702f9fa962899b0a3a1}{current});
+625   \hyperlink{debug_8h_afda355b35d18bf2e6a2a22d5c8eef42c}{MC\_DEBUG}(\textcolor{stringliteral}{"json\_tokener\_parse\_ex: error %s at offset %d\(\backslash\)n"},
+626        \hyperlink{json__tokener_8c_a6ede8ee7a4ec1fed68d10ea77294c966}{json\_tokener\_errors}[tok->\hyperlink{structjson__tokener_acc71f03c5d2edbcb5a036a906e8c2faf}{err}], tok->\hyperlink{structjson__tokener_a9daae2516fd6df23555d33ef01020a76}{char\_offset});
+627   \textcolor{keywordflow}{return} NULL;
+628 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__tokener_8c_ae23dd7ad4737bfc18409af6173ab2b09}\label{json__tokener_8c_ae23dd7ad4737bfc18409af6173ab2b09}} 
+\index{json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}!json\+\_\+tokener\+\_\+reset@{json\+\_\+tokener\+\_\+reset}}
+\index{json\+\_\+tokener\+\_\+reset@{json\+\_\+tokener\+\_\+reset}!json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}}
+\subsubsection{\texorpdfstring{json\+\_\+tokener\+\_\+reset()}{json\_tokener\_reset()}}
+{\footnotesize\ttfamily void json\+\_\+tokener\+\_\+reset (\begin{DoxyParamCaption}\item[{struct \hyperlink{structjson__tokener}{json\+\_\+tokener} $\ast$}]{tok }\end{DoxyParamCaption})}
+
+
+
+Definition at line 90 of file json\+\_\+tokener.\+c.
+
+
+\begin{DoxyCode}
+91 \{
+92   \textcolor{keywordtype}{int} i;
+93   \textcolor{keywordflow}{if} (!tok)
+94     \textcolor{keywordflow}{return};
+95 
+96   \textcolor{keywordflow}{for}(i = tok->\hyperlink{structjson__tokener_ae0e5102b44cc1fc680be3e0fb5fff028}{depth}; i >= 0; i--)
+97     json\_tokener\_reset\_level(tok, i);
+98   tok->\hyperlink{structjson__tokener_ae0e5102b44cc1fc680be3e0fb5fff028}{depth} = 0;
+99   tok->\hyperlink{structjson__tokener_acc71f03c5d2edbcb5a036a906e8c2faf}{err} = \hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59afe2fa9bde03155019b2df30f66a5fcd0}{json\_tokener\_success};
+100 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{json__tokener_8c_a9dd8c380e1619571aa097b2119a9bca9}\label{json__tokener_8c_a9dd8c380e1619571aa097b2119a9bca9}} 
+\index{json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}!strndup@{strndup}}
+\index{strndup@{strndup}!json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}}
+\subsubsection{\texorpdfstring{strndup()}{strndup()}}
+{\footnotesize\ttfamily char$\ast$ strndup (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line 118 of file json\+\_\+tokener.\+c.
+
+
+\begin{DoxyCode}
+119 \{
+120   \textcolor{keywordflow}{if}(str) \{
+121     \textcolor{keywordtype}{size\_t} len = strlen(str);
+122     \textcolor{keywordtype}{size\_t} nn = \hyperlink{bits_8h_a3dde282dc23d0eaa3c4840df8dc262d4}{json\_min}(len,n);
+123     \textcolor{keywordtype}{char}* s = (\textcolor{keywordtype}{char}*)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}) * (nn + 1));
+124 
+125     \textcolor{keywordflow}{if}(s) \{
+126       memcpy(s, str, nn);
+127       s[nn] = \textcolor{charliteral}{'\(\backslash\)0'};
+128     \}
+129 
+130     \textcolor{keywordflow}{return} s;
+131   \}
+132 
+133   \textcolor{keywordflow}{return} NULL;
+134 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{json__tokener_8c_a6ede8ee7a4ec1fed68d10ea77294c966}\label{json__tokener_8c_a6ede8ee7a4ec1fed68d10ea77294c966}} 
+\index{json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}!json\+\_\+tokener\+\_\+errors@{json\+\_\+tokener\+\_\+errors}}
+\index{json\+\_\+tokener\+\_\+errors@{json\+\_\+tokener\+\_\+errors}!json\+\_\+tokener.\+c@{json\+\_\+tokener.\+c}}
+\subsubsection{\texorpdfstring{json\+\_\+tokener\+\_\+errors}{json\_tokener\_errors}}
+{\footnotesize\ttfamily const char$\ast$ json\+\_\+tokener\+\_\+errors\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  \textcolor{stringliteral}{"success"},
+  \textcolor{stringliteral}{"continue"},
+  \textcolor{stringliteral}{"nesting to deep"},
+  \textcolor{stringliteral}{"unexpected end of data"},
+  \textcolor{stringliteral}{"unexpected character"},
+  \textcolor{stringliteral}{"null expected"},
+  \textcolor{stringliteral}{"boolean expected"},
+  \textcolor{stringliteral}{"number expected"},
+  \textcolor{stringliteral}{"array value separator ',' expected"},
+  \textcolor{stringliteral}{"quoted object property name expected"},
+  \textcolor{stringliteral}{"object property name separator ':' expected"},
+  \textcolor{stringliteral}{"object value separator ',' expected"},
+  \textcolor{stringliteral}{"invalid string sequence"},
+  \textcolor{stringliteral}{"expected comment"},
+\}
+\end{DoxyCode}
+
+
+Definition at line 44 of file json\+\_\+tokener.\+c.
+

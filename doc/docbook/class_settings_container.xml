@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_settings_container">
+<title>SettingsContainer class Reference</title>
+<para>
+    <programlisting>#include <link linkend="settingscontainer_8h">&lt;settingscontainer.h&gt;</link></programlisting>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_settings_container_1aadc591433bbbdd60eee071ce80fac655">SettingsContainer</link> (
+QObject * parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="class_settings_container_1aadc591433bbbdd60eee071ce80fac655">
+                <title>SettingsContainer::SettingsContainer (QObject *parent=0)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

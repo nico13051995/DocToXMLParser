@@ -1,0 +1,463 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_j_s_edit">
+<title>JSEdit class Reference</title>
+<para>
+    <programlisting>#include <link linkend="jsedit_8h">&lt;jsedit.h&gt;</link></programlisting>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213">ColorComponent</link> {
+<link linkend="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a79b93a41435ddfd6b670821e7be31306">Background</link>,
+<link linkend="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a51b1886888e6bf8841064a795bd6ab8d">Normal</link>,
+<link linkend="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a430947e4b883553d04f618a799095f4d">Comment</link>,
+<link linkend="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213aeebc6c595d9a8bc74d3b03bd4c8f2d1f">Number</link>,
+<link linkend="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a60b69a2cc0268b2048fceadf7067e231">String</link>,
+<link linkend="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a7cf7fcdce0c49ff9995b8d8a02a3b127">Operator</link>,
+<link linkend="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a06246136a94298b2d147a9d3dea7fd89">Identifier</link>,
+<link linkend="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213ad70548abdd876f2648764b7924b90251">Keyword</link>,
+<link linkend="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a8b227288b9e8c72ccb15968f3127f6c2">BuiltIn</link>,
+<link linkend="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213acda2a01a6da3090252b320a2c4b99133">Sidebar</link>,
+<link linkend="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a43eb7503aa3a0f0520a2ad5c71b4d419">LineNumber</link>,
+<link linkend="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a5438637d9a462daaa47e0fdea5f342cc">Cursor</link>,
+<link linkend="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a098e62a1854a46cb2b58c49ee5d78208">Marker</link>,
+<link linkend="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a0c0c2038c38e75704e991bcf7c63dc7f">BracketMatch</link>,
+<link linkend="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213af2e19200abafb0bf0534dd89fd73c63b">BracketError</link>,
+<link linkend="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a364777f3c240e11db6d1d2a8c7b9962d">FoldIndicator</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QScopedPointer&lt; JSEditPrivate &gt; d_ptr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_j_s_edit_1a8f9e2f3aa005871d8eb1a541b8e872cf">JSEdit</link> (
+QWidget * parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_j_s_edit_1a53e969b73a8472fd0f22b504ea68fb29">~JSEdit</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_j_s_edit_1a783833bb402b29457f3ec268e5a8ae57">setColor</link> (
+<link linkend="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213">ColorComponent</link> component, const QColor &amp; color)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QStringList <link linkend="class_j_s_edit_1af2a11c0f985403c3cf42143151688500">keywords</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_j_s_edit_1a1a77f8ce932ed2654de4ad8a092d2754">setKeywords</link> (
+const QStringList &amp; keywords)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_j_s_edit_1a4a0ea37124129f1c18d84708c454834c">isBracketsMatchingEnabled</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_j_s_edit_1a4ff46404c4277cf3d32b66ee26ff8965">isCodeFoldingEnabled</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_j_s_edit_1a72262886ceb0918384629a2cc813777c">isLineNumbersVisible</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_j_s_edit_1a7d397d0f91f3829d4897b103a7f238f1">isTextWrapEnabled</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_j_s_edit_1aa9489a933ccc52750bbcac24d58d284c">isFoldable</link> (
+int line)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_j_s_edit_1af06c6789b9046e6b42ec34e94820291b">isFolded</link> (
+int line)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_j_s_edit_1a3c5fb615d94f736ce8fdbc6288d3d2f8">resizeEvent</link> (
+QResizeEvent * e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_j_s_edit_1a66017f13ed0ae775050bfe3e89afd407">wheelEvent</link> (
+QWheelEvent * e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_j_s_edit_1a171839a6ee2c9be58d5e9041a9a6ccb7">Q_DECLARE_PRIVATE</link> (
+<link linkend="class_j_s_edit">JSEdit</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_j_s_edit_1a3f9be03bc9a2f69b5daef200b6b17f5f">Q_DISABLE_COPY</link> (
+<link linkend="class_j_s_edit">JSEdit</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213">
+               <title>enum ColorComponent </title>
+               
+               <formalpara>
+                    <title>Enumerator:</title>
+                    <variablelist>
+                        <varlistentry xml:id="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a79b93a41435ddfd6b670821e7be31306">
+                            <term>Background</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a51b1886888e6bf8841064a795bd6ab8d">
+                            <term>Normal</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a430947e4b883553d04f618a799095f4d">
+                            <term>Comment</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213aeebc6c595d9a8bc74d3b03bd4c8f2d1f">
+                            <term>Number</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a60b69a2cc0268b2048fceadf7067e231">
+                            <term>String</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a7cf7fcdce0c49ff9995b8d8a02a3b127">
+                            <term>Operator</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a06246136a94298b2d147a9d3dea7fd89">
+                            <term>Identifier</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213ad70548abdd876f2648764b7924b90251">
+                            <term>Keyword</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a8b227288b9e8c72ccb15968f3127f6c2">
+                            <term>BuiltIn</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213acda2a01a6da3090252b320a2c4b99133">
+                            <term>Sidebar</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a43eb7503aa3a0f0520a2ad5c71b4d419">
+                            <term>LineNumber</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a5438637d9a462daaa47e0fdea5f342cc">
+                            <term>Cursor</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a098e62a1854a46cb2b58c49ee5d78208">
+                            <term>Marker</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a0c0c2038c38e75704e991bcf7c63dc7f">
+                            <term>BracketMatch</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213af2e19200abafb0bf0534dd89fd73c63b">
+                            <term>BracketError</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="class_j_s_edit_1a5a465193a1344e5be9b04f5ff7883213a364777f3c240e11db6d1d2a8c7b9962d">
+                            <term>FoldIndicator</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 60 of file jsedit.h
+                    <computeroutput><literallayout>
+{
+Background, 
+Normal, 
+Comment, 
+Number, 
+String, 
+Operator, 
+Identifier, 
+Keyword, 
+BuiltIn, 
+Sidebar, 
+LineNumber, 
+Cursor, 
+Marker, 
+BracketMatch, 
+BracketError, 
+FoldIndicator, 
+}ColorComponent;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_j_s_edit_1a8f9e2f3aa005871d8eb1a541b8e872cf">
+                <title>JSEdit::JSEdit (QWidget *parent=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_edit_1a53e969b73a8472fd0f22b504ea68fb29">
+                <title>JSEdit::~JSEdit ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_edit_1a783833bb402b29457f3ec268e5a8ae57">
+                <title>void JSEdit::setColor (ColorComponent component, const QColor &amp;color)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_edit_1af2a11c0f985403c3cf42143151688500">
+                <title>QStringList JSEdit::keywords () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_edit_1a1a77f8ce932ed2654de4ad8a092d2754">
+                <title>void JSEdit::setKeywords (const QStringList &amp;keywords)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_edit_1a4a0ea37124129f1c18d84708c454834c">
+                <title>bool JSEdit::isBracketsMatchingEnabled () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_edit_1a4ff46404c4277cf3d32b66ee26ff8965">
+                <title>bool JSEdit::isCodeFoldingEnabled () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_edit_1a72262886ceb0918384629a2cc813777c">
+                <title>bool JSEdit::isLineNumbersVisible () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_edit_1a7d397d0f91f3829d4897b103a7f238f1">
+                <title>bool JSEdit::isTextWrapEnabled () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_edit_1aa9489a933ccc52750bbcac24d58d284c">
+                <title>bool JSEdit::isFoldable (int line) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_edit_1af06c6789b9046e6b42ec34e94820291b">
+                <title>bool JSEdit::isFolded (int line) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_edit_1a3c5fb615d94f736ce8fdbc6288d3d2f8">
+                <title>void JSEdit::resizeEvent (QResizeEvent *e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_edit_1a66017f13ed0ae775050bfe3e89afd407">
+                <title>void JSEdit::wheelEvent (QWheelEvent *e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_edit_1a171839a6ee2c9be58d5e9041a9a6ccb7">
+                <title>JSEdit::Q_DECLARE_PRIVATE (JSEdit)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_j_s_edit_1a3f9be03bc9a2f69b5daef200b6b17f5f">
+                <title>JSEdit::Q_DISABLE_COPY (JSEdit)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

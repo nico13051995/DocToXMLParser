@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="jsoneditormain_8cpp">
+    <title>jsoneditormain.cpp File Reference</title>
+    <programlisting>#include &quot;jsoneditormain.h&quot;</programlisting>
+    <programlisting>#include &quot;ui_jsoneditormain.h&quot;</programlisting>
+    <programlisting>#include &quot;jsontreemodel.h&quot;</programlisting>
+    <programlisting>#include &quot;addnodedlg.h&quot;</programlisting>
+    <programlisting>#include &quot;jsedit.h&quot;</programlisting>
+    <programlisting>#include &lt;QMessageBox&gt;</programlisting>
+    <programlisting>#include &lt;QInputDialog&gt;</programlisting>
+    <programlisting>#include &lt;QFileDialog&gt;</programlisting>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file E:/HardWare/windowsFolders/DOCUMENTU/DocToXMLParser/qt-json-editor-master/jsoneditormain.cpp</para>
+    </simplesect>
+</section>

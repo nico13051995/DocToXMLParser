@@ -1,0 +1,171 @@
+\hypertarget{class_json_editor_main}{}\section{Json\+Editor\+Main Class Reference}
+\label{class_json_editor_main}\index{Json\+Editor\+Main@{Json\+Editor\+Main}}
+
+
+{\ttfamily \#include $<$jsoneditormain.\+h$>$}
+
+Inheritance diagram for Json\+Editor\+Main\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_json_editor_main}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_json_editor_main_a26035af11b29baf46d5fd32c288501f0}{Json\+Editor\+Main} (Q\+Widget $\ast$parent=0)
+\item 
+\hyperlink{class_json_editor_main_a6ed414b7f5f19c6c971053a5a8e83c3a}{$\sim$\+Json\+Editor\+Main} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_json_editor_main_a8242322e2557b45ff878ba77bbcc26d9}{change\+Event} (Q\+Event $\ast$e)
+\item 
+void \hyperlink{class_json_editor_main_a3040d8580a6cd99cb2158b8da0207b97}{close\+Event} (Q\+Close\+Event $\ast$event)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 16 of file jsoneditormain.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_json_editor_main_a26035af11b29baf46d5fd32c288501f0}\label{class_json_editor_main_a26035af11b29baf46d5fd32c288501f0}} 
+\index{Json\+Editor\+Main@{Json\+Editor\+Main}!Json\+Editor\+Main@{Json\+Editor\+Main}}
+\index{Json\+Editor\+Main@{Json\+Editor\+Main}!Json\+Editor\+Main@{Json\+Editor\+Main}}
+\subsubsection{\texorpdfstring{Json\+Editor\+Main()}{JsonEditorMain()}}
+{\footnotesize\ttfamily Json\+Editor\+Main\+::\+Json\+Editor\+Main (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file jsoneditormain.\+cpp.
+
+
+\begin{DoxyCode}
+11                                               :
+12     QMainWindow(parent),
+13     ui(\textcolor{keyword}{new} Ui::JsonEditorMain),
+14     newInsertText(tr(\textcolor{stringliteral}{"Insert new data"})),
+15     treeViewColumnKey(tr(\textcolor{stringliteral}{"Node"})),
+16     treeViewColumnValue(tr(\textcolor{stringliteral}{"Value"})),
+17     treeViewColumnType(tr(\textcolor{stringliteral}{"Type"}))
+18 \{
+19     ui->setupUi(\textcolor{keyword}{this});
+20     connect(ui->menuCodeTools, SIGNAL(toggled(\textcolor{keywordtype}{bool})), \textcolor{keyword}{this}, SLOT(toggleCodeToolbar(\textcolor{keywordtype}{bool})));
+21     connect(ui->menuFindTools, SIGNAL(toggled(\textcolor{keywordtype}{bool})), \textcolor{keyword}{this}, SLOT(toggleFindToolbar(\textcolor{keywordtype}{bool})));
+22     connect(ui->menuFileTools, SIGNAL(toggled(\textcolor{keywordtype}{bool})), \textcolor{keyword}{this}, SLOT(toggleFileToolbar(\textcolor{keywordtype}{bool})));
+23     connect(ui->menuEditTools, SIGNAL(toggled(\textcolor{keywordtype}{bool})), \textcolor{keyword}{this}, SLOT(toggleEditToolbar(\textcolor{keywordtype}{bool})));
+24     connect(ui->menuRefresh, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(refreshJsonTree()));
+25     connect(ui->menuInsertNode, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(insertTreeNode()));
+26     connect(ui->menuInsertChild, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(insertTreeChild()));
+27     connect(ui->menuDeleteNode, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(deleteTreeNode()));
+28     connect(ui->jsonTree, SIGNAL(clicked(QModelIndex)), \textcolor{keyword}{this}, SLOT(updateActions()));
+29     connect(ui->menuFormat, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(formatCode()));
+30     connect(ui->menuHelp, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(showHelp()));
+31     connect(ui->jsonTree, SIGNAL(doubleClicked(QModelIndex)), \textcolor{keyword}{this}, SLOT(dataEdit(QModelIndex)));
+32 
+33 
+34 \textcolor{comment}{//    connect(ui->menuNewFile, SIGNAL(triggered()), this, SLOT(newFile()));}
+35     connect(ui->menuOpenFile, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(open()));
+36     connect(ui->menuSaveFile, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(save()));
+37     connect(ui->menuSaveAs, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(saveAs()));
+38 
+39     \hyperlink{class_j_s_highlighter}{JSHighlighter} * highlight = \textcolor{keyword}{new} \hyperlink{class_j_s_highlighter}{JSHighlighter}(ui->jsonCode->document());
+40 
+41     setCurrentFile(\textcolor{stringliteral}{""});
+42 
+43     textEdit = ui->jsonCode;
+44     connect(textEdit->document(), SIGNAL(contentsChanged()),
+45             \textcolor{keyword}{this}, SLOT(documentWasModified()));
+46     setUnifiedTitleAndToolBarOnMac(\textcolor{keyword}{true});
+47 
+48     m\_findDialog = \textcolor{keyword}{new} FindDialog(\textcolor{keyword}{this});
+49     m\_findDialog->setModal(\textcolor{keyword}{false});
+50     m\_findDialog->\hyperlink{class_ui_1_1_find_replace_dialog_a3d3cd91477be5d6529e9aa3de21958a6}{setTextEdit}(textEdit);
+51 
+52     m\_findReplaceDialog = \textcolor{keyword}{new} FindReplaceDialog(\textcolor{keyword}{this});
+53     m\_findReplaceDialog->setModal(\textcolor{keyword}{false});
+54     m\_findReplaceDialog->\hyperlink{class_ui_1_1_find_replace_dialog_a3d3cd91477be5d6529e9aa3de21958a6}{setTextEdit}(textEdit);
+55 
+56     connect(ui->menuFind, SIGNAL(triggered()), m\_findDialog, SLOT(show()));
+57     connect(ui->menuReplace, SIGNAL(triggered()), m\_findReplaceDialog, SLOT(show()));
+58 
+59 \textcolor{comment}{//    connect(ui->actionFindNext, SIGNAL(triggered()), m\_findDialog, SLOT(findNext()));}
+60 \textcolor{comment}{//    connect(ui->actionFindPrevious, SIGNAL(triggered()), m\_findDialog, SLOT(findPrev()));}
+61 
+62     readSettings();
+63 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_editor_main_a6ed414b7f5f19c6c971053a5a8e83c3a}\label{class_json_editor_main_a6ed414b7f5f19c6c971053a5a8e83c3a}} 
+\index{Json\+Editor\+Main@{Json\+Editor\+Main}!````~Json\+Editor\+Main@{$\sim$\+Json\+Editor\+Main}}
+\index{````~Json\+Editor\+Main@{$\sim$\+Json\+Editor\+Main}!Json\+Editor\+Main@{Json\+Editor\+Main}}
+\subsubsection{\texorpdfstring{$\sim$\+Json\+Editor\+Main()}{~JsonEditorMain()}}
+{\footnotesize\ttfamily Json\+Editor\+Main\+::$\sim$\+Json\+Editor\+Main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 65 of file jsoneditormain.\+cpp.
+
+
+\begin{DoxyCode}
+66 \{
+67     \textcolor{keyword}{delete} ui;
+68 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_json_editor_main_a8242322e2557b45ff878ba77bbcc26d9}\label{class_json_editor_main_a8242322e2557b45ff878ba77bbcc26d9}} 
+\index{Json\+Editor\+Main@{Json\+Editor\+Main}!change\+Event@{change\+Event}}
+\index{change\+Event@{change\+Event}!Json\+Editor\+Main@{Json\+Editor\+Main}}
+\subsubsection{\texorpdfstring{change\+Event()}{changeEvent()}}
+{\footnotesize\ttfamily void Json\+Editor\+Main\+::change\+Event (\begin{DoxyParamCaption}\item[{Q\+Event $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 70 of file jsoneditormain.\+cpp.
+
+
+\begin{DoxyCode}
+71 \{
+72     QMainWindow::changeEvent(e);
+73     \textcolor{keywordflow}{switch} (e->type()) \{
+74     \textcolor{keywordflow}{case} QEvent::LanguageChange:
+75         ui->retranslateUi(\textcolor{keyword}{this});
+76         \textcolor{keywordflow}{break};
+77     \textcolor{keywordflow}{default}:
+78         \textcolor{keywordflow}{break};
+79     \}
+80 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_editor_main_a3040d8580a6cd99cb2158b8da0207b97}\label{class_json_editor_main_a3040d8580a6cd99cb2158b8da0207b97}} 
+\index{Json\+Editor\+Main@{Json\+Editor\+Main}!close\+Event@{close\+Event}}
+\index{close\+Event@{close\+Event}!Json\+Editor\+Main@{Json\+Editor\+Main}}
+\subsubsection{\texorpdfstring{close\+Event()}{closeEvent()}}
+{\footnotesize\ttfamily void Json\+Editor\+Main\+::close\+Event (\begin{DoxyParamCaption}\item[{Q\+Close\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 353 of file jsoneditormain.\+cpp.
+
+
+\begin{DoxyCode}
+354 \{
+355     \textcolor{keywordflow}{if} (maybeSave()) \{
+356         writeSettings();
+357         \textcolor{keyword}{event}->accept();
+358     \} \textcolor{keywordflow}{else} \{
+359         \textcolor{keyword}{event}->ignore();
+360     \}
+361 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+qt-\/json-\/editor-\/master/\hyperlink{jsoneditormain_8h}{jsoneditormain.\+h}\item 
+qt-\/json-\/editor-\/master/\hyperlink{jsoneditormain_8cpp}{jsoneditormain.\+cpp}\end{DoxyCompactItemize}

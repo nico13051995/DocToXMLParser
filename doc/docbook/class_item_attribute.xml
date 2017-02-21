@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_item_attribute">
+<title>ItemAttribute class Reference</title>
+<para>
+    <programlisting>#include <link linkend="item__attribute_8h">&lt;item_attribute.h&gt;</link></programlisting>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int type</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString value</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool enable</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_item_attribute_1a1245a8f1a5bd8e214a249bfadaf3a471">ItemAttribute</link> (
+<link linkend="class_item">Item</link> * parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_item_attribute_1a934cfe58d341d8a8e0e956e9813ddf71">ItemAttribute</link> (
+QJsonObject obj, <link linkend="class_item">Item</link> * parent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_item_attribute_1a5504e3f5abf4e2f48eba7893fc6d297e">load</link> (
+QJsonObject obj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_item_attribute_1a5622c9174b2b4e5c1d37b2e76d4ca2d9">save</link> (
+QJsonObject obj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString <link linkend="class_item_attribute_1aa9c05254cd2706c7afc051c2f159278f">getValue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString <link linkend="class_item_attribute_1a8c00d3838c2406b6ebe6515246399896">getValue</link> (
+QStringList mach)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString <link linkend="class_item_attribute_1a1e858380efb11bbbc7edd241059cee96">getName</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_item_attribute_1a2eac222eddafebcddad8aaa8e7926ffd">setName</link> (
+const QString &amp; value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="class_item_attribute_1a3eec36cbf8033331845d89de15754b83">getType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_item_attribute_1a3c763039c2ba34ab53c5c8fa46b655d7">setType</link> (
+int value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_item_attribute_1a1245a8f1a5bd8e214a249bfadaf3a471">
+                <title>ItemAttribute::ItemAttribute (Item *parent=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_attribute_1a934cfe58d341d8a8e0e956e9813ddf71">
+                <title>ItemAttribute::ItemAttribute (QJsonObject obj, Item *parent=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_attribute_1a5504e3f5abf4e2f48eba7893fc6d297e">
+                <title>bool ItemAttribute::load (QJsonObject obj)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_attribute_1a5622c9174b2b4e5c1d37b2e76d4ca2d9">
+                <title>bool ItemAttribute::save (QJsonObject obj)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_attribute_1aa9c05254cd2706c7afc051c2f159278f">
+                <title>QString ItemAttribute::getValue () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_attribute_1a8c00d3838c2406b6ebe6515246399896">
+                <title>QString ItemAttribute::getValue (QStringList mach) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_attribute_1a1e858380efb11bbbc7edd241059cee96">
+                <title>QString ItemAttribute::getName () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_attribute_1a2eac222eddafebcddad8aaa8e7926ffd">
+                <title>void ItemAttribute::setName (const QString &amp;value)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_attribute_1a3eec36cbf8033331845d89de15754b83">
+                <title>int ItemAttribute::getType () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_item_attribute_1a3c763039c2ba34ab53c5c8fa46b655d7">
+                <title>void ItemAttribute::setType (int value)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_builder">
+<title>Builder class Reference</title>
+<para>
+    <programlisting>#include <link linkend="builder_8h">&lt;builder.h&gt;</link></programlisting>
+</para>
+        <section>
+            <title>Protected Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString header</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>QString footer</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>RegExpTool rxTool</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_builder_1a90a875243096a42ca4069258c52a1ad4">Builder</link> (
+QString name, QString header, QString footer)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual QObject * <link linkend="class_builder_1a92d31ffc3502acebf0cd074e8b084751">build</link> (
+QList&lt; <link linkend="class_item">Item</link> *&gt; items, QList&lt; <link linkend="class_paragraph">Paragraph</link> &gt; paragraphs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>The <link linkend="class_builder">Builder</link> interface for future extend of current functionality create other builders. </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_builder_1a90a875243096a42ca4069258c52a1ad4">
+                <title>Builder::Builder (QString name, QString header, QString footer)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_builder_1a92d31ffc3502acebf0cd074e8b084751">
+                <title>virtual QObject* Builder::build (QList&lt; Item *&gt; items, QList&lt; Paragraph &gt; paragraphs)=0</title> <emphasis></emphasis>
+                
+            </section>
+</section>
