@@ -16,6 +16,12 @@ class XmlBuilder : public Builder
     QString *result;
 public:
     XmlBuilder(QString name, QString header, QString footer);
+    /**
+     * @brief build - wraper for builder
+     * @param items
+     * @param paragraphs
+     * @return
+     */
     QObject *build(QList<Item*> items, QList<Paragraph> paragraphs);
     /**
      * @brief getResultAsString - get XML string from QXmlStreamWriter

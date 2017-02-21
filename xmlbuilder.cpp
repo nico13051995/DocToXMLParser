@@ -32,10 +32,10 @@ QObject *XmlBuilder::build(QStringList parentMatch, QList<Item *> items, QList<P
     for(Item* item : items)
     {
         int infoListIndicator = false;
-        QFont firstFont;
+        QFont firstFont;//for watch font changes
         for(int pIndex = 0; pIndex < paragraphs.size(); pIndex++)
         {
-            QStringList findList = rxTool.globalMatch(paragraphs[pIndex].getText(), item->getRegexp());
+            QStringList findList = rxTool.globalMatch(paragraphs[pIndex].getText(), item->getRegexp());//finded results
             if(item->getUseParentGroups())
                 findList = parentMatch + findList;
             item->setNextHopeIndex(pIndex);
@@ -51,11 +51,11 @@ QObject *XmlBuilder::build(QStringList parentMatch, QList<Item *> items, QList<P
                     xml->writeStartElement(item->getName());
                     for(ItemAttribute *atribute : item->getAtributes())
                     {
-                        xml->writeAttribute(atribute->getName(), atribute->getValue(findList).trimmed().toHtmlEscaped());
+                        xml->writeAttribute(atribute->getName(), atribute->getValue(findList).trimmed().toHtmlEscaped());//write atributes
                     }
 
                     QString text = item->getValue(findList).trimmed().toHtmlEscaped();
-                    if(item->getCompareFontProperties())
+                    if(item->getCompareFontProperties())//compare font if need
                     {
                         while(pIndex + 1 < paragraphs.size() && firstFont == paragraphs[pIndex + 1].getFont())
                         {
@@ -66,7 +66,7 @@ QObject *XmlBuilder::build(QStringList parentMatch, QList<Item *> items, QList<P
                         }
                           item->setNextHopeIndex(pIndex);
                     }
-                    xml->writeCharacters(text);
+                    xml->writeCharacters(text);//write content after atributes
                     QList<Paragraph> listParagraphs;
                     listParagraphs.append(paragraphs.at(pIndex));
                     for(int i = 0 ; i < item->getChildrens().size(); i++){
@@ -77,9 +77,9 @@ QObject *XmlBuilder::build(QStringList parentMatch, QList<Item *> items, QList<P
                         else
                             build(findList, listItems, paragraphs);
                     }
-                    xml->writeEndElement();
+                    xml->writeEndElement();//write footer
                 }
-                for(int i = 0 ; i < item->getNextHope().size(); i++){
+                for(int i = 0 ; i < item->getNextHope().size(); i++){//check next home items
                     QList<Item*> listItems;
                     listItems.append(item->getNextHope().at(i));
 
